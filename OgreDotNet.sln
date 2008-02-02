@@ -1,0 +1,215 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OgreBindings", "OgreNet\OgreBindings.vcproj", "{8A62772A-0833-4FDC-97D2-3CB0FF8C39F9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgreNet", "OgreNet\OgreNet.csproj", "{FBE27FFE-2E50-49F7-81D7-0B587D17A144}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8A62772A-0833-4FDC-97D2-3CB0FF8C39F9} = {8A62772A-0833-4FDC-97D2-3CB0FF8C39F9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCEGUI", "DemoCEGUI\DemoCEGUI.csproj", "{0290D562-AD87-4B67-B592-6CE465393802}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1} = {3A0F7281-8F4D-482B-818F-A1A712A607A1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWinForms", "DemoWinForms\DemoWinForms.csproj", "{D7E71643-9E02-4E2E-A6A1-2F35104A8A9D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoSkyBox", "DemoSkyBox\DemoSkyBox.csproj", "{3CA60154-0B47-414F-8976-8C6C5910012C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OgreBindings_Cegui", "OgreNet.Cegui\OgreBindings_Cegui.vcproj", "{A0F9F40D-C48B-4D6E-9E8A-EEA561016D03}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgreNet.CeguiRenderer", "OgreNet.Cegui\OgreNet.CeguiRenderer.csproj", "{4D5A01C4-0E53-4E06-B8FC-F267A1431A36}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A0F9F40D-C48B-4D6E-9E8A-EEA561016D03} = {A0F9F40D-C48B-4D6E-9E8A-EEA561016D03}
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1} = {3A0F7281-8F4D-482B-818F-A1A712A607A1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CeguiBindings", "CeguiNet\CeguiBindings.vcproj", "{76F2A613-9D50-4307-95E3-374E790CFD82}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeguiNet", "CeguiNet\CeguiNet.csproj", "{32E237BF-6841-4622-98F8-C9664C167817}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76F2A613-9D50-4307-95E3-374E790CFD82} = {76F2A613-9D50-4307-95E3-374E790CFD82}
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1} = {3A0F7281-8F4D-482B-818F-A1A712A607A1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCeguiMenus", "DemoCeguiMenus\DemoCeguiMenus.csproj", "{804223DD-ECB0-4914-A832-2A021F6874BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1} = {3A0F7281-8F4D-482B-818F-A1A712A607A1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math3D", "Math3D\Math3D.csproj", "{3A0F7281-8F4D-482B-818F-A1A712A607A1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoParticleFX", "DemoParticleFX\DemoParticleFX.csproj", "{C131FDB4-8961-4279-A9DB-0353B158EBBD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoSkeletalAnimation", "DemoSkeletalAnimation\DemoSkeletalAnimation.csproj", "{261AB8E1-B922-4511-B121-210B7ED89B2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1} = {3A0F7281-8F4D-482B-818F-A1A712A607A1}
+		{FBE27FFE-2E50-49F7-81D7-0B587D17A144} = {FBE27FFE-2E50-49F7-81D7-0B587D17A144}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFireworks", "Samples\DemoFireworks\DemoFireworks.csproj", "{B342F90B-CFF8-4BE1-9F3F-2188B84BE51D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoGrass", "Samples\DemoGrass\DemoGrass.csproj", "{D49193D9-952B-4B6A-B458-9D0BE0BF5FDE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoRSQ", "Samples\DemoRSQ\DemoRSQ.csproj", "{1D6734B1-60E7-4913-8B4B-B0F51DD76DCF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GangstaBindings", "GangstaNet\GangstaBindings.vcproj", "{93F4E5A9-F41F-4CE0-9815-4B2D3CE1D4F7}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GangstaDotNet", "GangstaNet\GangstaDotNet.csproj", "{9364FF04-B3E5-48F0-A1F9-6D98A77F96B5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{93F4E5A9-F41F-4CE0-9815-4B2D3CE1D4F7} = {93F4E5A9-F41F-4CE0-9815-4B2D3CE1D4F7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoGAPyramid", "Samples\DemoGAPyramid\DemoGAPyramid.csproj", "{3712436B-0125-4E48-910D-9781B8712ADF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCustomObjects", "Samples\DemoCustomObjects\DemoCustomObjects.csproj", "{10E7681A-F093-4E6B-ABC4-2E191FFE888D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoRenderToTexture", "Samples\DemoRenderToTexture\DemoRenderToTexture.csproj", "{6D13ACF0-1705-47D9-8C2A-D77BD7592634}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCelShading", "Samples\DemoCelShading\DemoCelShading.csproj", "{B613CB8C-467F-4D07-AAD6-EB9573873954}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCompositor", "Samples\DemoCompositor\DemoCompositor.csproj", "{414386B0-D348-4E95-88F7-BF8DA276D036}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8A62772A-0833-4FDC-97D2-3CB0FF8C39F9}.Debug.ActiveCfg = Debug|Win32
+		{8A62772A-0833-4FDC-97D2-3CB0FF8C39F9}.Debug.Build.0 = Debug|Win32
+		{8A62772A-0833-4FDC-97D2-3CB0FF8C39F9}.Release.ActiveCfg = Release|Win32
+		{8A62772A-0833-4FDC-97D2-3CB0FF8C39F9}.Release.Build.0 = Release|Win32
+		{FBE27FFE-2E50-49F7-81D7-0B587D17A144}.Debug.ActiveCfg = Debug|.NET
+		{FBE27FFE-2E50-49F7-81D7-0B587D17A144}.Debug.Build.0 = Debug|.NET
+		{FBE27FFE-2E50-49F7-81D7-0B587D17A144}.Release.ActiveCfg = Release|.NET
+		{FBE27FFE-2E50-49F7-81D7-0B587D17A144}.Release.Build.0 = Release|.NET
+		{0290D562-AD87-4B67-B592-6CE465393802}.Debug.ActiveCfg = Debug|.NET
+		{0290D562-AD87-4B67-B592-6CE465393802}.Debug.Build.0 = Debug|.NET
+		{0290D562-AD87-4B67-B592-6CE465393802}.Release.ActiveCfg = Release|.NET
+		{0290D562-AD87-4B67-B592-6CE465393802}.Release.Build.0 = Release|.NET
+		{D7E71643-9E02-4E2E-A6A1-2F35104A8A9D}.Debug.ActiveCfg = Debug|.NET
+		{D7E71643-9E02-4E2E-A6A1-2F35104A8A9D}.Debug.Build.0 = Debug|.NET
+		{D7E71643-9E02-4E2E-A6A1-2F35104A8A9D}.Release.ActiveCfg = Release|.NET
+		{D7E71643-9E02-4E2E-A6A1-2F35104A8A9D}.Release.Build.0 = Release|.NET
+		{3CA60154-0B47-414F-8976-8C6C5910012C}.Debug.ActiveCfg = Debug|.NET
+		{3CA60154-0B47-414F-8976-8C6C5910012C}.Debug.Build.0 = Debug|.NET
+		{3CA60154-0B47-414F-8976-8C6C5910012C}.Release.ActiveCfg = Release|.NET
+		{3CA60154-0B47-414F-8976-8C6C5910012C}.Release.Build.0 = Release|.NET
+		{A0F9F40D-C48B-4D6E-9E8A-EEA561016D03}.Debug.ActiveCfg = Debug|Win32
+		{A0F9F40D-C48B-4D6E-9E8A-EEA561016D03}.Debug.Build.0 = Debug|Win32
+		{A0F9F40D-C48B-4D6E-9E8A-EEA561016D03}.Release.ActiveCfg = Release|Win32
+		{A0F9F40D-C48B-4D6E-9E8A-EEA561016D03}.Release.Build.0 = Release|Win32
+		{4D5A01C4-0E53-4E06-B8FC-F267A1431A36}.Debug.ActiveCfg = Debug|.NET
+		{4D5A01C4-0E53-4E06-B8FC-F267A1431A36}.Debug.Build.0 = Debug|.NET
+		{4D5A01C4-0E53-4E06-B8FC-F267A1431A36}.Release.ActiveCfg = Release|.NET
+		{4D5A01C4-0E53-4E06-B8FC-F267A1431A36}.Release.Build.0 = Release|.NET
+		{76F2A613-9D50-4307-95E3-374E790CFD82}.Debug.ActiveCfg = Debug|Win32
+		{76F2A613-9D50-4307-95E3-374E790CFD82}.Debug.Build.0 = Debug|Win32
+		{76F2A613-9D50-4307-95E3-374E790CFD82}.Release.ActiveCfg = Release|Win32
+		{76F2A613-9D50-4307-95E3-374E790CFD82}.Release.Build.0 = Release|Win32
+		{32E237BF-6841-4622-98F8-C9664C167817}.Debug.ActiveCfg = Debug|.NET
+		{32E237BF-6841-4622-98F8-C9664C167817}.Debug.Build.0 = Debug|.NET
+		{32E237BF-6841-4622-98F8-C9664C167817}.Release.ActiveCfg = Release|.NET
+		{32E237BF-6841-4622-98F8-C9664C167817}.Release.Build.0 = Release|.NET
+		{804223DD-ECB0-4914-A832-2A021F6874BB}.Debug.ActiveCfg = Debug|.NET
+		{804223DD-ECB0-4914-A832-2A021F6874BB}.Debug.Build.0 = Debug|.NET
+		{804223DD-ECB0-4914-A832-2A021F6874BB}.Release.ActiveCfg = Release|.NET
+		{804223DD-ECB0-4914-A832-2A021F6874BB}.Release.Build.0 = Release|.NET
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1}.Debug.ActiveCfg = Debug|.NET
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1}.Debug.Build.0 = Debug|.NET
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1}.Release.ActiveCfg = Release|.NET
+		{3A0F7281-8F4D-482B-818F-A1A712A607A1}.Release.Build.0 = Release|.NET
+		{C131FDB4-8961-4279-A9DB-0353B158EBBD}.Debug.ActiveCfg = Debug|.NET
+		{C131FDB4-8961-4279-A9DB-0353B158EBBD}.Debug.Build.0 = Debug|.NET
+		{C131FDB4-8961-4279-A9DB-0353B158EBBD}.Release.ActiveCfg = Release|.NET
+		{C131FDB4-8961-4279-A9DB-0353B158EBBD}.Release.Build.0 = Release|.NET
+		{261AB8E1-B922-4511-B121-210B7ED89B2C}.Debug.ActiveCfg = Debug|.NET
+		{261AB8E1-B922-4511-B121-210B7ED89B2C}.Debug.Build.0 = Debug|.NET
+		{261AB8E1-B922-4511-B121-210B7ED89B2C}.Release.ActiveCfg = Release|.NET
+		{261AB8E1-B922-4511-B121-210B7ED89B2C}.Release.Build.0 = Release|.NET
+		{B342F90B-CFF8-4BE1-9F3F-2188B84BE51D}.Debug.ActiveCfg = Debug|.NET
+		{B342F90B-CFF8-4BE1-9F3F-2188B84BE51D}.Debug.Build.0 = Debug|.NET
+		{B342F90B-CFF8-4BE1-9F3F-2188B84BE51D}.Release.ActiveCfg = Release|.NET
+		{B342F90B-CFF8-4BE1-9F3F-2188B84BE51D}.Release.Build.0 = Release|.NET
+		{D49193D9-952B-4B6A-B458-9D0BE0BF5FDE}.Debug.ActiveCfg = Debug|.NET
+		{D49193D9-952B-4B6A-B458-9D0BE0BF5FDE}.Debug.Build.0 = Debug|.NET
+		{D49193D9-952B-4B6A-B458-9D0BE0BF5FDE}.Release.ActiveCfg = Release|.NET
+		{D49193D9-952B-4B6A-B458-9D0BE0BF5FDE}.Release.Build.0 = Release|.NET
+		{1D6734B1-60E7-4913-8B4B-B0F51DD76DCF}.Debug.ActiveCfg = Debug|.NET
+		{1D6734B1-60E7-4913-8B4B-B0F51DD76DCF}.Debug.Build.0 = Debug|.NET
+		{1D6734B1-60E7-4913-8B4B-B0F51DD76DCF}.Release.ActiveCfg = Release|.NET
+		{1D6734B1-60E7-4913-8B4B-B0F51DD76DCF}.Release.Build.0 = Release|.NET
+		{93F4E5A9-F41F-4CE0-9815-4B2D3CE1D4F7}.Debug.ActiveCfg = Debug|Win32
+		{93F4E5A9-F41F-4CE0-9815-4B2D3CE1D4F7}.Debug.Build.0 = Debug|Win32
+		{93F4E5A9-F41F-4CE0-9815-4B2D3CE1D4F7}.Release.ActiveCfg = Release|Win32
+		{93F4E5A9-F41F-4CE0-9815-4B2D3CE1D4F7}.Release.Build.0 = Release|Win32
+		{9364FF04-B3E5-48F0-A1F9-6D98A77F96B5}.Debug.ActiveCfg = Debug|.NET
+		{9364FF04-B3E5-48F0-A1F9-6D98A77F96B5}.Debug.Build.0 = Debug|.NET
+		{9364FF04-B3E5-48F0-A1F9-6D98A77F96B5}.Release.ActiveCfg = Release|.NET
+		{9364FF04-B3E5-48F0-A1F9-6D98A77F96B5}.Release.Build.0 = Release|.NET
+		{3712436B-0125-4E48-910D-9781B8712ADF}.Debug.ActiveCfg = Debug|.NET
+		{3712436B-0125-4E48-910D-9781B8712ADF}.Debug.Build.0 = Debug|.NET
+		{3712436B-0125-4E48-910D-9781B8712ADF}.Release.ActiveCfg = Release|.NET
+		{3712436B-0125-4E48-910D-9781B8712ADF}.Release.Build.0 = Release|.NET
+		{10E7681A-F093-4E6B-ABC4-2E191FFE888D}.Debug.ActiveCfg = Debug|.NET
+		{10E7681A-F093-4E6B-ABC4-2E191FFE888D}.Debug.Build.0 = Debug|.NET
+		{10E7681A-F093-4E6B-ABC4-2E191FFE888D}.Release.ActiveCfg = Release|.NET
+		{10E7681A-F093-4E6B-ABC4-2E191FFE888D}.Release.Build.0 = Release|.NET
+		{6D13ACF0-1705-47D9-8C2A-D77BD7592634}.Debug.ActiveCfg = Debug|.NET
+		{6D13ACF0-1705-47D9-8C2A-D77BD7592634}.Debug.Build.0 = Debug|.NET
+		{6D13ACF0-1705-47D9-8C2A-D77BD7592634}.Release.ActiveCfg = Release|.NET
+		{6D13ACF0-1705-47D9-8C2A-D77BD7592634}.Release.Build.0 = Release|.NET
+		{B613CB8C-467F-4D07-AAD6-EB9573873954}.Debug.ActiveCfg = Debug|.NET
+		{B613CB8C-467F-4D07-AAD6-EB9573873954}.Debug.Build.0 = Debug|.NET
+		{B613CB8C-467F-4D07-AAD6-EB9573873954}.Release.ActiveCfg = Release|.NET
+		{B613CB8C-467F-4D07-AAD6-EB9573873954}.Release.Build.0 = Release|.NET
+		{414386B0-D348-4E95-88F7-BF8DA276D036}.Debug.ActiveCfg = Debug|.NET
+		{414386B0-D348-4E95-88F7-BF8DA276D036}.Debug.Build.0 = Debug|.NET
+		{414386B0-D348-4E95-88F7-BF8DA276D036}.Release.ActiveCfg = Release|.NET
+		{414386B0-D348-4E95-88F7-BF8DA276D036}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		Samples\Media\DemoFireworks.material = Samples\Media\DemoFireworks.material
+		Samples\Media\DemoFireworks.particle = Samples\Media\DemoFireworks.particle
+		Samples\Media\Demos.material = Samples\Media\Demos.material
+		README.linux = README.linux
+		Samples\Media\SkyBoxes.material = Samples\Media\SkyBoxes.material
+		Samples\Media\SkyBoxes.readme.txt = Samples\Media\SkyBoxes.readme.txt
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

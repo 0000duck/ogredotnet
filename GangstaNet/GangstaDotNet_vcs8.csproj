@@ -1,0 +1,217 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9364FF04-B3E5-48F0-A1F9-6D98A77F96B5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>GangstaDotNet</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GangstaDotNet</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>Bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>Bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Math3D\Math3D_vcs8.csproj">
+      <Name>Math3D_vcs8</Name>
+      <Project>{3A0F7281-8F4D-482B-818F-A1A712A607A1}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\OgreNet\OgreNet_vcs8.csproj">
+      <Name>OgreNet_vcs8</Name>
+      <Project>{FBE27FFE-2E50-49F7-81D7-0B587D17A144}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Body.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallbackInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallbackInterface_Ogre.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Capability.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\GangstaExample.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DebugNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DebugVisual.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DebugVisual_Ogre.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynamicModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynamicObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaDegree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaMat3x3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaMat4x4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GangstaBindings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GangstaBindingsPINVOKE.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaQuat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaRadian.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaStringList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaVec3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaVec4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Joint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Material.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Named.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ogre_EntityInformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parameterized.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParameterList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PhysicsDriver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shape.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_Ga__GaPtrTvoid_t.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="World.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>copy "$(TargetPath)" "$(ProjectDir)..\Bin\$(ConfigurationName)"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
