@@ -1,0 +1,164 @@
+AC_PREREQ(2.59)
+
+AC_INIT([OgreDotNet], [0.0.2], [see the Ogre Forums http://www.ogre3d.org/phpBB2/viewtopic.php?t=12816])
+AC_CANONICAL_SYSTEM
+AM_CONFIG_HEADER(config.h)
+
+AM_INIT_AUTOMAKE([OgreDotNet], [0.0.2])
+AM_INIT_AUTOMAKE([dist-bzip2])
+
+
+AC_PROG_CXX
+AC_LANG_CPLUSPLUS
+AC_PROG_INSTALL
+AC_PROG_LIBTOOL
+
+
+dnl find mono and mcs
+AC_ARG_VAR([has_mono], [is Mono Installed])
+AC_ARG_VAR([MONO], [path to mono])
+AC_ARG_VAR([MCS], [path to gmcs or mcs])
+MONO_REQUIRED_VERSION=1.1.9
+PKG_CHECK_MODULES(MONO_DEPENDENCY, mono >= $MONO_REQUIRED_VERSION, [has_mono=true], [has_mono=false])
+if test x$has_mono = xtrue; then
+   AC_PATH_PROG([MONO], [mono], [no], [$PATH:$MONOPATH])
+   AC_PATH_PROG([MCS], [gmcs], [no] , [$PATH:$MONOPATH])
+   if test x$MCS = xno; then
+      AC_PATH_PROG([MCS], [mcs], [AC_MSG_ERROR([mcs Not Found])] , [$PATH:$MONOPATH])
+   fi
+   if test `uname -s` = "Darwin"; then
+      LIB_PREFIX=
+      LIB_SUFFIX=.dylib
+   else
+      LIB_PREFIX=.so
+      LIB_SUFFIX=
+   fi
+else
+  AC_MSG_ERROR([mono 1.1.9 or higher is required])
+fi
+
+dnl compile flage for all mono projects
+dnl CSC_TOP_FLAGS= -unsafe -debug
+CSC_TOP_FLAGS="-debug"
+AC_SUBST(CSC_TOP_FLAGS)
+
+
+AC_SUBST(PATH)
+AC_SUBST(LD_LIBRARY_PATH)
+AC_SUBST(MONO)
+AC_SUBST(MCS)
+AC_SUBST(LIB_PREFIX)
+AC_SUBST(LIB_SUFFIX)
+
+
+OGRENET_CURRENT=0
+OGRENET_REVISION=0
+OGRENET_AGE=
+OGRENET_VERSION_INFO=$OGRENET_CURRENT:$OGRENET_REVISION:$OGRENET_AGE
+AC_SUBST(OGRENET_VERSION_INFO)
+
+CEGUINET_CURRENT=0
+CEGUINET_REVISION=0
+CEGUINET_AGE=
+CEGUINET_VERSION_INFO=$CEGUINET_CURRENT:$CEGUINET_REVISION:$CEGUINET_AGE
+AC_SUBST(CEGUINET_VERSION_INFO)
+
+GANGSTANET_CURRENT=0
+GANGSTANET_REVISION=0
+GANGSTANET_AGE=
+GANGSTANET_VERSION_INFO=$GANGSTANET_CURRENT:$GANGSTANET_REVISION:$GANGSTANET_AGE
+AC_SUBST(GANGSTANET_VERSION_INFO)
+
+dnl check for OGRE 
+PKG_CHECK_MODULES(OGRE, OGRE >= 1.0.4,,AC_MSG_ERROR("OGRE not found!"))
+AC_SUBST(OGRE_CFLAGS)
+AC_SUBST(OGRE_LIBS)
+
+dnl check for CEGUI
+has_cegui=false
+BUILDCEGUI=@BUILDCEGUI@
+if test x$BUILDCEGUI = xtrue; then
+	PKG_CHECK_MODULES(CEGUI, CEGUI >= 0.4.0, [has_cegui=true], [has_cegui=false])
+	if test "x$has_cegui" = "xtrue"; then
+		AC_SUBST(CEGUI_CFLAGS)
+		AC_SUBST(CEGUI_LIBS)
+		
+		CEGUI_HEADERS1="`pkg-config --cflags-only-I CEGUI`"
+		CEGUI_CFLAGS2=${CEGUI_HEADERS1:0:${#CEGUI_HEADERS1}-2}'/elements'
+		AC_SUBST(CEGUI_CFLAGS2)
+	
+	
+	
+		dnl check for OGRE 
+		PKG_CHECK_MODULES(CEGUI_OGRE, CEGUI-OGRE >= 1.0.4,,AC_MSG_ERROR("CEGUI-OGRE not found!"))
+		AC_SUBST(CEGUI_OGRE_CFLAGS)
+		AC_SUBST(CEGUI_OGRE_LIBS)
+	fi
+fi
+AM_CONDITIONAL([HAS_CEGUI], [test x$has_cegui = xtrue])
+
+has_gangsta=false
+BUILDGANGSTANET=@BUILDGANGSTANET@
+if test x$BUILDGANGSTANET = xtrue; then
+	PKG_CHECK_MODULES(GANGSTA_OGRE, gangsta_ogre >= 0.1,  [has_gangsta=true],  [has_gangsta=false])
+	AC_SUBST(GANGSTA_OGRE_CFLAGS)
+	AC_SUBST(GANGSTA_OGRE_LIBS)
+fi
+AM_CONDITIONAL([HAS_GANGSTA], [test x$has_gangsta = xtrue])
+
+
+
+dnl for Bin/Debug/resources.cfg.in
+[if [ x$OGRE_HOME = x ] ; then
+	OGRE_HOME=$HOME/src/ogrenew
+fi]
+AC_SUBST([OGRE_HOME])
+echo "ogre media path = $OGRE_HOME/Samples/Media"
+
+
+[if [ x$GangstaWrapper = x ] ; then
+	GangstaWrapper=$HOME/src/Gangsta/GangstaWrapper
+fi]
+AC_SUBST([GangstaWrapper])
+
+
+dnl for Bin/Debug/plugins.cfg.in
+plugins_path="`pkg-config --libs-only-L OGRE`"
+PLUGINSPATH=${plugins_path:2:${#plugins_path}-4}'/OGRE'
+AC_SUBST(PLUGINSPATH)
+echo "plugins path = $PLUGINSPATH"
+
+
+dnl OgreNet needs to be first subdir
+dnl OgreDotNet.dll.config needs to before the Makefile
+AC_CONFIG_FILES([
+   Makefile \
+   Bin/Debug/plugins.cfg \
+   Bin/Debug/resources.cfg \
+   Math3D/Makefile \
+   OgreNet/OgreDotNet.dll.config \
+   OgreNet/Makefile \
+   CeguiNet/CeguiDotNet.dll.config \
+   CeguiNet/Makefile \
+   OgreNet.Cegui/OgreDotNet.Cegui.dll.config \
+   OgreNet.Cegui/Makefile \
+   GangstaNet/GangstaDotNet.dll.config \
+   GangstaNet/Makefile \
+   Samples/Makefile \
+   Samples/DemoCelShading/Makefile \
+   Samples/DemoCompositor/Makefile \
+   Samples/DemoCustomObjects/Makefile \
+   Samples/DemoFireworks/Makefile \
+   Samples/DemoGrass/Makefile \
+   Samples/DemoRenderToTexture/Makefile \
+   Samples/DemoRSQ/Makefile \
+   Samples/DemoGAPyramid/Makefile \
+   DemoSkyBox/Makefile \
+   DemoParticleFX/Makefile \
+   DemoWinForms/Makefile \
+   DemoSkeletalAnimation/Makefile \
+   DemoCEGUI/Makefile \
+   DemoCeguiMenus/Makefile
+])
+AC_OUTPUT
+

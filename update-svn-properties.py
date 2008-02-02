@@ -73,6 +73,7 @@ property_map = {
     ".i" : textfile,
     ".ico" : binary,
     ".imageset" : textfile,
+    ".in" : textfile,
     ".inc" : textfile,
     ".include" : textfile,
     ".ini" : textfile,

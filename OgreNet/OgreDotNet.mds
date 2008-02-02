@@ -1,0 +1,16 @@
+<Combine name="OgreDotNet" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="OgreDotNet" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="OgreDotNet" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="OgreDotNet" single="True">
+    <Execute type="None" entry="OgreDotNet" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./OgreDotNet.mdp" />
+  </Entries>
+</Combine>

@@ -1,0 +1,28 @@
+# Resource locations to be added to the 'boostrap' path
+# This also contains the minimum you need to use the Ogre example framework
+[Bootstrap]
+Zip=@OGRE_HOME@/Samples/Media/packs/OgreCore.zip
+
+# Resource locations to be added to the default path
+[General]
+FileSystem=@OGRE_HOME@/Samples/Media
+FileSystem=@OGRE_HOME@/Samples/Media/fonts
+FileSystem=@OGRE_HOME@/Samples/Media/materials/programs
+FileSystem=@OGRE_HOME@/Samples/Media/materials/scripts
+FileSystem=@OGRE_HOME@/Samples/Media/materials/textures
+FileSystem=@OGRE_HOME@/Samples/Media/models
+FileSystem=@OGRE_HOME@/Samples/Media/overlays
+FileSystem=@OGRE_HOME@/Samples/Media/particle
+FileSystem=@OGRE_HOME@/Samples/Media/gui
+FileSystem=@OGRE_HOME@/Samples/Media/DeferredShadingMedia
+Zip=@OGRE_HOME@/Samples/Media/packs/cubemap.zip
+Zip=@OGRE_HOME@/Samples/Media/packs/cubemapsJS.zip
+Zip=@OGRE_HOME@/Samples/Media/packs/dragon.zip
+Zip=@OGRE_HOME@/Samples/Media/packs/fresneldemo.zip
+Zip=@OGRE_HOME@/Samples/Media/packs/ogretestmap.zip
+Zip=@OGRE_HOME@/Samples/Media/packs/skybox.zip
+
+FileSystem=../../Samples/Media
+FileSystem=@GangstaWrapper@/../Gangsta_Ogre/Samples/Media
+
+

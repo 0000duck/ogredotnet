@@ -1,51 +1,46 @@
-Build instructions, read all of this before you start.
+Build instructions.  Read all of this before you start.
 
-Requirments
-Ogre
-	http://www.ogre3d.org/
-CEGUI, optional
-	http://www.cegui.org.uk/wiki/index.php/Main_Page
-GangstaWrapper, optional
-	http://sourceforge.net/projects/gangsta/
+Requirements:
+ - Ogre (http://www.ogre3d.org/)
 
+Optional:
+ - CEGUI (http://www.cegui.org.uk/wiki/index.php/Main_Page)
+ - GangstaWrapper (http://sourceforge.net/projects/gangsta/)
 
-the autotools scripts are in ogredotnet.linux.tar.gz.  Just extract it form
-the parent directory to place the scripts where they need to be. like:
-	( assuming that you are at [/]ogreaddons/ogredotnet )
-	cd ../
-	tar -xzvf ogredotnet/ogredotnet.linux.tar.gz
+The configure script looks for an environment varible OGRE_HOME to
+find the Media directory. It assumes you build ogre from source so it
+uses the variable as $OGRE_HOME/Sample/Media.  If not set it assumes
+OGRE_HOME=$HOME/src/ogrenew.  Before running autogen.sh set this like:
 
+  export OGRE_HOME=/full/path/to/ogrenew
 
-the configure script look for an envirnment varible OGRE_HOME to find the 
-Media directory. It assume you build ogre from source so it uses the varible 
-as so $OGRE_HOME/Sample/Media.  if not set it assums OGRE_HOME=$HOME/src/ogrenew. 
-Befor running autogen.sh set this like:
-	export OGRE_HOME=/full/path/to/ogrenew
+Run autogen.sh it will first ask if you want to build CeguiNet. Then
+it will determine if swig needs to be run, and if not it will ask if
+you want to run it again. Then it will run autotools and configure.
+If you want to pass any command line arguments to configure like
+--prefix, enter them with autogen.sh like:
 
+  ./autogen.sh [--prefix=install/path]
+  make
+  sudo make install
+  sudo ldconfig
 
-Run autogen.sh it will first ask if you want to build CeguiNet. Then it will 
-determin if swig needs to be run, and if not it will ask if you want to run it 
-again. Then it will run the autotools and configure.  If you want to pass any 
-command line arguments to configure like --prefix, enter them with autogen.sh
-like:
+make install only installs the bindings.so's. The .Net dlls and exe
+are in [ogredotnet]/Bin/Debug. Run install as root, or use sudo if you
+use the default prefix /usr/local.
 
-	./autogen.sh [--prefix=install/path]
-	make
-	sudo make install
-	sudo ldconfig
+Now run the demo:
 
-make install only install the bindings.so's. The .Net dlls and exe build to 
-[ogredotnet]/Bin/Debug. Run install as root, or use sudo if you use the default prefix
-/usr/local.
-
-now run the demo
-	cd Bin/Debug
-	mono DemoSkyBox.exe
+  cd Bin/Debug
+  mono DemoSkyBox.exe
 
 If you get an error about dll or something not found you will need to set 
-LD_LIBRARY_PATH.  Check to see if your install path is in LD_LIBRARY_PATH.
-	set | grep LD_LIBRARY_PATH
-if the install path is not in there then.
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/install/path
+LD_LIBRARY_PATH.  Check to see if your install path is in LD_LIBRARY_PATH:
+
+  set | grep LD_LIBRARY_PATH
+
+If the install path is not in there then:
+
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/install/path
 
 

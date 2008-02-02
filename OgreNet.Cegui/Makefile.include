@@ -1,0 +1,6 @@
+OGRENETCEGUI_SWIG_FILES = \
+	OgreBindings_Cegui.cs \
+	OgreBindings_CeguiPINVOKE.cs \
+	OgreCEGUIRenderer.cs \
+	OgreCEGUIResourceProvider.cs \
+	OgreCEGUITexture.cs

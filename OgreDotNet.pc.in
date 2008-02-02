@@ -1,0 +1,8 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: OgreDotNet
+Description: .NET wrapper for OGRE. see the Ogre Forums http://www.ogre3d.org/phpBB2/viewtopic.php?t=12816
+Version: @VERSION@
+Libs: -r:${libdir}/mono/OgreNet/OgreDotNet.dll

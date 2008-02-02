@@ -1,0 +1,8 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: CeguiDotNet
+Description: .NET wrapper for CEGUI. see the Ogre Forums http://www.ogre3d.org/phpBB2/viewtopic.php?t=12816
+Version: @VERSION@
+Libs: -r:${libdir}/mono/OgreNet/CeguiDotNet.dll
