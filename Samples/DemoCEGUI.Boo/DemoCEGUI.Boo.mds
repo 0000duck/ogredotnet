@@ -1,0 +1,16 @@
+<Combine name="DemoCEGUI.Boo" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="DemoCEGUI.Boo" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="DemoCEGUI.Boo" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="DemoCEGUI.Boo" single="True">
+    <Execute type="None" entry="DemoCEGUI.Boo" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./DemoCEGUI.Boo.mdp" />
+  </Entries>
+</Combine>

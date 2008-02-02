@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project name="DemoCEGUI.Boo" default="build">
+    
+    
+    <property name="boo.dir" value="C:\Program Files\Mono\lib\boo" />
+    
+    
+    <target name="run" depends="build">
+        <exec basedir="..\..\Bin\Debug" program="DemoCEGUI.Boo.exe" useruntimeengine="true">
+        </exec>
+    </target>
+    
+    
+    <target name="build" depends="init">        
+        <booc target="exe" output="..\..\Bin\Debug\DemoCEGUI.Boo.exe">
+            <sources basedir=".">
+                <include name="*.boo" />
+            </sources>
+            <references basedir="..\..\Bin\Debug\">
+                <include name="System.Drawing.dll" />
+                <include name="Math3D.dll" />
+                <include name="OgreDotNet.dll" />
+                <include name="CeguiDotNet.dll" />
+                <include name="OgreDotNet.Cegui.dll" />
+            </references>
+        </booc>
+    </target>
+    
+    <target name="rebuild" depends="clean, build">
+    </target>    
+    
+    
+    <target name="init">
+        <mkdir dir="..\..\Bin\Debug" unless="${directory::exists('..\..\Bin\Debug')}" />
+        <copy todir="..\..\Bin\Debug">
+            <fileset basedir="${boo.dir}">
+                <include name="Boo.Lang.dll" />
+            </fileset>
+        </copy>
+        <loadtasks assembly="${boo.dir}/Boo.NAnt.Tasks.dll" />
+    </target>
+    
+    
+    <target name="clean" description="remove all generated files">
+        <delete file="..\..\Bin\Debug\DemoCEGUI.Boo.exe" if="${file::exists('..\..\Bin\Debug\DemoCEGUI.Boo.exe')}" />
+        <delete file="..\..\Bin\Debug\DemoCEGUI.Boo.pdb" if="${file::exists('..\..\Bin\Debug\DemoCEGUI.Boo.pdb')}" />
+    </target>
+    
+    
+</project>

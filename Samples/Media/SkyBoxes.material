@@ -1,0 +1,34 @@
+material skybox/Mountain
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture Mountain_ft.jpg Mountain_bk.jpg Mountain_lt.jpg Mountain_rt.jpg Mountain_tp.jpg Mountain_bt.jpg separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+material skybox/Starfield
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture Starfield_ft.jpg Starfield_bk.jpg Starfield_lt.jpg Starfield_rt.jpg Starfield_tp.jpg Starfield_bt.jpg separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}

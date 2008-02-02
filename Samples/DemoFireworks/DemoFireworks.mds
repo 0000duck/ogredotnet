@@ -1,0 +1,16 @@
+<Combine name="DemoFireworks" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="DemoFireworks" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="DemoFireworks" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="DemoFireworks" single="True">
+    <Execute type="None" entry="DemoFireworks" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./DemoFireworks.mdp" />
+  </Entries>
+</Combine>
