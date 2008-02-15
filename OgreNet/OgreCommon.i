@@ -93,7 +93,7 @@ SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(Light, Ogre::Light*)
 //we can only have one all uses of std::map<string,string> will use the same named type
 //  typedef std::map<String, String> BinaryOptionList;
 //  typedef std::map<String, String> AliasTextureNamePairList;
-//	typedef std::map<String, String> NameValuePairList;
+//    typedef std::map<String, String> NameValuePairList;
 %template(NameValuePairList) std::map<std::string, std::string>;
 
 // typedef TRect<float> FloatRect;

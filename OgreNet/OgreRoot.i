@@ -75,61 +75,61 @@
 
 %typemap(cscode) Ogre::Root
 %{
-	public RenderWindow Initialise( System.Windows.Forms.Control control )
-	{
-		System.Drawing.Size s = control.ClientSize;
-		return this.Initialise( control.Handle.ToInt32(), s.Width, s.Height, false );
-	}
-	
-	static public Root Instance // njkogre-added
-	{
-		get	{
-			if (_instance == null) _instance = GetSingleton();
-			return _instance;
-		}
-	}
-	static private Root _instance = null;
-	
-	public RenderSystemList AvailableRenderers {
-		get	{	return GetAvailableRenderers();	}
-	}
-	
-	public RenderSystem RenderSystem {
-		get	{	return GetRenderSystem();	}
-		set	{	SetRenderSystem((RenderSystem)value);	}
-	}
-	
-	public TextureManager TextureManager {
-		get	{	return GetTextureManager();	}
-	}
+    public RenderWindow Initialise(System.Windows.Forms.Control control)
+    {
+        System.Drawing.Size s = control.ClientSize;
+        return this.Initialise(control.Handle.ToInt32(), s.Width, s.Height, false);
+    }
+    
+    static public Root Instance // njkogre-added
+    {
+        get    {
+            if (_instance == null) _instance = GetSingleton();
+            return _instance;
+        }
+    }
+    static private Root _instance = null;
+    
+    public RenderSystemList AvailableRenderers {
+        get    {    return GetAvailableRenderers();    }
+    }
+    
+    public RenderSystem RenderSystem {
+        get    {    return GetRenderSystem();    }
+        set    {    SetRenderSystem((RenderSystem)value);    }
+    }
+    
+    public TextureManager TextureManager {
+        get    {    return GetTextureManager();    }
+    }
 
-	public MeshManager MeshManager {
-		get	{	return GetMeshManager();	}
-	}
-	
-	public RenderWindow AutoCreatedWindow {
-		get	{	return GetAutoCreatedWindow();	}
-	}
-	
-	public OgreDotNet.Timer Timer {
-		get	{	return GetTimer();	}
-	}
-	
-	public UInt32 CurrentFrameNumber {
-		get	{	return GetCurrentFrameNumber();	}
-	}
+    public MeshManager MeshManager {
+        get    {    return GetMeshManager();    }
+    }
+    
+    public RenderWindow AutoCreatedWindow {
+        get    {    return GetAutoCreatedWindow();    }
+    }
+    
+    public OgreDotNet.Timer Timer {
+        get    {    return GetTimer();    }
+    }
+    
+    public UInt32 CurrentFrameNumber {
+        get    {    return GetCurrentFrameNumber();    }
+    }
 %}
 
 %extend Ogre::Root
 {
-    RenderWindow * initialise( int existingwindowhandle, int width, int height, bool fullscreen )
+    RenderWindow * initialise(int existingwindowhandle, int width, int height, bool fullscreen)
     {
-			NameValuePairList miscParams;
-			miscParams["externalWindowHandle"] = StringConverter::toString((size_t)existingwindowhandle);
-			
-			self->initialise( false );
-			
-			return self->createRenderWindow("", width, height, fullscreen, &miscParams);
+            NameValuePairList miscParams;
+            miscParams["externalWindowHandle"] = StringConverter::toString((size_t)existingwindowhandle);
+            
+            self->initialise(false);
+            
+            return self->createRenderWindow("", width, height, fullscreen, &miscParams);
     }
 };
 
@@ -141,7 +141,7 @@
 SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(RenderSystem, Ogre::RenderSystem*)
 %template(RenderSystemList) std::vector<Ogre::RenderSystem*>;
 
-//	typedef std::map<String, MovableObjectFactory*> MovableObjectFactoryMap;
-//	typedef ConstMapIterator<MovableObjectFactoryMap> MovableObjectFactoryIterator;
+//    typedef std::map<String, MovableObjectFactory*> MovableObjectFactoryMap;
+//    typedef ConstMapIterator<MovableObjectFactoryMap> MovableObjectFactoryIterator;
 ConstMapIteratorWRAP(MovableObjectFactoryIteratorWrap, std::map, Ogre::String, Ogre::MovableObjectFactory*);
 

@@ -134,68 +134,68 @@
     }
   }
 %}
-	public:
-		typedef size_t size_type;
-		typedef CTYPE value_type;
-		typedef const value_type& const_reference;
-		size_type size() const;
-		%newobject GetRange(int index, int count);
-		set();
-		%extend {
-			const_reference getitem(int index) throw (std::out_of_range) {
-				std::set<CTYPE >::iterator it= self->begin();
-				std::advance(it,index);
-				if ( it != self->end() )
-					return (*it);
-				else
-					throw std::out_of_range("index");
-			}
-			// Takes a deep copy of the elements unlike ArrayList.AddRange
-			void AddRange(const std::set<CTYPE >& values) {
-				self->insert(values.begin(), values.end());
-			}
-			// Takes a deep copy of the elements unlike ArrayList.GetRange
-			std::set<CTYPE > *GetRange(int index, int count) throw (std::out_of_range, std::invalid_argument) {
-				if (index < 0)
-					throw std::out_of_range("index");
-				if (count < 0)
-					throw std::out_of_range("count");
-				if (index >= (int)self->size()+1 || index+count > (int)self->size())
-					throw std::invalid_argument("invalid range");
+    public:
+        typedef size_t size_type;
+        typedef CTYPE value_type;
+        typedef const value_type& const_reference;
+        size_type size() const;
+        %newobject GetRange(int index, int count);
+        set();
+        %extend {
+            const_reference getitem(int index) throw (std::out_of_range) {
+                std::set<CTYPE >::iterator it= self->begin();
+                std::advance(it,index);
+                if (it != self->end())
+                    return (*it);
+                else
+                    throw std::out_of_range("index");
+            }
+            // Takes a deep copy of the elements unlike ArrayList.AddRange
+            void AddRange(const std::set<CTYPE >& values) {
+                self->insert(values.begin(), values.end());
+            }
+            // Takes a deep copy of the elements unlike ArrayList.GetRange
+            std::set<CTYPE > *GetRange(int index, int count) throw (std::out_of_range, std::invalid_argument) {
+                if (index < 0)
+                    throw std::out_of_range("index");
+                if (count < 0)
+                    throw std::out_of_range("count");
+                if (index >= (int)self->size()+1 || index+count > (int)self->size())
+                    throw std::invalid_argument("invalid range");
 
-				std::set<CTYPE >::iterator it = self->begin();
-				std::set<CTYPE >::iterator ite = self->begin();
-				std::advance(ite,index);
-				return new std::set<CTYPE >(it, ite);
-			}
-			//returns true if an insertion was make and false if the set already contained an element whose key had an equivalent value in the ordering.
-			bool insert(const value_type& value)
-			{
-				std::pair< std::set<CTYPE >::iterator, bool > r= self->insert( value );
-				return r.second;
-			}
-			void RemoveAt(int index) throw (std::out_of_range) {
-				std::set<CTYPE >::iterator it = self->begin();
-				std::advance(it,index);
-				if ( it != self->end() )
-					self->erase(it);
-				else
-					throw std::out_of_range("index");
-			}
-			void RemoveRange(int index, int count) throw (std::out_of_range, std::invalid_argument) {
-				if (index < 0)
-					throw std::out_of_range("index");
-				if (count < 0)
-					throw std::out_of_range("count");
-				if (index >= (int)self->size()+1 || index+count > (int)self->size())
-					throw std::invalid_argument("invalid range");
+                std::set<CTYPE >::iterator it = self->begin();
+                std::set<CTYPE >::iterator ite = self->begin();
+                std::advance(ite,index);
+                return new std::set<CTYPE >(it, ite);
+            }
+            //returns true if an insertion was make and false if the set already contained an element whose key had an equivalent value in the ordering.
+            bool insert(const value_type& value)
+            {
+                std::pair< std::set<CTYPE >::iterator, bool > r= self->insert(value);
+                return r.second;
+            }
+            void RemoveAt(int index) throw (std::out_of_range) {
+                std::set<CTYPE >::iterator it = self->begin();
+                std::advance(it,index);
+                if (it != self->end())
+                    self->erase(it);
+                else
+                    throw std::out_of_range("index");
+            }
+            void RemoveRange(int index, int count) throw (std::out_of_range, std::invalid_argument) {
+                if (index < 0)
+                    throw std::out_of_range("index");
+                if (count < 0)
+                    throw std::out_of_range("count");
+                if (index >= (int)self->size()+1 || index+count > (int)self->size())
+                    throw std::invalid_argument("invalid range");
 
-				std::set<CTYPE >::iterator it = self->begin();
-				std::set<CTYPE >::iterator ite = self->begin();
-				std::advance(ite,index);
-				self->erase(it, ite);
-			}
-	};
+                std::set<CTYPE >::iterator it = self->begin();
+                std::set<CTYPE >::iterator ite = self->begin();
+                std::advance(ite,index);
+                self->erase(it, ite);
+            }
+    };
 %enddef
 
 // Extra methods added to the collection class if operator== is defined for the class being wrapped
@@ -216,7 +216,7 @@
         int index = -1;
         std::set<CTYPE >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
         if (rit != self->rend())
-          index = (int)std::distance(rit, --(self->rend()) );
+          index = (int)std::distance(rit, --(self->rend()));
         return index;
       }
       void Remove(const value_type& value) {

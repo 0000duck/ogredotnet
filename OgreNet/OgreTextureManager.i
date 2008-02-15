@@ -1,5 +1,5 @@
 %{
-	#include "OgreTextureManager.h"
+    #include "OgreTextureManager.h"
 %}
 
 %rename Ogre::TextureManager::load                 Load;
@@ -14,13 +14,13 @@
 
 %typemap(cscode) Ogre::TextureManager
 %{
-	public static TextureManager Instance
-	{
-		get
-		{
-			return new TextureManager(OgreBindingsPINVOKE.TextureManager_GetSingleton(), false);
-		}
-	}
+    public static TextureManager Instance
+    {
+        get
+        {
+            return new TextureManager(OgreBindingsPINVOKE.TextureManager_GetSingleton(), false);
+        }
+    }
 %}
 
 %ignore Ogre::TextureManager::TextureManager;

@@ -22,29 +22,29 @@
 
 %typemap(cscode) Ogre::RenderWindow
 %{
-	public HandleRef HandleRef	{
-		get { return swigCPtr; }
-	}
+    public HandleRef HandleRef    {
+        get { return swigCPtr; }
+    }
 
-	public bool Closed	{
-		get { return IsClosed(); }
-	}
-	
-	public bool Visible {
-		get { return IsVisible(); }
-	}
+    public bool Closed    {
+        get { return IsClosed(); }
+    }
+    
+    public bool Visible {
+        get { return IsVisible(); }
+    }
 
-	public bool Active {
-		get { return IsActive(); }
-	}
+    public bool Active {
+        get { return IsActive(); }
+    }
 
-	public bool Primary {
-		get { return IsPrimary(); }
-	}
+    public bool Primary {
+        get { return IsPrimary(); }
+    }
 
-	public bool FullScreen {
-		get { return IsFullScreen(); }
-	}
+    public bool FullScreen {
+        get { return IsFullScreen(); }
+    }
 
 %}
 

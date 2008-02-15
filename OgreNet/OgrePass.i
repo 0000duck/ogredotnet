@@ -16,35 +16,35 @@
 
 %extend Ogre::Pass
 {
-	void SetVertexProgramParameters(GpuProgramParametersSharedPtr vparams)
-	{
-		self->setVertexProgramParameters(vparams);
-	}
-	
-	void SetShadowCasterVertexProgramParameters(GpuProgramParametersSharedPtr vparams)
-	{
-		self->setShadowCasterVertexProgramParameters(vparams);
-	}
-	
-	void SetShadowReceiverVertexProgramParameters(GpuProgramParametersSharedPtr vparams)
-	{
-		self->setShadowReceiverVertexProgramParameters(vparams);
-	}
-	
-	void SetShadowReceiverFragmentProgramParameters(GpuProgramParametersSharedPtr vparams)
-	{
-		self->setShadowReceiverFragmentProgramParameters(vparams);
-	}
-	
-	void SetFragmentProgramParameters(GpuProgramParametersSharedPtr vparams)
-	{
-		self->setFragmentProgramParameters(vparams);
-	}
-	
+    void SetVertexProgramParameters(GpuProgramParametersSharedPtr vparams)
+    {
+        self->setVertexProgramParameters(vparams);
+    }
+    
+    void SetShadowCasterVertexProgramParameters(GpuProgramParametersSharedPtr vparams)
+    {
+        self->setShadowCasterVertexProgramParameters(vparams);
+    }
+    
+    void SetShadowReceiverVertexProgramParameters(GpuProgramParametersSharedPtr vparams)
+    {
+        self->setShadowReceiverVertexProgramParameters(vparams);
+    }
+    
+    void SetShadowReceiverFragmentProgramParameters(GpuProgramParametersSharedPtr vparams)
+    {
+        self->setShadowReceiverFragmentProgramParameters(vparams);
+    }
+    
+    void SetFragmentProgramParameters(GpuProgramParametersSharedPtr vparams)
+    {
+        self->setFragmentProgramParameters(vparams);
+    }
+    
 };
 
 
-//		typedef std::set<Pass*> PassSet;
+//        typedef std::set<Pass*> PassSet;
 SWIG_STD_SET_SPECIALIZE_MINIMUM(Pass, Ogre::Pass*)
 %template(PassSet) std::set<Ogre::Pass*>;
 
@@ -57,10 +57,10 @@ SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(TextureUnitState, Ogre::TextureUnitState*)
 VectorIteratorWRAP(TextureUnitStateIteratorWrap, std::vector, Ogre::TextureUnitState*);
 
 
-//		typedef ConstVectorIterator<TextureUnitStates> ConstTextureUnitStateIterator;
+//        typedef ConstVectorIterator<TextureUnitStates> ConstTextureUnitStateIterator;
 ConstVectorIteratorWRAP(ConstTextureUnitStateIteratorWrap, std::vector, Ogre::TextureUnitState*);
 
-//		typedef std::vector<IlluminationPass*> IlluminationPassList;
+//        typedef std::vector<IlluminationPass*> IlluminationPassList;
 //swig.29     PTR_REF_TYPEMAPS(IlluminationPass, Ogre::IlluminationPass*)
 SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(IlluminationPass, Ogre::IlluminationPass*)
 %template(IlluminationPassList) std::vector<Ogre::IlluminationPass*>;

@@ -46,48 +46,48 @@
 %typemap(cscode) Ogre::Camera
 %{
         public override float AspectRatio
-	{
-		get
-		{
-			return GetAspectRatio();
-		}
-		set
-		{
-			SetAspectRatio( value );
-		}
-	}
+    {
+        get
+        {
+            return GetAspectRatio();
+        }
+        set
+        {
+            SetAspectRatio(value);
+        }
+    }
 
-	public override float NearClipDistance
-	{
-		get
-		{
-			return GetNearClipDistance();
-		}
-		set
-		{
-			SetNearClipDistance( value );
-		}
-	}
-	
-	public Math3D.Vector3 Position
-	{
-		get
-		{
-			return GetPosition();
-		}
-		set
-		{
-			SetPosition( value );
-		}
-	}
-	
-	public Math3D.Vector3 LookAt
-	{
-		set
-		{
-			_lookAt( value );
-		}
-	}
+    public override float NearClipDistance
+    {
+        get
+        {
+            return GetNearClipDistance();
+        }
+        set
+        {
+            SetNearClipDistance(value);
+        }
+    }
+    
+    public Math3D.Vector3 Position
+    {
+        get
+        {
+            return GetPosition();
+        }
+        set
+        {
+            SetPosition(value);
+        }
+    }
+    
+    public Math3D.Vector3 LookAt
+    {
+        set
+        {
+            _lookAt(value);
+        }
+    }
 
   public SceneManager SceneManager {
     get
@@ -236,7 +236,7 @@
         SetAutoAspectRatio((bool)value);
     }
   }
-	
+    
 %}
 
 %include "OgreCamera.h"

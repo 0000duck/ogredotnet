@@ -24,31 +24,31 @@
 // so just the autocreated one some functions
 %extend Ogre::HardwareVertexBufferSharedPtr
 {
-	Ogre::HardwareVertexBuffer* Get()
-	{
-		return (Ogre::HardwareVertexBuffer*)self->get();
-	}
-	bool IsUnique()
-	{
-		return self->unique();
-	}
-	unsigned int UseCount()
-	{
-		return self->useCount();
-	}
-	bool IsNull()
-	{
-		return self->isNull();
-	}
-	void SetNull()
-	{
-		return self->setNull();
-	}
+    Ogre::HardwareVertexBuffer* Get()
+    {
+        return (Ogre::HardwareVertexBuffer*)self->get();
+    }
+    bool IsUnique()
+    {
+        return self->unique();
+    }
+    unsigned int UseCount()
+    {
+        return self->useCount();
+    }
+    bool IsNull()
+    {
+        return self->isNull();
+    }
+    void SetNull()
+    {
+        return self->setNull();
+    }
 };
 
 
 
-//	typedef std::list<VertexElement> VertexElementList;
+//    typedef std::list<VertexElement> VertexElementList;
 SWIG_STD_LIST_SPECIALIZE(VertexElement, Ogre::VertexElement)
 %template(VertexElementList) std::list<Ogre::VertexElement>;
 

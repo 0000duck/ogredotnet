@@ -1,5 +1,5 @@
 %{
-	#include "OgreViewport.h"
+    #include "OgreViewport.h"
 %}
 
 %rename Ogre::Viewport::update              Update;
@@ -25,36 +25,36 @@
 %rename Ogre::Viewport::getOverlaysEnabled  GetOverlaysEnabled;
 
 
-//  void getActualDimensions(int &left, int &top, int &width, int &height ) const;
+//  void getActualDimensions(int &left, int &top, int &width, int &height) const;
 %apply int &OUTPUT { int &left, int &top, int &width, int &height };
 
 
 %typemap(cscode) Ogre::Viewport
 %{
-	public System.Drawing.Color BackgroundColor
-	{
-		set
-		{
-			SetBackgroundColour( value );
-		}
-	}
-	
-	public int ActualWidth
-	{
-		get
-		{
-			return GetActualWidth();
-		}
-	}
-	
-	public int ActualHeight
-	{
-		get
-		{
-			return GetActualHeight();
-		}
-	}
-	
+    public System.Drawing.Color BackgroundColor
+    {
+        set
+        {
+            SetBackgroundColour(value);
+        }
+    }
+    
+    public int ActualWidth
+    {
+        get
+        {
+            return GetActualWidth();
+        }
+    }
+    
+    public int ActualHeight
+    {
+        get
+        {
+            return GetActualHeight();
+        }
+    }
+    
   public RenderTarget Target {
     get
     {
@@ -143,7 +143,7 @@
         SetOverlaysEnabled((bool)value);
     }
   }
-	
+    
 %}
 
 %include "OgreViewport.h"

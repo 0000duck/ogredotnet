@@ -3,12 +3,12 @@
 //LinkedSkeletonAnimationSource
 namespace Ogre
 {
-	struct SkeletonAnimLSAS
-	{
-		const LinkedSkeletonAnimationSource* mLSAS;
-		Animation* mAnimation;
-		SkeletonAnimLSAS() : mLSAS(0), mAnimation(0) {}
-	};
+    struct SkeletonAnimLSAS
+    {
+        const LinkedSkeletonAnimationSource* mLSAS;
+        Animation* mAnimation;
+        SkeletonAnimLSAS() : mLSAS(0), mAnimation(0) {}
+    };
 }
 %}
 
@@ -63,23 +63,23 @@ namespace Ogre
 
 namespace Ogre
 {
-	struct SkeletonAnimLSAS
-	{
-		const LinkedSkeletonAnimationSource* mLSAS;
-		Animation* mAnimation;
-		SkeletonAnimLSAS();
-	};
+    struct SkeletonAnimLSAS
+    {
+        const LinkedSkeletonAnimationSource* mLSAS;
+        Animation* mAnimation;
+        SkeletonAnimLSAS();
+    };
 }
 
 
 %extend Ogre::Skeleton
 {
-	Ogre::SkeletonAnimLSAS* GetAnimation(const String& name) const
-	{
-		Ogre::SkeletonAnimLSAS* ret= new Ogre::SkeletonAnimLSAS();
-		ret->mAnimation = self->getAnimation(name, &ret->mLSAS );
-		return ret;
-	}
+    Ogre::SkeletonAnimLSAS* GetAnimation(const String& name) const
+    {
+        Ogre::SkeletonAnimLSAS* ret= new Ogre::SkeletonAnimLSAS();
+        ret->mAnimation = self->getAnimation(name, &ret->mLSAS);
+        return ret;
+    }
 };
 
 
@@ -88,26 +88,26 @@ namespace Ogre
 // so just the autocreated one some functions
 %extend Ogre::SkeletonPtr
 {
-	Ogre::Skeleton* Get()
-	{
-		return (Ogre::Skeleton*)self->get();
-	}
-	bool IsUnique()
-	{
-		return self->unique();
-	}
-	unsigned int UseCount()
-	{
-		return self->useCount();
-	}
-	bool IsNull()
-	{
-		return self->isNull();
-	}
-	void SetNull()
-	{
-		return self->setNull();
-	}
+    Ogre::Skeleton* Get()
+    {
+        return (Ogre::Skeleton*)self->get();
+    }
+    bool IsUnique()
+    {
+        return self->unique();
+    }
+    unsigned int UseCount()
+    {
+        return self->useCount();
+    }
+    bool IsNull()
+    {
+        return self->isNull();
+    }
+    void SetNull()
+    {
+        return self->setNull();
+    }
 };
 
 
@@ -126,11 +126,11 @@ VectorIteratorWRAP(BoneIteratorWrap, std::vector, Ogre::Bone*);
 //##
 
 //## LinkedSkeletonAnimSourceIterator
-//typedef std::vector<LinkedSkeletonAnimationSource> 	LinkedSkeletonAnimSourceList;
+//typedef std::vector<LinkedSkeletonAnimationSource>     LinkedSkeletonAnimSourceList;
 SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(LinkedSkeletonAnimationSource, Ogre::LinkedSkeletonAnimationSource)
 %template(LinkedSkeletonAnimSourceList) std::vector<Ogre::LinkedSkeletonAnimationSource>;
 
-//typedef ConstVectorIterator<LinkedSkeletonAnimSourceList> 	LinkedSkeletonAnimSourceIterator;
+//typedef ConstVectorIterator<LinkedSkeletonAnimSourceList>     LinkedSkeletonAnimSourceIterator;
 ConstVectorIteratorWRAP(LinkedSkeletonAnimSourceIteratorWrap, std::vector, Ogre::LinkedSkeletonAnimationSource);
 //##
 

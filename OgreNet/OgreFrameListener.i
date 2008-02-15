@@ -1,6 +1,6 @@
 //Deprecated
 %{
-	#include "OgreFrameListener.h"
+    #include "OgreFrameListener.h"
 %}
 
 %feature("director") Ogre::FrameListener;

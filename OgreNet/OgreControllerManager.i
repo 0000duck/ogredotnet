@@ -32,13 +32,13 @@
 
 %typemap(cscode) Ogre::ControllerManager
 %{
-	public static ControllerManager Instance
-	{
-		get
-		{
-			return new ControllerManager(OgreBindingsPINVOKE.ControllerManager_GetSingleton(), false);
-		}
-	}
+    public static ControllerManager Instance
+    {
+        get
+        {
+            return new ControllerManager(OgreBindingsPINVOKE.ControllerManager_GetSingleton(), false);
+        }
+    }
 %}
 
 

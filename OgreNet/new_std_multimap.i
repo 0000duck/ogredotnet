@@ -39,7 +39,7 @@ namespace std {
                     throw std::out_of_range("key not found");
             }
             void set(const K& key, const T& x) {
-              self->insert( std::pair< K, T>(key, x) );
+              self->insert(std::pair< K, T>(key, x));
             }
             void del(const K& key) throw (std::out_of_range) {
                 std::multimap<K,T >::iterator i = self->find(key);

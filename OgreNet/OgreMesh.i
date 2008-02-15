@@ -176,44 +176,44 @@
 // so just the autocreated one some functions
 %extend Ogre::MeshPtr
 {
-	Ogre::Mesh* Get()
-	{
-		return (Ogre::Mesh*)self->get();
-	}
-	bool IsUnique()
-	{
-		return self->unique();
-	}
-	unsigned int UseCount()
-	{
-		return self->useCount();
-	}
-	bool IsNull()
-	{
-		return self->isNull();
-	}
-	void SetNull()
-	{
-		return self->setNull();
-	}
+    Ogre::Mesh* Get()
+    {
+        return (Ogre::Mesh*)self->get();
+    }
+    bool IsUnique()
+    {
+        return self->unique();
+    }
+    unsigned int UseCount()
+    {
+        return self->useCount();
+    }
+    bool IsNull()
+    {
+        return self->isNull();
+    }
+    void SetNull()
+    {
+        return self->setNull();
+    }
 };
 
 
 %extend Ogre::Mesh
 {
-	Ogre::Mesh::BoneAssignmentIterator *GetBoneAssignmentIterator()
-	{
-		Ogre::Mesh::BoneAssignmentIterator * jresult;
-		
-		//typedef std::multimap<size_t, VertexBoneAssignment> VertexBoneAssignmentList;
-		//typedef MapIterator<VertexBoneAssignmentList> BoneAssignmentIterator;
-		SwigValueWrapper<Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > > result;
+    Ogre::Mesh::BoneAssignmentIterator *GetBoneAssignmentIterator()
+    {
+        Ogre::Mesh::BoneAssignmentIterator * jresult;
+        
+        //typedef std::multimap<size_t, VertexBoneAssignment> VertexBoneAssignmentList;
+        //typedef MapIterator<VertexBoneAssignmentList> BoneAssignmentIterator;
+        SwigValueWrapper<Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > > result;
 
-		result = self->getBoneAssignmentIterator();
-		jresult = new Ogre::Mesh::BoneAssignmentIterator((Ogre::Mesh::BoneAssignmentIterator &)result); 
-		
-		return jresult;
-	}
+        result = self->getBoneAssignmentIterator();
+        jresult = new Ogre::Mesh::BoneAssignmentIterator((Ogre::Mesh::BoneAssignmentIterator &)result); 
+        
+        return jresult;
+    }
 };
 
 //        typedef std::vector<SubMesh*> SubMeshList;

@@ -31,10 +31,10 @@
 
 %extend Ogre::SkeletonInstance
 {
-	Ogre::Animation* GetAnimation(const String& name, 
-		const LinkedSkeletonAnimationSource* linker = 0) const
-	{
-		const LinkedSkeletonAnimationSource** pplinker= &linker;
-		return self->getAnimation(name, pplinker);
-	}
+    Ogre::Animation* GetAnimation(const String& name, 
+        const LinkedSkeletonAnimationSource* linker = 0) const
+    {
+        const LinkedSkeletonAnimationSource** pplinker= &linker;
+        return self->getAnimation(name, pplinker);
+    }
 };

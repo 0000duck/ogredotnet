@@ -69,7 +69,7 @@
 
 
 %rename Ogre::BillboardSet::_notifyBillboardResized                 m_NotifyBillboardResized;
-%rename Ogre::BillboardSet::_notifyBillboardTextureCoordsModified	m_NotifyBillboardTextureCoordsModified;
+%rename Ogre::BillboardSet::_notifyBillboardTextureCoordsModified    m_NotifyBillboardTextureCoordsModified;
 %rename Ogre::BillboardSet::_updateBounds                           m_UpdateBounds;
 
 
@@ -88,7 +88,7 @@
 
 
 //TODO this retruns an array of FloatRect
-// virtual Ogre::FloatRect const * getTextureCoords( uint16 * oNumCoords );
+// virtual Ogre::FloatRect const * getTextureCoords(uint16 * oNumCoords);
 %apply unsigned short *INOUT { Ogre::uint16 * oNumCoords };
 //%ignore Ogre::BillboardSet::getTextureCoords;
 
@@ -265,7 +265,7 @@
 %include OgreBillboardSet.h
 
 %extend Ogre::BillboardSet {
-	Renderable * GetAsRenderable()	{
-		return (Renderable*)self;
-	}
+    Renderable * GetAsRenderable()    {
+        return (Renderable*)self;
+    }
 };

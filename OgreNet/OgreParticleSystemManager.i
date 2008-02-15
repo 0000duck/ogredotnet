@@ -46,13 +46,13 @@
 
 %typemap(cscode) Ogre::ParticleSystemManager
 %{
-	public static ParticleSystemManager Instance
-	{
-		get
-		{
-			return new ParticleSystemManager(OgreBindingsPINVOKE.ParticleSystemManager_GetSingleton(), false);
-		}
-	}
+    public static ParticleSystemManager Instance
+    {
+        get
+        {
+            return new ParticleSystemManager(OgreBindingsPINVOKE.ParticleSystemManager_GetSingleton(), false);
+        }
+    }
 %}
 
 %include "OgreParticleSystemManager.h"

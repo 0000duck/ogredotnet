@@ -39,83 +39,83 @@
 
 %typemap(cscode) Ogre::Entity
 %{
-	public MeshPtr Mesh {
-		get { return GetMesh(); }
-	}
+    public MeshPtr Mesh {
+        get { return GetMesh(); }
+    }
 
-	public UInt32 NumSubEntities	{
-		get { return GetNumSubEntities(); }
-	}
+    public UInt32 NumSubEntities    {
+        get { return GetNumSubEntities(); }
+    }
 
-	public string MaterialName {
-		set { SetMaterialName(value); }
-	}
+    public string MaterialName {
+        set { SetMaterialName(value); }
+    }
 
-	public override RenderQueueGroupID RenderQueueGroup {
-		set { SetRenderQueueGroup((byte)value); }
-	}
+    public override RenderQueueGroupID RenderQueueGroup {
+        set { SetRenderQueueGroup((byte)value); }
+    }
 
-	public override AxisAlignedBox BoundingBox {
-		get { return GetBoundingBox(); }
-	}
+    public override AxisAlignedBox BoundingBox {
+        get { return GetBoundingBox(); }
+    }
 
-	public AxisAlignedBox ChildObjectsBoundingBox {
-		get { return GetChildObjectsBoundingBox(); }
-	}
+    public AxisAlignedBox ChildObjectsBoundingBox {
+        get { return GetChildObjectsBoundingBox(); }
+    }
 
-	public override string Name {
-		get { return GetName(); }
-	}
+    public override string Name {
+        get { return GetName(); }
+    }
 
-	public override string MovableType {
-		get { return GetMovableType(); }
-	}
+    public override string MovableType {
+        get { return GetMovableType(); }
+    }
 
-	public AnimationStateSet AllAnimationStates {
-		get { return GetAllAnimationStates(); }
-	}
+    public AnimationStateSet AllAnimationStates {
+        get { return GetAllAnimationStates(); }
+    }
 
-	public bool DisplaySkeleton {
-		get { return GetDisplaySkeleton(); }
-		set { SetDisplaySkeleton((bool)value); }    
-	}
+    public bool DisplaySkeleton {
+        get { return GetDisplaySkeleton(); }
+        set { SetDisplaySkeleton((bool)value); }    
+    }
 
-	public float MeshLodBias {
-		set { SetMeshLodBias(value); }
-	}
+    public float MeshLodBias {
+        set { SetMeshLodBias(value); }
+    }
 
-	public float MaterialLodBias {
-		set { SetMaterialLodBias(value); }
-	}
+    public float MaterialLodBias {
+        set { SetMaterialLodBias(value); }
+    }
 
-	public override float BoundingRadius {
-		get { return GetBoundingRadius(); }
-	}
+    public override float BoundingRadius {
+        get { return GetBoundingRadius(); }
+    }
 
-	public AxisAlignedBox WorldBoundingBox {
-		get { return GetWorldBoundingBox(); }
-	}
+    public AxisAlignedBox WorldBoundingBox {
+        get { return GetWorldBoundingBox(); }
+    }
 
-	public Sphere WorldBoundingSphere {
-		get { return GetWorldBoundingSphere(); }
-	}
+    public Sphere WorldBoundingSphere {
+        get { return GetWorldBoundingSphere(); }
+    }
 
-	public bool NormaliseNormals {
-		get { return GetNormaliseNormals(); }
-		set { SetNormaliseNormals((bool)value); }    
-	}
+    public bool NormaliseNormals {
+        get { return GetNormaliseNormals(); }
+        set { SetNormaliseNormals((bool)value); }    
+    }
 
-	public Math3D.Matrix4 BoneMatrices {
-		get { return _getBoneMatrices(); }
-	}
+    public Math3D.Matrix4 BoneMatrices {
+        get { return _getBoneMatrices(); }
+    }
 
-	public int NumBoneMatrices {
-		get { return _getNumBoneMatrices(); }
-	}
+    public int NumBoneMatrices {
+        get { return _getNumBoneMatrices(); }
+    }
 
-	public SkeletonInstance Skeleton {
-		get { return GetSkeleton(); }
-	}
+    public SkeletonInstance Skeleton {
+        get { return GetSkeleton(); }
+    }
 %}
 
 
@@ -127,11 +127,11 @@
 
 
 //the names from SceneManager are better
-//		typedef std::map<String, MovableObject*> ChildObjectList;
-//		typedef MapIterator<ChildObjectList> ChildObjectListIterator;
+//        typedef std::map<String, MovableObject*> ChildObjectList;
+//        typedef MapIterator<ChildObjectList> ChildObjectListIterator;
 //
-//		typedef std::map<String, MovableObject*> MovableObjectMap;
-//		typedef MapIterator<MovableObjectMap> MovableObjectIterator;
+//        typedef std::map<String, MovableObject*> MovableObjectMap;
+//        typedef MapIterator<MovableObjectMap> MovableObjectIterator;
 PTR_REF_TYPEMAPS(MovableObject, Ogre::MovableObject*)
 %template(MovableObjectMap) std::map<std::string, Ogre::MovableObject*>;
 

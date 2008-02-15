@@ -8,8 +8,6 @@
 //TODO figure out,  for functions that return a pointer to a simple type
 
 
-
-
 %define SIMPLE_TYPEMAP(TYPE, CTYPE, CSTYPE)
 %typemap(ctype)  TYPE "CTYPE"
 %typemap(imtype) TYPE "CSTYPE"
@@ -17,13 +15,13 @@
 %typemap(csin)   TYPE "(CSTYPE)$csinput"
 %typemap(csout, excode=SWIGEXCODE)  TYPE
 {
-	return (CSTYPE)($imcall);
+    return (CSTYPE)($imcall);
 }
 %typemap(csvarout) TYPE
 %{
-	get	{
-		return (CSTYPE)($imcall);
-	}
+    get    {
+        return (CSTYPE)($imcall);
+    }
 %}
 %typemap(out) TYPE  %{ $result = (CTYPE)$1; %}
 %enddef
@@ -48,15 +46,14 @@ SIMPLE_TYPEMAP(uint,           unsigned int,     UInt32)
 SIMPLE_TYPEMAP(uint32,         unsigned int,     UInt32)
 
 
-
-//there are a few std::map templates that need this for theere key values
+//there are a few std::map templates that need this for their key values
 %define SIMPLE_RETRUN_PTR_TYPEMAP(TYPE, CTYPE, CSTYPE)
 %typemap(ctype)  TYPE & "CTYPE"
 %typemap(imtype) TYPE & "CSTYPE"
 %typemap(cstype) TYPE & "CSTYPE"
 %typemap(csout, excode=SWIGEXCODE)  TYPE & 
 {
-	return (CSTYPE)($imcall);
+    return (CSTYPE)($imcall);
 }
 %typemap(out) TYPE & %{ $result = (CTYPE)*$1; %}
 %typemap(ctype)  TYPE * "CTYPE"
@@ -64,14 +61,13 @@ SIMPLE_TYPEMAP(uint32,         unsigned int,     UInt32)
 %typemap(cstype) TYPE * "CSTYPE"
 %typemap(csout, excode=SWIGEXCODE)  TYPE * 
 {
-	return (CSTYPE)($imcall);
+    return (CSTYPE)($imcall);
 }
 %typemap(out) TYPE * %{ $result = (CTYPE)*$1; %}
 %enddef
 SIMPLE_RETRUN_PTR_TYPEMAP(unsigned long,  unsigned long,    UInt32)
 SIMPLE_RETRUN_PTR_TYPEMAP(size_t,         unsigned long,    UInt32)
 SIMPLE_RETRUN_PTR_TYPEMAP(unsigned short, unsigned short,   UInt16)
-
 
 
 %define SIMPLE_ARRAY_TYPE_IN(CTYPE, CSTYPE)
@@ -87,40 +83,38 @@ SIMPLE_ARRAY_TYPE_IN(float,  float)
 SIMPLE_ARRAY_TYPE_IN(int,  int)
 
 
-
 %define VOID_PTR_TYPEMAP(TYPE, CTYPE)
-%typemap(ctype)		TYPE	"CTYPE"
-%typemap(imtype)	TYPE	"IntPtr"
-%typemap(cstype)	TYPE	"IntPtr"
-%typemap(in)		TYPE	%{ $1 = (CTYPE)$input; %}
-%typemap(out)		TYPE	%{ $result = $1; %}
-%typemap(csin)		TYPE	"$csinput"
-%typemap(csout, excode=SWIGEXCODE)		TYPE
+%typemap(ctype)        TYPE    "CTYPE"
+%typemap(imtype)    TYPE    "IntPtr"
+%typemap(cstype)    TYPE    "IntPtr"
+%typemap(in)        TYPE    %{ $1 = (CTYPE)$input; %}
+%typemap(out)        TYPE    %{ $result = $1; %}
+%typemap(csin)        TYPE    "$csinput"
+%typemap(csout, excode=SWIGEXCODE)        TYPE
 {
-	return new IntPtr((int)$imcall);
+    return new IntPtr((int)$imcall);
 }
-%typemap(csvarin)	TYPE
+%typemap(csvarin)    TYPE
 %{
-	set {
-		$imcall;
-	}
+    set {
+        $imcall;
+    }
 %}
-%typemap(csvarout)	TYPE
+%typemap(csvarout)    TYPE
 %{
-	get {
-		return new IntPtr((int)$imcall);
-	}
+    get {
+        return new IntPtr((int)$imcall);
+    }
 %}
 %enddef
-VOID_PTR_TYPEMAP( void *,              void * )
-VOID_PTR_TYPEMAP( void[ANY],           void * )
-VOID_PTR_TYPEMAP( void[],              void * )
-VOID_PTR_TYPEMAP( uchar *,             unsigned char * )
-VOID_PTR_TYPEMAP( unsigned char *,     unsigned char * )
-VOID_PTR_TYPEMAP( unsigned char[ANY],  unsigned char * )
-VOID_PTR_TYPEMAP( unsigned char[],     unsigned char * )
-VOID_PTR_TYPEMAP( unsigned char **,    unsigned char ** )
-
+VOID_PTR_TYPEMAP(void *,              void *)
+VOID_PTR_TYPEMAP(void[ANY],           void *)
+VOID_PTR_TYPEMAP(void[],              void *)
+VOID_PTR_TYPEMAP(uchar *,             unsigned char *)
+VOID_PTR_TYPEMAP(unsigned char *,     unsigned char *)
+VOID_PTR_TYPEMAP(unsigned char[ANY],  unsigned char *)
+VOID_PTR_TYPEMAP(unsigned char[],     unsigned char *)
+VOID_PTR_TYPEMAP(unsigned char **,    unsigned char **)
 
 
 //pointer typemaps:
@@ -140,7 +134,6 @@ VOID_PTR_TYPEMAP( unsigned char **,    unsigned char ** )
 %enddef
 
 
-
 %define CONST_PTR_REF_TYPEMAPS(CSTYPE, CTYPE)
 #if defined(SWIGCSHARP)
 %typemap(ctype)    const CTYPE *, const CTYPE &   "void *"
@@ -153,12 +146,11 @@ VOID_PTR_TYPEMAP( unsigned char **,    unsigned char ** )
   }
 %typemap(in)       const CTYPE *, const CTYPE & 
 %{
-	$1 = (CTYPE *)$input;
+    $1 = (CTYPE *)$input;
 %}
 %typemap(out)      const CTYPE *, const CTYPE &   %{ $result = (void *)*$1; %}
 #endif
 %enddef
-
 
 
 %define DLLEnumType(CSTYPE, CTYPE)
@@ -169,14 +161,12 @@ VOID_PTR_TYPEMAP( unsigned char **,    unsigned char ** )
 %typemap(csin)     CTYPE   "(CSTYPE)$csinput"
 %typemap(csout)    CTYPE 
 {
-	return (CSTYPE)$imcall;
+    return (CSTYPE)$imcall;
 }
 %typemap(out)      CTYPE   %{ $result = (int)$1; %}
 %typemap(in)       CTYPE   %{ $1 = (CTYPE)$input; %}
 #endif
 %enddef
-
-
 
 
 %define DLLNonePtrType(CSTYPE, CTYPE)
@@ -196,7 +186,7 @@ VOID_PTR_TYPEMAP( unsigned char **,    unsigned char ** )
 
 
 // ***************************************************************************************
-// The following typemaps are required to be able to wrap another library that use
+// The following typemaps are required to be able to wrap another library that uses
 // OgreDotNet.
 // They make the constructors and the getCPtr() methods accessible, so the other wrapper
 // can create OgreDotNet objects.
@@ -218,9 +208,8 @@ VOID_PTR_TYPEMAP( unsigned char **,    unsigned char ** )
 
   static public void RemoveOwnership($csclassname obj) {
     if (obj!=null)
-		obj.swigCMemOwn=false;
+        obj.swigCMemOwn=false;
   }
-
 %}
 
 
@@ -238,7 +227,7 @@ VOID_PTR_TYPEMAP( unsigned char **,    unsigned char ** )
 
   static public void RemoveOwnership($csclassname obj) {
     if (obj!=null)
-		obj.swigCMemOwn=false;
+        obj.swigCMemOwn=false;
   }
 %}
 

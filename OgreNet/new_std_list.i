@@ -283,14 +283,14 @@
         int index = -1;
         std::list<CTYPE >::iterator it = std::find(self->begin(), self->end(), value);
         if (it != self->end())
-          index = std::distance( self->begin(), it );
+          index = std::distance(self->begin(), it);
         return index;
       }
       int LastIndexOf(CTYPE value) {
         int index = -1;
         std::list<CTYPE >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
         if (rit != self->rend())
-          index = std::distance( self->rbegin(), rit );
+          index = std::distance(self->rbegin(), rit);
         return index;
       }
       void Remove(CTYPE value) {

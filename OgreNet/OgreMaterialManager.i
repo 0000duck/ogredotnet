@@ -15,30 +15,30 @@
 
 %typemap(cscode) Ogre::MaterialManager
 %{
-	public static MaterialManager Instance {
-		get { return new MaterialManager(OgreBindingsPINVOKE.MaterialManager_GetSingleton(), false); }
-	}
+    public static MaterialManager Instance {
+        get { return new MaterialManager(OgreBindingsPINVOKE.MaterialManager_GetSingleton(), false); }
+    }
 
-	public virtual TextureFilterOptions DefaultTextureFiltering {
-		set { SetDefaultTextureFiltering(value); }
-	}
+    public virtual TextureFilterOptions DefaultTextureFiltering {
+        set { SetDefaultTextureFiltering(value); }
+    }
 
-	public UInt32 DefaultAnisotropy {
-		get { return GetDefaultAnisotropy(); }
-		set { SetDefaultAnisotropy(value); }
-	}
+    public UInt32 DefaultAnisotropy {
+        get { return GetDefaultAnisotropy(); }
+        set { SetDefaultAnisotropy(value); }
+    }
 
-	public virtual MaterialPtr DefaultSettings {
-		get { return GetDefaultSettings(); }
-	}
+    public virtual MaterialPtr DefaultSettings {
+        get { return GetDefaultSettings(); }
+    }
 
-	public static MaterialManager Singleton {
-		get { return GetSingleton(); }
-	}
+    public static MaterialManager Singleton {
+        get { return GetSingleton(); }
+    }
 
-	public static MaterialManager SingletonPtr {
-		get { return GetSingletonPtr(); }
-	}
+    public static MaterialManager SingletonPtr {
+        get { return GetSingletonPtr(); }
+    }
 %}
 
 

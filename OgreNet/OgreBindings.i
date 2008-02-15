@@ -21,10 +21,10 @@ using namespace Ogre;
 #pragma SWIG nowarn=402
 
 //if classes do not have expected functions uncomment next line and see if another class needs to be defined.
-#pragma SWIG nowarn=401		//: Nothing known about base class '.....'. Ignored.
+#pragma SWIG nowarn=401        //: Nothing known about base class '.....'. Ignored.
 
 
-%warnfilter(844) Ogre::Vector2;		//Warning(844): C# exception may not be thrown - no $excode or excode attribute in 'csout' typemap.
+%warnfilter(844) Ogre::Vector2;        //Warning(844): C# exception may not be thrown - no $excode or excode attribute in 'csout' typemap.
 %warnfilter(844) Ogre::Vector3;
 %warnfilter(844) Ogre::Vector4;
 %warnfilter(844) Ogre::Matrix3;
@@ -39,10 +39,10 @@ using namespace Ogre;
 %include std_string.i
 %include std_pair.i
 %include std_vector.i
-%include new_std_map.i		//modified SWIG's version to add functions getitemValue, getitemKey
-%include new_std_list.i		//modified SWIG's std_vector to use with list
-%include new_std_multimap.i	//modified SWIG's std_map to use with multimap
-%include new_std_set.i		//modified SWIG's std_vector to use with set
+%include new_std_map.i        //modified SWIG's version to add functions getitemValue, getitemKey
+%include new_std_list.i        //modified SWIG's std_vector to use with list
+%include new_std_multimap.i    //modified SWIG's std_map to use with multimap
+%include new_std_set.i        //modified SWIG's std_vector to use with set
 
 
 %apply const std::string & {std::string &};
@@ -67,7 +67,7 @@ using namespace Ogre;
 //%include OgreStringConverter.i
 //%include OgreStringInterface.i
 %include Initialiser.i
-%include OgreColourValue.i	//so all colourvalues are the same
+%include OgreColourValue.i    //so all colourvalues are the same
 %include OgreCommon.i
 
 %include OgreVector2.i
@@ -87,7 +87,7 @@ using namespace Ogre;
 %template(PairBoolFloat) std::pair<bool, float>;
 
 
-//		typedef std::map<size_t, Vector3> VertexOffsetMap;
+//        typedef std::map<size_t, Vector3> VertexOffsetMap;
 //OgreMesh.h , OgrePose.h
 %apply unsigned long &INPUT { size_t& key };
 %template(MapUInt32Vector3) std::map<size_t, Ogre::Vector3>;
@@ -111,7 +111,7 @@ using namespace Ogre;
 
 
 
-//		typedef std::vector<Real> LodDistanceList;
+//        typedef std::vector<Real> LodDistanceList;
 //OgreMaterial.h , OgreMesh.h
 %template(VecFloats) std::vector<Ogre::Real>;
 
@@ -170,7 +170,7 @@ using namespace Ogre;
 
 %include OgreKeyFrame.i
 %include OgrePose.i
-%include OgreAnimationTrack.i	//enum VertexAnimationType befor submesh and animation
+%include OgreAnimationTrack.i    //enum VertexAnimationType befor submesh and animation
 %include OgreAnimation.i
 %include OgreAnimationState.i
 %include OgreSubMesh.i

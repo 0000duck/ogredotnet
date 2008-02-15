@@ -17,11 +17,11 @@
 
 %typemap(cscode) Ogre::ResourceGroupManager
 %{
-	public static ResourceGroupManager Instance	{
-		get	{
-			return new ResourceGroupManager(OgreBindingsPINVOKE.ResourceGroupManager_getSingleton(), false);
-		}
-	}
+    public static ResourceGroupManager Instance    {
+        get    {
+            return new ResourceGroupManager(OgreBindingsPINVOKE.ResourceGroupManager_getSingleton(), false);
+        }
+    }
 %}
 
 
@@ -40,42 +40,42 @@
 
 namespace Ogre
 {
-	// declarations for custom code to handle ResourceGroupManager::ResourceDeclaration
-	class RGMResourceDeclaration {
-	public:
-		RGMResourceDeclaration();
-		String getResourceName();
-		void setResourceName(String v);
-		String getResourceType();
-		void setResourceType(String v);
-		ManualResourceLoader* getLoader();
-		NameValuePairList* getParameters();
-	};
+    // declarations for custom code to handle ResourceGroupManager::ResourceDeclaration
+    class RGMResourceDeclaration {
+    public:
+        RGMResourceDeclaration();
+        String getResourceName();
+        void setResourceName(String v);
+        String getResourceType();
+        void setResourceType(String v);
+        ManualResourceLoader* getLoader();
+        NameValuePairList* getParameters();
+    };
 
-	// declarations for custom code to handle ResourceGroupManager::ResourceDeclarationList
-	class RGMResourceDeclarationList {
-	public:
-		RGMResourceDeclarationList();
-		size_t size();
-		RGMResourceDeclaration *getFirst();
-		RGMResourceDeclaration *getLast();
-		RGMResourceDeclaration *getByIndex(int index);
-	};
+    // declarations for custom code to handle ResourceGroupManager::ResourceDeclarationList
+    class RGMResourceDeclarationList {
+    public:
+        RGMResourceDeclarationList();
+        size_t size();
+        RGMResourceDeclaration *getFirst();
+        RGMResourceDeclaration *getLast();
+        RGMResourceDeclaration *getByIndex(int index);
+    };
 }
 
 
 %extend Ogre::ResourceGroupManager {
-	//declare new functions to use RGMResourceDeclaration in place of ResourceGroupManager::ResourceDeclaration
-	//  ResourceDeclarationList getResourceDeclarationList(const String& groupName);
-	Ogre::RGMResourceDeclarationList *GetResourceDeclarationList(const String& groupName)
-	{
-		return new Ogre::RGMResourceDeclarationList( &self->getResourceDeclarationList(groupName) );
-	}
-	
-	DataStreamListSharedPtr *OpenResources(const String& pattern, const String& groupName = DEFAULT_RESOURCE_GROUP_NAME)
-	{
-		return new DataStreamListSharedPtr( self->openResources(pattern, groupName) );
-	}
+    //declare new functions to use RGMResourceDeclaration in place of ResourceGroupManager::ResourceDeclaration
+    //  ResourceDeclarationList getResourceDeclarationList(const String& groupName);
+    Ogre::RGMResourceDeclarationList *GetResourceDeclarationList(const String& groupName)
+    {
+        return new Ogre::RGMResourceDeclarationList(&self->getResourceDeclarationList(groupName));
+    }
+    
+    DataStreamListSharedPtr *OpenResources(const String& pattern, const String& groupName = DEFAULT_RESOURCE_GROUP_NAME)
+    {
+        return new DataStreamListSharedPtr(self->openResources(pattern, groupName));
+    }
 
 };
 

@@ -6,13 +6,13 @@
 
 %typemap(cscode) Ogre::FontManager
 %{
-	public static FontManager Instance
-	{
-		get
-		{
-			return new FontManager(OgreBindingsPINVOKE.FontManager_getSingleton(), false);
-		}
-	}
+    public static FontManager Instance
+    {
+        get
+        {
+            return new FontManager(OgreBindingsPINVOKE.FontManager_getSingleton(), false);
+        }
+    }
 %}
 
 %include OgreFontManager.h

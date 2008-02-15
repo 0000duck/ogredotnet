@@ -30,7 +30,7 @@
 %rename Ogre::ParticleEmitter::getColour              GetColour;
 %rename Ogre::ParticleEmitter::getColourRangeStart    GetColourRangeStart;
 %rename Ogre::ParticleEmitter::getColourRangeEnd      GetColourRangeEnd;
-%rename Ogre::ParticleEmitter::getType                GetEmitterType;	// We cant call it GetType(), because it is a reserved method implemented by each object
+%rename Ogre::ParticleEmitter::getType                GetEmitterType;    // We cant call it GetType(), because it is a reserved method implemented by each object
 %rename Ogre::ParticleEmitter::setEnabled             SetEnabled;
 %rename Ogre::ParticleEmitter::getEnabled             GetEnabled;
 %rename Ogre::ParticleEmitter::setStartTime           SetStartTime;
@@ -53,70 +53,70 @@
 
 %typemap(cscode) Ogre::ParticleEmitter
 %{
-	public float TimeToLive
-	{
-		get
-		{
-			return GetTimeToLive();
-		}
-		set
-		{
-			SetTimeToLive((float)value);
-		}
-	}
-	
-	public float EmissionRate
-	{
-		get
-		{
-			return GetEmissionRate();
-		}
-		set
-		{
-			SetEmissionRate((float)value );
-		}
-	}
-	
-	public float ParticleVelocity
-	{
-		get
-		{
-			return GetParticleVelocity();
-		}
-		set
-		{
-			SetParticleVelocity((float)value);
-		}
-	}
-	
-	public Math3D.Vector3 Direction
-	{
-		get
-		{
-			return GetDirection();	
-		}
-		set
-		{
-			SetDirection( value );	
-		}
-	}
-	
-	public Math3D.Vector3 Position
-	{
-		get
-		{
-			return GetPosition();
-		}
-		set
-		{
-			SetPosition( value );
-		}
-	}
-	
-	public void SetColors( System.Drawing.Color c1, System.Drawing.Color c2 )
-	{
-		SetColour( c1, c2 );
-	}
+    public float TimeToLive
+    {
+        get
+        {
+            return GetTimeToLive();
+        }
+        set
+        {
+            SetTimeToLive((float)value);
+        }
+    }
+    
+    public float EmissionRate
+    {
+        get
+        {
+            return GetEmissionRate();
+        }
+        set
+        {
+            SetEmissionRate((float)value);
+        }
+    }
+    
+    public float ParticleVelocity
+    {
+        get
+        {
+            return GetParticleVelocity();
+        }
+        set
+        {
+            SetParticleVelocity((float)value);
+        }
+    }
+    
+    public Math3D.Vector3 Direction
+    {
+        get
+        {
+            return GetDirection();    
+        }
+        set
+        {
+            SetDirection(value);    
+        }
+    }
+    
+    public Math3D.Vector3 Position
+    {
+        get
+        {
+            return GetPosition();
+        }
+        set
+        {
+            SetPosition(value);
+        }
+    }
+    
+    public void SetColors(System.Drawing.Color c1, System.Drawing.Color c2)
+    {
+        SetColour(c1, c2);
+    }
 %}
 
 

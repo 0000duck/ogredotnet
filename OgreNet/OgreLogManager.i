@@ -9,23 +9,23 @@
 
 %typemap(cscode) Ogre::LogManager
 %{
-	public static LogManager Instance	{
-		get	{
-			return new LogManager(OgreBindingsPINVOKE.LogManager_GetSingleton(), false);
-		}
-	}
-	
-	public static LogManager Singleton	{
-		get	{
-			return GetSingleton();
-		}
-	}
-	
-	public static LogManager SingletonPtr	{
-		get	{
-			return GetSingletonPtr();
-		}
-	}
+    public static LogManager Instance    {
+        get    {
+            return new LogManager(OgreBindingsPINVOKE.LogManager_GetSingleton(), false);
+        }
+    }
+    
+    public static LogManager Singleton    {
+        get    {
+            return GetSingleton();
+        }
+    }
+    
+    public static LogManager SingletonPtr    {
+        get    {
+            return GetSingletonPtr();
+        }
+    }
 %}
 
 %include OgreLogManager.h

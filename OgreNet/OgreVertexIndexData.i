@@ -9,7 +9,7 @@
 
 %include OgreVertexIndexData.h
 
-//	typedef std::vector<HardwareBuffer::Usage> BufferUsageList;
+//    typedef std::vector<HardwareBuffer::Usage> BufferUsageList;
 SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(HardwareBuffer.Usage,  Ogre::HardwareBuffer::Usage)
 %template(BufferUsageList) std::vector<Ogre::HardwareBuffer::Usage>;
 

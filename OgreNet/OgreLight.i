@@ -1,5 +1,5 @@
 %{
-	#include "OgreLight.h"
+    #include "OgreLight.h"
 %}
 
 // enum LightTypes
@@ -10,7 +10,7 @@
 %rename Ogre::Light::tempSquareDist         TempSquareDist;
 %rename Ogre::Light::getName                GetName;
 %rename Ogre::Light::setType                SetLightType;
-%rename Ogre::Light::getType                GetLightType;		// We cant call it GetType(), because it is a reserved method implemented by each object
+%rename Ogre::Light::getType                GetLightType;        // We cant call it GetType(), because it is a reserved method implemented by each object
 %rename Ogre::Light::setDiffuseColour       SetDiffuseColour;
 %rename Ogre::Light::getDiffuseColour       GetDiffuseColour;
 %rename Ogre::Light::setSpecularColour      SetSpecularColour;
@@ -43,44 +43,44 @@
 
 %typemap(cscode) Ogre::Light
 %{
-	public Math3D.Vector3 Direction
-	{
-		get
-		{
-			return GetDirection();
-		}
-		set
-		{
-			SetDirection( value );	
-		}
-	}
-	
-	public Math3D.Vector3 Position
-	{
-		get
-		{
-			return GetPosition();
-		}
-		set
-		{
-			SetPosition( value );	
-		}
-	}
-	
-	public System.Drawing.Color DiffuseColor
-	{
-		get
-		{
-			return GetDiffuseColour();
-		}
-		set
-		{
-			SetDiffuseColour( value );
-		}
-	}
+    public Math3D.Vector3 Direction
+    {
+        get
+        {
+            return GetDirection();
+        }
+        set
+        {
+            SetDirection(value);    
+        }
+    }
+    
+    public Math3D.Vector3 Position
+    {
+        get
+        {
+            return GetPosition();
+        }
+        set
+        {
+            SetPosition(value);    
+        }
+    }
+    
+    public System.Drawing.Color DiffuseColor
+    {
+        get
+        {
+            return GetDiffuseColour();
+        }
+        set
+        {
+            SetDiffuseColour(value);
+        }
+    }
 
-	
-	  public override string Name {
+    
+      public override string Name {
     get
     {
         return GetName();
@@ -106,7 +106,7 @@
     }
     set
     {
-        SetSpecularColour( value );
+        SetSpecularColour(value);
     }    
   }
 

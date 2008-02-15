@@ -2,11 +2,11 @@
 #include "OgreSubMesh.h"
 %}
 
-%rename Ogre::SubMesh::setMaterialName				SetMaterialName;
-%rename Ogre::SubMesh::getMaterialName				GetMaterialName;
-%rename Ogre::SubMesh::isMatInitialised				IsMatInitialised;
-%rename Ogre::SubMesh::addBoneAssignment			AddBoneAssignment;
-%rename Ogre::SubMesh::clearBoneAssignments			ClearBoneAssignments;
+%rename Ogre::SubMesh::setMaterialName                SetMaterialName;
+%rename Ogre::SubMesh::getMaterialName                GetMaterialName;
+%rename Ogre::SubMesh::isMatInitialised                IsMatInitialised;
+%rename Ogre::SubMesh::addBoneAssignment            AddBoneAssignment;
+%rename Ogre::SubMesh::clearBoneAssignments            ClearBoneAssignments;
 
 
 //TODO is multimap working?  below is the template
@@ -42,7 +42,7 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
 %typemap(cstype)  Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > *      "BoneAssignmentIteratorWrap"
 %typemap(out)     Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > *
 %{
-	$result = (void *)$1;
+    $result = (void *)$1;
 %}
 %typemap(csout)   Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > * 
 {
@@ -61,11 +61,11 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
 
 %typemap(cscode) Ogre::SubMesh
 %{
-	public string MaterialName
-	{
-		set { SetMaterialName(value); }
-		get { return GetMaterialName(); }
-	}
+    public string MaterialName
+    {
+        set { SetMaterialName(value); }
+        get { return GetMaterialName(); }
+    }
 %}
 
 
@@ -74,24 +74,24 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
 
 %extend Ogre::SubMesh
 {
-	Ogre::Mesh::BoneAssignmentIterator *GetBoneAssignmentIterator()
-	{
-		Ogre::Mesh::BoneAssignmentIterator * jresult;
-		
-		//typedef std::multimap<size_t, VertexBoneAssignment> VertexBoneAssignmentList;
-		//typedef MapIterator<VertexBoneAssignmentList> BoneAssignmentIterator;
-		SwigValueWrapper<Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > > result;
+    Ogre::Mesh::BoneAssignmentIterator *GetBoneAssignmentIterator()
+    {
+        Ogre::Mesh::BoneAssignmentIterator * jresult;
+        
+        //typedef std::multimap<size_t, VertexBoneAssignment> VertexBoneAssignmentList;
+        //typedef MapIterator<VertexBoneAssignmentList> BoneAssignmentIterator;
+        SwigValueWrapper<Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > > result;
 
-		result = self->getBoneAssignmentIterator();
-		jresult = new Ogre::Mesh::BoneAssignmentIterator((Ogre::Mesh::BoneAssignmentIterator &)result); 
-		
-		return jresult;
-	}
+        result = self->getBoneAssignmentIterator();
+        jresult = new Ogre::Mesh::BoneAssignmentIterator((Ogre::Mesh::BoneAssignmentIterator &)result); 
+        
+        return jresult;
+    }
 };
 
 
 //typedef std::map<String, String> AliasTextureNamePairList;
 //typedef ConstMapIterator<AliasTextureNamePairList> AliasTextureIterator;
-ConstMapIteratorWRAP(AliasTextureIteratorWrap, std::map, std::string, std::string );
+ConstMapIteratorWRAP(AliasTextureIteratorWrap, std::map, std::string, std::string);
 
 

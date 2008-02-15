@@ -1,32 +1,32 @@
 %{
-	#include "OgreOverlayContainer.h"
+    #include "OgreOverlayContainer.h"
 %}
 
-%rename Ogre::OverlayContainer::getChild						GetChild;
+%rename Ogre::OverlayContainer::getChild                        GetChild;
 
 
 %typemap(cscode) Ogre::OverlayContainer
 %{
-	public TextAreaOverlayElement GetChildTextArea(string instanceName)
-	{
-		OverlayElement el = GetChild(instanceName);
-		TextAreaOverlayElement ret = new TextAreaOverlayElement( OverlayElement.getCPtr(el).Handle , false );
-		return ret;
-	}
+    public TextAreaOverlayElement GetChildTextArea(string instanceName)
+    {
+        OverlayElement el = GetChild(instanceName);
+        TextAreaOverlayElement ret = new TextAreaOverlayElement(OverlayElement.getCPtr(el).Handle , false);
+        return ret;
+    }
 
-	public PanelOverlayElement GetChildPanel(string instanceName)
-	{
-		OverlayElement el = GetChild(instanceName);
-		PanelOverlayElement ret = new PanelOverlayElement( OverlayElement.getCPtr(el).Handle , false );
-		return ret;
-	}
+    public PanelOverlayElement GetChildPanel(string instanceName)
+    {
+        OverlayElement el = GetChild(instanceName);
+        PanelOverlayElement ret = new PanelOverlayElement(OverlayElement.getCPtr(el).Handle , false);
+        return ret;
+    }
 
-	public OverlayContainer GetChildContainer(string instanceName)
-	{
-		OverlayElement el = GetChild(instanceName);
-		OverlayContainer ret = new OverlayContainer( OverlayElement.getCPtr(el).Handle , false );
-		return ret;
-	}
+    public OverlayContainer GetChildContainer(string instanceName)
+    {
+        OverlayElement el = GetChild(instanceName);
+        OverlayContainer ret = new OverlayContainer(OverlayElement.getCPtr(el).Handle , false);
+        return ret;
+    }
 %}
 
 

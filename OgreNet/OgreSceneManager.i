@@ -150,89 +150,89 @@ SIMPLE_TYPEMAP(SceneTypeMask,  unsigned short,   UInt16)
 
 %typemap(cscode) Ogre::SceneManager
 %{
-	public System.Drawing.Color AmbientLightColor {
-		set { SetAmbientLight( value ); }
-	}
+    public System.Drawing.Color AmbientLightColor {
+        set { SetAmbientLight(value); }
+    }
 
-	public virtual SceneNode RootSceneNode {
-		get { return GetRootSceneNode(); }
-	}
+    public virtual SceneNode RootSceneNode {
+        get { return GetRootSceneNode(); }
+    }
 
-	public System.Drawing.Color AmbientLight {
-		get { return GetAmbientLight(); }
-		set { SetAmbientLight(value); }
-	}
+    public System.Drawing.Color AmbientLight {
+        get { return GetAmbientLight(); }
+        set { SetAmbientLight(value); }
+    }
 
-	public virtual FogMode FogMode	{
-		get { return GetFogMode(); }
-	}
+    public virtual FogMode FogMode    {
+        get { return GetFogMode(); }
+    }
 
-	public virtual System.Drawing.Color FogColour {
-		get { return GetFogColour(); }
-	}
+    public virtual System.Drawing.Color FogColour {
+        get { return GetFogColour(); }
+    }
 
-	public virtual float FogStart {
-		get { return GetFogStart(); }
-	}
+    public virtual float FogStart {
+        get { return GetFogStart(); }
+    }
 
-	public virtual float FogEnd {
-		get { return GetFogEnd(); }
-	}
+    public virtual float FogEnd {
+        get { return GetFogEnd(); }
+    }
 
-	public virtual float FogDensity {
-		get { return GetFogDensity(); }
-	}
+    public virtual float FogDensity {
+        get { return GetFogDensity(); }
+    }
 
-	public virtual RenderQueueGroupID WorldGeometryRenderQueue {
-		get { return (RenderQueueGroupID)(int)GetWorldGeometryRenderQueue(); }
-		set { SetWorldGeometryRenderQueue((byte)value); }
-	}
+    public virtual RenderQueueGroupID WorldGeometryRenderQueue {
+        get { return (RenderQueueGroupID)(int)GetWorldGeometryRenderQueue(); }
+        set { SetWorldGeometryRenderQueue((byte)value); }
+    }
 
-	public virtual ShadowTechnique ShadowTechnique {
-		get { return GetShadowTechnique(); }
-		set { SetShadowTechnique((ShadowTechnique)value); }
-	}
+    public virtual ShadowTechnique ShadowTechnique {
+        get { return GetShadowTechnique(); }
+        set { SetShadowTechnique((ShadowTechnique)value); }
+    }
 
-	public virtual bool ShowDebugShadows {
-		get { return GetShowDebugShadows(); }
-		set { SetShowDebugShadows((bool)value); }
-	}
+    public virtual bool ShowDebugShadows {
+        get { return GetShowDebugShadows(); }
+        set { SetShowDebugShadows((bool)value); }
+    }
 
-	public virtual System.Drawing.Color ShadowColour {
-		get { return GetShadowColour(); }
-		set { SetShadowColour(value); }
-	}
+    public virtual System.Drawing.Color ShadowColour {
+        get { return GetShadowColour(); }
+        set { SetShadowColour(value); }
+    }
 
-	public virtual float ShadowDirectionalLightExtrusionDistance {
-		get { return GetShadowDirectionalLightExtrusionDistance(); }
-		set { SetShadowDirectionalLightExtrusionDistance((float)value); }
-	}
+    public virtual float ShadowDirectionalLightExtrusionDistance {
+        get { return GetShadowDirectionalLightExtrusionDistance(); }
+        set { SetShadowDirectionalLightExtrusionDistance((float)value); }
+    }
 
-	public virtual float ShadowFarDistance {
-		get { return GetShadowFarDistance(); }
-		set { SetShadowFarDistance((float)value); }
-	}
+    public virtual float ShadowFarDistance {
+        get { return GetShadowFarDistance(); }
+        set { SetShadowFarDistance((float)value); }
+    }
 
-	public virtual UInt32 ShadowIndexBufferSize {
-		get { return GetShadowIndexBufferSize(); }
-		set { SetShadowIndexBufferSize(value); }
-	}
+    public virtual UInt32 ShadowIndexBufferSize {
+        get { return GetShadowIndexBufferSize(); }
+        set { SetShadowIndexBufferSize(value); }
+    }
 
-	public UInt16 ShadowTextureSize {
-		get { return GetShadowTextureSize(); }
-		set { SetShadowTextureSize((UInt16)value); }
-	}
+    public UInt16 ShadowTextureSize {
+        get { return GetShadowTextureSize(); }
+        set { SetShadowTextureSize((UInt16)value); }
+    }
 
 
-	public PixelFormat ShadowTexturePixelFormat {
-		get { return GetShadowTexturePixelFormat(); }
-		set { SetShadowTexturePixelFormat((PixelFormat)value); }
-	}
+    public PixelFormat ShadowTexturePixelFormat {
+        get { return GetShadowTexturePixelFormat(); }
+        set { SetShadowTexturePixelFormat((PixelFormat)value); }
+    }
 
-	public UInt16 ShadowTextureCount {
-		get { return GetShadowTextureCount(); }
-		set { SetShadowTextureCount((UInt16)value); }
-	}
+    public UInt16 ShadowTextureCount {
+        get { return GetShadowTextureCount(); }
+        set { SetShadowTextureCount((UInt16)value); }
+    }
 
 %}
 
@@ -244,11 +244,11 @@ SIMPLE_TYPEMAP(SceneTypeMask,  unsigned short,   UInt16)
 
 %extend Ogre::SceneManager
 {
-	MovableObject* CreateMovableObject(const String& name, const String& typeName, const NameValuePairList* vparams = 0)
-	{
-		return self->createMovableObject(name, typeName, vparams);
-	}
-	
+    MovableObject* CreateMovableObject(const String& name, const String& typeName, const NameValuePairList* vparams = 0)
+    {
+        return self->createMovableObject(name, typeName, vparams);
+    }
+    
 };
 
 
@@ -262,8 +262,8 @@ PTR_REF_TYPEMAPS(Animation, Ogre::Animation*)
 %template(AnimationList) std::map<std::string, Ogre::Animation*>;
 
 //defined in OgreEntity.i
-//		typedef std::map<String, MovableObject*> MovableObjectMap;
-//		typedef MapIterator<MovableObjectMap> MovableObjectIterator;
+//        typedef std::map<String, MovableObject*> MovableObjectMap;
+//        typedef MapIterator<MovableObjectMap> MovableObjectIterator;
 
 
 

@@ -5,11 +5,11 @@
 
 %typemap(cscode) Ogre::SceneManagerEnumerator
 %{
-	public static SceneManagerEnumerator Instance	{
-		get	{
-			return new SceneManagerEnumerator(OgreBindingsPINVOKE.SceneManagerEnumerator_getSingletonPtr(), false);
-		}
-	}
+    public static SceneManagerEnumerator Instance    {
+        get    {
+            return new SceneManagerEnumerator(OgreBindingsPINVOKE.SceneManagerEnumerator_getSingletonPtr(), false);
+        }
+    }
 %}
 
 

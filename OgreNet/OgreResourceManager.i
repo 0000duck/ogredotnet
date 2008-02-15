@@ -3,7 +3,7 @@
 %}
 
 %rename Ogre::ResourceManager::create      Create;
-%rename Ogre::ResourceManager::load	       Load;
+%rename Ogre::ResourceManager::load           Load;
 
 
 
@@ -17,5 +17,5 @@ DLLNonePtrType(ResourcePtr, Ogre::SharedPtr<Ogre::Resource>)
 %template(ResourceHandleMap) std::map<unsigned long, Ogre::SharedPtr<Ogre::Resource> >;
 
 //typedef MapIterator<ResourceHandleMap> ResourceMapIterator;
-MapIteratorWRAP(ResourceMapIteratorWrap, std::map, unsigned long, Ogre::ResourcePtr );
+MapIteratorWRAP(ResourceMapIteratorWrap, std::map, unsigned long, Ogre::ResourcePtr);
 

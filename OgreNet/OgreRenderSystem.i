@@ -68,85 +68,85 @@
 
 %typemap(cscode) Ogre::RenderSystem
 %{
-	public virtual string Name {
-		get { return GetName(); }
-	}
-	
-	public ShadeOptions ShadingType {
-		set { SetShadingType(value); }
-	}
-	
-	public bool LightingEnabled {
-		set { SetLightingEnabled(value); }
-	}
-	
-	public bool WBufferEnabled {
-		get { return GetWBufferEnabled(); }
-		set { SetWBufferEnabled((bool)value); }
-	}
-	
-	public bool WaitForVerticalBlank {
-		get { return GetWaitForVerticalBlank(); }
-		set { SetWaitForVerticalBlank((bool)value); }
-	}
-	
-	public virtual Viewport Viewport {
-		get { return _getViewport(); }
-		set { _setViewport((Viewport)value); }
-	}
-	
-	public virtual CullingMode CullingMode {
-		get { return _getCullingMode(); }
-		set { _setCullingMode((CullingMode)value); }
-	}
-	
-	public virtual UInt32 FaceCount {
-		get { return _getFaceCount(); }
-	}
-	
-	public virtual UInt32 VertexCount {
-		get { return _getVertexCount(); }
-	}
-	
-	public bool StencilCheckEnabled {
-		set { SetStencilCheckEnabled(value); }
-	}
-	
-	public VertexDeclaration vertexdeclaration {
-		set { SetVertexDeclaration(value); }
-	}
-	
-	public VertexBufferBinding vertexbufferbinding {
-		set { SetVertexBufferBinding(value); }
-	}
-	
-	public bool NormaliseNormals {
-		set { SetNormaliseNormals(value); }
-	}
-	
-	public RenderSystemCapabilities Capabilities {
-		get { return GetCapabilities(); }
-	}
-	
-	public bool InvertVertexWinding {
-		set { SetInvertVertexWinding(value); }
-	}
-	
-	public virtual float HorizontalTexelOffset {
-		get { return GetHorizontalTexelOffset(); }
-	}
-	
-	public virtual float VerticalTexelOffset {
-		get { return GetVerticalTexelOffset(); }
-	}
-	
-	public virtual float MinimumDepthInputValue {
-		get { return GetMinimumDepthInputValue(); }
-	}
-	
-	public virtual float MaximumDepthInputValue {
-		get { return GetMaximumDepthInputValue(); }
-	}
+    public virtual string Name {
+        get { return GetName(); }
+    }
+    
+    public ShadeOptions ShadingType {
+        set { SetShadingType(value); }
+    }
+    
+    public bool LightingEnabled {
+        set { SetLightingEnabled(value); }
+    }
+    
+    public bool WBufferEnabled {
+        get { return GetWBufferEnabled(); }
+        set { SetWBufferEnabled((bool)value); }
+    }
+    
+    public bool WaitForVerticalBlank {
+        get { return GetWaitForVerticalBlank(); }
+        set { SetWaitForVerticalBlank((bool)value); }
+    }
+    
+    public virtual Viewport Viewport {
+        get { return _getViewport(); }
+        set { _setViewport((Viewport)value); }
+    }
+    
+    public virtual CullingMode CullingMode {
+        get { return _getCullingMode(); }
+        set { _setCullingMode((CullingMode)value); }
+    }
+    
+    public virtual UInt32 FaceCount {
+        get { return _getFaceCount(); }
+    }
+    
+    public virtual UInt32 VertexCount {
+        get { return _getVertexCount(); }
+    }
+    
+    public bool StencilCheckEnabled {
+        set { SetStencilCheckEnabled(value); }
+    }
+    
+    public VertexDeclaration vertexdeclaration {
+        set { SetVertexDeclaration(value); }
+    }
+    
+    public VertexBufferBinding vertexbufferbinding {
+        set { SetVertexBufferBinding(value); }
+    }
+    
+    public bool NormaliseNormals {
+        set { SetNormaliseNormals(value); }
+    }
+    
+    public RenderSystemCapabilities Capabilities {
+        get { return GetCapabilities(); }
+    }
+    
+    public bool InvertVertexWinding {
+        set { SetInvertVertexWinding(value); }
+    }
+    
+    public virtual float HorizontalTexelOffset {
+        get { return GetHorizontalTexelOffset(); }
+    }
+    
+    public virtual float VerticalTexelOffset {
+        get { return GetVerticalTexelOffset(); }
+    }
+    
+    public virtual float MinimumDepthInputValue {
+        get { return GetMinimumDepthInputValue(); }
+    }
+    
+    public virtual float MaximumDepthInputValue {
+        get { return GetMaximumDepthInputValue(); }
+    }
 %}
 
 
@@ -154,10 +154,10 @@
 
 
 %extend Ogre::RenderSystem {
-	void _SetTextureAddressingMode(size_t unit, Ogre::TUSUVWAddressingMode * uvw)
-	{
-		self->_setTextureAddressingMode(unit, *uvw->get_mObj() );
-	}
+    void _SetTextureAddressingMode(size_t unit, Ogre::TUSUVWAddressingMode * uvw)
+    {
+        self->_setTextureAddressingMode(unit, *uvw->get_mObj());
+    }
 };
 
 

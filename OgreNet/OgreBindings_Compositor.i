@@ -64,7 +64,7 @@ using namespace Ogre;
 %typemap(csin)   const Ogre::ColourValue &,  Ogre::ColourValue   "ColourValue.getCPtr(Converter.ToColourValue($csinput))"
 %typemap(csout, excode=SWIGEXCODE) const Ogre::ColourValue &,  Ogre::ColourValue
 {
-	return Converter.ToColor(new ColourValue($imcall, false));
+    return Converter.ToColor(new ColourValue($imcall, false));
 }
 
 

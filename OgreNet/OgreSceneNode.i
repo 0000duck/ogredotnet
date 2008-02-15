@@ -1,5 +1,5 @@
 %{
-	#include "OgreSceneNode.h"
+    #include "OgreSceneNode.h"
 %}
 
 %rename Ogre::SceneNode::attachObject                AttachObject;
@@ -34,7 +34,7 @@
 
 %typemap(cscode) Ogre::SceneNode
 %{
-	
+    
 //  public virtual bool IsInSceneGraph {
 //    get
 //    {
@@ -84,11 +84,11 @@
     }
   }
 
-	static public SceneNode GetSceneNodeFrom( Node n )
-	{
-		SceneNode ret = new SceneNode( Node.getCPtr(n).Handle , false );
-		return ret;
-	}
+    static public SceneNode GetSceneNodeFrom(Node n)
+    {
+        SceneNode ret = new SceneNode(Node.getCPtr(n).Handle , false);
+        return ret;
+    }
 
 %}
 

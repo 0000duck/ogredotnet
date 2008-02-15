@@ -1,9 +1,9 @@
 %{
-	#include "OgreInputEvent.h"
-	#include "OgreEventQueue.h"
-	#include "OgreEventTarget.h"
+    #include "OgreInputEvent.h"
+    #include "OgreEventQueue.h"
+    #include "OgreEventTarget.h"
 
-	#include "OgreEventProcessor.h"
+    #include "OgreEventProcessor.h"
 %}
 
 

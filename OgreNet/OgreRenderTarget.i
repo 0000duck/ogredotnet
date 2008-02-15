@@ -1,5 +1,5 @@
 %{
-	#include "OgreRenderTarget.h"
+    #include "OgreRenderTarget.h"
 %}
 
 %rename Ogre::RenderTarget::getName                        GetName;
@@ -49,11 +49,11 @@
 %apply unsigned int &OUTPUT { unsigned int& width, unsigned int& height, unsigned int& colourDepth };
 
 //        virtual void getCustomAttribute(const String& name, void* pData);
-%typemap(ctype)		void* pData 	"void*"
-%typemap(imtype)	void* pData 	"ref IntPtr"
-%typemap(cstype)	void* pData 	"ref IntPtr"
-%typemap(in)		void* pData 	%{ $1 = (void*)$input; %}
-%typemap(csin)		void* pData 	"ref $csinput"
+%typemap(ctype)        void* pData     "void*"
+%typemap(imtype)    void* pData     "ref IntPtr"
+%typemap(cstype)    void* pData     "ref IntPtr"
+%typemap(in)        void* pData     %{ $1 = (void*)$input; %}
+%typemap(csin)        void* pData     "ref $csinput"
 
 
 %typemap(cscode) Ogre::RenderTarget
