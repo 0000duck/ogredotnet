@@ -1,5 +1,5 @@
 %{
-    #include "OgrePredefinedControllers.h"
+#include "OgrePredefinedControllers.h"
 %}
 
 %rename Ogre::FrameTimeControllerValue::getValue GetValue;
@@ -35,7 +35,5 @@
   }
 
 %}
-
-
 
 %include "OgrePredefinedControllers.h"

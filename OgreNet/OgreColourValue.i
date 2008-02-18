@@ -1,5 +1,5 @@
 %{
-    #include "OgreColourValue.h"
+#include "OgreColourValue.h"
 %}
 
 %typemap(cscode) Ogre::ColourValue
@@ -32,7 +32,6 @@
 
 %include "OgreColourValue.h"
 
-
 %extend Ogre::ColourValue
 {
     float GetA()
@@ -59,18 +58,19 @@
     {
         self->a = val;
     }
+
     void SetR(float val)
     {
         self->r = val;
     }
+
     void SetG(float val)
     {
         self->g = val;
     }
+
     void SetB(float val)
     {
         self->b = val;
     }
-
 };
-

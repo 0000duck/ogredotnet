@@ -1,9 +1,8 @@
 %{
-    #include "OgreOverlayContainer.h"
+#include "OgreOverlayContainer.h"
 %}
 
 %rename Ogre::OverlayContainer::getChild                        GetChild;
-
 
 %typemap(cscode) Ogre::OverlayContainer
 %{
@@ -29,11 +28,7 @@
     }
 %}
 
-
-
 %include OgreOverlayContainer.h
-
-
 
 //        typedef std::map<String, OverlayContainer*> ChildContainerMap;
 PTR_REF_TYPEMAPS(OverlayContainer, Ogre::OverlayContainer*)

@@ -1,5 +1,5 @@
 %{
-    #include "OgreLight.h"
+#include "OgreLight.h"
 %}
 
 // enum LightTypes

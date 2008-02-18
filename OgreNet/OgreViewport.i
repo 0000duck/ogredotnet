@@ -1,5 +1,5 @@
 %{
-    #include "OgreViewport.h"
+#include "OgreViewport.h"
 %}
 
 %rename Ogre::Viewport::update              Update;
@@ -24,10 +24,8 @@
 %rename Ogre::Viewport::setOverlaysEnabled  SetOverlaysEnabled;
 %rename Ogre::Viewport::getOverlaysEnabled  GetOverlaysEnabled;
 
-
 //  void getActualDimensions(int &left, int &top, int &width, int &height) const;
 %apply int &OUTPUT { int &left, int &top, int &width, int &height };
-
 
 %typemap(cscode) Ogre::Viewport
 %{
@@ -55,95 +53,94 @@
         }
     }
     
-  public RenderTarget Target {
-    get
-    {
-        return GetTarget();
+    public RenderTarget Target {
+        get
+        {
+            return GetTarget();
+        }
     }
-  }
 
-  public Camera Camera {
-    get
-    {
-        return GetCamera();
+    public Camera Camera {
+        get
+        {
+            return GetCamera();
+        }
+        set
+        {
+            SetCamera((Camera)value);
+        }
     }
-    set
-    {
-        SetCamera((Camera)value);
-    }
-  }
 
-  public int ZOrder {
-    get
-    {
-        return GetZOrder();
+    public int ZOrder {
+        get
+        {
+            return GetZOrder();
+        }
     }
-  }
 
-  public float Left {
-    get
-    {
-        return GetLeft();
+    public float Left {
+        get
+        {
+            return GetLeft();
+        }
     }
-  }
 
-  public float Top {
-    get
-    {
-        return GetTop();
+    public float Top {
+        get
+        {
+            return GetTop();
+        }
     }
-  }
 
-  public float Width {
-    get
-    {
-        return GetWidth();
+    public float Width {
+        get
+        {
+            return GetWidth();
+        }
     }
-  }
 
-  public float Height {
-    get
-    {
-        return GetHeight();
+    public float Height {
+        get
+        {
+            return GetHeight();
+        }
     }
-  }
 
-  public int ActualLeft {
-    get
-    {
-        return GetActualLeft();
+    public int ActualLeft {
+        get
+        {
+            return GetActualLeft();
+        }
     }
-  }
 
-  public int ActualTop {
-    get
-    {
-        return GetActualTop();
+    public int ActualTop {
+        get
+        {
+            return GetActualTop();
+        }
     }
-  }
 
-  public bool ClearEveryFrame {
-    get
-    {
-        return GetClearEveryFrame();
+    public bool ClearEveryFrame {
+        get
+        {
+            return GetClearEveryFrame();
+        }
+        set
+        {
+            SetClearEveryFrame((bool)value);
+        }
     }
-    set
-    {
-        SetClearEveryFrame((bool)value);
-    }
-  }
 
-  public bool OverlaysEnabled {
-    get
-    {
-        return GetOverlaysEnabled();
+    public bool OverlaysEnabled {
+        get
+        {
+            return GetOverlaysEnabled();
+        }
+        set
+        {
+            SetOverlaysEnabled((bool)value);
+        }
     }
-    set
-    {
-        SetOverlaysEnabled((bool)value);
-    }
-  }
-    
 %}
 
 %include "OgreViewport.h"

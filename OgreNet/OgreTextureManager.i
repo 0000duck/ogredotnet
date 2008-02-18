@@ -1,5 +1,5 @@
 %{
-    #include "OgreTextureManager.h"
+#include "OgreTextureManager.h"
 %}
 
 %rename Ogre::TextureManager::load                 Load;

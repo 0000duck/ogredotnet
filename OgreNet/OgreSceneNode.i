@@ -1,5 +1,5 @@
 %{
-    #include "OgreSceneNode.h"
+#include "OgreSceneNode.h"
 %}
 
 %rename Ogre::SceneNode::attachObject                AttachObject;
@@ -35,61 +35,60 @@
 %typemap(cscode) Ogre::SceneNode
 %{
     
-//  public virtual bool IsInSceneGraph {
-//    get
-//    {
-//        return IsInSceneGraph();
-//    }
-//  }
+//     public virtual bool IsInSceneGraph {
+//         get
+//         {
+//             return IsInSceneGraph();
+//         }
+//     }
 
-  public SceneManager Creator {
-    get
-    {
-        return GetCreator();
+    public SceneManager Creator {
+        get
+        {
+            return GetCreator();
+        }
     }
-  }
 
-//  public virtual bool ShowBoundingBox {
-//    get
-//    {
-//        return GetShowBoundingBox();
-//    }
-//  }
+//     public virtual bool ShowBoundingBox {
+//         get
+//         {
+//             return GetShowBoundingBox();
+//         }
+//     }
 
-  public SceneNode AutoTrackTarget {
-    get
-    {
-        return GetAutoTrackTarget();
+    public SceneNode AutoTrackTarget {
+        get
+        {
+            return GetAutoTrackTarget();
+        }
     }
-  }
 
-  public Math3D.Vector3 AutoTrackOffset {
-    get
-    {
-        return GetAutoTrackOffset();
+    public Math3D.Vector3 AutoTrackOffset {
+        get
+        {
+            return GetAutoTrackOffset();
+        }
     }
-  }
 
-  public Math3D.Vector3 AutoTrackLocalDirection {
-    get
-    {
-        return GetAutoTrackLocalDirection();
+    public Math3D.Vector3 AutoTrackLocalDirection {
+        get
+        {
+            return GetAutoTrackLocalDirection();
+        }
     }
-  }
 
-  public SceneNode ParentSceneNode {
-    get
-    {
-        return GetParentSceneNode();
+    public SceneNode ParentSceneNode {
+        get
+        {
+            return GetParentSceneNode();
+        }
     }
-  }
 
     static public SceneNode GetSceneNodeFrom(Node n)
     {
         SceneNode ret = new SceneNode(Node.getCPtr(n).Handle , false);
         return ret;
     }
-
 %}
 
 //TODO wrap Iterator, hash_map needs custom wrap
@@ -103,5 +102,3 @@
 //        typedef HashMap<String, MovableObject*> ObjectMap;
 //        typedef MapIterator<ObjectMap> ObjectIterator;
 //        typedef ConstMapIterator<ObjectMap> ConstObjectIterator;
-
-

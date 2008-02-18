@@ -1,5 +1,5 @@
 %{
-   #include "OgrePixelFormat.h"
+#include "OgrePixelFormat.h"
 %}
 
 %apply float *OUTPUT { float *r, float *g, float *b, float *a };
@@ -10,15 +10,14 @@
 
 %apply unsigned char *OUTPUT { uint8 *r, uint8 *g, uint8 *b, uint8 *a };
 
-
-
 %ignore Ogre::PixelUtil::getBitDepths;
 %ignore Ogre::PixelUtil::getBitMasks;
 
 //static void getBitDepths(PixelFormat format, int rgba[4]);
 //static void getBitMasks(PixelFormat format, uint32 rgba[4]);
 
-%extend Ogre::PixelUtil {
+%extend Ogre::PixelUtil
+{
     static void GetBitDepths(PixelFormat format, int *r, int *g, int *b, int *a)
     {
         int _rgba[4]= {0,0,0,0};
@@ -32,6 +31,7 @@
         if (b != 0)  *b = _rgba[2];
         if (a != 0)  *a = _rgba[3];
     }
+
     static void GetBitMasks(PixelFormat format, uint32 *r, uint32 *g, uint32 *b, uint32 *a)
     {
         uint32 _rgba[4]= {0,0,0,0};
@@ -47,9 +47,4 @@
     }
 };
 
-
-
-
 %include "OgrePixelFormat.h"
-
-

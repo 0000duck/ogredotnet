@@ -1,5 +1,5 @@
 %{
-    #include "OgreRenderTarget.h"
+#include "OgreRenderTarget.h"
 %}
 
 %rename Ogre::RenderTarget::getName                        GetName;
@@ -58,150 +58,148 @@
 
 %typemap(cscode) Ogre::RenderTarget
 %{
-  public virtual string Name {
-    get
-    {
-        return GetName();
+    public virtual string Name {
+        get
+        {
+            return GetName();
+        }
     }
-  }
 
-  public virtual UInt32 Width {
-    get
-    {
-        return GetWidth();
+    public virtual UInt32 Width {
+        get
+        {
+            return GetWidth();
+        }
     }
-  }
 
-  public virtual UInt32 Height {
-    get
-    {
-        return GetHeight();
+    public virtual UInt32 Height {
+        get
+        {
+            return GetHeight();
+        }
+    } 
+
+    public virtual UInt32 ColourDepth {
+        get
+        {
+            return GetColourDepth();
+        }
     }
-  } 
 
-  public virtual UInt32 ColourDepth {
-    get
-    {
-        return GetColourDepth();
+    public virtual int NumViewports {
+        get
+        {
+            return GetNumViewports();
+        }
     }
-  }
 
-  public virtual int NumViewports {
-    get
-    {
-        return GetNumViewports();
+    public virtual float LastFPS {
+        get
+        {
+            return GetLastFPS();
+        }
     }
-  }
 
-  public virtual float LastFPS {
-    get
-    {
-        return GetLastFPS();
+    public virtual float AverageFPS {
+        get
+        {
+            return GetAverageFPS();
+        }
     }
-  }
 
-  public virtual float AverageFPS {
-    get
-    {
-        return GetAverageFPS();
+    public virtual float BestFPS {
+        get
+        {
+            return GetBestFPS();
+        }
     }
-  }
 
-  public virtual float BestFPS {
-    get
-    {
-        return GetBestFPS();
+    public virtual float WorstFPS {
+        get
+        {
+            return GetWorstFPS();
+        }
     }
-  }
 
-  public virtual float WorstFPS {
-    get
-    {
-        return GetWorstFPS();
+    public virtual float BestFrameTime {
+        get
+        {
+            return GetBestFrameTime();
+        }
     }
-  }
 
-  public virtual float BestFrameTime {
-    get
-    {
-        return GetBestFrameTime();
+    public virtual float WorstFrameTime {
+        get
+        {
+            return GetWorstFrameTime();
+        }
     }
-  }
 
-  public virtual float WorstFrameTime {
-    get
-    {
-        return GetWorstFrameTime();
+    public string DebugText {
+        get
+        {
+            return GetDebugText();
+        }
+        set
+        {
+            SetDebugText((string)value);
+        }
     }
-  }
 
-  public string DebugText {
-    get
-    {
-        return GetDebugText();
+    public virtual byte Priority {
+        get
+        {
+            return GetPriority();
+        }
+        set
+        {
+            SetPriority((byte)value);
+        }
     }
-    set
-    {
-        SetDebugText((string)value);
+
+
+
+//     public virtual bool IsActive {
+//         get
+//         {
+//             return IsActive();
+//         }
+//     }
+
+//     public virtual void Active {
+//         set
+//         {
+//             SetActive((bool)value);
+//         }
+//     }
+
+//     public virtual void AutoUpdated {
+//         set
+//         {
+//             SetAutoUpdated((bool)value);
+//         }
+//     }
+
+//     public virtual bool IsAutoUpdated {
+//         get
+//         {
+//             return IsAutoUpdated();
+//         }
+//     }
+
+    public virtual UInt32 TriangleCount {
+        get
+        {
+            return GetTriangleCount();
+        }
     }
-  }
 
-  public virtual byte Priority {
-    get
-    {
-        return GetPriority();
-    }
-    set
-    {
-        SetPriority((byte)value);
-    }
-  }
-
-//  public virtual bool IsActive {
-//    get
-//    {
-//        return IsActive();
-//    }
-//  }
-
-//  public virtual void Active {
-//    set
-//    {
-//        SetActive((bool)value);
-//    }
-//  }
-
-//  public virtual void AutoUpdated {
-//    set
-//    {
-//        SetAutoUpdated((bool)value);
-//    }
-//  }
-
-//  public virtual bool IsAutoUpdated {
-//    get
-//    {
-//        return IsAutoUpdated();
-//    }
-//  }
-
-
-  public virtual UInt32 TriangleCount {
-    get
-    {
-        return GetTriangleCount();
-    }
-  }
-
-//  public virtual bool IsPrimary {
-//    get
-//    {
-//        return IsPrimary();
-//    }
-//  }
-
+//     public virtual bool IsPrimary {
+//         get
+//         {
+//             return IsPrimary();
+//         }
+//     }
 %}
 
-
 %include "OgreRenderTarget.h"
-
