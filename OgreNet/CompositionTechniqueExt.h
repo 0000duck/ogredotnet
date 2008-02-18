@@ -1,43 +1,44 @@
-//CompositionTechniqueExt.h
 #ifndef _CompositionTechniqueExt__H_
 #define _CompositionTechniqueExt__H_
 
 namespace Ogre
 {
-
     class CTTextureDefinition
     {
     protected:
-        CompositionTechnique::TextureDefinition *myOBJ;
+        CompositionTechnique::TextureDefinition* myObj;
     public:
-        CTTextureDefinition(CompositionTechnique::TextureDefinition *p)    {
-            myOBJ=p;
+        CTTextureDefinition(CompositionTechnique::TextureDefinition* p)
+        {
+            myObj = p;
         }
-        virtual ~CTTextureDefinition()    {}
+
+        virtual ~CTTextureDefinition() {}
+
         //## these functions Not for swig
-        CompositionTechnique::TextureDefinition * get_myOBJ()    {    return myOBJ; }
+        CompositionTechnique::TextureDefinition* getMyObj()  { return myObj; }
         //##
 
     public:
         const String& getName()
-        { if (myOBJ!=0) return myOBJ->name; else return ""; }
+        { return myObj == 0 ? "" : myObj->name; }
         void setName(const String& v)
-        { if (myOBJ!=0) myOBJ->name = v; }
+        { if (myObj!=0) myObj->name = v; }
 
         size_t getWidth()
-        { if (myOBJ!=0) return myOBJ->width; else return 0; }
+        { return myObj == 0 ? 0 : myObj->width; }
         void setWidth(size_t v)
-        { if (myOBJ!=0) myOBJ->width = v; }
+        { if (myObj!=0) myObj->width = v; }
 
         size_t getHeight()
-        { if (myOBJ!=0) return myOBJ->height; else return 0; }
+        { return myObj == 0 ? 0 : myObj->height; }
         void setHeight(size_t v)
-        { if (myOBJ!=0) myOBJ->height = v; }
+        { if (myObj!=0) myObj->height = v; }
 
         PixelFormat getFormat()
-        { if (myOBJ!=0) return myOBJ->format; else return PF_R8G8B8A8; }
+        { return myObj == 0 ? PF_R8G8B8A8 : myObj->format; }
         void setFormat(PixelFormat v)
-        { if (myOBJ!=0) myOBJ->format = v; }
+        { if (myObj!=0) myObj->format = v; }
     };
 
 
@@ -49,39 +50,57 @@ namespace Ogre
     class  CTTextureDefinitionsIterator
     {
     private:
-        CompositionTechnique::TextureDefinitionIterator *myOBJ;
+        CompositionTechnique::TextureDefinitionIterator* myObj;
     public:
-        CTTextureDefinitionsIterator()    { myOBJ = 0; }
-        CTTextureDefinitionsIterator(CompositionTechnique::TextureDefinitionIterator *p)    { myOBJ = p; }
-        virtual ~CTTextureDefinitionsIterator()    {
-            if (myOBJ != 0)
-                delete myOBJ;
+        CTTextureDefinitionsIterator()
+        {
+            myObj = 0;
         }
-        bool hasMoreElements(void) const    {
-            if (myOBJ==0) return false;
-            return myOBJ->hasMoreElements();
+
+        CTTextureDefinitionsIterator(CompositionTechnique::TextureDefinitionIterator* p)
+        {
+            myObj = p;
         }
-        void moveNext(void)                    {
-            if (myOBJ==0) return;
-            myOBJ->moveNext();
+
+        virtual ~CTTextureDefinitionsIterator()
+        {
+            if (myObj != 0)
+                delete myObj;
         }
-        CTTextureDefinition* peekNext(void)    {
-            if (myOBJ==0) return 0;
-            return new CTTextureDefinition((CompositionTechnique::TextureDefinition*)myOBJ->peekNext());
+        
+        bool hasMoreElements(void) const
+        {
+            if (myObj == 0) return false;
+            return myObj->hasMoreElements();
         }
-        CTTextureDefinition* getNext(void)        {
-            if (myOBJ==0) return 0;
-            return new CTTextureDefinition((CompositionTechnique::TextureDefinition*)myOBJ->getNext());
+
+        void moveNext(void)
+        {
+            if (myObj == 0) return;
+            myObj->moveNext();
         }
-        CTTextureDefinition* next() {
-            if (myOBJ==0) return 0;
-            if (myOBJ->hasMoreElements())
-                return new CTTextureDefinition((CompositionTechnique::TextureDefinition*)myOBJ->getNext());
+
+        CTTextureDefinition* peekNext(void)
+        {
+            if (myObj == 0) return 0;
+            return new CTTextureDefinition((CompositionTechnique::TextureDefinition*)myObj->peekNext());
+        }
+
+        CTTextureDefinition* getNext(void)
+        {
+            if (myObj == 0) return 0;
+            return new CTTextureDefinition((CompositionTechnique::TextureDefinition*)myObj->getNext());
+        }
+
+        CTTextureDefinition* next()
+        {
+            if (myObj == 0) return 0;
+            if (myObj->hasMoreElements())
+                return new CTTextureDefinition((CompositionTechnique::TextureDefinition*)myObj->getNext());
             else
                 throw(Ogre::Exception(Exception::ERR_ITEM_NOT_FOUND, "StopIteration at end", "CTTextureDefinitionsIterator", __FILE__, __LINE__));
         }
     };
-
 }
 
-#endif //_StaticGeometrySubClassProxies__H_
+#endif

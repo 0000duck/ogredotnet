@@ -1,4 +1,3 @@
-//ControllerFloatHandler.h
 #ifndef _ControllerFloatHandler_H_
 #define _ControllerFloatHandler_H_
 
@@ -39,7 +38,6 @@ namespace Ogre
     };
 
 
-
     //rastaman 11/14/2005
     // ControllerFunctionFloat Event Director
     // need some way to callback into C# for calculate 
@@ -61,10 +59,10 @@ namespace Ogre
         CFFH_Calculate_FunctionPointer mCalculateFP;
         CFFH_GetAdjustedInput_FunctionPointer mGetAdjustedInputFP;
 
-        ControllerFunctionFloatDirector(bool deltaInput)    : ControllerFunction<float>(deltaInput)
+        ControllerFunctionFloatDirector(bool deltaInput) : ControllerFunction<float>(deltaInput)
         {
-            mCalculateFP =0;
-            mGetAdjustedInputFP =0;
+            mCalculateFP = 0;
+            mGetAdjustedInputFP = 0;
         }
 
         float  calculate (float sourceValue)
@@ -75,37 +73,33 @@ namespace Ogre
                 return 0;
         }
 
-        bool GetDeltaInput()            { return mDeltaInput; }
-        void SetDeltaInput(bool vv)        { mDeltaInput = vv; }
-        float GetDeltaCount()            { return mDeltaCount; }
-        void SetDeltaCount(float vv)    { mDeltaCount = vv; }
+        bool GetDeltaInput()          { return mDeltaInput; }
+        void SetDeltaInput(bool vv)   { mDeltaInput = vv; }
+        float GetDeltaCount()         { return mDeltaCount; }
+        void SetDeltaCount(float vv)  { mDeltaCount = vv; }
     };
 }
 
 
-
-extern "C" SWIGEXPORT void CVFH_GetValue_Function(void * cv, void * fn)
+extern "C" SWIGEXPORT void CVFH_GetValue_Function(void* cv, void* fn)
 {
     ((Ogre::ControllerValueFloatDirector*)cv)->mGetValueFP = (CVFH_GetValue_FunctionPointer)fn;
 }
 
-extern "C" SWIGEXPORT void CVFH_SetValue_Function(ControllerValueFloatDirector * cv, void * fn)
+extern "C" SWIGEXPORT void CVFH_SetValue_Function(ControllerValueFloatDirector* cv, void* fn)
 {
     ((Ogre::ControllerValueFloatDirector*)cv)->mSetValueFP = (CVFH_SetValue_FunctionPointer)fn;
 }
 
 
-
-extern "C" SWIGEXPORT void CFFH_Calculate_Function(void * cf, void * fn)
+extern "C" SWIGEXPORT void CFFH_Calculate_Function(void* cf, void* fn)
 {
     ((Ogre::ControllerFunctionFloatDirector*)cf)->mCalculateFP = (CFFH_Calculate_FunctionPointer)fn;
 }
 
-extern "C" SWIGEXPORT void CFFH_GetAdjustedInput_Function(void * cf, void * fn)
+extern "C" SWIGEXPORT void CFFH_GetAdjustedInput_Function(void* cf, void* fn)
 {
     ((Ogre::ControllerFunctionFloatDirector*)cf)->mGetAdjustedInputFP = (CFFH_GetAdjustedInput_FunctionPointer)fn;
 }
-
-
 
 #endif //_ControllerFloatHandler_H_
