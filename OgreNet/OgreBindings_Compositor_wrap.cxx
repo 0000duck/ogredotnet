@@ -372,8 +372,8 @@ SWIGINTERN Ogre::CompositionPass *Ogre_VectorIterator_Sl_std_vector_Sl_Ogre_Comp
 #include "OgreCompositionTargetPass.h"
 
 SWIGINTERN void Ogre_CompositionTargetPass_SetOutputName(Ogre::CompositionTargetPass *self,Ogre::String const &strOutPutName){
-		self->setOutputName(strOutPutName);
-	}
+        self->setOutputName(strOutPutName);
+    }
 SWIGINTERN std::vector<Ogre::CompositionTargetPass * > *new_std_vector_Sl_Ogre_CompositionTargetPass_Sm__Sg___SWIG_1(int capacity){
         std::vector<Ogre::CompositionTargetPass* >* pv = 0;
         if (capacity >= 0) {
@@ -472,24 +472,24 @@ SWIGINTERN Ogre::CompositionTargetPass *Ogre_VectorIterator_Sl_std_vector_Sl_Ogr
 #include "CompositionTechniqueExt.h"
 
 SWIGINTERN Ogre::CTTextureDefinition *Ogre_CompositionTechnique_CreateTextureDefinition(Ogre::CompositionTechnique *self,Ogre::String const &name){
-		return new CTTextureDefinition( self->createTextureDefinition(name) );
-	}
+        return new CTTextureDefinition(self->createTextureDefinition(name));
+    }
 SWIGINTERN Ogre::CTTextureDefinition *Ogre_CompositionTechnique_GetTextureDefinition(Ogre::CompositionTechnique *self,size_t idx){
-		return new CTTextureDefinition( self->getTextureDefinition(idx) );
-	}
+        return new CTTextureDefinition(self->getTextureDefinition(idx));
+    }
 SWIGINTERN Ogre::CTTextureDefinitionsIterator *Ogre_CompositionTechnique_GetTextureDefinitionIterator(Ogre::CompositionTechnique *self){
-		Ogre::CompositionTechnique::TextureDefinitionIterator * jresult;
+        Ogre::CompositionTechnique::TextureDefinitionIterator * jresult;
 
         //typedef std::vector<TextureDefinition*> TextureDefinitions;
         //typedef VectorIterator<TextureDefinitions> TextureDefinitionIterator;
         
-		SwigValueWrapper<Ogre::VectorIterator<std::vector<Ogre::CompositionTechnique::TextureDefinition * > > > result;
+        SwigValueWrapper<Ogre::VectorIterator<std::vector<Ogre::CompositionTechnique::TextureDefinition * > > > result;
 
-		result = self->getTextureDefinitionIterator();
-		jresult = new Ogre::CompositionTechnique::TextureDefinitionIterator((Ogre::CompositionTechnique::TextureDefinitionIterator &)result); 
+        result = self->getTextureDefinitionIterator();
+        jresult = new Ogre::CompositionTechnique::TextureDefinitionIterator((Ogre::CompositionTechnique::TextureDefinitionIterator &)result); 
 
-		return new Ogre::CTTextureDefinitionsIterator( jresult );
-	}
+        return new Ogre::CTTextureDefinitionsIterator(jresult);
+    }
 SWIGINTERN std::vector<Ogre::CompositionTechnique * > *new_std_vector_Sl_Ogre_CompositionTechnique_Sm__Sg___SWIG_1(int capacity){
         std::vector<Ogre::CompositionTechnique* >* pv = 0;
         if (capacity >= 0) {
@@ -587,33 +587,33 @@ SWIGINTERN Ogre::CompositionTechnique *Ogre_VectorIterator_Sl_std_vector_Sl_Ogre
 #include "OgreCompositor.h"
 
 SWIGINTERN Ogre::Resource *Ogre_Compositor_GetAsResource(Ogre::Compositor *self){
-		return (Ogre::Resource*)self;
-	}
+        return (Ogre::Resource*)self;
+    }
 SWIGINTERN Ogre::Compositor *Ogre_CompositorPtr_Get(Ogre::CompositorPtr *self){
-		return (Ogre::Compositor*)self->get();
-	}
+        return (Ogre::Compositor*)self->get();
+    }
 SWIGINTERN bool Ogre_CompositorPtr_IsUnique(Ogre::CompositorPtr *self){
-		return self->unique();
-	}
+        return self->unique();
+    }
 SWIGINTERN unsigned int Ogre_CompositorPtr_UseCount(Ogre::CompositorPtr *self){
-		return self->useCount();
-	}
+        return self->useCount();
+    }
 SWIGINTERN bool Ogre_CompositorPtr_IsNull(Ogre::CompositorPtr *self){
-		return self->isNull();
-	}
+        return self->isNull();
+    }
 SWIGINTERN void Ogre_CompositorPtr_SetNull(Ogre::CompositorPtr *self){
-		return self->setNull();
-	}
+        return self->setNull();
+    }
 
 #include "OgreCompositorInstance.h"
 #include "CompositorInstanceExt.h"
 
 SWIGINTERN void Ogre_CompositorInstance_AddListener(Ogre::CompositorInstance *self,Ogre::CompositorInstanceListenerDirector *l){
-		self->addListener( (Ogre::CompositorInstance::Listener *)l );
-	}
+        self->addListener((Ogre::CompositorInstance::Listener *)l);
+    }
 SWIGINTERN void Ogre_CompositorInstance_RemoveListener(Ogre::CompositorInstance *self,Ogre::CompositorInstanceListenerDirector *l){
-		self->removeListener( (Ogre::CompositorInstance::Listener *)l );
-	}
+        self->removeListener((Ogre::CompositorInstance::Listener *)l);
+    }
 SWIGINTERN std::vector<Ogre::CompositorInstance * > *new_std_vector_Sl_Ogre_CompositorInstance_Sm__Sg___SWIG_1(int capacity){
         std::vector<Ogre::CompositorInstance* >* pv = 0;
         if (capacity >= 0) {
@@ -714,14 +714,14 @@ SWIGINTERN Ogre::CompositorInstance *Ogre_VectorIterator_Sl_std_vector_Sl_Ogre_C
 #include "OgreCompositorManager.h"
 
 SWIGINTERN Ogre::ResourceManager *Ogre_CompositorManager_GetAsResourceManager(Ogre::CompositorManager *self){
-		return (Ogre::ResourceManager*)self;
-	}
+        return (Ogre::ResourceManager*)self;
+    }
 SWIGINTERN Ogre::CompositorManager &Ogre_CompositorManager_GetSingleton(void){
-		return (CompositorManager&)Ogre::CompositorManager::getSingleton();
-	}
+        return (CompositorManager&)Ogre::CompositorManager::getSingleton();
+    }
 SWIGINTERN Ogre::CompositorManager *Ogre_CompositorManager_GetSingletonPtr(void){
-		return (CompositorManager*)Ogre::CompositorManager::getSingletonPtr();
-	}
+        return (CompositorManager*)Ogre::CompositorManager::getSingletonPtr();
+    }
 
 #ifdef __cplusplus
 extern "C" {
