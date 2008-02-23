@@ -133,7 +133,6 @@ using namespace Ogre;
 %include OgreMath.i
 %include OgreAutoParamDataSource.i
 %include OgreRectangle.i
-%include OgreEventProcessor.i
 %include OgreException.i
 %include OgreDataStream.i
 %include OgreArchive.i
@@ -143,7 +142,6 @@ using namespace Ogre;
 %include Key.i
 %include EventHandler.i
 %include OgreLog.i
-%include OgreInput.i
 %include OgreNode.i
 %include OgreViewport.i
 %include OgreSceneQuery.i
@@ -252,8 +250,6 @@ using namespace Ogre;
 %include OgreParticleSystemRenderer.i
 %include OgreParticleSystemManager.i
 
-
-%include OgrePlatformManager.i
 %include OgreSceneManager.i
 %include OgreSceneManagerEnumerator.i
 %include OgreRoot.i
