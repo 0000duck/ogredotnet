@@ -5,7 +5,6 @@
 %ignore Ogre::TextureUsage;
 
 
-
 enum TextureUsage
 {
     Static = HardwareBuffer.Usage.HBU_STATIC,
@@ -21,7 +20,6 @@ enum TextureUsage
 
 
 %include OgreTexture.h
-
 
 
 //lot of trouble with templating the SharedPtr + we dont need 2 of them.
@@ -49,5 +47,3 @@ enum TextureUsage
         return self->setNull();
     }
 };
-
-
