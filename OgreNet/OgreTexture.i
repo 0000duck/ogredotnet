@@ -7,12 +7,12 @@
 
 enum TextureUsage
 {
-    Static = HardwareBuffer.Usage.HBU_STATIC,
-    Dynamic = HardwareBuffer.Usage.HBU_DYNAMIC,
-    WriteOnly = HardwareBuffer.Usage.HBU_WRITE_ONLY,
-    StaticWriteOnly = HardwareBuffer.Usage.HBU_STATIC_WRITE_ONLY,
-    DynamicWriteOnly = HardwareBuffer.Usage.HBU_DYNAMIC_WRITE_ONLY,
-    DynamicWriteOnlyDiscardable = HardwareBuffer.Usage.HBU_DYNAMIC_WRITE_ONLY_DISCARDABLE,
+    Static = HardwareBuffer::HBU_STATIC,
+    Dynamic = HardwareBuffer::HBU_DYNAMIC,
+    WriteOnly = HardwareBuffer::HBU_WRITE_ONLY,
+    StaticWriteOnly = HardwareBuffer::HBU_STATIC_WRITE_ONLY,
+    DynamicWriteOnly = HardwareBuffer::HBU_DYNAMIC_WRITE_ONLY,
+    DynamicWriteOnlyDiscardable = HardwareBuffer::HBU_DYNAMIC_WRITE_ONLY_DISCARDABLE,
     AutoMipMap = 0x100,
     RenderTarget = 0x200,
     Default = AutoMipMap | StaticWriteOnly
