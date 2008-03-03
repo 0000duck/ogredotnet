@@ -66,7 +66,7 @@ using namespace Ogre;
 %include OgrePrerequisites.h
 
 // %include OgreSharedPtr.i
-// %include OgreIteratorWrappers.i
+%include OgreIteratorWrappers.i
 
 // %include OgreString.i
 // %include OgreStringVector.i
@@ -231,7 +231,7 @@ using namespace Ogre;
 
 
 // %include OgreRenderTarget.i
-// %include OgreRenderWindow.i
+%include OgreRenderWindow.i
 // %include OgreRenderTexture.i
 // %include OgreRenderTargetListener.i
 // %include OgreRenderSystemCapabilities.i

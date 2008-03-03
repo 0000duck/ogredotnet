@@ -9,14 +9,15 @@
  *           getTrackIterator in OgreAnimation.i.
  */
  
-namespace Ogre {
+namespace Ogre
+{
     template <class T>
     class MapIterator
     {
-     private:
+    private:
         MapIterator();
 
-     public:
+    public:
         //MapIterator(typename T::iterator start, typename T::iterator end);
         bool hasMoreElements(void) const;
         void moveNext(void);
@@ -25,15 +26,14 @@ namespace Ogre {
     template <class T>
     class ConstMapIterator
     {
-     private:
+    private:
         ConstMapIterator();
 
-     public:
+    public:
         //ConstMapIterator(typename T::iterator start, typename T::iterator end);
         bool hasMoreElements(void) const;
         void moveNext(void);
     };
-    
     
     template <class T>
     class VectorIterator
@@ -46,8 +46,6 @@ namespace Ogre {
         void moveNext(void);
     };
     
-    
-    
     template <class T>
     class ConstVectorIterator
     {
@@ -58,10 +56,7 @@ namespace Ogre {
         bool hasMoreElements(void) const;
         void moveNext(void) const;
     };
-    
 }
-
-
 
 %define MapIteratorWRAP(name, T, X, Y)
 %template(name) Ogre::MapIterator<T <X, Y> >;
@@ -96,8 +91,6 @@ namespace Ogre {
 #endif
 };
 %enddef
-
-
 
 %define ConstMapIteratorWRAP(name, T, X, Y)
 %template(name) Ogre::ConstMapIterator<T <X, Y> >;
@@ -134,8 +127,6 @@ namespace Ogre {
 };
 %enddef
 
-
-
 %define VectorIteratorWRAP(name, T, X)
 %template(name) Ogre::VectorIterator<T <X> >;
 %extend Ogre::VectorIterator< T<X> >
@@ -169,8 +160,6 @@ namespace Ogre {
 };
 %enddef
 
-
-
 %define ConstVectorIteratorWRAP(name, T, X)
 %template(name) Ogre::ConstVectorIterator<T <X> >;
 %extend Ogre::ConstVectorIterator< T<X> >
@@ -203,4 +192,3 @@ namespace Ogre {
 #endif
 };
 %enddef
-
