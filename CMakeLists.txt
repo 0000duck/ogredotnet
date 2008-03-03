@@ -3,27 +3,49 @@ PROJECT(OGREDOTNET)
 ## If you get errors about not finding swig, set this:
 #SET(SWIG_DIR /usr/local/bin)
 
-# Set this to the directory containing Ogre.h, etc.
-#SET(OGRE_INCLUDE_DIR /Library/Frameworks/Ogre.framework/Headers)
-
 SET(INTERFACE_FILES OgreNet/OgreBindings.i OgreNet/OgreBindings_Compositor.i OgreNet/OgreBindings_DotSceneOctreeHelper.i)
 SET(SRC_FILES "")
 
 FIND_PACKAGE(SWIG REQUIRED)
 INCLUDE(${SWIG_USE_FILE})
 
+IF(APPLE)
+  # TODO: these FIND_PATHs find the files, but then the -I argument seems to be wrong to swig
+
+  FIND_LIBRARY(OGRE_LIBRARY Ogre)
+  #FIND_PATH(OGRE_INCLUDE_DIR Ogre/Ogre.h)
+  SET(OGRE_INCLUDE_DIR /Library/Frameworks/Ogre.framework/Headers)
+
+  FIND_LIBRARY(CARBON_LIBRARY Carbon)
+  #FIND_PATH(CARBON_INCLUDE_DIR Carbon/Carbon.h)
+  SET(CARBON_INCLUDE_DIR /System/Library/Frameworks/Carbon.framework/Headers)
+
+  SET(EXTRA_INCLUDES ${EXTRA_INCLUDES}
+    ${OGRE_INCLUDE_DIR}
+    ${CARBON_INCLUDE_DIR})
+
+  SET(EXTRA_LIBRARIES ${EXTRA_LIBRARIES}
+    ${OGRE_LIBRARY}
+    ${CARBON_LIBRARY})
+ELSE(APPLE)
+  FIND_PATH(OGRE_INCLUDE_DIR Ogre/Ogre.h)
+
+  SET(EXTRA_INCLUDES ${EXTRA_INCLUDES}
+    ${OGRE_INCLUDE_DIR})
+ENDIF(APPLE)
+
 SET_SOURCE_FILES_PROPERTIES(${INTERFACE_FILES} PROPERTIES CPLUSPLUS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/OgreNet
-  ${OGRE_INCLUDE_DIR})
+  ${EXTRA_INCLUDES})
 
 IF(WINDOWS)
-  SET(CMAKE_SWIG_FLAGS -c++ -csharp -namespace OgreDotNet)
+  SET(CMAKE_SWIG_FLAGS -csharp -namespace OgreDotNet)
 ELSE(WINDOWS)
-  SET(CMAKE_SWIG_FLAGS -c++ -csharp -namespace OgreDotNet -D_MONO)
+  SET(CMAKE_SWIG_FLAGS -csharp -namespace OgreDotNet -D_MONO)
 ENDIF(WINDOWS)  
 
-SET(CMAKE_SWIG_OUTDIR OgreNet/build)
+SET(CMAKE_SWIG_OUTDIR OgreNet)
 
-SWIG_ADD_MODULE(OgreDotNet csharp
+SWIG_ADD_MODULE(OgreDotNet c++
   ${INTERFACE_FILES} ${SRC_FILES})
-SWIG_LINK_LIBRARIES(OgreDotNet)
+SWIG_LINK_LIBRARIES(OgreDotNet ${EXTRA_LIBRARIES})
