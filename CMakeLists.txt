@@ -11,19 +11,15 @@ FIND_PACKAGE(SWIG REQUIRED)
 INCLUDE(${SWIG_USE_FILE})
 
 IF(APPLE)
-  # TODO: these FIND_PATHs find the files, but then the -I argument seems to be wrong to swig
-
   FIND_LIBRARY(OGRE_LIBRARY Ogre)
-  #FIND_PATH(OGRE_INCLUDE_DIR Ogre/Ogre.h)
-  SET(OGRE_INCLUDE_DIR /Library/Frameworks/Ogre.framework/Headers)
+  FIND_PATH(OGRE_INCLUDE_DIR Ogre/Ogre.h)
 
   FIND_LIBRARY(CARBON_LIBRARY Carbon)
-  #FIND_PATH(CARBON_INCLUDE_DIR Carbon/Carbon.h)
-  SET(CARBON_INCLUDE_DIR /System/Library/Frameworks/Carbon.framework/Headers)
+  FIND_PATH(CARBON_INCLUDE_DIR Carbon/Carbon.h)
 
   SET(EXTRA_INCLUDES ${EXTRA_INCLUDES}
-    ${OGRE_INCLUDE_DIR}
-    ${CARBON_INCLUDE_DIR})
+    ${OGRE_INCLUDE_DIR}/Headers
+    ${CARBON_INCLUDE_DIR}/Headers)
 
   SET(EXTRA_LIBRARIES ${EXTRA_LIBRARIES}
     ${OGRE_LIBRARY}
