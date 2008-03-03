@@ -43,10 +43,12 @@ using namespace Ogre;
 %include std_string.i
 %include std_pair.i
 %include std_vector.i
-%include new_std_map.i        //modified SWIG's version to add functions getitemValue, getitemKey
-%include new_std_list.i        //modified SWIG's std_vector to use with list
-%include new_std_multimap.i    //modified SWIG's std_map to use with multimap
-%include new_std_set.i        //modified SWIG's std_vector to use with set
+%include std_map.i
+
+// %include new_std_map.i        //modified SWIG's version to add functions getitemValue, getitemKey
+// %include new_std_list.i        //modified SWIG's std_vector to use with list
+// %include new_std_multimap.i    //modified SWIG's std_map to use with multimap
+// %include new_std_set.i        //modified SWIG's std_vector to use with set
 
 
 %apply const std::string & {std::string &};
