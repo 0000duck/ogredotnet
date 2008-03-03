@@ -6,9 +6,13 @@
 #include "OgreIteratorWrappers.h"
 #include "OgreString.h"
 
-using namespace Ogre;
+#ifdef __APPLE__
+#include "Carbon/Carbon.h"
+#endif
 
+using namespace Ogre;
 %}
+
 //swiglabels.swg defines for SWIGSTDCALL and SWIGEXPORT
 %include swiglabels.swg
 
