@@ -3,7 +3,8 @@ PROJECT(OGREDOTNET)
 ## If you get errors about not finding swig, set this:
 #SET(SWIG_DIR /usr/local/bin)
 
-SET(INTERFACE_FILES OgreNet/OgreBindings.i OgreNet/OgreBindings_Compositor.i OgreNet/OgreBindings_DotSceneOctreeHelper.i)
+#SET(INTERFACE_FILES OgreNet/OgreBindings.i OgreNet/OgreBindings_Compositor.i OgreNet/OgreBindings_DotSceneOctreeHelper.i)
+SET(INTERFACE_FILES OgreNet/OgreBindings.i)
 SET(SRC_FILES "")
 
 FIND_PACKAGE(SWIG REQUIRED)

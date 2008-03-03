@@ -63,23 +63,23 @@ using namespace Ogre;
 
 %include OgrePrerequisites.h
 
-%include OgreSharedPtr.i
-%include OgreIteratorWrappers.i
+// %include OgreSharedPtr.i
+// %include OgreIteratorWrappers.i
 
-%include OgreString.i
-%include OgreStringVector.i
+// %include OgreString.i
+// %include OgreStringVector.i
 //%include OgreStringConverter.i
 //%include OgreStringInterface.i
-%include Initialiser.i
-%include OgreColourValue.i    //so all colourvalues are the same
-%include OgreCommon.i
+// %include Initialiser.i
+// %include OgreColourValue.i    //so all colourvalues are the same
+// %include OgreCommon.i
 
-%include OgreVector2.i
-%include OgreVector3.i
-%include OgreVector4.i
-%include OgreMatrix3.i
-%include OgreMatrix4.i
-%include OgreQuaternion.i
+// %include OgreVector2.i
+// %include OgreVector3.i
+// %include OgreVector4.i
+// %include OgreMatrix3.i
+// %include OgreMatrix4.i
+// %include OgreQuaternion.i
 
 
 //std::pair< uint, uint > 
@@ -125,138 +125,138 @@ using namespace Ogre;
 
 
 
-%include OgreTimer.i
-%include OgreConfigDialog.i
+// %include OgreTimer.i
+// %include OgreConfigDialog.i
 //%include OgreConfigFile.i
-%include OgreConfigOptionMap.i
-%include OgrePlane.i
-%include OgreSphere.i
-%include OgreRay.i
-%include OgreAxisAlignedBox.i
-%include OgrePlaneBoundedVolume.i
-%include OgreMath.i
-%include OgreAutoParamDataSource.i
-%include OgreRectangle.i
-%include OgreException.i
-%include OgreDataStream.i
-%include OgreArchive.i
-%include OgrePixelFormat.i
-%include OgreVertexBoneAssignment.i
-%include OgreProgressiveMesh.i
-%include Key.i
+// %include OgreConfigOptionMap.i
+// %include OgrePlane.i
+// %include OgreSphere.i
+// %include OgreRay.i
+// %include OgreAxisAlignedBox.i
+// %include OgrePlaneBoundedVolume.i
+// %include OgreMath.i
+// %include OgreAutoParamDataSource.i
+// %include OgreRectangle.i
+// %include OgreException.i
+// %include OgreDataStream.i
+// %include OgreArchive.i
+// %include OgrePixelFormat.i
+// %include OgreVertexBoneAssignment.i
+// %include OgreProgressiveMesh.i
+// %include Key.i
 // %include EventHandler.i
-%include OgreLog.i
-%include OgreNode.i
-%include OgreViewport.i
-%include OgreSceneQuery.i
-%include OgreSceneNode.i
-%include OgreBlendMode.i
-%include OgreResource.i
-%include OgreHardwareBuffer.i
-%include OgreHardwareIndexBuffer.i
-%include OgreHardwareOcclusionQuery.i
-%include OgreHardwarePixelBuffer.i
-%include OgreHardwareVertexBuffer.i
-%include OgreGpuProgram.i
-%include OgreHighLevelGpuProgram.i
+// %include OgreLog.i
+// %include OgreNode.i
+// %include OgreViewport.i
+// %include OgreSceneQuery.i
+// %include OgreSceneNode.i
+// %include OgreBlendMode.i
+// %include OgreResource.i
+// %include OgreHardwareBuffer.i
+// %include OgreHardwareIndexBuffer.i
+// %include OgreHardwareOcclusionQuery.i
+// %include OgreHardwarePixelBuffer.i
+// %include OgreHardwareVertexBuffer.i
+// %include OgreGpuProgram.i
+// %include OgreHighLevelGpuProgram.i
 
-%include OgreAnimable.i
-%include OgreShadowCaster.i
-%include OgreMovableObject.i
-%include OgrePatchSurface.i
-
-
-%include OgreRenderOperation.i
-%include OgreRenderQueue.i
-%include OgreRenderQueueSortingGrouping.i
-
-%include OgreKeyFrame.i
-%include OgrePose.i
-%include OgreAnimationTrack.i    //enum VertexAnimationType befor submesh and animation
-%include OgreAnimation.i
-%include OgreAnimationState.i
-%include OgreSubMesh.i
-%include OgreStaticGeometry.i
-%include OgreBillboard.i
-%include OgreBillboardSet.i
-%include OgreTagPoint.i
-%include OgreBone.i
-%include OgreSimpleRenderable.i
-%include OgreRectangle2D.i
-%include OgreFrustum.i
-%include OgreCamera.i
-%include OgreLight.i
-%include OgreEntity.i
-%include OgreSubEntity.i
-%include OgreMovablePlane.i
-%include OgreMaterial.i
-%include OgreFont.i
-%include OgrePass.i
-%include OgreTechnique.i
-%include OgreTexture.i
-%include OgreMesh.i
-%include OgrePatchMesh.i
-%include OgreSkeleton.i
-%include OgreSkeletonInstance.i
-%include OgreVertexIndexData.i
-%include OgreRibbonTrail.i
-%include OgreBillboardChain.i
-%include Line3D.i
-%include OgreTextureUnitState.i
+// %include OgreAnimable.i
+// %include OgreShadowCaster.i
+// %include OgreMovableObject.i
+// %include OgrePatchSurface.i
 
 
-%include OgreHardwareBufferManager.i
-%include OgreLogManager.i
-%include OgreScriptLoader.i
-%include OgreResourceManager.i
-%include OgreResourceGroupManager.i
+// %include OgreRenderOperation.i
+// %include OgreRenderQueue.i
+// %include OgreRenderQueueSortingGrouping.i
 
-%include OgreFontManager.i
-%include OgreGpuProgramManager.i
-%include OgreHighLevelGpuProgramManager.i
-%include OgreMaterialManager.i
-%include OgreMeshManager.i
-%include OgreSkeletonManager.i
-%include OgreTextureManager.i
+// %include OgreKeyFrame.i
+// %include OgrePose.i
+// %include OgreAnimationTrack.i    //enum VertexAnimationType befor submesh and animation
+// %include OgreAnimation.i
+// %include OgreAnimationState.i
+// %include OgreSubMesh.i
+// %include OgreStaticGeometry.i
+// %include OgreBillboard.i
+// %include OgreBillboardSet.i
+// %include OgreTagPoint.i
+// %include OgreBone.i
+// %include OgreSimpleRenderable.i
+// %include OgreRectangle2D.i
+// %include OgreFrustum.i
+// %include OgreCamera.i
+// %include OgreLight.i
+// %include OgreEntity.i
+// %include OgreSubEntity.i
+// %include OgreMovablePlane.i
+// %include OgreMaterial.i
+// %include OgreFont.i
+// %include OgrePass.i
+// %include OgreTechnique.i
+// %include OgreTexture.i
+// %include OgreMesh.i
+// %include OgrePatchMesh.i
+// %include OgreSkeleton.i
+// %include OgreSkeletonInstance.i
+// %include OgreVertexIndexData.i
+// %include OgreRibbonTrail.i
+// %include OgreBillboardChain.i
+// %include Line3D.i
+// %include OgreTextureUnitState.i
 
 
-%include OgreRenderQueueListener.i
+// %include OgreHardwareBufferManager.i
+// %include OgreLogManager.i
+// %include OgreScriptLoader.i
+// %include OgreResourceManager.i
+// %include OgreResourceGroupManager.i
 
-%include OgreController.i
-%include OgreControllerManager.i
-%include OgrePredefinedControllers.i
-%include ControllerFloatHandler.i
+// %include OgreFontManager.i
+// %include OgreGpuProgramManager.i
+// %include OgreHighLevelGpuProgramManager.i
+// %include OgreMaterialManager.i
+// %include OgreMeshManager.i
+// %include OgreSkeletonManager.i
+// %include OgreTextureManager.i
 
 
-%include OgreRenderTarget.i
-%include OgreRenderWindow.i
-%include OgreRenderTexture.i
-%include OgreRenderTargetListener.i
-%include OgreRenderSystemCapabilities.i
-%include OgreRenderSystem.i
+// %include OgreRenderQueueListener.i
 
-%include OgreOverlay.i
-%include OgreOverlayElement.i
-%include OgreOverlayContainer.i
-%include OgrePanelOverlayElement.i
-%include OgreTextAreaOverlayElement.i
-%include OgreOverlayElementFactory.i
-%include OgreOverlayManager.i
+// %include OgreController.i
+// %include OgreControllerManager.i
+// %include OgrePredefinedControllers.i
+// %include ControllerFloatHandler.i
+
+
+// %include OgreRenderTarget.i
+// %include OgreRenderWindow.i
+// %include OgreRenderTexture.i
+// %include OgreRenderTargetListener.i
+// %include OgreRenderSystemCapabilities.i
+// %include OgreRenderSystem.i
+
+// %include OgreOverlay.i
+// %include OgreOverlayElement.i
+// %include OgreOverlayContainer.i
+// %include OgrePanelOverlayElement.i
+// %include OgreTextAreaOverlayElement.i
+// %include OgreOverlayElementFactory.i
+// %include OgreOverlayManager.i
 
 //%include OgreFactoryObj.i
-%include OgreParticle.i
-%include OgreParticleEmitter.i
-%include OgreParticleIterator.i
-%include OgreParticleSystem.i
-%include OgreParticleAffector.i
+// %include OgreParticle.i
+// %include OgreParticleEmitter.i
+// %include OgreParticleIterator.i
+// %include OgreParticleSystem.i
+// %include OgreParticleAffector.i
 //%include OgreParticleAffectorFactory.i
 //%include OgreParticleEmitterFactory.i
-%include OgreParticleSystemRenderer.i
-%include OgreParticleSystemManager.i
+// %include OgreParticleSystemRenderer.i
+// %include OgreParticleSystemManager.i
 
-%include OgreSceneManager.i
-%include OgreSceneManagerEnumerator.i
-%include OgreRoot.i
+// %include OgreSceneManager.i
+// %include OgreSceneManagerEnumerator.i
+// %include OgreRoot.i
 
-%include OgreRenderable.i
-%include MeshBuilderHelper.i
+// %include OgreRenderable.i
+// %include MeshBuilderHelper.i
