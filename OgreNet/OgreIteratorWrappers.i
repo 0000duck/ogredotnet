@@ -85,7 +85,7 @@ namespace Ogre
             if (self.hasMoreElements())
                 return self.getNext();
             else
-                throw new Excption("StopIteration");
+                throw new Exception("StopIteration");
         }
     %}
 #endif
@@ -120,7 +120,7 @@ namespace Ogre
             if (self.hasMoreElements())
                 return self.getNext();
             else
-                throw new Excption("StopIteration");
+                throw new Exception("StopIteration");
         }
     %}
 #endif
@@ -153,7 +153,7 @@ namespace Ogre
             if (self.hasMoreElements())
                 return self.getNext();
             else
-                throw new Excption("StopIteration");
+                throw new Exception("StopIteration");
         }
     %}
 #endif
@@ -186,7 +186,7 @@ namespace Ogre
             if (self.hasMoreElements())
                 return self.getNext();
             else
-                throw new Excption("StopIteration");
+                throw new Exception("StopIteration");
         }
     %}
 #endif
