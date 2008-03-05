@@ -27,16 +27,13 @@ using namespace Ogre;
 //if classes do not have expected functions uncomment next line and see if another class needs to be defined.
 #pragma SWIG nowarn=401        //: Nothing known about base class '.....'. Ignored.
 
-
 %warnfilter(844) Ogre::Vector2;        //Warning(844): C# exception may not be thrown - no $excode or excode attribute in 'csout' typemap.
 %warnfilter(844) Ogre::Vector3;
 %warnfilter(844) Ogre::Vector4;
 %warnfilter(844) Ogre::Matrix3;
 %warnfilter(844) Ogre::Matrix4;
 %warnfilter(844) Ogre::Quaternion;
-
 %warnfilter(844) std::map;
-
 
 %rename params parameters;
 
@@ -50,13 +47,11 @@ using namespace Ogre;
 // %include new_std_multimap.i    //modified SWIG's std_map to use with multimap
 // %include new_std_set.i        //modified SWIG's std_vector to use with set
 
-
 %apply const std::string & {std::string &};
 %apply std::string & {std::string *};
 %apply const std::string & {const Ogre::string &};
 %apply std::string & {Ogre::string &};
 %apply std::string & {Ogre::string *};
-
 
 %include CLSCompliancy.i
 
@@ -82,7 +77,6 @@ using namespace Ogre;
 // %include OgreMatrix3.i
 // %include OgreMatrix4.i
 // %include OgreQuaternion.i
-
 
 //std::pair< uint, uint > 
 // OgreFont.h , OgreTextureUnitState.h
@@ -114,9 +108,6 @@ using namespace Ogre;
 %}
 %typemap(out)     const std::map<size_t, Ogre::Vector3> *&       %{ $result = (void *)$1; %}
 
-
-
-
 //        typedef std::vector<Real> LodDistanceList;
 //OgreMaterial.h , OgreMesh.h
 %template(VecFloats) std::vector<Ogre::Real>;
@@ -124,8 +115,6 @@ using namespace Ogre;
 //        typedef std::vector<unsigned short> IndexMap;
 // OgreMesh.h
 %template(VecUShorts) std::vector<unsigned short>;
-
-
 
 // %include OgreTimer.i
 // %include OgreConfigDialog.i
@@ -256,7 +245,7 @@ using namespace Ogre;
 // %include OgreParticleSystemRenderer.i
 // %include OgreParticleSystemManager.i
 
-// %include OgreSceneManager.i
+%include OgreSceneManager.i
 // %include OgreSceneManagerEnumerator.i
 // %include OgreRoot.i
 
