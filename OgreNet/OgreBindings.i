@@ -215,7 +215,7 @@ using namespace Ogre;
 // %include OgrePredefinedControllers.i
 // %include ControllerFloatHandler.i
 
-// %include OgreRenderTarget.i
+%include OgreRenderTarget.i
 %include OgreRenderWindow.i
 // %include OgreRenderTexture.i
 // %include OgreRenderTargetListener.i

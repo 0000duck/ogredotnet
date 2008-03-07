@@ -2,48 +2,11 @@
 #include "OgreRenderTarget.h"
 %}
 
-%rename Ogre::RenderTarget::getName                        GetName;
-%rename Ogre::RenderTarget::getMetrics                     GetMetrics;
-%rename Ogre::RenderTarget::getWidth                       GetWidth;
-%rename Ogre::RenderTarget::getHeight                      GetHeight;
-%rename Ogre::RenderTarget::getColourDepth                 GetColourDepth;
-%rename Ogre::RenderTarget::update                         Update;
-%rename Ogre::RenderTarget::addViewport                    AddViewport;
-%rename Ogre::RenderTarget::getNumViewports                GetNumViewports;
-%rename Ogre::RenderTarget::getViewport                    GetViewport;
-%rename Ogre::RenderTarget::removeViewport                 RemoveViewport;
-%rename Ogre::RenderTarget::removeAllViewports             RemoveAllViewports;
-%rename Ogre::RenderTarget::getLastFPS                     GetLastFPS;
-%rename Ogre::RenderTarget::getAverageFPS                  GetAverageFPS;
-%rename Ogre::RenderTarget::getBestFPS                     GetBestFPS;
-%rename Ogre::RenderTarget::getWorstFPS                    GetWorstFPS;
-%rename Ogre::RenderTarget::getBestFrameTime               GetBestFrameTime;
-%rename Ogre::RenderTarget::getWorstFrameTime              GetWorstFrameTime;
-%rename Ogre::RenderTarget::resetStatistics                ResetStatistics;
-%rename Ogre::RenderTarget::getCustomAttribute             GetCustomAttribute;
-%rename Ogre::RenderTarget::setDebugText                   SetDebugText;
-%rename Ogre::RenderTarget::getDebugText                   GetDebugText;
-%rename Ogre::RenderTarget::addListener                    AddListener;
-%rename Ogre::RenderTarget::removeListener                 RemoveListener;
-%rename Ogre::RenderTarget::removeAllListeners             RemoveAllListeners;
-%rename Ogre::RenderTarget::setPriority                    SetPriority;
-%rename Ogre::RenderTarget::getPriority                    GetPriority;
-%rename Ogre::RenderTarget::isActive                       IsActive;
-%rename Ogre::RenderTarget::setActive                      SetActive;
-%rename Ogre::RenderTarget::setAutoUpdated                 SetAutoUpdated;
-%rename Ogre::RenderTarget::isAutoUpdated                  IsAutoUpdated;
-%rename Ogre::RenderTarget::writeContentsToFile            WriteContentsToFile;
-%rename Ogre::RenderTarget::writeContentsToTimestampedFile WriteContentsToTimestampedFile;
-%rename Ogre::RenderTarget::requiresTextureFlipping        RequiresTextureFlipping;
-%rename Ogre::RenderTarget::getTriangleCount               GetTriangleCount;
-%rename Ogre::RenderTarget::isPrimary                      IsPrimary;
-
 //TODO subclass Impl, do we need that?
 %ignore Ogre::RenderTarget::_getImpl;
 
-//subclass FrameStats, dont think we need it was there befor v1.2
+//subclass FrameStats, don't think we need it was there before v1.2
 %ignore getStatistics;
-
 
 //  virtual void getMetrics(unsigned int& width, unsigned int& height, unsigned int& colourDepth);
 %apply unsigned int &OUTPUT { unsigned int& width, unsigned int& height, unsigned int& colourDepth };
@@ -54,7 +17,6 @@
 %typemap(cstype)    void* pData     "ref IntPtr"
 %typemap(in)        void* pData     %{ $1 = (void*)$input; %}
 %typemap(csin)        void* pData     "ref $csinput"
-
 
 %typemap(cscode) Ogre::RenderTarget
 %{
@@ -156,8 +118,6 @@
             SetPriority((byte)value);
         }
     }
-
-
 
 //     public virtual bool IsActive {
 //         get
