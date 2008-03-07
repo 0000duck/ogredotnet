@@ -120,7 +120,7 @@ using namespace Ogre;
 // %include OgreConfigDialog.i
 //%include OgreConfigFile.i
 // %include OgreConfigOptionMap.i
-// %include OgrePlane.i
+%include OgrePlane.i
 // %include OgreSphere.i
 // %include OgreRay.i
 // %include OgreAxisAlignedBox.i
