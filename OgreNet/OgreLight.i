@@ -49,7 +49,7 @@
     }
 
     
-    public override string Name {
+    public string Name {
         get
         {
             return GetName();
