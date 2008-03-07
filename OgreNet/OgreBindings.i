@@ -141,7 +141,7 @@ using namespace Ogre;
 %include OgreViewport.i
 // %include OgreSceneQuery.i
 %include OgreSceneNode.i
-// %include OgreBlendMode.i
+%include OgreBlendMode.i
 // %include OgreResource.i
 %include OgreHardwareBuffer.i
 // %include OgreHardwareIndexBuffer.i
