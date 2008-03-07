@@ -6,7 +6,7 @@
 
 %typemap(cscode) Ogre::Camera
 %{
-    public override float AspectRatio
+    public float AspectRatio
     {
         get
         {
@@ -18,7 +18,7 @@
         }
     }
 
-    public override float NearClipDistance
+    public float NearClipDistance
     {
         get
         {
@@ -57,7 +57,7 @@
         }
     }
 
-    public override string Name {
+    public string Name {
         get
         {
             return GetName();
@@ -134,7 +134,7 @@
         }
     }
 
-    public override string MovableType {
+    public string MovableType {
         get
         {
             return GetMovableType();
@@ -159,7 +159,7 @@
         }
     }
 
-    public override float BoundingRadius {
+    public float BoundingRadius {
         get
         {
             return GetBoundingRadius();
