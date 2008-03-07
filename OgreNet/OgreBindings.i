@@ -179,7 +179,7 @@ using namespace Ogre;
 // %include OgreEntity.i
 // %include OgreSubEntity.i
 // %include OgreMovablePlane.i
-// %include OgreMaterial.i
+%include OgreMaterial.i
 // %include OgreFont.i
 // %include OgrePass.i
 // %include OgreTechnique.i
