@@ -48,8 +48,7 @@
         }
     }
 
-    
-    public string Name {
+    public override string Name {
         get
         {
             return getName();
@@ -66,7 +65,6 @@
             setLightType(value);
         }    
     }
-
 
     public System.Drawing.Color SpecularColour {
         get
@@ -150,14 +148,14 @@
         }
     }
 
-    public AxisAlignedBox BoundingBox {
+    public override AxisAlignedBox BoundingBox {
         get
         {
             return getBoundingBox();
         }
     }
 
-    public string MovableType {
+    public override string MovableType {
         get
         {
             return getMovableType();
@@ -185,7 +183,7 @@
 //    }
 //  }
 
-    public float BoundingRadius {
+    public override float BoundingRadius {
         get
         {
             return getBoundingRadius();

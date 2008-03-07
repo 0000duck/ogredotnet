@@ -79,28 +79,28 @@
         }
     }
 
-    public AxisAlignedBox BoundingBox {
+    public override AxisAlignedBox BoundingBox {
         get
         {
             return getBoundingBox();
         }
     }
 
-    public float BoundingRadius {
+    public override float BoundingRadius {
         get
         {
             return getBoundingRadius();
         }
     }
 
-    public string MovableType {
+    public override string MovableType {
         get
         {
             return getMovableType();
         }
     }
 
-    public string Name {
+    public override string Name {
         get
         {
             return getName();
