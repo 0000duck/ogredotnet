@@ -123,7 +123,7 @@ using namespace Ogre;
 %include OgrePlane.i
 // %include OgreSphere.i
 // %include OgreRay.i
-// %include OgreAxisAlignedBox.i
+%include OgreAxisAlignedBox.i
 // %include OgrePlaneBoundedVolume.i
 %include OgreMath.i
 // %include OgreAutoParamDataSource.i
