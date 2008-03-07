@@ -78,7 +78,6 @@ namespace Ogre
                 mFP_nodeDetached(node);
         }
     };
-
 }
 
 extern "C" SWIGEXPORT void set_NLD_FP_nodeUpdated(void * nld, void * _fn)
@@ -97,7 +96,5 @@ extern "C" SWIGEXPORT void set_NLD_FP_nodeDetached(void * nld, void * _fn)
 {
     ((Ogre::NodeListenerDirector*)nld)->mFP_nodeDetached = (NLD_FunctionPointers)_fn;
 }
-
-
 
 #endif //__NodeExt_H_

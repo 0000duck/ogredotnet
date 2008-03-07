@@ -3,45 +3,6 @@
 #include "NodeExt.h"
 %}
 
-%rename Ogre::Node::getParent             GetParent;
-%rename Ogre::Node::getOrientation        GetOrientation;
-%rename Ogre::Node::setOrientation        SetOrientation;
-%rename Ogre::Node::resetOrientation      ResetOrientation;
-%rename Ogre::Node::setPosition           SetPosition;
-%rename Ogre::Node::getPosition           GetPosition;
-%rename Ogre::Node::setScale              SetScale;
-%rename Ogre::Node::getScale              GetScale;
-%rename Ogre::Node::setInheritScale       SetInheritScale;
-%rename Ogre::Node::getInheritScale       GetInheritScale;
-%rename Ogre::Node::scale                 Scale;
-%rename Ogre::Node::translate             Translate;
-%rename Ogre::Node::roll                  Roll;
-%rename Ogre::Node::pitch                 Pitch;
-%rename Ogre::Node::yaw                   Yaw;
-%rename Ogre::Node::rotate                Rotate;
-%rename Ogre::Node::getLocalAxes          GetLocalAxes;
-%rename Ogre::Node::createChild           CreateChild;
-%rename Ogre::Node::addChild              AddChild;
-%rename Ogre::Node::numChildren           NumChildren;
-%rename Ogre::Node::getChild              GetChild;
-%rename Ogre::Node::getName               GetName;
-%rename Ogre::Node::removeChild           RemoveChild;
-%rename Ogre::Node::removeAllChildren     RemoveAllChildren;
-%rename Ogre::Node::getMaterial           GetMaterial;
-%rename Ogre::Node::getWorldTransforms    GetWorldTransforms;
-%rename Ogre::Node::getWorldOrientation   GetWorldOrientation;
-%rename Ogre::Node::getWorldPosition      GetWorldPosition;
-%rename Ogre::Node::setInitialState       SetInitialState;
-%rename Ogre::Node::resetToInitialState   ResetToInitialState;
-%rename Ogre::Node::getInitialPosition    GetInitialPosition;
-%rename Ogre::Node::getInitialOrientation GetInitialOrientation;
-%rename Ogre::Node::getInitialScale       GetInitialScale;
-%rename Ogre::Node::getSquaredViewDepth   GetSquaredViewDepth;
-%rename Ogre::Node::needUpdate            NeedUpdate;
-%rename Ogre::Node::requestUpdate         RequestUpdate;
-%rename Ogre::Node::cancelUpdate          CancelUpdate;
-%rename Ogre::Node::getLights             GetLights;
-
 //ignore because of RenderOperation is private
 %ignore Ogre::Node::getRenderOperation;
 
@@ -56,12 +17,8 @@
 %ignore Ogre::Node::ChildNodeIterator;
 %ignore Ogre::Node::getChildIterator;
 
-
-
 %newobject Ogre::Node::GetChildIterator;
 %nodefault Ogre::ChildNodeIteratorWrap;
-
-
 
 %typemap(cscode) Ogre::Node
 %{
@@ -152,7 +109,6 @@
     }
 %}
 
-
 %typemap(cscode) Ogre::NodeListenerDirector %{
     public    delegate  void  NLD_Delegate  (Node node);
     protected delegate  void  _NLD_Delegate (IntPtr node);
@@ -172,6 +128,7 @@
         set_NLD_FP_nodeDetached     (swigCPtr, m_Delegate_nodeDetached);
         
     }
+
     public event    NLD_Delegate        evtNodeUpdated = null;
     public event    NLD_Delegate        evtNodeDestroyed = null;
     public event    NLD_Delegate        evtNodeAttached = null;
@@ -181,8 +138,6 @@
     protected    _NLD_Delegate            m_Delegate_nodeDestroyed = null;
     protected    _NLD_Delegate            m_Delegate_nodeAttached = null;
     protected    _NLD_Delegate            m_Delegate_nodeDetached = null;
-
-
 
     [DllImport("OgreBindings", EntryPoint="set_NLD_FP_nodeUpdated")]
     protected static extern void set_NLD_FP_nodeUpdated(HandleRef nodelistenerdirector, _NLD_Delegate fn);
@@ -195,8 +150,6 @@
 
     [DllImport("OgreBindings", EntryPoint="set_NLD_FP_nodeDetached")]
     protected static extern void set_NLD_FP_nodeDetached(HandleRef nodelistenerdirector, _NLD_Delegate fn);
-    
-    
     
     protected void Handle_NodeUpdated (IntPtr node)
     {
@@ -221,9 +174,7 @@
         if(evtNodeDetached != null)
             evtNodeDetached(new Node(node, false));
     }
-    
 %}
-
 
 %include "OgreNode.h"
 
@@ -240,7 +191,6 @@ namespace Ogre
         Ogre::Node * next();
     };
     
-    
     class NodeListenerDirector
     {
     public:
@@ -251,9 +201,7 @@ namespace Ogre
         virtual void nodeAttached(const Node* node);
         virtual void nodeDetached(const Node* node);
     };
-    
 }
-
 
 %extend Ogre::Node
 {
@@ -278,6 +226,4 @@ namespace Ogre
         //if we dont static cast will an exception be thown if its not a director???
         return (Ogre::NodeListenerDirector*)self->getListener(); 
     }
-
 };
-

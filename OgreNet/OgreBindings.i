@@ -137,10 +137,10 @@ using namespace Ogre;
 // %include Key.i
 // %include EventHandler.i
 // %include OgreLog.i
-// %include OgreNode.i
+%include OgreNode.i
 %include OgreViewport.i
 // %include OgreSceneQuery.i
-// %include OgreSceneNode.i
+%include OgreSceneNode.i
 // %include OgreBlendMode.i
 // %include OgreResource.i
 // %include OgreHardwareBuffer.i
