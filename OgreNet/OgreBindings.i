@@ -184,7 +184,7 @@ using namespace Ogre;
 // %include OgrePass.i
 // %include OgreTechnique.i
 // %include OgreTexture.i
-// %include OgreMesh.i
+%include OgreMesh.i
 // %include OgrePatchMesh.i
 // %include OgreSkeleton.i
 // %include OgreSkeletonInstance.i
