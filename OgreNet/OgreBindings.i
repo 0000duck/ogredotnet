@@ -74,9 +74,9 @@ using namespace Ogre;
 %include OgreVector2.i
 %include OgreVector3.i
 %include OgreVector4.i
-// %include OgreMatrix3.i
-// %include OgreMatrix4.i
-// %include OgreQuaternion.i
+%include OgreMatrix3.i
+%include OgreMatrix4.i
+%include OgreQuaternion.i
 
 //std::pair< uint, uint > 
 // OgreFont.h , OgreTextureUnitState.h
