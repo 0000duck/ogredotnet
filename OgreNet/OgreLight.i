@@ -157,7 +157,7 @@
         }
     }
 
-    public override string MovableType {
+    public string MovableType {
         get
         {
             return GetMovableType();
@@ -185,7 +185,7 @@
 //    }
 //  }
 
-    public override float BoundingRadius {
+    public float BoundingRadius {
         get
         {
             return GetBoundingRadius();
