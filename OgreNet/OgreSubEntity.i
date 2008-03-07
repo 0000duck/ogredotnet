@@ -8,7 +8,6 @@
 //TODO wrapp AutoConstantEntry
 %ignore Ogre::SubEntity::_updateCustomGpuParameter;
 
-
 %include OgreSubEntity.h
 
 %extend Ogre::SubEntity {

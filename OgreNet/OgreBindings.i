@@ -177,7 +177,7 @@ using namespace Ogre;
 %include OgreCamera.i
 %include OgreLight.i
 %include OgreEntity.i
-// %include OgreSubEntity.i
+%include OgreSubEntity.i
 %include OgreMovablePlane.i
 %include OgreMaterial.i
 // %include OgreFont.i
