@@ -9,24 +9,6 @@
 
 %extend Ogre::Vector2
 {
-    inline float getX(void)
-    {
-        return self->x;
-    }
-    inline void setX(float X)
-    {
-        self->x = X;
-    }
-    
-    inline float getY(void)
-    {
-        return self->y;
-    }
-    inline void setY(float Y)
-    {
-        self->y = Y;
-    }
-    
     static Vector2 Multiply(Vector2 * v1, Vector2 * v2)
     {
         return *v1 * *v2;
@@ -49,30 +31,6 @@
 }
 
 %typemap(cscode) Ogre::Vector2 %{
-    public float x
-    {
-        get
-        {
-            return getX();
-        }
-        set
-        {
-            setX(value);
-        }
-    }
-    
-    public float y
-    {
-        get
-        {
-            return getY();
-        }
-        set
-        {
-            setY(value);
-        }
-    }
-    
     public static Math3D.Vector2 ToVector2(OgreDotNet.OgreVector2 v)
     {
         return new Math3D.Vector2(v.x, v.y);

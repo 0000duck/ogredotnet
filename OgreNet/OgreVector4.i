@@ -9,42 +9,6 @@
 
 %extend Ogre::Vector4
 {
-    inline float getW(void)
-    {
-        return self->w;
-    }
-    inline void setW(float W)
-    {
-        self->w = W;
-    }
-
-    inline float getX(void)
-    {
-        return self->x;
-    }
-    inline void setX(float X)
-    {
-        self->x = X;
-    }
-    
-    inline float getY(void)
-    {
-        return self->y;
-    }
-    inline void setY(float Y)
-    {
-        self->y = Y;
-    }
-    
-    inline float getZ(void)
-    {
-        return self->z;
-    }
-    inline void setZ(float Z)
-    {
-        self->z = Z;
-    }
-    
     static Vector4 Multiply(Vector4 * v1, Vector4 * v2)
     {
         return *v1 * *v2;
@@ -72,54 +36,6 @@
 }
 
 %typemap(cscode) Ogre::Vector4 %{
-    public float w
-    {
-        get
-        {
-            return getW();
-        }
-        set
-        {
-            setW(value);
-        }
-    }
-
-    public float x
-    {
-        get
-        {
-            return getX();
-        }
-        set
-        {
-            setX(value);
-        }
-    }
-    
-    public float y
-    {
-        get
-        {
-            return getY();
-        }
-        set
-        {
-            setY(value);
-        }
-    }
-    
-    public float z
-    {
-        get
-        {
-            return getZ();
-        }
-        set
-        {
-            setZ(value);
-        }
-    }
-    
     public static Math3D.Vector4 ToVector4(OgreDotNet.OgreVector4 v)
     {
         return new Math3D.Vector4(v.x, v.y, v.z, v.w);
