@@ -12,13 +12,7 @@
 //virtual const VertexBufferBindingMap& getBindings(void) const;
 %ignore Ogre::VertexBufferBinding::getBindings;
 
-
-
-
 %include OgreHardwareVertexBuffer.h
-
-
-
 
 //lot of trouble with templating the SharedPtr + we dont need 2 of them.
 // so just the autocreated one some functions
@@ -46,8 +40,6 @@
     }
 };
 
-
-
 //    typedef std::list<VertexElement> VertexElementList;
 SWIG_STD_LIST_SPECIALIZE(VertexElement, Ogre::VertexElement)
 %template(VertexElementList) std::list<Ogre::VertexElement>;
@@ -55,5 +47,3 @@ SWIG_STD_LIST_SPECIALIZE(VertexElement, Ogre::VertexElement)
 //TODO build error
 //typedef std::map<unsigned short, HardwareVertexBufferSharedPtr> VertexBufferBindingMap;
 //%template(VertexBufferBindingMap) std::map< unsigned short, Ogre::HardwareVertexBufferSharedPtr >;
-
-

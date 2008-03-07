@@ -43,7 +43,7 @@ using namespace Ogre;
 %include std_map.i
 
 // %include new_std_map.i        //modified SWIG's version to add functions getitemValue, getitemKey
-// %include new_std_list.i        //modified SWIG's std_vector to use with list
+%include new_std_list.i        //modified SWIG's std_vector to use with list
 // %include new_std_multimap.i    //modified SWIG's std_map to use with multimap
 // %include new_std_set.i        //modified SWIG's std_vector to use with set
 
@@ -143,11 +143,11 @@ using namespace Ogre;
 %include OgreSceneNode.i
 // %include OgreBlendMode.i
 // %include OgreResource.i
-// %include OgreHardwareBuffer.i
+%include OgreHardwareBuffer.i
 // %include OgreHardwareIndexBuffer.i
 // %include OgreHardwareOcclusionQuery.i
 // %include OgreHardwarePixelBuffer.i
-// %include OgreHardwareVertexBuffer.i
+%include OgreHardwareVertexBuffer.i
 // %include OgreGpuProgram.i
 // %include OgreHighLevelGpuProgram.i
 
