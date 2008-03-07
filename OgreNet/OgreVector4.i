@@ -155,7 +155,5 @@ get
 {
     return OgreVector4.ToVector4(new OgreVector4($imcall, false));
 }
-    
-
 
 %include "OgreVector4.h"

@@ -106,5 +106,4 @@
     return OgreVector2.ToVector2(new OgreVector2($imcall, false));
 }
     
-
 %include "OgreVector2.h"

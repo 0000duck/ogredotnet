@@ -12,7 +12,6 @@
 %ignore Ogre::Vector3::Vector3(const int afCoordinate[3]);
 %ignore Ogre::Vector3::Vector3(Real* const r);
 
-
 %extend Ogre::Vector3
 {
     inline float getX(void)
@@ -33,7 +32,7 @@
         self->y = Y;
     }
     
-        inline float getZ(void)
+    inline float getZ(void)
     {
         return self->z;
     }
@@ -168,6 +167,4 @@ get
 }
 %}
 
-
 %include "OgreVector3.h"
-

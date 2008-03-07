@@ -71,9 +71,9 @@ using namespace Ogre;
 // %include OgreColourValue.i    //so all colourvalues are the same
 %include OgreCommon.i
 
-// %include OgreVector2.i
-// %include OgreVector3.i
-// %include OgreVector4.i
+%include OgreVector2.i
+%include OgreVector3.i
+%include OgreVector4.i
 // %include OgreMatrix3.i
 // %include OgreMatrix4.i
 // %include OgreQuaternion.i
