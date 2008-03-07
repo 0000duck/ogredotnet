@@ -219,7 +219,7 @@ using namespace Ogre;
 %include OgreRenderWindow.i
 // %include OgreRenderTexture.i
 // %include OgreRenderTargetListener.i
-// %include OgreRenderSystemCapabilities.i
+%include OgreRenderSystemCapabilities.i
 %include OgreRenderSystem.i
 
 // %include OgreOverlay.i
