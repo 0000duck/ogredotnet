@@ -53,9 +53,10 @@
         get    {    return getAutoCreatedWindow();    }
     }
     
-    public OgreDotNet.Timer Timer {
-        get    {    return getTimer();    }
-    }
+// TODO: problems generating Timer.cs
+//    public OgreDotNet.Timer Timer {
+//        get    {    return getTimer();    }
+//    }
     
     public UInt32 CurrentFrameNumber {
         get    {    return getCurrentFrameNumber();    }
