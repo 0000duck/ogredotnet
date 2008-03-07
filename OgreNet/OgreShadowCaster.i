@@ -2,21 +2,9 @@
 #include "OgreShadowCaster.h"
 %}
 
-%rename Ogre::ShadowCaster::getCastShadows                    GetCastShadows;
-%rename Ogre::ShadowCaster::getEdgeList                       GetEdgeList;
-%rename Ogre::ShadowCaster::getWorldBoundingBox               GetWorldBoundingBox;
-%rename Ogre::ShadowCaster::getWorldBoundingBox               GetWorldBoundingBox;
-%rename Ogre::ShadowCaster::getLightCapBounds                 GetLightCapBounds;
-%rename Ogre::ShadowCaster::getDarkCapBounds                  GetDarkCapBounds;
-%rename Ogre::ShadowCaster::getShadowVolumeRenderableIterator GetShadowVolumeRenderableIterator;
-%rename Ogre::ShadowCaster::extrudeVertices                   ExtrudeVertices;
-%rename Ogre::ShadowCaster::getPointExtrusionDistance         GetPointExtrusionDistance;
-
-
 //ignore because of RenderOperation is private
 %ignore Ogre::ShadowRenderable::getRenderOperation;
 %ignore Ogre::ShadowRenderable::getRenderOperationForUpdate;
-
 
 %typemap(cscode) Ogre::ShadowCaster
 %{
@@ -67,11 +55,9 @@
         ShadowCaster ret = new ShadowCaster(SimpleRenderable.getCPtr(obj).Handle , false);
         return ret;
     }
-    
 %}
 
 %include OgreShadowCaster.h
-
 
 %extend Ogre::ShadowRenderable {
     Renderable * GetAsRenderable()    {

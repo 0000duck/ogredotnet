@@ -151,8 +151,8 @@ using namespace Ogre;
 // %include OgreGpuProgram.i
 // %include OgreHighLevelGpuProgram.i
 
-// %include OgreAnimable.i
-// %include OgreShadowCaster.i
+%include OgreAnimable.i
+%include OgreShadowCaster.i
 // %include OgreMovableObject.i
 // %include OgrePatchSurface.i
 
