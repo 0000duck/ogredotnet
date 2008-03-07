@@ -192,7 +192,7 @@ using namespace Ogre;
 // %include OgreRibbonTrail.i
 // %include OgreBillboardChain.i
 // %include Line3D.i
-// %include OgreTextureUnitState.i
+%include OgreTextureUnitState.i
 
 // %include OgreHardwareBufferManager.i
 // %include OgreLogManager.i
@@ -220,7 +220,7 @@ using namespace Ogre;
 // %include OgreRenderTexture.i
 // %include OgreRenderTargetListener.i
 // %include OgreRenderSystemCapabilities.i
-// %include OgreRenderSystem.i
+%include OgreRenderSystem.i
 
 // %include OgreOverlay.i
 // %include OgreOverlayElement.i
