@@ -138,7 +138,7 @@ using namespace Ogre;
 // %include EventHandler.i
 // %include OgreLog.i
 // %include OgreNode.i
-// %include OgreViewport.i
+%include OgreViewport.i
 // %include OgreSceneQuery.i
 // %include OgreSceneNode.i
 // %include OgreBlendMode.i
