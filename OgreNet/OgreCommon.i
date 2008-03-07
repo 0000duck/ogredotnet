@@ -77,8 +77,6 @@
 #define FBT_DEPTH   FBTypeDepth
 #define FBT_STENCIL FBTypeStencil
 
-
-
 //DotNet has native ways to do commandline parsing
 %ignore Ogre::findCommandLineOpts;
 
@@ -88,7 +86,6 @@
 //swig.29     PTR_REF_TYPEMAPS(Light, Ogre::Light*)
 SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(Light, Ogre::Light*)
 %template(LightList) std::vector<Ogre::Light*>;
-
 
 //we can only have one all uses of std::map<string,string> will use the same named type
 //  typedef std::map<String, String> BinaryOptionList;
@@ -101,5 +98,3 @@ SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(Light, Ogre::Light*)
 
 // typedef TRect< long > Rect;
 %template(Rect) Ogre::TRect<long>;
-
-
