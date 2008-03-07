@@ -3,8 +3,6 @@
 #include "TextureUnitState.h"
 %}
 
-%rename Ogre::TextureUnitState::setTextureAddressingMode  SetTextureAddressingMode;
-
 %ignore Ogre::TextureUnitState::EffectMap;
 %ignore Ogre::TextureUnitState::getEffects;
 %ignore Ogre::TextureUnitState::addEffect;
@@ -20,8 +18,6 @@
 %newobject Ogre::TUSTextureEffectMap::getLast;
 %newobject Ogre::TUSTextureEffectMap::getByIndex;
 %newobject Ogre::TUSTextureEffectMap::getItem;
-
-
 
 %include OgreTextureUnitState.h
 
@@ -39,7 +35,6 @@ namespace Ogre
         TextureUnitState::TextureAddressingMode getW();
         void setW(TextureUnitState::TextureAddressingMode value);
     };
-    
     
     class TUSTextureEffect {
     public:
@@ -70,7 +65,6 @@ namespace Ogre
         void setFrustum(const Frustum* value);
     };
     
-    
     class TUSTextureEffectMap {
     public:
         size_t size();
@@ -80,7 +74,6 @@ namespace Ogre
         TUSTextureEffect *getItem(TextureUnitState::TextureEffectType key);
     };
 }
-
 
 //  const UVWAddressingMode& getTextureAddressingMode(void) const;
 //  void setTextureAddressingMode(const UVWAddressingMode& uvw);
@@ -114,5 +107,3 @@ namespace Ogre
             self->addEffect(*p);
     }
 };
-
-
