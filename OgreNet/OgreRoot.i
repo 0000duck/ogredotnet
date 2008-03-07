@@ -66,12 +66,12 @@
 {
     RenderWindow * initialise(int existingwindowhandle, int width, int height, bool fullscreen)
     {
-            NameValuePairList miscParams;
-            miscParams["externalWindowHandle"] = StringConverter::toString((size_t)existingwindowhandle);
+        NameValuePairList miscParams;
+        miscParams["externalWindowHandle"] = StringConverter::toString((size_t)existingwindowhandle);
             
-            self->initialise(false);
+        self->initialise(false);
             
-            return self->createRenderWindow("", width, height, fullscreen, &miscParams);
+        return self->createRenderWindow("", width, height, fullscreen, &miscParams);
     }
 };
 
