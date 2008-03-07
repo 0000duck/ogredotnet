@@ -204,7 +204,7 @@ using namespace Ogre;
 // %include OgreGpuProgramManager.i
 // %include OgreHighLevelGpuProgramManager.i
 // %include OgreMaterialManager.i
-// %include OgreMeshManager.i
+%include OgreMeshManager.i
 // %include OgreSkeletonManager.i
 %include OgreTextureManager.i
 
