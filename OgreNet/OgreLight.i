@@ -150,7 +150,7 @@
         }
     }
 
-    public override AxisAlignedBox BoundingBox {
+    public AxisAlignedBox BoundingBox {
         get
         {
             return GetBoundingBox();
