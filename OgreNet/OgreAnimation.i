@@ -9,47 +9,17 @@
 #define RIM_LINEAR       RLinear
 #define RIM_SPHERICAL    Spherical
 
-%rename Ogre::Animation::createNodeTrack                CreateNodeTrack;
-%rename Ogre::Animation::createNumericTrack                CreateNumericTrack;
-%rename Ogre::Animation::createVertexTrack                CreateVertexTrack;
-%rename Ogre::Animation::destroyNodeTrack                DestroyNodeTrack;
-%rename Ogre::Animation::destroyNumericTrack            DestroyNumericTrack;
-%rename Ogre::Animation::destroyVertexTrack                DestroyVertexTrack;
-%rename Ogre::Animation::destroyAllTracks                DestroyAllTracks;
-%rename Ogre::Animation::destroyAllNodeTracks            DestroyAllNodeTracks;
-%rename Ogre::Animation::destroyAllNumericTracks        DestroyAllNumericTracks;
-%rename Ogre::Animation::destroyAllVertexTracks            DestroyAllVertexTracks;
-%rename Ogre::Animation::getNodeTrack                    GetNodeTrack;
-%rename Ogre::Animation::getNumericTrack                GetNumericTrack;
-%rename Ogre::Animation::getVertexTrack                    GetVertexTrack;
-%rename Ogre::Animation::hasNodeTrack                    HasNodeTrack;
-%rename Ogre::Animation::hasNumericTrack                HasNumericTrack;
-%rename Ogre::Animation::hasVertexTrack                    HasVertexTrack;
-%rename Ogre::Animation::getNumNodeTracks                GetNumNodeTracks;
-%rename Ogre::Animation::getNumNumericTracks            GetNumNumericTracks;
-%rename Ogre::Animation::getNumVertexTracks                GetNumVertexTracks;
-%rename Ogre::Animation::getNodeTrackIterator            GetNodeTrackIterator;
-%rename Ogre::Animation::getNumericTrackIterator        GetNumericTrackIterator;
-%rename Ogre::Animation::getVertexTrackIterator            GetVertexTrackIterator;
-%rename Ogre::Animation::_getNodeTrackList                GetNodeTrackList;
-%rename Ogre::Animation::_getNumericTrackList            GetNumericTrackList;
-%rename Ogre::Animation::apply Apply;
-%rename Ogre::Animation::optimise Optimise;
-%rename Ogre::Animation::getName GetName;
-%rename Ogre::Animation::getLength GetLength;
-%rename Ogre::Animation::setRotationInterpolationMode SetRotationInterpolationMode;
-%rename Ogre::Animation::setDefaultInterpolationMode  SetDefaultInterpolationMode;
-%rename Ogre::Animation::setInterpolationMode SetInterpolationMode;
-%rename Ogre::Animation::getInterpolationMode GetInterpolationMode;
-%rename Ogre::Animation::getRotationInterpolationMode  GetRotationInterpolationMode;
-%rename Ogre::Animation::getDefaultInterpolationMode   GetDefaultInterpolationMode;
-%rename Ogre::Animation::setDefaultRotationInterpolationMode  SetDefaultRotationInterpolationMode;
-%rename Ogre::Animation::getDefaultRotationInterpolationMode  GetDefaultRotationInterpolationMode;
-
+// internal functions
+%ignore Ogre::Animation::_getTimeIndex;
+%ignore Ogre::Animation::_getNodeTrackList;
+%ignore Ogre::Animation::_getNumericTrackList;
+%ignore Ogre::Animation::_collectIdentityNodeTracks;
+%ignore Ogre::Animation::_destroyNodeTracks;
+%ignore Ogre::Animation::_keyFrameListChanged;
+%ignore Ogre::Animation::_getVertexTrackList;
 
 //typedef SharedPtr<AnimableValue> AnimableValuePtr;
 %template(AnimableValuePtr) Ogre::SharedPtr<Ogre::AnimableValue>;
-
 
 %typemap(cscode) Ogre::Animation
 %{
@@ -114,10 +84,7 @@
     }
 %}
 
-
 %include OgreAnimation.h 
-
-
 
 //typedef std::map<unsigned short, NodeAnimationTrack*> NodeTrackList;
 //typedef std::map<unsigned short, NumericAnimationTrack*> NumericTrackList;
@@ -131,9 +98,6 @@ PTR_REF_TYPEMAPS(VertexAnimationTrack, Ogre::VertexAnimationTrack*)
 %template(NumericTrackList) std::map<unsigned short, Ogre::NumericAnimationTrack*>;
 %template(VertexTrackList) std::map<unsigned short, Ogre::VertexAnimationTrack*>;
 
-
-
-
 //typedef ConstMapIterator<NodeTrackList> NodeTrackIterator;
 //typedef ConstMapIterator<NumericTrackList> NumericTrackIterator;
 //typedef ConstMapIterator<VertexTrackList> VertexTrackIterator;
@@ -141,6 +105,3 @@ PTR_REF_TYPEMAPS(VertexAnimationTrack, Ogre::VertexAnimationTrack*)
 ConstMapIteratorWRAP(NodeTrackIteratorWrap, std::map, unsigned short, Ogre::NodeAnimationTrack*);
 ConstMapIteratorWRAP(NumericTrackIteratorWrap, std::map, unsigned short, Ogre::NumericAnimationTrack*);
 ConstMapIteratorWRAP(VertexTrackIteratorWrap, std::map, unsigned short, Ogre::VertexAnimationTrack*);
-
-
-

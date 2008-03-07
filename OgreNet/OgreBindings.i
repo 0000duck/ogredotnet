@@ -60,7 +60,7 @@ using namespace Ogre;
 
 %include OgrePrerequisites.h
 
-// %include OgreSharedPtr.i
+%include OgreSharedPtr.i
 %include OgreIteratorWrappers.i
 
 // %include OgreString.i
@@ -164,7 +164,7 @@ using namespace Ogre;
 // %include OgreKeyFrame.i
 // %include OgrePose.i
 // %include OgreAnimationTrack.i    //enum VertexAnimationType befor submesh and animation
-// %include OgreAnimation.i
+%include OgreAnimation.i
 // %include OgreAnimationState.i
 // %include OgreSubMesh.i
 // %include OgreStaticGeometry.i
