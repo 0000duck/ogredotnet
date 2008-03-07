@@ -45,7 +45,7 @@ using namespace Ogre;
 // %include new_std_map.i        //modified SWIG's version to add functions getitemValue, getitemKey
 %include new_std_list.i        //modified SWIG's std_vector to use with list
 // %include new_std_multimap.i    //modified SWIG's std_map to use with multimap
-// %include new_std_set.i        //modified SWIG's std_vector to use with set
+%include new_std_set.i        //modified SWIG's std_vector to use with set
 
 %apply const std::string & {std::string &};
 %apply std::string & {std::string *};
@@ -176,7 +176,7 @@ using namespace Ogre;
 %include OgreFrustum.i
 %include OgreCamera.i
 %include OgreLight.i
-// %include OgreEntity.i
+%include OgreEntity.i
 // %include OgreSubEntity.i
 // %include OgreMovablePlane.i
 %include OgreMaterial.i
