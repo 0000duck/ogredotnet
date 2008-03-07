@@ -4,21 +4,21 @@
 
 %typemap(cscode) Ogre::AxisAlignedBox
 %{
-  public Math3D.Vector3 Minimum
-  {
-    get
+    public Math3D.Vector3 Minimum
     {
-        return getMinimum();
-    }
-  }  
+        get
+        {
+            return getMinimum();
+        }
+    }  
 
-  public Math3D.Vector3 Maximum
-  {
-    get
+    public Math3D.Vector3 Maximum
     {
-        return getMaximum();
+        get
+        {
+            return getMaximum();
+        }
     }
-  }
 %}
 
 // use __nonzero__ instead:
