@@ -168,7 +168,7 @@ using namespace Ogre;
 // %include OgreSubMesh.i
 // %include OgreStaticGeometry.i
 // %include OgreBillboard.i
-// %include OgreBillboardSet.i
+%include OgreBillboardSet.i
 // %include OgreTagPoint.i
 // %include OgreBone.i
 // %include OgreSimpleRenderable.i
