@@ -263,7 +263,6 @@ namespace Math3D
 		{
 			get 
 			{
-				float fTx  = 2.0f * x;
 				float fTy  = 2.0f * y;
 				float fTz  = 2.0f * z;
 				float fTwy = fTy * w;
