@@ -9,10 +9,8 @@
 %ignore Ogre::MovablePlane::_updateRenderQueue;
 %ignore Ogre::MovablePlane::getMovableType;
 
-
 %typemap(cscode) MovablePlane
 %{
-
     static public MovablePlane FromMovableObject(MovableObject obj)
     {
         MovablePlane r = new MovablePlane(MovableObject.getCPtr(obj).Handle , false);
@@ -23,7 +21,6 @@
         MovablePlane r = new MovablePlane(Plane.getCPtr(obj).Handle , false);
         return r;
     }
-
 %}
 
 %include "OgreMovablePlane.h"
@@ -33,4 +30,3 @@
         return (MovableObject*)self;
     }
 };
-
