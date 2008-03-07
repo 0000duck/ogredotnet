@@ -156,7 +156,6 @@ using namespace Ogre;
 // %include OgreMovableObject.i
 // %include OgrePatchSurface.i
 
-
 // %include OgreRenderOperation.i
 // %include OgreRenderQueue.i
 // %include OgreRenderQueueSortingGrouping.i
@@ -175,7 +174,7 @@ using namespace Ogre;
 // %include OgreSimpleRenderable.i
 // %include OgreRectangle2D.i
 // %include OgreFrustum.i
-// %include OgreCamera.i
+%include OgreCamera.i
 // %include OgreLight.i
 // %include OgreEntity.i
 // %include OgreSubEntity.i
@@ -195,7 +194,6 @@ using namespace Ogre;
 // %include Line3D.i
 // %include OgreTextureUnitState.i
 
-
 // %include OgreHardwareBufferManager.i
 // %include OgreLogManager.i
 // %include OgreScriptLoader.i
@@ -210,14 +208,12 @@ using namespace Ogre;
 // %include OgreSkeletonManager.i
 // %include OgreTextureManager.i
 
-
 // %include OgreRenderQueueListener.i
 
 // %include OgreController.i
 // %include OgreControllerManager.i
 // %include OgrePredefinedControllers.i
 // %include ControllerFloatHandler.i
-
 
 // %include OgreRenderTarget.i
 %include OgreRenderWindow.i
