@@ -157,7 +157,7 @@ using namespace Ogre;
 // %include OgrePatchSurface.i
 
 // %include OgreRenderOperation.i
-// %include OgreRenderQueue.i
+%include OgreRenderQueue.i
 // %include OgreRenderQueueSortingGrouping.i
 
 // %include OgreKeyFrame.i
