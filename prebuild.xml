@@ -67,6 +67,8 @@
 
       <ReferencePath>../bin/</ReferencePath>
       <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
       <Reference name="Math3D"/>
       <Files>
         <Match pattern="*.cs" recurse="false"/>
