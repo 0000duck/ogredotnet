@@ -11,8 +11,8 @@
 %typemap(cscode) Ogre::NodeAnimationTrack
 %{
     public Node AssociatedNode    {
-        get    { return GetAssociatedNode(); }
-        set    { SetAssociatedNode((Node)value); }
+        get    { return getAssociatedNode(); }
+        set    { setAssociatedNode((Node)value); }
     }
 %}
 

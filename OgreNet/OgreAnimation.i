@@ -25,62 +25,62 @@
 %{
     public InterpolationMode mInterpolationMode    {
         get    {
-            return (InterpolationMode)GetInterpolationMode();
+            return (InterpolationMode)getInterpolationMode();
         }
         set     {
-            SetInterpolationMode(value);
+            setInterpolationMode(value);
         }
     }
     
     public RotationInterpolationMode mRotationInterpolationMode     {
         get    {
-            return (RotationInterpolationMode)GetRotationInterpolationMode();
+            return (RotationInterpolationMode)getRotationInterpolationMode();
         }
         set    {
-            SetRotationInterpolationMode(value);
+            setRotationInterpolationMode(value);
         }
     }
     
     public InterpolationMode DefaultInterpolationMode    {
         get    {
-            return (InterpolationMode)GetDefaultInterpolationMode();
+            return (InterpolationMode)getDefaultInterpolationMode();
         }
         set    {
-            SetDefaultInterpolationMode(value);
+            setDefaultInterpolationMode(value);
         }
     }
     
     public RotationInterpolationMode DefaultRotationInterpolationMode    {
         get    {
-            return (RotationInterpolationMode)GetDefaultRotationInterpolationMode();
+            return (RotationInterpolationMode)getDefaultRotationInterpolationMode();
         }
         set    {
-            SetDefaultRotationInterpolationMode(value);
+            setDefaultRotationInterpolationMode(value);
         }
     }
     
     public string Name {
         get        {
-            return GetName();
+            return getName();
         }
     }
     
     public float Length {
         get        {
-            return GetLength();
+            return getLength();
         }
     }
     
     public int NumNodeTracks {
-        get { return GetNumNodeTracks(); }
+        get { return getNumNodeTracks(); }
     }
 
     public int NumNumericTracks {
-        get { return GetNumNumericTracks(); }
+        get { return getNumNumericTracks(); }
     }
 
     public int NumVertexTracks {
-        get { return GetNumVertexTracks(); }
+        get { return getNumVertexTracks(); }
     }
 %}
 

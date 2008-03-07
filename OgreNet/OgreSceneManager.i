@@ -33,86 +33,86 @@ SIMPLE_TYPEMAP(SceneTypeMask,  unsigned short,   UInt16)
 %typemap(cscode) Ogre::SceneManager
 %{
     public System.Drawing.Color AmbientLightColor {
-        set { SetAmbientLight(value); }
+        set { setAmbientLight(value); }
     }
 
     public virtual SceneNode RootSceneNode {
-        get { return GetRootSceneNode(); }
+        get { return getRootSceneNode(); }
     }
 
     public System.Drawing.Color AmbientLight {
-        get { return GetAmbientLight(); }
-        set { SetAmbientLight(value); }
+        get { return getAmbientLight(); }
+        set { setAmbientLight(value); }
     }
 
     public virtual FogMode FogMode {
-        get { return GetFogMode(); }
+        get { return getFogMode(); }
     }
 
     public virtual System.Drawing.Color FogColour {
-        get { return GetFogColour(); }
+        get { return getFogColour(); }
     }
 
     public virtual float FogStart {
-        get { return GetFogStart(); }
+        get { return getFogStart(); }
     }
 
     public virtual float FogEnd {
-        get { return GetFogEnd(); }
+        get { return getFogEnd(); }
     }
 
     public virtual float FogDensity {
-        get { return GetFogDensity(); }
+        get { return getFogDensity(); }
     }
 
     public virtual RenderQueueGroupID WorldGeometryRenderQueue {
-        get { return (RenderQueueGroupID)(int)GetWorldGeometryRenderQueue(); }
-        set { SetWorldGeometryRenderQueue((byte)value); }
+        get { return (RenderQueueGroupID)(int)getWorldGeometryRenderQueue(); }
+        set { setWorldGeometryRenderQueue((byte)value); }
     }
 
     public virtual ShadowTechnique ShadowTechnique {
-        get { return GetShadowTechnique(); }
-        set { SetShadowTechnique((ShadowTechnique)value); }
+        get { return getShadowTechnique(); }
+        set { setShadowTechnique((ShadowTechnique)value); }
     }
 
     public virtual bool ShowDebugShadows {
-        get { return GetShowDebugShadows(); }
-        set { SetShowDebugShadows((bool)value); }
+        get { return getShowDebugShadows(); }
+        set { setShowDebugShadows((bool)value); }
     }
 
     public virtual System.Drawing.Color ShadowColour {
-        get { return GetShadowColour(); }
-        set { SetShadowColour(value); }
+        get { return getShadowColour(); }
+        set { setShadowColour(value); }
     }
 
     public virtual float ShadowDirectionalLightExtrusionDistance {
-        get { return GetShadowDirectionalLightExtrusionDistance(); }
-        set { SetShadowDirectionalLightExtrusionDistance((float)value); }
+        get { return getShadowDirectionalLightExtrusionDistance(); }
+        set { setShadowDirectionalLightExtrusionDistance((float)value); }
     }
 
     public virtual float ShadowFarDistance {
-        get { return GetShadowFarDistance(); }
-        set { SetShadowFarDistance((float)value); }
+        get { return getShadowFarDistance(); }
+        set { setShadowFarDistance((float)value); }
     }
 
     public virtual UInt32 ShadowIndexBufferSize {
-        get { return GetShadowIndexBufferSize(); }
-        set { SetShadowIndexBufferSize(value); }
+        get { return getShadowIndexBufferSize(); }
+        set { setShadowIndexBufferSize(value); }
     }
 
     public UInt16 ShadowTextureSize {
-        get { return GetShadowTextureSize(); }
-        set { SetShadowTextureSize((UInt16)value); }
+        get { return getShadowTextureSize(); }
+        set { setShadowTextureSize((UInt16)value); }
     }
 
     public PixelFormat ShadowTexturePixelFormat {
-        get { return GetShadowTexturePixelFormat(); }
-        set { SetShadowTexturePixelFormat((PixelFormat)value); }
+        get { return getShadowTexturePixelFormat(); }
+        set { setShadowTexturePixelFormat((PixelFormat)value); }
     }
 
     public UInt16 ShadowTextureCount {
-        get { return GetShadowTextureCount(); }
-        set { SetShadowTextureCount((UInt16)value); }
+        get { return getShadowTextureCount(); }
+        set { setShadowTextureCount((UInt16)value); }
     }
 %}
 

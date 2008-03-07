@@ -7,93 +7,93 @@
 %typemap(cscode) Ogre::Material
 %{
     public bool ReceiveShadows    {
-        get { return GetReceiveShadows(); }
-        set { SetReceiveShadows(value); }
+        get { return getReceiveShadows(); }
+        set { setReceiveShadows(value); }
     }
     
     public bool TransparencyCastsShadows    {
-        get { return GetTransparencyCastsShadows(); }
-        set { SetTransparencyCastsShadows(value); }
+        get { return getTransparencyCastsShadows(); }
+        set { setTransparencyCastsShadows(value); }
     }
     
     public int NumTechniques    {
-        get { return GetNumTechniques(); }
+        get { return getNumTechniques(); }
     }
     
     public int NumSupportedTechniques    {
-        get { return GetNumSupportedTechniques(); }
+        get { return getNumSupportedTechniques(); }
     }
     
     public System.Drawing.Color Ambient    {
-        set { SetAmbient(value); }
+        set { setAmbient(value); }
     }
     
     public System.Drawing.Color Diffuse    {
-        set { SetDiffuse(value); }
+        set { setDiffuse(value); }
     }
     
     public System.Drawing.Color Specular    {
-        set { SetSpecular(value); }
+        set { setSpecular(value); }
     }
     
     public float Shininess    {
-        set { SetShininess(value); }
+        set { setShininess(value); }
     }
     
     public System.Drawing.Color SelfIllumination    {
-        set { SetSelfIllumination(value); }
+        set { setSelfIllumination(value); }
     }
     
     public bool DepthCheckEnabled    {
-        set { SetDepthCheckEnabled(value); }
+        set { setDepthCheckEnabled(value); }
     }
     
     public bool DepthWriteEnabled    {
-        set { SetDepthWriteEnabled(value); }
+        set { setDepthWriteEnabled(value); }
     }
     
     public CompareFunction DepthFunction    {
-        set { SetDepthFunction(value); }
+        set { setDepthFunction(value); }
     }
     
     public bool ColourWriteEnabled    {
-        set { SetColourWriteEnabled(value); }
+        set { setColourWriteEnabled(value); }
     }
     
     public CullingMode CullingMode    {
-        set { SetCullingMode(value); }
+        set { setCullingMode(value); }
     }
     
     public ManualCullingMode ManualCullingMode    {
-        set { SetManualCullingMode(value); }
+        set { setManualCullingMode(value); }
     }
 
     public bool LightingEnabled    {
-        set { SetLightingEnabled(value); }
+        set { setLightingEnabled(value); }
     }
     
     public ShadeOptions ShadingMode    {
-        set { SetShadingMode(value); }
+        set { setShadingMode(value); }
     }
     
     public UInt16 DepthBias    {
-        set        { SetDepthBias(value); }
+        set        { setDepthBias(value); }
     }
     
     public TextureFilterOptions TextureFiltering {
-        set    { SetTextureFiltering(value); }
+        set    { setTextureFiltering(value); }
     }
     
     public int TextureAnisotropy    {
-        set { SetTextureAnisotropy(value); }
+        set { setTextureAnisotropy(value); }
     }
     
     public SceneBlendType SceneBlending    {
-        set    { SetSceneBlending(value); }
+        set    { setSceneBlending(value); }
     }
     
     public VecFloats LodLevels    {
-        set { SetLodLevels(value); }
+        set { setLodLevels(value); }
     }
 %}
 

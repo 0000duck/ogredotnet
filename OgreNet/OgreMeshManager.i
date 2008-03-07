@@ -14,13 +14,13 @@
     }
 
     public bool PrepareAllMeshesForShadowVolumes {
-        get { return GetPrepareAllMeshesForShadowVolumes(); }
-        set { SetPrepareAllMeshesForShadowVolumes((bool)value); }
+        get { return getPrepareAllMeshesForShadowVolumes(); }
+        set { setPrepareAllMeshesForShadowVolumes((bool)value); }
     }
 
     public float BoundsPaddingFactor {
-        get { return GetBoundsPaddingFactor(); }
-        set { SetBoundsPaddingFactor((float)value); }
+        get { return getBoundsPaddingFactor(); }
+        set { setBoundsPaddingFactor((float)value); }
     }
 
 %}

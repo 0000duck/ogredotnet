@@ -8,7 +8,7 @@
   {
     get
     {
-        return GetMinimum();
+        return getMinimum();
     }
   }  
 
@@ -16,7 +16,7 @@
   {
     get
     {
-        return GetMaximum();
+        return getMaximum();
     }
   }
 %}

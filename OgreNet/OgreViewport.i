@@ -11,7 +11,7 @@
     {
         set
         {
-            SetBackgroundColour(value);
+            setBackgroundColour(value);
         }
     }
     
@@ -19,7 +19,7 @@
     {
         get
         {
-            return GetActualWidth();
+            return getActualWidth();
         }
     }
     
@@ -27,96 +27,96 @@
     {
         get
         {
-            return GetActualHeight();
+            return getActualHeight();
         }
     }
     
     public RenderTarget Target {
         get
         {
-            return GetTarget();
+            return getTarget();
         }
     }
 
     public Camera Camera {
         get
         {
-            return GetCamera();
+            return getCamera();
         }
         set
         {
-            SetCamera((Camera)value);
+            setCamera((Camera)value);
         }
     }
 
     public int ZOrder {
         get
         {
-            return GetZOrder();
+            return getZOrder();
         }
     }
 
     public float Left {
         get
         {
-            return GetLeft();
+            return getLeft();
         }
     }
 
     public float Top {
         get
         {
-            return GetTop();
+            return getTop();
         }
     }
 
     public float Width {
         get
         {
-            return GetWidth();
+            return getWidth();
         }
     }
 
     public float Height {
         get
         {
-            return GetHeight();
+            return getHeight();
         }
     }
 
     public int ActualLeft {
         get
         {
-            return GetActualLeft();
+            return getActualLeft();
         }
     }
 
     public int ActualTop {
         get
         {
-            return GetActualTop();
+            return getActualTop();
         }
     }
 
     public bool ClearEveryFrame {
         get
         {
-            return GetClearEveryFrame();
+            return getClearEveryFrame();
         }
         set
         {
-            SetClearEveryFrame((bool)value);
+            setClearEveryFrame((bool)value);
         }
     }
 
     public bool OverlaysEnabled {
         get
         {
-            return GetOverlaysEnabled();
+            return getOverlaysEnabled();
         }
         set
         {
-            SetOverlaysEnabled((bool)value);
+            setOverlaysEnabled((bool)value);
         }
     }
 %}

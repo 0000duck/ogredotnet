@@ -54,58 +54,58 @@
     #endregion njkogre - added Yaw, Pitch, Roll with argument as Degrees
 
     public string Name {
-        get { return GetName(); }
+        get { return getName(); }
     }
 
     public virtual Node Parent {
-        get { return GetParent(); }
+        get { return getParent(); }
     }
 
     public virtual Math3D.Quaternion Orientation {
-        get { return GetOrientation(); }
-        set { SetOrientation(value); }
+        get { return getOrientation(); }
+        set { setOrientation(value); }
     }
 
     public virtual Math3D.Vector3 Position {
-        get { return GetPosition(); }
-        set { SetPosition(value); }
+        get { return getPosition(); }
+        set { setPosition(value); }
     }
 
     public virtual bool InheritScale {
-        get { return GetInheritScale(); }
-        set { SetInheritScale((bool)value); }
+        get { return getInheritScale(); }
+        set { setInheritScale((bool)value); }
     }
 
     public virtual Math3D.Matrix3 LocalAxes {
-        get { return GetLocalAxes(); }
+        get { return getLocalAxes(); }
     }
 
     public MaterialPtr Material {
-        get { return GetMaterial(); }
+        get { return getMaterial(); }
     }
 
     public Math3D.Quaternion WorldOrientation {
-        get { return GetWorldOrientation(); }
+        get { return getWorldOrientation(); }
     }
 
     public Math3D.Vector3 WorldPosition {
-        get { return GetWorldPosition(); }
+        get { return getWorldPosition(); }
     }
 
     public virtual Math3D.Vector3 InitialPosition {
-        get { return GetInitialPosition(); }
+        get { return getInitialPosition(); }
     }
 
     public virtual Math3D.Quaternion InitialOrientation {
-        get { return GetInitialOrientation(); }
+        get { return getInitialOrientation(); }
     }
 
     public virtual Math3D.Vector3 InitialScale {
-        get { return GetInitialScale(); }
+        get { return getInitialScale(); }
     }
 
     public LightList Lights {
-        get { return GetLights(); }
+        get { return getLights(); }
     }
 %}
 

@@ -26,39 +26,39 @@
     static public Root Instance
     {
         get    {
-            if (_instance == null) _instance = GetSingleton();
+            if (_instance == null) _instance = getSingleton();
             return _instance;
         }
     }
     static private Root _instance = null;
     
     public RenderSystemList AvailableRenderers {
-        get    {    return GetAvailableRenderers();    }
+        get    {    return getAvailableRenderers();    }
     }
     
     public RenderSystem RenderSystem {
-        get    {    return GetRenderSystem();    }
-        set    {    SetRenderSystem((RenderSystem)value);    }
+        get    {    return getRenderSystem();    }
+        set    {    setRenderSystem((RenderSystem)value);    }
     }
     
     public TextureManager TextureManager {
-        get    {    return GetTextureManager();    }
+        get    {    return getTextureManager();    }
     }
 
     public MeshManager MeshManager {
-        get    {    return GetMeshManager();    }
+        get    {    return getMeshManager();    }
     }
     
     public RenderWindow AutoCreatedWindow {
-        get    {    return GetAutoCreatedWindow();    }
+        get    {    return getAutoCreatedWindow();    }
     }
     
     public OgreDotNet.Timer Timer {
-        get    {    return GetTimer();    }
+        get    {    return getTimer();    }
     }
     
     public UInt32 CurrentFrameNumber {
-        get    {    return GetCurrentFrameNumber();    }
+        get    {    return getCurrentFrameNumber();    }
     }
 %}
 

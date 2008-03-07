@@ -16,11 +16,11 @@
     {
         get
         {
-            return GetDirection();
+            return getDirection();
         }
         set
         {
-            SetDirection(value);    
+            setDirection(value);    
         }
     }
     
@@ -28,11 +28,11 @@
     {
         get
         {
-            return GetPosition();
+            return getPosition();
         }
         set
         {
-            SetPosition(value);    
+            setPosition(value);    
         }
     }
     
@@ -40,11 +40,11 @@
     {
         get
         {
-            return GetDiffuseColour();
+            return getDiffuseColour();
         }
         set
         {
-            SetDiffuseColour(value);
+            setDiffuseColour(value);
         }
     }
 
@@ -52,18 +52,18 @@
     public string Name {
         get
         {
-            return GetName();
+            return getName();
         }
     }
 
     public Light.LightTypes Type {
         get
         {
-            return GetLightType();
+            return getLightType();
         }
         set
         {
-            SetLightType(value);
+            setLightType(value);
         }    
     }
 
@@ -71,131 +71,131 @@
     public System.Drawing.Color SpecularColour {
         get
         {
-            return GetSpecularColour();
+            return getSpecularColour();
         }
         set
         {
-            SetSpecularColour(value);
+            setSpecularColour(value);
         }    
     }
 
     public float AttenuationRange {
         get
         {
-            return GetAttenuationRange();
+            return getAttenuationRange();
         }
     }
 
     public float AttenuationConstant {
         get
         {
-            return GetAttenuationConstant();
+            return getAttenuationConstant();
         }
     }
 
     public float AttenuationLinear {
         get
         {
-            return GetAttenuationLinear();
+            return getAttenuationLinear();
         }
     }
 
     public float AttenuationQuadric {
         get
         {
-            return GetAttenuationQuadric();
+            return getAttenuationQuadric();
         }
     }
 
 //  public OgreVector3 Position {
 //    get
 //    {
-//        return GetPosition();
+//        return getPosition();
 //    }
 //    set
 //    {
-//        SetPosition((OgreVector3)value);
+//        setPosition((OgreVector3)value);
 //    }    
 //  }
 
 //  public OgreVector3 Direction {
 //    get
 //    {
-//        return GetDirection();
+//        return getDirection();
 //    }
 //    set
 //    {
-//        SetDirection((OgreVector3)value);
+//        setDirection((OgreVector3)value);
 //    }    
 //  }
 
     public Radian SpotlightInnerAngle {
         get
         {
-            return GetSpotlightInnerAngle();
+            return getSpotlightInnerAngle();
         }
     }
 
     public Radian SpotlightOuterAngle {
         get
         {
-            return GetSpotlightOuterAngle();
+            return getSpotlightOuterAngle();
         }
     }
 
     public float SpotlightFalloff {
         get
         {
-            return GetSpotlightFalloff();
+            return getSpotlightFalloff();
         }
     }
 
     public AxisAlignedBox BoundingBox {
         get
         {
-            return GetBoundingBox();
+            return getBoundingBox();
         }
     }
 
     public string MovableType {
         get
         {
-            return GetMovableType();
+            return getMovableType();
         }
     }
 
     public Math3D.Vector3 DerivedPosition {
         get
         {
-            return GetDerivedPosition();
+            return getDerivedPosition();
         }
     }
 
     public Math3D.Vector3 DerivedDirection {
         get
         {
-            return GetDerivedDirection();
+            return getDerivedDirection();
         }
     }
 
 //  public void Visible {
 //    set
 //    {
-//        SetVisible((bool)value);
+//        setVisible((bool)value);
 //    }
 //  }
 
     public float BoundingRadius {
         get
         {
-            return GetBoundingRadius();
+            return getBoundingRadius();
         }
     }
 
     public Math3D.Vector4 As4DVector {
         get
         {
-            return GetAs4DVector();
+            return getAs4DVector();
         }
     }
 %}

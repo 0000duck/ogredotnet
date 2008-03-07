@@ -13,49 +13,49 @@
 //     public virtual bool IsInSceneGraph {
 //         get
 //         {
-//             return IsInSceneGraph();
+//             return isInSceneGraph();
 //         }
 //     }
 
     public SceneManager Creator {
         get
         {
-            return GetCreator();
+            return getCreator();
         }
     }
 
 //     public virtual bool ShowBoundingBox {
 //         get
 //         {
-//             return GetShowBoundingBox();
+//             return getShowBoundingBox();
 //         }
 //     }
 
     public SceneNode AutoTrackTarget {
         get
         {
-            return GetAutoTrackTarget();
+            return getAutoTrackTarget();
         }
     }
 
     public Math3D.Vector3 AutoTrackOffset {
         get
         {
-            return GetAutoTrackOffset();
+            return getAutoTrackOffset();
         }
     }
 
     public Math3D.Vector3 AutoTrackLocalDirection {
         get
         {
-            return GetAutoTrackLocalDirection();
+            return getAutoTrackLocalDirection();
         }
     }
 
     public SceneNode ParentSceneNode {
         get
         {
-            return GetParentSceneNode();
+            return getParentSceneNode();
         }
     }
 

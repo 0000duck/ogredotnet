@@ -20,25 +20,25 @@
 %typemap(cscode) Ogre::RenderSystem
 %{
     public virtual string Name {
-        get { return GetName(); }
+        get { return getName(); }
     }
     
     public ShadeOptions ShadingType {
-        set { SetShadingType(value); }
+        set { setShadingType(value); }
     }
     
     public bool LightingEnabled {
-        set { SetLightingEnabled(value); }
+        set { setLightingEnabled(value); }
     }
     
     public bool WBufferEnabled {
-        get { return GetWBufferEnabled(); }
-        set { SetWBufferEnabled((bool)value); }
+        get { return getWBufferEnabled(); }
+        set { setWBufferEnabled((bool)value); }
     }
     
     public bool WaitForVerticalBlank {
-        get { return GetWaitForVerticalBlank(); }
-        set { SetWaitForVerticalBlank((bool)value); }
+        get { return getWaitForVerticalBlank(); }
+        set { setWaitForVerticalBlank((bool)value); }
     }
     
     public virtual Viewport Viewport {
@@ -60,43 +60,43 @@
     }
     
     public bool StencilCheckEnabled {
-        set { SetStencilCheckEnabled(value); }
+        set { setStencilCheckEnabled(value); }
     }
     
     public VertexDeclaration vertexdeclaration {
-        set { SetVertexDeclaration(value); }
+        set { setVertexDeclaration(value); }
     }
     
     public VertexBufferBinding vertexbufferbinding {
-        set { SetVertexBufferBinding(value); }
+        set { setVertexBufferBinding(value); }
     }
     
     public bool NormaliseNormals {
-        set { SetNormaliseNormals(value); }
+        set { setNormaliseNormals(value); }
     }
     
     public RenderSystemCapabilities Capabilities {
-        get { return GetCapabilities(); }
+        get { return getCapabilities(); }
     }
     
     public bool InvertVertexWinding {
-        set { SetInvertVertexWinding(value); }
+        set { setInvertVertexWinding(value); }
     }
     
     public virtual float HorizontalTexelOffset {
-        get { return GetHorizontalTexelOffset(); }
+        get { return getHorizontalTexelOffset(); }
     }
     
     public virtual float VerticalTexelOffset {
-        get { return GetVerticalTexelOffset(); }
+        get { return getVerticalTexelOffset(); }
     }
     
     public virtual float MinimumDepthInputValue {
-        get { return GetMinimumDepthInputValue(); }
+        get { return getMinimumDepthInputValue(); }
     }
     
     public virtual float MaximumDepthInputValue {
-        get { return GetMaximumDepthInputValue(); }
+        get { return getMaximumDepthInputValue(); }
     }
 %}
 

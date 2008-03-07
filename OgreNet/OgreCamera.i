@@ -10,11 +10,11 @@
     {
         get
         {
-            return GetAspectRatio();
+            return getAspectRatio();
         }
         set
         {
-            SetAspectRatio(value);
+            setAspectRatio(value);
         }
     }
 
@@ -22,11 +22,11 @@
     {
         get
         {
-            return GetNearClipDistance();
+            return getNearClipDistance();
         }
         set
         {
-            SetNearClipDistance(value);
+            setNearClipDistance(value);
         }
     }
     
@@ -34,11 +34,11 @@
     {
         get
         {
-            return GetPosition();
+            return getPosition();
         }
         set
         {
-            SetPosition(value);
+            setPosition(value);
         }
     }
     
@@ -53,37 +53,37 @@
     public SceneManager SceneManager {
         get
         {
-            return GetSceneManager();
+            return getSceneManager();
         }
     }
 
     public string Name {
         get
         {
-            return GetName();
+            return getName();
         }
     }
 
     public PolygonMode DetailLevel {
         get
         {
-            return GetPolygonMode();
+            return getPolygonMode();
         }
 
         set
         {
-            SetPolygonMode((PolygonMode)value);
+            setPolygonMode((PolygonMode)value);
         }
     }
 
     public Math3D.Vector3 Direction {
         get
         {
-            return GetDirection();
+            return getDirection();
         }
         set
         {
-            SetDirection(value);
+            setDirection(value);
         }
     }
 
@@ -91,110 +91,110 @@
     public Math3D.Vector3 Up {
         get
         {
-            return GetUp();
+            return getUp();
         }
     }
 
     public Math3D.Vector3 Right {
         get
         {
-            return GetRight();
+            return getRight();
         }
     }
 
     public Math3D.Quaternion Orientation {
         get
         {
-            return GetOrientation();
+            return getOrientation();
         }
         set
         {
-            SetOrientation(value);
+            setOrientation(value);
         }
     }
 
     public Math3D.Quaternion DerivedOrientation {
         get
         {
-            return GetDerivedOrientation();
+            return getDerivedOrientation();
         }
     }
 
     public Math3D.Vector3 DerivedPosition {
         get
         {
-            return GetDerivedPosition();
+            return getDerivedPosition();
         }
     }
 
     public Math3D.Vector3 DerivedDirection {
         get
         {
-            return GetDerivedDirection();
+            return getDerivedDirection();
         }
     }
 
     public string MovableType {
         get
         {
-            return GetMovableType();
+            return getMovableType();
         }
     }
 
     public float LodBias {
         get
         {
-            return GetLodBias();
+            return getLodBias();
         }
         set
         {
-            SetLodBias((float)value);
+            setLodBias((float)value);
         }
     }
 
     public PlaneVector WindowPlanes {
         get
         {
-            return GetWindowPlanes();
+            return getWindowPlanes();
         }
     }
 
     public float BoundingRadius {
         get
         {
-            return GetBoundingRadius();
+            return getBoundingRadius();
         }
     }
 
     public SceneNode AutoTrackTarget {
         get
         {
-            return GetAutoTrackTarget();
+            return getAutoTrackTarget();
         }
     }
 
     public Math3D.Vector3 AutoTrackOffset {
         get
         {
-            return GetAutoTrackOffset();
+            return getAutoTrackOffset();
         }
     }
 
     public Viewport Viewport {
         get
         {
-            return GetViewport();
+            return getViewport();
         }
     }
 
     public bool AutoAspectRatio {
         get
         {
-            return GetAutoAspectRatio();
+            return getAutoAspectRatio();
         }
         set
         {
-            SetAutoAspectRatio((bool)value);
+            setAutoAspectRatio((bool)value);
         }
     }
 %}
