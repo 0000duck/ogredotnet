@@ -2,18 +2,10 @@
 #include "OgreSubMesh.h"
 %}
 
-%rename Ogre::SubMesh::setMaterialName                SetMaterialName;
-%rename Ogre::SubMesh::getMaterialName                GetMaterialName;
-%rename Ogre::SubMesh::isMatInitialised                IsMatInitialised;
-%rename Ogre::SubMesh::addBoneAssignment            AddBoneAssignment;
-%rename Ogre::SubMesh::clearBoneAssignments            ClearBoneAssignments;
-
-
 //TODO is multimap working?  below is the template
 //swig is having some problem with "struct" Ogre::VertexBoneAssignment being in a multimap and MapIterator
 //have to custom wrap this function because swig cant see it right.
 %ignore Ogre::SubMesh::getBoneAssignmentIterator;
-
 
 //typedef std::multimap<size_t, VertexBoneAssignment> VertexBoneAssignmentList;
 PTR_REF_TYPEMAPS(VertexBoneAssignment, VertexBoneAssignment)
@@ -34,7 +26,6 @@ PTR_REF_TYPEMAPS(VertexBoneAssignment, VertexBoneAssignment)
     $1 = (std::multimap<size_t, Ogre::VertexBoneAssignment> *)$input;
 %}
 
-
 //typedef MapIterator<VertexBoneAssignmentList> BoneAssignmentIterator;
 MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexBoneAssignment);
 %typemap(ctype)   Ogre::MapIterator<std::multimap<size_t, Ogre::VertexBoneAssignment> > *      "void *"
@@ -50,14 +41,9 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
     return (cPtr == IntPtr.Zero) ? null : new BoneAssignmentIteratorWrap(cPtr, $owner);
 }
 
-
-
 //ignore because of RenderOperation is private
 %ignore Ogre::SubMesh::_getRenderOperation;
 %ignore Ogre::SubMesh::operationType;
-
-
-
 
 %typemap(cscode) Ogre::SubMesh
 %{
@@ -68,9 +54,7 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
     }
 %}
 
-
 %include OgreSubMesh.h
-
 
 %extend Ogre::SubMesh
 {
@@ -89,9 +73,6 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
     }
 };
 
-
 //typedef std::map<String, String> AliasTextureNamePairList;
 //typedef ConstMapIterator<AliasTextureNamePairList> AliasTextureIterator;
 ConstMapIteratorWRAP(AliasTextureIteratorWrap, std::map, std::string, std::string);
-
-
