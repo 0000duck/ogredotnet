@@ -121,8 +121,8 @@ using namespace Ogre;
 //%include OgreConfigFile.i
 // %include OgreConfigOptionMap.i
 %include OgrePlane.i
-// %include OgreSphere.i
-// %include OgreRay.i
+%include OgreSphere.i
+%include OgreRay.i
 %include OgreAxisAlignedBox.i
 // %include OgrePlaneBoundedVolume.i
 %include OgreMath.i
