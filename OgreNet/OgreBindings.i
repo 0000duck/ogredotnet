@@ -206,7 +206,7 @@ using namespace Ogre;
 // %include OgreMaterialManager.i
 // %include OgreMeshManager.i
 // %include OgreSkeletonManager.i
-// %include OgreTextureManager.i
+%include OgreTextureManager.i
 
 // %include OgreRenderQueueListener.i
 
