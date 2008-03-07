@@ -245,5 +245,5 @@ using namespace Ogre;
 %include OgreSceneManagerEnumerator.i
 %include OgreRoot.i
 
-// %include OgreRenderable.i
+%include OgreRenderable.i
 // %include MeshBuilderHelper.i

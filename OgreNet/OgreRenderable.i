@@ -13,7 +13,6 @@
 
 %typemap(cscode) Ogre::Renderable
 %{
-
     static public Renderable GetRenderableFrom(BillboardSet c)
     {
         Renderable ret = new Renderable(BillboardSet.getCPtr(c).Handle , false);
@@ -67,7 +66,6 @@
         Renderable ret = new Renderable(SubEntity.getCPtr(c).Handle , false);
         return ret;
     }
-
 %}
 
 %include OgreRenderable.h
