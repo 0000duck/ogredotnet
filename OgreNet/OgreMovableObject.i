@@ -3,41 +3,11 @@
 #include "MovableObjectExt.h"
 %}
 
-%rename Ogre::MovableObject::getName                   GetName;
-%rename Ogre::MovableObject::getMovableType            GetMovableType;
-%rename Ogre::MovableObject::getParentNode             GetParentNode;
-%rename Ogre::MovableObject::getParentSceneNode        GetParentSceneNode;
-%rename Ogre::MovableObject::isAttached                IsAttached;
-%rename Ogre::MovableObject::isInScene                 IsInScene;
-%rename Ogre::MovableObject::getBoundingBox            GetBoundingBox;
-%rename Ogre::MovableObject::getBoundingRadius         GetBoundingRadius;
-%rename Ogre::MovableObject::getWorldBoundingBox       GetWorldBoundingBox;
-%rename Ogre::MovableObject::getWorldBoundingSphere    GetWorldBoundingSphere;
-%rename Ogre::MovableObject::setVisible                SetVisible;
-%rename Ogre::MovableObject::isVisible                 IsVisible;
-%rename Ogre::MovableObject::setUserObject             SetUserObject;
-%rename Ogre::MovableObject::getUserObject             GetUserObject;
-%rename Ogre::MovableObject::setRenderQueueGroup       SetRenderQueueGroup;
-%rename Ogre::MovableObject::getRenderQueueGroup       GetRenderQueueGroup;
-%rename Ogre::MovableObject::setQueryFlags             SetQueryFlags;
-%rename Ogre::MovableObject::addQueryFlags             AddQueryFlags;
-%rename Ogre::MovableObject::removeQueryFlags          RemoveQueryFlags;
-%rename Ogre::MovableObject::getQueryFlags             GetQueryFlags;
-%rename Ogre::MovableObject::getEdgeList               GetEdgeList;
-%rename Ogre::MovableObject::getLightCapBounds         GetLightCapBounds;
-%rename Ogre::MovableObject::getDarkCapBounds          GetDarkCapBounds;
-%rename Ogre::MovableObject::setCastShadows            SetCastShadows;
-%rename Ogre::MovableObject::getCastShadows            GetCastShadows;
-%rename Ogre::MovableObject::getPointExtrusionDistance GetPointExtrusionDistance;
-
 //params is a keyword in C#.  there is a %extend for this function
 %ignore Ogre::MovableObjectFactory::createInstance(const String& name, SceneManager* manager, const NameValuePairList* params = 0);
 
-
-
 %typemap(cscode) Ogre::MovableObject
 %{
-
     public object UserData // njkogre - dont use the Ogre "UserObject" - we got our own.
     {
         get{return _userData;}
@@ -46,51 +16,51 @@
     private object _userData;
 
     public virtual string Name {
-        get { return GetName(); }
+        get { return getName(); }
     }
 
     public virtual string MovableType {
-        get { return GetMovableType(); }
+        get { return getMovableType(); }
     }
 
     public virtual Node ParentNode {
-        get { return GetParentNode(); }
+        get { return getParentNode(); }
     }
 
     public virtual SceneNode ParentSceneNode {
-        get { return GetParentSceneNode(); }
+        get { return getParentSceneNode(); }
     }
 
     public virtual AxisAlignedBox BoundingBox {
-        get { return GetBoundingBox(); }
+        get { return getBoundingBox(); }
     }
 
     public virtual float BoundingRadius {
-        get { return GetBoundingRadius(); }
+        get { return getBoundingRadius(); }
     }
 
 //    public virtual void Visible {
 //        get { return IsVisible(); }
-//        set { SetVisible((bool)value); }
+//        set { setVisible((bool)value); }
 //    }
 
     public virtual RenderQueueGroupID RenderQueueGroup {
-        get { return (RenderQueueGroupID)(int)GetRenderQueueGroup(); }
-        set { SetRenderQueueGroup((byte)value); }
+        get { return (RenderQueueGroupID)(int)getRenderQueueGroup(); }
+        set { setRenderQueueGroup((byte)value); }
     }
 
     public virtual UInt32 QueryFlags {
-        get { return GetQueryFlags(); }
-        set { SetQueryFlags(value); }
+        get { return getQueryFlags(); }
+        set { setQueryFlags(value); }
     }
 
     public AxisAlignedBox LightCapBounds {
-        get { return GetLightCapBounds(); }
+        get { return getLightCapBounds(); }
     }
 
     public bool CastShadows {
-        get { return GetCastShadows(); }
-        set { SetCastShadows((bool)value); }
+        get { return getCastShadows(); }
+        set { setCastShadows((bool)value); }
     }
 
     static public MovableObject GetMovableObjectFrom(BillboardSet c)    {
@@ -127,7 +97,6 @@
 */
 %}
 
-
 %include "OgreMovableObject.h"
 
 %extend Ogre::MovableObject {
@@ -142,9 +111,6 @@
         return self->createInstance(name, manager, vparams);
     }
 };
-
-
-
 
 %typemap(cscode) Ogre::MovableObjectFactoryDirector %{
     public delegate  MovableObject    MOFD_Delegate_createInstanceImpl    (string name, NameValuePairList vParams);
@@ -162,8 +128,6 @@
     protected delegate  bool        _MOFD_Delegate_requestTypeFlags        ();
     protected delegate  void        _MOFD_Delegate_notifyTypeFlags        (UInt32 flag);
     protected delegate  UInt32        _MOFD_Delegate_getTypeFlags            ();
-    
-    
     
     public void Init_Event_CreateInstanceImpl()    {
         m_Delegate_CreateInstanceImpl = new _MOFD_Delegate_createInstanceImpl(Handle_CreateInstanceImpl);
@@ -194,7 +158,6 @@
         set_MOFD_FP_getTypeFlags(swigCPtr, m_Delegate_GetTypeFlags);
     }
     
-    
     public event    MOFD_Delegate_createInstanceImpl        evtCreateInstanceImpl = null;
     public event    MOFD_Delegate_getType                    evtGetType = null;
     public event    MOFD_Delegate_createInstance            evtCreateInstance = null;
@@ -210,7 +173,6 @@
     protected    _MOFD_Delegate_requestTypeFlags            m_Delegate_RequestTypeFlags = null;
     protected    _MOFD_Delegate_notifyTypeFlags            m_Delegate_NotifyTypeFlags = null;
     protected    _MOFD_Delegate_getTypeFlags                m_Delegate_GetTypeFlags = null;
-    
     
     [DllImport("OgreBindings", EntryPoint="set_MOFD_FP_createInstanceImpl")]
     protected static extern void set_MOFD_FP_createInstanceImpl(HandleRef MOFactoryDirector, _MOFD_Delegate_createInstanceImpl fn);
@@ -232,8 +194,6 @@
     
     [DllImport("OgreBindings", EntryPoint="set_MOFD_FP_getTypeFlags")]
     protected static extern void set_MOFD_FP_getTypeFlags(HandleRef MOFactoryDirector, _MOFD_Delegate_getTypeFlags fn);
-
-
 
     protected IntPtr Handle_CreateInstanceImpl(string name, IntPtr vParams)
     {
@@ -290,11 +250,7 @@
         else
             return 0;
     }
-    
 %}
-
-
-
 
 namespace Ogre
 {
@@ -312,4 +268,3 @@ namespace Ogre
         virtual MovableObject* CreateInstanceImpl(const String& name, const NameValuePairList* vParams = 0);
     };
 }
-

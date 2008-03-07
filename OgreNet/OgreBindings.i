@@ -153,7 +153,7 @@ using namespace Ogre;
 
 %include OgreAnimable.i
 %include OgreShadowCaster.i
-// %include OgreMovableObject.i
+%include OgreMovableObject.i
 // %include OgrePatchSurface.i
 
 // %include OgreRenderOperation.i

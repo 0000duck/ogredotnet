@@ -4,7 +4,6 @@
 
 namespace Ogre
 {
-
     typedef MovableObject*    (SWIGSTDCALL *MOFD_FP_createInstanceImpl)    (const String&, const NameValuePairList*);
     typedef const String&    (SWIGSTDCALL *MOFD_FP_getType)                (void);
     typedef MovableObject*    (SWIGSTDCALL *MOFD_FP_createInstance)        (const String&, SceneManager*, const NameValuePairList*);
@@ -12,7 +11,6 @@ namespace Ogre
     typedef bool            (SWIGSTDCALL *MOFD_FP_requestTypeFlags)        (void);
     typedef void            (SWIGSTDCALL *MOFD_FP_notifyTypeFlags)        (unsigned long);
     typedef unsigned long    (SWIGSTDCALL *MOFD_FP_getTypeFlags)            (void);
-
 
     class MovableObjectFactoryDirector : public MovableObjectFactory 
     {
@@ -24,7 +22,6 @@ namespace Ogre
         MOFD_FP_requestTypeFlags    mFP_requestTypeFlags;
         MOFD_FP_notifyTypeFlags        mFP_notifyTypeFlags;
         MOFD_FP_getTypeFlags        mFP_getTypeFlags;
-
 
         MovableObjectFactoryDirector() : MovableObjectFactory()
         {
@@ -40,7 +37,6 @@ namespace Ogre
         {
         }
 
-
         /// Type flag, allocated if requested
         unsigned long get_TypeFlag()    {
             return mTypeFlag;
@@ -53,7 +49,6 @@ namespace Ogre
         {
             return createInstanceImpl(name, vParams);
         }
-
 
         //### overrides ###
     protected:
@@ -144,7 +139,6 @@ namespace Ogre
             else
                 return mTypeFlag;
         }
-
     };
 }
 
@@ -176,7 +170,5 @@ extern "C" SWIGEXPORT void set_MOFD_FP_getTypeFlags(void * _obj, void * _fn)
 {
     ((Ogre::MovableObjectFactoryDirector*)_obj)->mFP_getTypeFlags = (MOFD_FP_getTypeFlags)_fn;
 }
-
-
 
 #endif //__MovableObjectExt_H_
