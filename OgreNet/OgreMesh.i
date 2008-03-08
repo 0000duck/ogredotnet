@@ -5,6 +5,9 @@
 //bool suggestTangentVectorBuildParams(unsigned short& outSourceCoordSet, unsigned short& outDestCoordSet);
 %apply unsigned short     &INOUT { unsigned short& outSourceCoordSet, unsigned short& outDestCoordSet };
 
+// TODO: problems with ushort conversion
+%ignore Ogre::Mesh::suggestTangentVectorBuildParams;
+
 //TODO is multimap working?  below is the template
 //swig is having some problem with "struct" Ogre::VertexBoneAssignment being in a multimap and MapIterator
 //have to custom wrap this function because swig cant see it right.
@@ -140,7 +143,6 @@
         return self->setNull();
     }
 };
-
 
 %extend Ogre::Mesh
 {

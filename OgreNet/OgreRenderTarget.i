@@ -23,141 +23,130 @@
     public virtual string Name {
         get
         {
-            return GetName();
+            return getName();
         }
     }
 
     public virtual UInt32 Width {
         get
         {
-            return GetWidth();
+            return getWidth();
         }
     }
 
     public virtual UInt32 Height {
         get
         {
-            return GetHeight();
+            return getHeight();
         }
     } 
 
     public virtual UInt32 ColourDepth {
         get
         {
-            return GetColourDepth();
+            return getColourDepth();
         }
     }
 
     public virtual int NumViewports {
         get
         {
-            return GetNumViewports();
+            return getNumViewports();
         }
     }
 
     public virtual float LastFPS {
         get
         {
-            return GetLastFPS();
+            return getLastFPS();
         }
     }
 
     public virtual float AverageFPS {
         get
         {
-            return GetAverageFPS();
+            return getAverageFPS();
         }
     }
 
     public virtual float BestFPS {
         get
         {
-            return GetBestFPS();
+            return getBestFPS();
         }
     }
 
     public virtual float WorstFPS {
         get
         {
-            return GetWorstFPS();
+            return getWorstFPS();
         }
     }
 
     public virtual float BestFrameTime {
         get
         {
-            return GetBestFrameTime();
+            return getBestFrameTime();
         }
     }
 
     public virtual float WorstFrameTime {
         get
         {
-            return GetWorstFrameTime();
-        }
-    }
-
-    public string DebugText {
-        get
-        {
-            return GetDebugText();
-        }
-        set
-        {
-            SetDebugText((string)value);
+            return getWorstFrameTime();
         }
     }
 
     public virtual byte Priority {
         get
         {
-            return GetPriority();
+            return getPriority();
         }
         set
         {
-            SetPriority((byte)value);
+            setPriority((byte)value);
         }
     }
 
 //     public virtual bool IsActive {
 //         get
 //         {
-//             return IsActive();
+//             return isActive();
 //         }
 //     }
 
 //     public virtual void Active {
 //         set
 //         {
-//             SetActive((bool)value);
+//             setActive((bool)value);
 //         }
 //     }
 
 //     public virtual void AutoUpdated {
 //         set
 //         {
-//             SetAutoUpdated((bool)value);
+//             setAutoUpdated((bool)value);
 //         }
 //     }
 
 //     public virtual bool IsAutoUpdated {
 //         get
 //         {
-//             return IsAutoUpdated();
+//             return isAutoUpdated();
 //         }
 //     }
 
     public virtual UInt32 TriangleCount {
         get
         {
-            return GetTriangleCount();
+            return getTriangleCount();
         }
     }
 
 //     public virtual bool IsPrimary {
 //         get
 //         {
-//             return IsPrimary();
+//             return isPrimary();
 //         }
 //     }
 %}

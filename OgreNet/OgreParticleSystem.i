@@ -5,8 +5,8 @@
 %typemap(cscode) Ogre::ParticleSystem
 %{
     public string MaterialName    {
-        get { return GetMaterialName(); }
-        set { SetMaterialName(value); }
+        get { return getMaterialName(); }
+        set { setMaterialName(value); }
     }
 %}
 

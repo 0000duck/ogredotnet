@@ -8,7 +8,7 @@
     {
         get
         {
-            return new TextureManager(OgreBindingsPINVOKE.TextureManager_GetSingleton(), false);
+            return new TextureManager(OgreBindingsPINVOKE.TextureManager_getSingleton(), false);
         }
     }
 %}

@@ -15,27 +15,27 @@
 
     public bool Closed
     {
-        get { return IsClosed(); }
+        get { return isClosed(); }
     }
     
     public bool Visible
     {
-        get { return IsVisible(); }
+        get { return isVisible(); }
     }
 
     public bool Active
     {
-        get { return IsActive(); }
+        get { return isActive(); }
     }
 
     public bool Primary
     {
-        get { return IsPrimary(); }
+        get { return isPrimary(); }
     }
 
     public bool FullScreen
     {
-        get { return IsFullScreen(); }
+        get { return isFullScreen(); }
     }
 %}
 

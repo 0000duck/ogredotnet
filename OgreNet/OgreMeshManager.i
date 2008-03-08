@@ -9,7 +9,7 @@
 %{
     public static MeshManager Instance    {
         get    {
-            return new MeshManager(OgreBindingsPINVOKE.MeshManager_GetSingleton(), false);
+            return new MeshManager(OgreBindingsPINVOKE.MeshManager_getSingleton(), false);
         }
     }
 
