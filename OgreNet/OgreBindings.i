@@ -132,7 +132,7 @@ using namespace Ogre;
 // %include OgreDataStream.i
 // %include OgreArchive.i
 %include OgrePixelFormat.i
-// %include OgreVertexBoneAssignment.i
+%include OgreVertexBoneAssignment.i
 // %include OgreProgressiveMesh.i
 // %include Key.i
 // %include EventHandler.i
