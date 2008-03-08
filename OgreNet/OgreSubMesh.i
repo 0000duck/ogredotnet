@@ -49,8 +49,8 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
 %{
     public string MaterialName
     {
-        set { SetMaterialName(value); }
-        get { return GetMaterialName(); }
+        set { setMaterialName(value); }
+        get { return getMaterialName(); }
     }
 %}
 

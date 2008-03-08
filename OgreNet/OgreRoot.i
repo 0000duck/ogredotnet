@@ -20,9 +20,9 @@
     public RenderWindow Initialise(System.Windows.Forms.Control control)
     {
         System.Drawing.Size s = control.ClientSize;
-        return this.Initialise(control.Handle.ToInt32(), s.Width, s.Height, false);
+        return this.initialise(control.Handle.ToInt32(), s.Width, s.Height, false);
     }
-    
+
     static public Root Instance
     {
         get    {

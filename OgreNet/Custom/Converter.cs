@@ -15,10 +15,10 @@ namespace OgreDotNet
 
         public static System.Drawing.Color ToColor(ColourValue c)
         {
-            return Color.FromArgb((int)(c.GetA()*255.0f), 
-                (int)(c.GetR()*255.0f), 
-                (int)(c.GetG()*255.0f), 
-                (int)(c.GetB()*255.0f));
+            return Color.FromArgb((int)(c.a * 255.0f), 
+                (int)(c.r * 255.0f), 
+                (int)(c.g * 255.0f), 
+                (int)(c.b * 255.0f));
         }
 
         public static System.Drawing.Color GetColor(float r, float g, float b, float a)
