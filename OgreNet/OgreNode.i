@@ -36,19 +36,19 @@
     public void Yaw(float degrees) // njkogre-added to bridge gap interface Axiom supported
     {
         float radians = degrees * _DegreesToRadiansFactor;
-        Yaw(new Radian(radians));
+        yaw(new Radian(radians));
     }
 
     public void Pitch(float degrees) // njkogre-added to bridge gap interface Axiom supported
     {
         float radians = degrees * _DegreesToRadiansFactor;
-        Pitch(new Radian(radians));
+        pitch(new Radian(radians));
     }
 
     public void Roll(float degrees) // njkogre-added to bridge gap interface Axiom supported
     {
         float radians = degrees * _DegreesToRadiansFactor;
-        Roll(new Radian(radians));
+        roll(new Radian(radians));
     }
 
     #endregion njkogre - added Yaw, Pitch, Roll with argument as Degrees

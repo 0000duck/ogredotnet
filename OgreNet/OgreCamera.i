@@ -46,7 +46,7 @@
     {
         set
         {
-            _lookAt(value);
+            lookAt(value);
         }
     }
 

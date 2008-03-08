@@ -23,35 +23,35 @@ namespace Ogre
 %typemap(cscode) Ogre::AnimationState
 %{
     public string AnimationName    {
-        get { return GetAnimationName(); }
+        get { return getAnimationName(); }
     }
 
     public float TimePosition    {
-        get { return GetTimePosition(); }
-        set { SetTimePosition((float)value); }
+        get { return getTimePosition(); }
+        set { setTimePosition((float)value); }
     }
 
     public float Length    {
-        get { return GetLength(); }
-        set { SetLength((float)value); }
+        get { return getLength(); }
+        set { setLength((float)value); }
     }
 
     public float Weight
     {
-        get { return GetWeight(); }
-        set { SetWeight((float)value); }
+        get { return getWeight(); }
+        set { setWeight((float)value); }
     }
 
     public bool Enabled
     {
-        get { return GetEnabled(); }
-        set { SetEnabled((bool)value); }
+        get { return getEnabled(); }
+        set { setEnabled((bool)value); }
     }
 
     public bool Loop
     {
-        get { return GetLoop(); }
-        set { SetLoop((bool)value); }
+        get { return getLoop(); }
+        set { setLoop((bool)value); }
     }
 %}
 
