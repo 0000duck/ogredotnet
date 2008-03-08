@@ -233,8 +233,8 @@ using namespace Ogre;
 //%include OgreFactoryObj.i
 // %include OgreParticle.i
 // %include OgreParticleEmitter.i
-// %include OgreParticleIterator.i
-// %include OgreParticleSystem.i
+%include OgreParticleIterator.i
+%include OgreParticleSystem.i
 // %include OgreParticleAffector.i
 //%include OgreParticleAffectorFactory.i
 //%include OgreParticleEmitterFactory.i
