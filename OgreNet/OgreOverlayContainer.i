@@ -2,8 +2,6 @@
 #include "OgreOverlayContainer.h"
 %}
 
-%rename Ogre::OverlayContainer::getChild                        GetChild;
-
 %typemap(cscode) Ogre::OverlayContainer
 %{
     public TextAreaOverlayElement GetChildTextArea(string instanceName)
