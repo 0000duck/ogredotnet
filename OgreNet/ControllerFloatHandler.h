@@ -37,7 +37,6 @@ namespace Ogre
         }
     };
 
-
     //rastaman 11/14/2005
     // ControllerFunctionFloat Event Director
     // need some way to callback into C# for calculate 
@@ -80,7 +79,6 @@ namespace Ogre
     };
 }
 
-
 extern "C" SWIGEXPORT void CVFH_GetValue_Function(void* cv, void* fn)
 {
     ((Ogre::ControllerValueFloatDirector*)cv)->mGetValueFP = (CVFH_GetValue_FunctionPointer)fn;
@@ -90,7 +88,6 @@ extern "C" SWIGEXPORT void CVFH_SetValue_Function(ControllerValueFloatDirector* 
 {
     ((Ogre::ControllerValueFloatDirector*)cv)->mSetValueFP = (CVFH_SetValue_FunctionPointer)fn;
 }
-
 
 extern "C" SWIGEXPORT void CFFH_Calculate_Function(void* cf, void* fn)
 {

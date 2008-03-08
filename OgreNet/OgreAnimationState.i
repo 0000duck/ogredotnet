@@ -18,22 +18,7 @@ namespace Ogre
 }
 %}
 
-%rename Ogre::AnimationState::getAnimationName GetAnimationName;
-%rename Ogre::AnimationState::getTimePosition GetTimePosition;
-%rename Ogre::AnimationState::setTimePosition SetTimePosition;
-%rename Ogre::AnimationState::getLength GetLength;
-%rename Ogre::AnimationState::setLength SetLength;
-%rename Ogre::AnimationState::getWeight GetWeight;
-%rename Ogre::AnimationState::setWeight SetWeight;
-%rename Ogre::AnimationState::addTime AddTime;
-%rename Ogre::AnimationState::getEnabled GetEnabled;
-%rename Ogre::AnimationState::setEnabled SetEnabled;
-%rename Ogre::AnimationState::getLoop GetLoop;
-%rename Ogre::AnimationState::setLoop SetLoop;
-%rename Ogre::AnimationState::copyStateFrom CopyStateFrom;
-
 %nodefault Ogre::AnimationStateControllerValueDirector;
-
 
 %typemap(cscode) Ogre::AnimationState
 %{
@@ -69,8 +54,6 @@ namespace Ogre
         set { SetLoop((bool)value); }
     }
 %}
-
-
 
 // AnimationStateControllerValue Event Director
 %typemap(cscode) Ogre::AnimationStateControllerValueDirector %{
@@ -114,9 +97,6 @@ namespace Ogre
     }
 %}
 
-
-
-
 %include OgreAnimationState.h
 
 namespace Ogre
@@ -128,8 +108,6 @@ namespace Ogre
         virtual ~AnimationStateControllerValueDirector();
     };
 }
-
-
 
 //    typedef std::map<String, AnimationState*> AnimationStateMap;
 PTR_REF_TYPEMAPS(AnimationState, Ogre::AnimationState*)

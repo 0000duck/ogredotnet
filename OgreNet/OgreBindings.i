@@ -164,7 +164,7 @@ using namespace Ogre;
 // %include OgrePose.i
 %include OgreAnimationTrack.i    //enum VertexAnimationType befor submesh and animation
 %include OgreAnimation.i
-// %include OgreAnimationState.i
+%include OgreAnimationState.i
 %include OgreSubMesh.i
 // %include OgreStaticGeometry.i
 // %include OgreBillboard.i
