@@ -2,8 +2,6 @@
 #include "OgreOverlayManager.h"
 %}
 
-%rename Ogre::OverlayManager::createOverlayElement            CreateOverlayElement;
-
 %typemap(cscode) Ogre::OverlayManager
 %{
     public static OverlayManager Instance    {
@@ -14,36 +12,34 @@
     
     public TextAreaOverlayElement CreateTextAreaElement(string instanceName, bool isTemplate)
     {
-        OverlayElement el = CreateOverlayElement("TextArea", instanceName, isTemplate);
+        OverlayElement el = createOverlayElement("TextArea", instanceName, isTemplate);
         TextAreaOverlayElement ret = new TextAreaOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 
     public TextAreaOverlayElement CreateTextAreaElement(string instanceName)
     {
-        OverlayElement el = CreateOverlayElement("TextArea", instanceName);
+        OverlayElement el = createOverlayElement("TextArea", instanceName);
         TextAreaOverlayElement ret = new TextAreaOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 
     public PanelOverlayElement CreatePanelElement(string instanceName, bool isTemplate)
     {
-        OverlayElement el = CreateOverlayElement("Panel", instanceName, isTemplate);
+        OverlayElement el = createOverlayElement("Panel", instanceName, isTemplate);
         PanelOverlayElement ret = new PanelOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 
     public PanelOverlayElement CreatePanelElement(string instanceName)
     {
-        OverlayElement el = CreateOverlayElement("Panel", instanceName);
+        OverlayElement el = createOverlayElement("Panel", instanceName);
         PanelOverlayElement ret = new PanelOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 %}
 
-
 %include OgreOverlayManager.h
-
 
 //    typedef std::map<String, Overlay*> OverlayMap;
 PTR_REF_TYPEMAPS(Overlay, Ogre::Overlay*)
@@ -58,4 +54,3 @@ MapIteratorWRAP(OverlayMapIteratorWrap, std::map, std::string, Ogre::Overlay*);
 //%template(ElementMap) std::map<std::string, Ogre::OverlayElement*>;
 //    typedef MapIterator<ElementMap> TemplateIterator;
 //MapIteratorWRAP(TemplateIteratorWrap, std::map, std::string, Ogre::OverlayElement*);
-

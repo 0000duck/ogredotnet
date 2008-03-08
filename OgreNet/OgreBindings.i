@@ -227,8 +227,8 @@ using namespace Ogre;
 %include OgreOverlayContainer.i
 %include OgrePanelOverlayElement.i
 %include OgreTextAreaOverlayElement.i
-// %include OgreOverlayElementFactory.i
-// %include OgreOverlayManager.i
+%include OgreOverlayElementFactory.i
+%include OgreOverlayManager.i
 
 //%include OgreFactoryObj.i
 // %include OgreParticle.i
