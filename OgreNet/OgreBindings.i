@@ -156,7 +156,7 @@ using namespace Ogre;
 %include OgreMovableObject.i
 // %include OgrePatchSurface.i
 
-// %include OgreRenderOperation.i
+%include OgreRenderOperation.i
 %include OgreRenderQueue.i
 // %include OgreRenderQueueSortingGrouping.i
 
@@ -188,7 +188,7 @@ using namespace Ogre;
 // %include OgrePatchMesh.i
 %include OgreSkeleton.i
 %include OgreSkeletonInstance.i
-// %include OgreVertexIndexData.i
+%include OgreVertexIndexData.i
 // %include OgreRibbonTrail.i
 // %include OgreBillboardChain.i
 // %include Line3D.i
