@@ -171,7 +171,7 @@ using namespace Ogre;
 %include OgreBillboardSet.i
 // %include OgreTagPoint.i
 %include OgreBone.i
-// %include OgreSimpleRenderable.i
+%include OgreSimpleRenderable.i
 // %include OgreRectangle2D.i
 %include OgreFrustum.i
 %include OgreCamera.i

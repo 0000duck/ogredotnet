@@ -9,7 +9,6 @@
 %ignore Ogre::SimpleRenderableDirector::setRenderOperation;
 %ignore Ogre::SimpleRenderableDirector::getRenderOperation;
 
-
 %typemap(cscode) Ogre::SimpleRenderable
 %{
     //because theres no static_cast if you get an object that was originaly created as a SimpleRenderable
@@ -26,18 +25,13 @@
     }
 %}
 
-
-
 %include "OgreSimpleRenderable.h"
-
 
 %extend Ogre::SimpleRenderable {
     Ogre::Renderable * GetAsRenderable()    {
         return (Ogre::Renderable*)self;
     }
 };
-
-
 
 %typemap(cscode) Ogre::SimpleRenderableDirector %{
     public delegate  MaterialPtr        SRD_Delegate_getMaterial            ();
@@ -66,8 +60,6 @@
     protected delegate  float        _SRD_Delegate_getSquaredViewDepth    (IntPtr cam);
     protected delegate  float        _SRD_Delegate_getBoundingRadius        ();
     
-    
-    
     public Renderable RO_Renderable {
         get { return this.GetRO_Renderable(); }
     }
@@ -91,8 +83,6 @@
         get { return this.GetRO_VertexData(); }
         set { this.SetRO_VertexData(value); }
     }
-    
-    
     
     public void Init_Event_GetMaterial()    {
         m_Delegate_GetMaterial =            new _SRD_Delegate_getMaterial            (Handle_GetMaterial);
@@ -169,7 +159,6 @@
     protected    _SRD_Delegate_getSquaredViewDepth    m_Delegate_GetSquaredViewDepth = null;
     protected    _SRD_Delegate_getBoundingRadius        m_Delegate_GetBoundingRadius = null;
     
-    
     [DllImport("OgreBindings", EntryPoint="set_SRD_FP_getMaterial")]
     protected static extern void set_SRD_FP_getMaterial(HandleRef SRenderableDirector, _SRD_Delegate_getMaterial fn);
     
@@ -206,7 +195,6 @@
     [DllImport("OgreBindings", EntryPoint="set_SRD_FP_getBoundingRadius")]
     protected static extern void set_SRD_FP_getBoundingRadius(HandleRef SRenderableDirector, _SRD_Delegate_getBoundingRadius fn);
     
-    
     protected IntPtr Handle_GetMaterial()
     {
         IntPtr ret;
@@ -228,7 +216,6 @@
             this.CallBase_getWorldTransforms(m);
     }
     
-
     protected IntPtr Handle_GetWorldOrientation ()
     {
         IntPtr ret;
@@ -240,7 +227,6 @@
         ret = OgreQuaternion.getCPtr(q).Handle;
         return ret;
     }
-    
 
     protected IntPtr Handle_GetWorldPosition ()
     {
@@ -253,7 +239,6 @@
         ret = OgreVector3.getCPtr(v).Handle;
         return ret;
     }
-    
 
     protected void Handle_NotifyCurrentCamera (IntPtr cam)
     {
@@ -264,7 +249,6 @@
             this.CallBase_notifyCurrentCamera(c);
     }
     
-
     protected IntPtr Handle_GetBoundingBox ()
     {
         IntPtr ret;
@@ -277,7 +261,6 @@
         return ret;
     }
     
-
     protected void Handle_UpdateRenderQueue (IntPtr queue)
     {
         RenderQueue r = new RenderQueue(queue, false);
@@ -287,7 +270,6 @@
             this.CallBase_updateRenderQueue(r);
     }
     
-
     protected string Handle_GetName ()
     {
         if(evtGetName != null)
@@ -296,7 +278,6 @@
             return this.CallBase_getName();
     }
     
-
     protected string Handle_GetMovableType ()
     {
         if(evtGetMovableType != null)
@@ -305,7 +286,6 @@
             return this.CallBase_getMovableType();
     }
     
-
     protected IntPtr Handle_GetLights ()
     {
         IntPtr ret;
@@ -318,7 +298,6 @@
         return ret;
     }
     
-
     protected float Handle_GetSquaredViewDepth (IntPtr cam)
     {
         Camera c = new Camera(cam, false);
@@ -327,7 +306,6 @@
         else
             return 0.0f; //it is abstract and not on SimpleRenderer (multi-Inheritence problem)
     }
-    
 
     protected float Handle_GetBoundingRadius ()
     {
@@ -336,9 +314,7 @@
         else
             return 0.0f;    //it is abstract and not on SimpleRenderer (multi-Inheritence problem)
     }
-    
 %}
-
 
 namespace Ogre
 {
@@ -361,7 +337,6 @@ namespace Ogre
         VertexData * GetRO_VertexData();
         void SetRO_VertexData(VertexData * v);
         
-        
         const MaterialPtr& CallBase_getMaterial(void) const;
         void CallBase_getWorldTransforms(Matrix4* xform) const;
         const Quaternion& CallBase_getWorldOrientation(void) const;
@@ -377,4 +352,3 @@ namespace Ogre
         virtual Real getBoundingRadius(void) const;
     };
 }
-

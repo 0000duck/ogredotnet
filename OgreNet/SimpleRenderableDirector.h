@@ -5,7 +5,6 @@
 
 namespace Ogre
 {
-
     //not virtual typedef void        (SWIGSTDCALL *SRD_FP_setMaterial)            (const String&);
     typedef const MaterialPtr&        (SWIGSTDCALL *SRD_FP_getMaterial)            (void);
     //not virtual typedef void         (SWIGSTDCALL *SRD_FP_setWorldTransform)        (const Matrix4&);
@@ -20,7 +19,6 @@ namespace Ogre
     typedef const String&             (SWIGSTDCALL *SRD_FP_getMovableType)        (void);
     typedef const LightList&         (SWIGSTDCALL *SRD_FP_getLights)                (void);
 
-
     //from Renderable
     typedef Real                    (SWIGSTDCALL *SRD_FP_getSquaredViewDepth)    (const Camera*);
 
@@ -30,7 +28,6 @@ namespace Ogre
     class SimpleRenderableDirector : public Ogre::SimpleRenderable
     {
     public:
-
         //SRD_FP_setMaterial            mFP_setMaterial;
         SRD_FP_getMaterial                mFP_getMaterial;
         //SRD_FP_setWorldTransform        mFP_setWorldTransform;
@@ -47,7 +44,6 @@ namespace Ogre
 
         SRD_FP_getSquaredViewDepth        mFP_getSquaredViewDepth;
         SRD_FP_getBoundingRadius        mFP_getBoundingRadius;
-
 
         SimpleRenderableDirector()
         {
@@ -112,7 +108,6 @@ namespace Ogre
             mRenderOp.vertexData = v;
         }
         //########## RenderOperation access
-
 
         //##########  overrides for ODN delegates
         virtual const MaterialPtr& getMaterial(void) const
@@ -195,8 +190,6 @@ namespace Ogre
                 return SimpleRenderable::getLights();
         }
 
-
-
         virtual Real getSquaredViewDepth(const Camera* cam) const
         {
             if(mFP_getSquaredViewDepth)
@@ -204,8 +197,6 @@ namespace Ogre
             else
                 return 0.0f;  //abstract function so just return 0
         }
-
-
 
         virtual Real getBoundingRadius(void) const
         {
@@ -334,6 +325,5 @@ extern "C" SWIGEXPORT void set_SRD_FP_getBoundingRadius(void * srd, void * _fn)
 {
     ((Ogre::SimpleRenderableDirector*)srd)->mFP_getBoundingRadius = (SRD_FP_getBoundingRadius)_fn;
 }
-
 
 #endif //_SimpleRenderableDirector_H_
