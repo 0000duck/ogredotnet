@@ -155,6 +155,7 @@ using namespace Ogre;
 %include OgreShadowCaster.i
 %include OgreMovableObject.i
 // %include OgrePatchSurface.i
+%include OgreManualObject.i
 
 %include OgreRenderOperation.i
 %include OgreRenderQueue.i
