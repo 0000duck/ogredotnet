@@ -223,7 +223,7 @@ using namespace Ogre;
 %include OgreRenderSystem.i
 
 // %include OgreOverlay.i
-// %include OgreOverlayElement.i
+%include OgreOverlayElement.i
 // %include OgreOverlayContainer.i
 // %include OgrePanelOverlayElement.i
 // %include OgreTextAreaOverlayElement.i

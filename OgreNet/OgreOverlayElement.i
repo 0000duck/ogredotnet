@@ -22,10 +22,6 @@
         return ret;
     }
 
-
-
-
-
     static public OverlayContainer GetOverlayContainerFrom(OverlayElement c)
     {
         OverlayContainer ret = new OverlayContainer(OverlayElement.getCPtr(c).Handle , false);
