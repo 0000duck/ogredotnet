@@ -2,6 +2,9 @@
 #include "OgreLight.h"
 %}
 
+%rename Ogre::Light::getType getLightType;
+%rename Ogre::Light::setType setLightType;
+
 // enum LightTypes
 #define LT_POINT        Point
 #define LT_DIRECTIONAL  Directional

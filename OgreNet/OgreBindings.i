@@ -241,6 +241,7 @@ using namespace Ogre;
 // %include OgreParticleSystemRenderer.i
 // %include OgreParticleSystemManager.i
 
+%include OgreShadowTextureManager.i
 %include OgreSceneManager.i
 %include OgreSceneManagerEnumerator.i
 %include OgreRoot.i

@@ -75,10 +75,11 @@
     public ShadeOptions ShadingMode    {
         set { setShadingMode(value); }
     }
-    
-    public UInt16 DepthBias    {
-        set        { setDepthBias(value); }
-    }
+
+// TODO: setDepthBias takes 2 parameters    
+//     public UInt16 DepthBias    {
+//         set        { setDepthBias(value); }
+//     }
     
     public TextureFilterOptions TextureFiltering {
         set    { setTextureFiltering(value); }

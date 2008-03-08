@@ -100,17 +100,7 @@ SIMPLE_TYPEMAP(SceneTypeMask,  unsigned short,   UInt16)
         set { setShadowIndexBufferSize(value); }
     }
 
-    public UInt16 ShadowTextureSize {
-        get { return getShadowTextureSize(); }
-        set { setShadowTextureSize((UInt16)value); }
-    }
-
-    public PixelFormat ShadowTexturePixelFormat {
-        get { return getShadowTexturePixelFormat(); }
-        set { setShadowTexturePixelFormat((PixelFormat)value); }
-    }
-
-    public UInt16 ShadowTextureCount {
+    public UInt32 ShadowTextureCount {
         get { return getShadowTextureCount(); }
         set { setShadowTextureCount((UInt16)value); }
     }
