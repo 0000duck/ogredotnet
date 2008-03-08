@@ -186,8 +186,8 @@ using namespace Ogre;
 // %include OgreTexture.i
 %include OgreMesh.i
 // %include OgrePatchMesh.i
-// %include OgreSkeleton.i
-// %include OgreSkeletonInstance.i
+%include OgreSkeleton.i
+%include OgreSkeletonInstance.i
 // %include OgreVertexIndexData.i
 // %include OgreRibbonTrail.i
 // %include OgreBillboardChain.i
@@ -205,7 +205,7 @@ using namespace Ogre;
 // %include OgreHighLevelGpuProgramManager.i
 // %include OgreMaterialManager.i
 %include OgreMeshManager.i
-// %include OgreSkeletonManager.i
+%include OgreSkeletonManager.i
 %include OgreTextureManager.i
 
 // %include OgreRenderQueueListener.i

@@ -12,52 +12,31 @@ namespace Ogre
 }
 %}
 
-%rename Ogre::Skeleton::createBone                               CreateBone;
-%rename Ogre::Skeleton::getNumBones                              GetNumBones;
-%rename Ogre::Skeleton::getRootBone                              GetRootBone;
-%rename Ogre::Skeleton::getRootBoneIterator                      GetRootBoneIterator;
-%rename Ogre::Skeleton::getBoneIterator                          GetBoneIterator;
-%rename Ogre::Skeleton::getBone                                  GetBone;
-%rename Ogre::Skeleton::setBindingPose                           SetBindingPose;
-%rename Ogre::Skeleton::reset                                    Reset;
-%rename Ogre::Skeleton::createAnimation                          CreateAnimation;
-%rename Ogre::Skeleton::removeAnimation                          RemoveAnimation;
-%rename Ogre::Skeleton::setAnimationState                        SetAnimationState;
-%rename Ogre::Skeleton::getNumAnimations                         GetNumAnimations;
-%rename Ogre::Skeleton::getBlendMode                             GetBlendMode;
-%rename Ogre::Skeleton::setBlendMode                             SetBlendMode;
-%rename Ogre::Skeleton::optimiseAllAnimations                    OptimiseAllAnimations;
-%rename Ogre::Skeleton::addLinkedSkeletonAnimationSource         AddLinkedSkeletonAnimationSource;
-%rename Ogre::Skeleton::removeAllLinkedSkeletonAnimationSources  RemoveAllLinkedSkeletonAnimationSources;
-%rename Ogre::Skeleton::getLinkedSkeletonAnimationSourceIterator GetLinkedSkeletonAnimationSourceIterator;
-
 //custom warp because of pointer to pointer
 %ignore Ogre::Skeleton::getAnimation(const String& name, const LinkedSkeletonAnimationSource** linker = 0) const;
 %ignore Ogre::Skeleton::_getAnimationImpl;
 %newobject Ogre::Skeleton::GetAnimation;
 
-
 %typemap(cscode) Ogre::Skeleton
 %{
   public virtual int NumBones {
-    get { return GetNumBones(); }
+    get { return getNumBones(); }
   }
   
   public virtual Bone RootBone {
-    get { return GetRootBone(); }
+    get { return getRootBone(); }
   }
 
   public virtual int NumAnimations {
-    get { return GetNumAnimations(); }
+    get { return getNumAnimations(); }
   }
 
   public virtual SkeletonAnimationBlendMode BlendMode {
-    get { return GetBlendMode(); }
-    set { SetBlendMode((SkeletonAnimationBlendMode)value); }    
+    get { return getBlendMode(); }
+    set { setBlendMode((SkeletonAnimationBlendMode)value); }    
   }
 
 %}
-
 
 %include OgreSkeleton.h
 
@@ -71,7 +50,6 @@ namespace Ogre
     };
 }
 
-
 %extend Ogre::Skeleton
 {
     Ogre::SkeletonAnimLSAS* GetAnimation(const String& name) const
@@ -81,7 +59,6 @@ namespace Ogre
         return ret;
     }
 };
-
 
 //class _OgreExport SkeletonPtr : public SharedPtr<Skeleton>
 //lot of trouble with templating the SharedPtr + we dont need 2 of them.
@@ -110,11 +87,6 @@ namespace Ogre
     }
 };
 
-
-
-
-
-
 //## BoneIterator
 //typedef std::vector<Bone*> BoneList;
 //swig.29     PTR_REF_TYPEMAPS(Bone, Ogre::Bone*)
@@ -133,4 +105,3 @@ SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(LinkedSkeletonAnimationSource, Ogre::LinkedSk
 //typedef ConstVectorIterator<LinkedSkeletonAnimSourceList>     LinkedSkeletonAnimSourceIterator;
 ConstVectorIteratorWRAP(LinkedSkeletonAnimSourceIteratorWrap, std::vector, Ogre::LinkedSkeletonAnimationSource);
 //##
-
