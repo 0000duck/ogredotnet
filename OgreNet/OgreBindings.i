@@ -1,14 +1,14 @@
 %module (directors="1") OgreBindings
 
 %{
+#ifdef __APPLE__
+#include "Carbon/Carbon.h"
+#endif
+
 #include "Ogre.h"
 #include "OgrePrerequisites.h"
 #include "OgreIteratorWrappers.h"
 #include "OgreString.h"
-
-#ifdef __APPLE__
-#include "Carbon/Carbon.h"
-#endif
 
 using namespace Ogre;
 %}
