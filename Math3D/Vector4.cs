@@ -225,5 +225,4 @@ namespace Math3D
 
 		#endregion
 	}
-
 }

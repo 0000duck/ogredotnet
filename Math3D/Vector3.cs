@@ -11,15 +11,14 @@ namespace Math3D
 		/// <summary>Z component.</summary>
 		public float z;
 
-		private static readonly Vector3 zeroVector = new Vector3(0.0f, 0.0f, 0.0f);
-		private static readonly Vector3 unitX = new Vector3(1.0f, 0.0f, 0.0f);
-		private static readonly Vector3 unitY = new Vector3(0.0f, 1.0f, 0.0f);
-		private static readonly Vector3 unitZ = new Vector3(0.0f, 0.0f, 1.0f);
-		private static readonly Vector3 negativeUnitX = new Vector3(-1.0f, 0.0f, 0.0f);
-		private static readonly Vector3 negativeUnitY = new Vector3(0.0f, -1.0f, 0.0f);
-		private static readonly Vector3 negativeUnitZ = new Vector3(0.0f, 0.0f, -1.0f);
-		private static readonly Vector3 unitVector = new Vector3(1.0f, 1.0f, 1.0f);
-
+		public static readonly Vector3 zeroVector = new Vector3(0.0f, 0.0f, 0.0f);
+		public static readonly Vector3 unitX = new Vector3(1.0f, 0.0f, 0.0f);
+		public static readonly Vector3 unitY = new Vector3(0.0f, 1.0f, 0.0f);
+		public static readonly Vector3 unitZ = new Vector3(0.0f, 0.0f, 1.0f);
+		public static readonly Vector3 negativeUnitX = new Vector3(-1.0f, 0.0f, 0.0f);
+		public static readonly Vector3 negativeUnitY = new Vector3(0.0f, -1.0f, 0.0f);
+		public static readonly Vector3 negativeUnitZ = new Vector3(0.0f, 0.0f, -1.0f);
+		public static readonly Vector3 unitVector = new Vector3(1.0f, 1.0f, 1.0f);
 
 		/// <summary>
 		///		Creates a new 3 dimensional Vector.
