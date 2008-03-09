@@ -24,10 +24,7 @@
     }
 %}
 
-
 %include OgreResourceGroupManager.h
-
-
 
 %nodefault Ogre::RGMResourceDeclaration;
 %nodefault Ogre::RGMResourceDeclarationList;
@@ -63,7 +60,6 @@ namespace Ogre
     };
 }
 
-
 %extend Ogre::ResourceGroupManager {
     //declare new functions to use RGMResourceDeclaration in place of ResourceGroupManager::ResourceDeclaration
     //  ResourceDeclarationList getResourceDeclarationList(const String& groupName);
@@ -78,4 +74,3 @@ namespace Ogre
     }
 
 };
-

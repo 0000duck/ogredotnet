@@ -33,8 +33,6 @@ namespace Ogre
         { if (mRD!=0) return &mRD->parameters; else return 0; }
     };
 
-
-
     //----------------------------------------------------------------
     // custom code to handle ResourceGroupManager::ResourceDeclarationList
     class RGMResourceDeclarationList {
@@ -74,6 +72,5 @@ namespace Ogre
         }
     };
 }
-
 
 #endif //__ResourceGroupManagerExt_H_

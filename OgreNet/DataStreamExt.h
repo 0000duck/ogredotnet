@@ -42,7 +42,6 @@ namespace Ogre
         }
     };
 
-
     //   typedef SharedPtr<DataStreamList> DataStreamListPtr;
     class DataStreamListSharedPtr
     {
@@ -80,7 +79,6 @@ namespace Ogre
             return mObj.setNull();
         }
     };
-
 }
 
 #endif //_DataStreamExt__H_

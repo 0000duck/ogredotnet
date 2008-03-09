@@ -1,10 +1,9 @@
-// from Sinjaph in forums post
 %{
 #include "OgreDataStream.h"
 #include "DataStreamExt.h"
 %}
 
-//rastaman C# has file streams.
+// C# has file streams.
 %ignore Ogre::FileHandleDataStream;
 %ignore Ogre::FileStreamDataStream;
 
@@ -22,7 +21,6 @@
 
 %ignore Ogre::DataStream::operator>>;
 
-
 //   typedef SharedPtr<DataStream> DataStreamPtr;
 %template(DataStreamPtr) Ogre::SharedPtr<Ogre::DataStream>;
 
@@ -30,13 +28,10 @@
 SWIG_STD_LIST_SPECIALIZE_MINIMUM(DataStreamPtr  , Ogre::SharedPtr<Ogre::DataStream>)
 %template(DataStreamList)  std::list<Ogre::SharedPtr<Ogre::DataStream> >;
 
-
 //custom wrapped  functions that use it need to be ignored and an exteded function created to use DataStreamListSharedPtr
 //   typedef SharedPtr<DataStreamList> DataStreamListPtr;
 //DLLNonePtrType(DataStreamList,  std::list<Ogre::SharedPtr<Ogre::DataStream> >)
 //%template(DataStreamListPtr) Ogre::SharedPtr<std::list<Ogre::SharedPtr<Ogre::DataStream> > >;
-
-
 
 //custom wrapped  functions that use it need to be ignored and an exteded function created to use MemoryDataStreamSharedPtr
 //causes error in OgreDotNet "no suitable method found to override"
@@ -50,13 +45,11 @@ SWIG_STD_LIST_SPECIALIZE_MINIMUM(DataStreamPtr  , Ogre::SharedPtr<Ogre::DataStre
 //%typemap(csinterfaces) Ogre::SharedPtr<Ogre::MemoryDataStream> "IDisposable, MemoryDataStream";
 //%template(MemoryDataStreamPtr) Ogre::SharedPtr<Ogre::MemoryDataStream>;
 
-
 %apply unsigned char *INPUTARRAY {void *newmembuff};
 
 %newobject Ogre::MemoryDataStream::MakeTestBuffFloats;
 %newobject Ogre::MemoryDataStream::MakeTestBuffDoubles;
 %newobject Ogre::MemoryDataStream::MakeTestBuffInt32;
-
 
 %include "OgreDataStream.h"
 
@@ -94,13 +87,6 @@ namespace Ogre
     };
 }
 
-
-
-
-
-
-
-
 %extend Ogre::DataStream {
     //virtual size_t readLine(char* buf, size_t maxCount, const String& delim = "\n");
     const Ogre::String& ReadLine(const Ogre::String& delim = "\n")
@@ -111,8 +97,6 @@ namespace Ogre
         s = Ogre::String(buff);
         return s;
     }
-    
-    
 };
 
 %extend Ogre::MemoryDataStream {
@@ -162,7 +146,6 @@ namespace Ogre
             p++;
         }
     }
-    
     
     Ogre::uint8 ReadByte()
     {
@@ -242,7 +225,6 @@ namespace Ogre
         return v;
     }
     
-    
     size_t SeekByte(size_t index)
     {
         self->seek(sizeof(Ogre::uint8) * index);
@@ -278,6 +260,4 @@ namespace Ogre
         self->seek(sizeof(double) * index);
         return self->tell();
     }
-    
 };
-

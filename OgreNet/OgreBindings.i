@@ -118,7 +118,7 @@ using namespace Ogre;
 
 %include OgreTimer.i
 // %include OgreConfigDialog.i
-//%include OgreConfigFile.i
+%include OgreConfigFile.i
 // %include OgreConfigOptionMap.i
 %include OgrePlane.i
 %include OgreSphere.i
@@ -129,7 +129,7 @@ using namespace Ogre;
 // %include OgreAutoParamDataSource.i
 // %include OgreRectangle.i
 // %include OgreException.i
-// %include OgreDataStream.i
+%include OgreDataStream.i
 // %include OgreArchive.i
 %include OgrePixelFormat.i
 %include OgreVertexBoneAssignment.i
@@ -142,7 +142,7 @@ using namespace Ogre;
 // %include OgreSceneQuery.i
 %include OgreSceneNode.i
 %include OgreBlendMode.i
-// %include OgreResource.i
+%include OgreResource.i
 %include OgreHardwareBuffer.i
 // %include OgreHardwareIndexBuffer.i
 // %include OgreHardwareOcclusionQuery.i
@@ -199,8 +199,8 @@ using namespace Ogre;
 // %include OgreHardwareBufferManager.i
 // %include OgreLogManager.i
 // %include OgreScriptLoader.i
-// %include OgreResourceManager.i
-// %include OgreResourceGroupManager.i
+%include OgreResourceManager.i
+%include OgreResourceGroupManager.i
 
 // %include OgreFontManager.i
 // %include OgreGpuProgramManager.i
