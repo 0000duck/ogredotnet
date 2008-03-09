@@ -16,3 +16,12 @@ Then build using your chosen generator the way you normally would.  In
 the case of Unix makefiles, run:
 
   make
+
+To build the C# wrapper on Linux / OS X, run:
+
+  ./runprebuild.sh && nant
+
+On Windows:
+
+  runprebuild.bat (or runprebuild2008.bat for VC# 2008)
+  Then build the projects in OgreDotNet.sln
