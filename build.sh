@@ -15,15 +15,12 @@ clean() {
 }
 
 build_swig() {
-    cmake -G "Unix Makefiles"
-    make
+    cmake -G "Unix Makefiles" && make
 }
 
 build_csharp() {
-    ./runprebuild.sh
-    nant
+    ./runprebuild.sh && nant
 }
 
 clean
-build_swig
-build_csharp
+build_swig && build_csharp
