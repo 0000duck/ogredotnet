@@ -190,7 +190,7 @@ using namespace Ogre;
 %include OgreSkeleton.i
 %include OgreSkeletonInstance.i
 %include OgreVertexIndexData.i
-// %include OgreRibbonTrail.i
+%include OgreRibbonTrail.i
 // %include OgreBillboardChain.i
 // %include Line3D.i
 %include OgreTextureUnitState.i
