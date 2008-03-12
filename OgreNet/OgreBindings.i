@@ -135,7 +135,7 @@ using namespace Ogre;
 // %include OgreProgressiveMesh.i
 // %include Key.i
 // %include EventHandler.i
-// %include OgreLog.i
+%include OgreLog.i
 %include OgreNode.i
 %include OgreViewport.i
 // %include OgreSceneQuery.i
