@@ -125,7 +125,7 @@ using namespace Ogre;
 %include OgreAxisAlignedBox.i
 // %include OgrePlaneBoundedVolume.i
 %include OgreMath.i
-// %include OgreAutoParamDataSource.i
+%include OgreAutoParamDataSource.i
 // %include OgreRectangle.i
 // %include OgreException.i
 %include OgreDataStream.i
