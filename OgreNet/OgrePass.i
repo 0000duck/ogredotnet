@@ -9,10 +9,12 @@
 %ignore Ogre::Pass::setShadowReceiverFragmentProgramParameters;
 %ignore Ogre::Pass::setFragmentProgramParameters;
 
-
+// TODO: problems with nested struct HashFunc
+%ignore Ogre::Pass::setHashFunction(BuiltinHashFunction builtin);
+%ignore Ogre::Pass::setHashFunction(HashFunc* hashFunc);
+%ignore Ogre::Pass::getHashFunction();
 
 %include OgrePass.h
-
 
 %extend Ogre::Pass
 {
@@ -40,9 +42,7 @@
     {
         self->setFragmentProgramParameters(vparams);
     }
-    
 };
-
 
 //        typedef std::set<Pass*> PassSet;
 SWIG_STD_SET_SPECIALIZE_MINIMUM(Pass, Ogre::Pass*)
@@ -64,4 +64,3 @@ ConstVectorIteratorWRAP(ConstTextureUnitStateIteratorWrap, std::vector, Ogre::Te
 //swig.29     PTR_REF_TYPEMAPS(IlluminationPass, Ogre::IlluminationPass*)
 SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(IlluminationPass, Ogre::IlluminationPass*)
 %template(IlluminationPassList) std::vector<Ogre::IlluminationPass*>;
-

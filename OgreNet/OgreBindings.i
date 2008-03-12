@@ -183,8 +183,8 @@ using namespace Ogre;
 %include OgreMovablePlane.i
 %include OgreMaterial.i
 // %include OgreFont.i
-// %include OgrePass.i
-// %include OgreTechnique.i
+%include OgrePass.i
+%include OgreTechnique.i
 // %include OgreTexture.i
 %include OgreMesh.i
 // %include OgrePatchMesh.i
@@ -205,7 +205,7 @@ using namespace Ogre;
 // %include OgreFontManager.i
 // %include OgreGpuProgramManager.i
 // %include OgreHighLevelGpuProgramManager.i
-// %include OgreMaterialManager.i
+%include OgreMaterialManager.i
 %include OgreMeshManager.i
 %include OgreSkeletonManager.i
 %include OgreTextureManager.i
