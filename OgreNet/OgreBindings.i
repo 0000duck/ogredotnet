@@ -203,7 +203,7 @@ using namespace Ogre;
 
 %include OgreFontManager.i
 %include OgreGpuProgramManager.i
-// %include OgreHighLevelGpuProgramManager.i
+%include OgreHighLevelGpuProgramManager.i
 %include OgreMaterialManager.i
 %include OgreMeshManager.i
 %include OgreSkeletonManager.i
