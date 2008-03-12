@@ -148,7 +148,7 @@ using namespace Ogre;
 %include OgreHardwarePixelBuffer.i
 %include OgreHardwareVertexBuffer.i
 // %include OgreGpuProgram.i
-// %include OgreHighLevelGpuProgram.i
+%include OgreHighLevelGpuProgram.i
 
 %include OgreAnimable.i
 %include OgreShadowCaster.i
