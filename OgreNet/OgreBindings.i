@@ -65,7 +65,7 @@ using namespace Ogre;
 
 %include OgreString.i
 // %include OgreStringVector.i
-// %include OgreStringConverter.i
+%include OgreStringConverter.i
 // %include OgreStringInterface.i
 // %include Initialiser.i
 %include OgreColourValue.i    //so all colourvalues are the same
