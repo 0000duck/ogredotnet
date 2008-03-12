@@ -170,7 +170,7 @@ using namespace Ogre;
 // %include OgreStaticGeometry.i
 // %include OgreBillboard.i
 %include OgreBillboardSet.i
-// %include OgreTagPoint.i
+%include OgreTagPoint.i
 %include OgreBone.i
 %include OgreSimpleRenderable.i
 %include OgreRectangle2D.i
