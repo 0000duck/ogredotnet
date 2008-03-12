@@ -13,7 +13,7 @@
 using namespace Ogre;
 %}
 
-//swiglabels.swg defines for SWIGSTDCALL and SWIGEXPORT
+// swiglabels.swg defines for SWIGSTDCALL and SWIGEXPORT
 %include swiglabels.swg
 
 #define _OgreExport
@@ -24,7 +24,7 @@ using namespace Ogre;
 #pragma SWIG nowarn=503
 #pragma SWIG nowarn=402
 
-//if classes do not have expected functions uncomment next line and see if another class needs to be defined.
+// if classes do not have expected functions uncomment next line and see if another class needs to be defined.
 #pragma SWIG nowarn=401        //: Nothing known about base class '.....'. Ignored.
 
 %warnfilter(844) Ogre::Vector2;        //Warning(844): C# exception may not be thrown - no $excode or excode attribute in 'csout' typemap.
@@ -65,8 +65,8 @@ using namespace Ogre;
 
 // %include OgreString.i
 // %include OgreStringVector.i
-//%include OgreStringConverter.i
-//%include OgreStringInterface.i
+// %include OgreStringConverter.i
+// %include OgreStringInterface.i
 // %include Initialiser.i
 %include OgreColourValue.i    //so all colourvalues are the same
 %include OgreCommon.i
@@ -78,17 +78,16 @@ using namespace Ogre;
 %include OgreMatrix4.i
 %include OgreQuaternion.i
 
-//std::pair< uint, uint > 
+// std::pair< uint, uint > 
 // OgreFont.h , OgreTextureUnitState.h
 %template(PairUintUint) std::pair<Ogre::uint, Ogre::uint>;
 
-//std::pair<bool, Real>
-//OgreMath.h , OgrePlaneBoundedVolume.h , OgreRay.h
+// std::pair<bool, Real>
+// OgreMath.h , OgrePlaneBoundedVolume.h , OgreRay.h
 %template(PairBoolFloat) std::pair<bool, float>;
 
-
-//        typedef std::map<size_t, Vector3> VertexOffsetMap;
-//OgreMesh.h , OgrePose.h
+// typedef std::map<size_t, Vector3> VertexOffsetMap;
+// OgreMesh.h , OgrePose.h
 %apply unsigned long &INPUT { size_t& key };
 %template(MapUInt32Vector3) std::map<size_t, Ogre::Vector3>;
 
@@ -108,11 +107,11 @@ using namespace Ogre;
 %}
 %typemap(out)     const std::map<size_t, Ogre::Vector3> *&       %{ $result = (void *)$1; %}
 
-//        typedef std::vector<Real> LodDistanceList;
-//OgreMaterial.h , OgreMesh.h
+// typedef std::vector<Real> LodDistanceList;
+// OgreMaterial.h , OgreMesh.h
 %template(VecFloats) std::vector<Ogre::Real>;
 
-//        typedef std::vector<unsigned short> IndexMap;
+// typedef std::vector<unsigned short> IndexMap;
 // OgreMesh.h
 %template(VecUShorts) std::vector<unsigned short>;
 
@@ -232,14 +231,14 @@ using namespace Ogre;
 %include OgreOverlayElementFactory.i
 %include OgreOverlayManager.i
 
-//%include OgreFactoryObj.i
+// %include OgreFactoryObj.i
 // %include OgreParticle.i
 // %include OgreParticleEmitter.i
 %include OgreParticleIterator.i
 %include OgreParticleSystem.i
 // %include OgreParticleAffector.i
-//%include OgreParticleAffectorFactory.i
-//%include OgreParticleEmitterFactory.i
+// %include OgreParticleAffectorFactory.i
+// %include OgreParticleEmitterFactory.i
 // %include OgreParticleSystemRenderer.i
 // %include OgreParticleSystemManager.i
 
