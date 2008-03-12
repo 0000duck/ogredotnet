@@ -209,7 +209,7 @@ using namespace Ogre;
 %include OgreSkeletonManager.i
 %include OgreTextureManager.i
 
-// %include OgreRenderQueueListener.i
+%include OgreRenderQueueListener.i
 
 %include OgreController.i
 %include OgreControllerManager.i
