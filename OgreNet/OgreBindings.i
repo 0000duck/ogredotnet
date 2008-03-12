@@ -127,7 +127,7 @@ using namespace Ogre;
 %include OgreMath.i
 %include OgreAutoParamDataSource.i
 // %include OgreRectangle.i
-// %include OgreException.i
+%include OgreException.i
 %include OgreDataStream.i
 %include OgreArchive.i
 %include OgrePixelFormat.i
