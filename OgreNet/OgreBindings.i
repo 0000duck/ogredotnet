@@ -232,7 +232,7 @@ using namespace Ogre;
 %include OgreOverlayManager.i
 
 %include OgreFactoryObj.i
-// %include OgreParticle.i
+%include OgreParticle.i
 // %include OgreParticleEmitter.i
 %include OgreParticleIterator.i
 %include OgreParticleSystem.i
