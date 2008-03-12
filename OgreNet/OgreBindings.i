@@ -162,7 +162,7 @@ using namespace Ogre;
 
 %include OgreFrameListener.i
 // %include OgreKeyFrame.i
-// %include OgrePose.i
+%include OgrePose.i
 %include OgreAnimationTrack.i    //enum VertexAnimationType befor submesh and animation
 %include OgreAnimation.i
 %include OgreAnimationState.i
