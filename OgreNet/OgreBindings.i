@@ -126,7 +126,7 @@ using namespace Ogre;
 %include OgrePlaneBoundedVolume.i
 %include OgreMath.i
 %include OgreAutoParamDataSource.i
-// %include OgreRectangle.i
+%include OgreRectangle.i
 %include OgreException.i
 %include OgreDataStream.i
 %include OgreArchive.i
