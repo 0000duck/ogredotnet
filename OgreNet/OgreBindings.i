@@ -64,7 +64,7 @@ using namespace Ogre;
 %include OgreIteratorWrappers.i
 
 %include OgreString.i
-// %include OgreStringVector.i
+%include OgreStringVector.i
 %include OgreStringConverter.i
 // %include OgreStringInterface.i
 // %include Initialiser.i
