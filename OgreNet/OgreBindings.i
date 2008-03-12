@@ -195,7 +195,7 @@ using namespace Ogre;
 // %include Line3D.i
 %include OgreTextureUnitState.i
 
-// %include OgreHardwareBufferManager.i
+%include OgreHardwareBufferManager.i
 // %include OgreLogManager.i
 // %include OgreScriptLoader.i
 %include OgreResourceManager.i
