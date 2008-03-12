@@ -197,7 +197,7 @@ using namespace Ogre;
 
 %include OgreHardwareBufferManager.i
 %include OgreLogManager.i
-// %include OgreScriptLoader.i
+%include OgreScriptLoader.i
 %include OgreResourceManager.i
 %include OgreResourceGroupManager.i
 
