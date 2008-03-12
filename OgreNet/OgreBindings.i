@@ -63,7 +63,7 @@ using namespace Ogre;
 %include OgreSharedPtr.i
 %include OgreIteratorWrappers.i
 
-// %include OgreString.i
+%include OgreString.i
 // %include OgreStringVector.i
 // %include OgreStringConverter.i
 // %include OgreStringInterface.i
