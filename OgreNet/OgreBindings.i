@@ -116,7 +116,7 @@ using namespace Ogre;
 %template(VecUShorts) std::vector<unsigned short>;
 
 %include OgreTimer.i
-// %include OgreConfigDialog.i
+%include OgreConfigDialog.i
 %include OgreConfigFile.i
 // %include OgreConfigOptionMap.i
 %include OgrePlane.i
