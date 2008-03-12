@@ -144,7 +144,7 @@ using namespace Ogre;
 %include OgreResource.i
 %include OgreHardwareBuffer.i
 %include OgreHardwareIndexBuffer.i
-// %include OgreHardwareOcclusionQuery.i
+%include OgreHardwareOcclusionQuery.i
 // %include OgreHardwarePixelBuffer.i
 %include OgreHardwareVertexBuffer.i
 // %include OgreGpuProgram.i
