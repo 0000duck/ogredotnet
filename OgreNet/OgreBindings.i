@@ -201,7 +201,7 @@ using namespace Ogre;
 %include OgreResourceManager.i
 %include OgreResourceGroupManager.i
 
-// %include OgreFontManager.i
+%include OgreFontManager.i
 // %include OgreGpuProgramManager.i
 // %include OgreHighLevelGpuProgramManager.i
 %include OgreMaterialManager.i
