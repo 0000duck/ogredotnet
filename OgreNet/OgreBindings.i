@@ -218,7 +218,7 @@ using namespace Ogre;
 
 %include OgreRenderTarget.i
 %include OgreRenderWindow.i
-// %include OgreRenderTexture.i
+%include OgreRenderTexture.i
 // %include OgreRenderTargetListener.i
 %include OgreRenderSystemCapabilities.i
 %include OgreRenderSystem.i
