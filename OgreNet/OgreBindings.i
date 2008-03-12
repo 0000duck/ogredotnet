@@ -143,7 +143,7 @@ using namespace Ogre;
 %include OgreBlendMode.i
 %include OgreResource.i
 %include OgreHardwareBuffer.i
-// %include OgreHardwareIndexBuffer.i
+%include OgreHardwareIndexBuffer.i
 // %include OgreHardwareOcclusionQuery.i
 // %include OgreHardwarePixelBuffer.i
 %include OgreHardwareVertexBuffer.i
