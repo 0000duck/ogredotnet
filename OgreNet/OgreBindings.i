@@ -213,7 +213,7 @@ using namespace Ogre;
 
 %include OgreController.i
 %include OgreControllerManager.i
-// %include OgrePredefinedControllers.i
+%include OgrePredefinedControllers.i
 // %include ControllerFloatHandler.i
 
 %include OgreRenderTarget.i
