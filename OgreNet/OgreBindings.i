@@ -231,7 +231,7 @@ using namespace Ogre;
 %include OgreOverlayElementFactory.i
 %include OgreOverlayManager.i
 
-// %include OgreFactoryObj.i
+%include OgreFactoryObj.i
 // %include OgreParticle.i
 // %include OgreParticleEmitter.i
 %include OgreParticleIterator.i
