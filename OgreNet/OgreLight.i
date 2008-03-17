@@ -205,12 +205,12 @@
         }
     }
 
-//  public void Visible {
-//    set
-//    {
-//        SetVisible((bool)value);
-//    }
-//  }
+    public bool Visible {
+        set
+        {
+            SetVisible((bool)value);
+        }
+    }
 
     public override float BoundingRadius {
         get
