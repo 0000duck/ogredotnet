@@ -3,7 +3,6 @@
 
 // #include "OgreKeyEvent.h"
 // #include "OgreEventListeners.h"
-#include "OgreRoot.h"
 
 namespace Ogre
 {
