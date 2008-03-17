@@ -5,9 +5,12 @@
 %typemap(cscode) Ogre::EventHandler %{
     
     protected delegate bool _FrameDelegate(float TimeSinceLastFrame, float TimeSinceLastEvent);
+
+/*
     protected delegate void _KeyDelegate(OgreDotNet.KeyCode keycode, char keychar, bool shift, bool alt, bool ctrl);
     protected delegate void _MouseMotionDelegate(float deltax, float deltay, float deltaz);
     protected delegate void _MouseDelegate(float x, float y, float z, int button);
+*/
     
     public void SubscribeEvents()
     {
@@ -17,6 +20,7 @@
         mFrameEndedDelegate = new _FrameDelegate(FrameEndedHandler);
         SetFrameEndedFunction(swigCPtr, mFrameEndedDelegate);
         
+/*
         mKeyClickedDelegate = new _KeyDelegate(KeyClickedHandler);
         SetKeyClickedFunction(swigCPtr, mKeyClickedDelegate);
         
@@ -40,6 +44,7 @@
         
         mMouseReleasedDelegate = new _MouseDelegate(MouseReleasedHandler);
         SetMouseReleasedFunction(swigCPtr, mMouseReleasedDelegate);
+*/
     }
         
     //
@@ -78,6 +83,7 @@
         return true;
     }
     
+/*
     //
     // KeyClicked handling
     //
@@ -205,18 +211,16 @@
         if(MouseReleased != null)
             MouseReleased(new MouseEvent(x, y, z, buttonid));
     }
+*/
 %}
-
-
 
 namespace Ogre
 {
-    class EventHandler : public FrameListener, public KeyListener, public MouseMotionListener, public MouseListener
+    class EventHandler : public FrameListener // , public KeyListener, public MouseMotionListener, public MouseListener
     {
     public:
-        EventHandler(Root * root, RenderWindow * renderwindow, bool bHandleInput = true);
+        EventHandler(Root* root, RenderWindow* renderwindow); // , bool bHandleInput = true);
 
-        InputReader * GetInputReader();
+//        InputReader* GetInputReader();
     };
 }
-
