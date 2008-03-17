@@ -2,6 +2,49 @@
 #include "OgreMesh.h"
 %}
 
+%rename Ogre::Mesh::createSubMesh                   CreateSubMesh;
+%rename Ogre::Mesh::nameSubMesh                     NameSubMesh;
+%rename Ogre::Mesh::getNumSubMeshes                 GetNumSubMeshes;
+%rename Ogre::Mesh::getSubMesh                      GetSubMesh;
+%rename Ogre::Mesh::getSubMeshIterator              GetSubMeshIterator;
+%rename Ogre::Mesh::sharedVertexData                SharedVertexData;
+%rename Ogre::Mesh::clone                           Clone;
+%rename Ogre::Mesh::getBounds                       GetBounds;
+%rename Ogre::Mesh::getBoundingSphereRadius         GetBoundingSphereRadius;
+%rename Ogre::Mesh::setSkeletonName                 SetSkeletonName;
+%rename Ogre::Mesh::hasSkeleton                     HasSkeleton;
+%rename Ogre::Mesh::getSkeleton                     GetSkeleton;
+%rename Ogre::Mesh::getSkeletonName                 GetSkeletonName;
+%rename Ogre::Mesh::addBoneAssignment               AddBoneAssignment;
+%rename Ogre::Mesh::clearBoneAssignments            ClearBoneAssignments;
+%rename Ogre::Mesh::getNumLodLevels                 GetNumLodLevels;
+%rename Ogre::Mesh::getLodLevel                     GetLodLevel;
+%rename Ogre::Mesh::createManualLodLevel            CreateManualLodLevel;
+%rename Ogre::Mesh::updateManualLodLevel            UpdateManualLodLevel;
+%rename Ogre::Mesh::getLodIndex                     GetLodIndex;
+%rename Ogre::Mesh::getLodIndexSquaredDepth         GetLodIndexSquaredDepth;
+%rename Ogre::Mesh::isLodManual                     IsLodManual;
+%rename Ogre::Mesh::removeLodLevels                 RemoveLodLevels;
+%rename Ogre::Mesh::setVertexBufferPolicy           SetVertexBufferPolicy;
+%rename Ogre::Mesh::setIndexBufferPolicy            SetIndexBufferPolicy;
+%rename Ogre::Mesh::getVertexBufferUsage            GetVertexBufferUsage;
+%rename Ogre::Mesh::isVertexBufferShadowed          IsVertexBufferShadowed;
+%rename Ogre::Mesh::isIndexBufferShadowed           IsIndexBufferShadowed;
+%rename Ogre::Mesh::buildTangentVectors             BuildTangentVectors;
+%rename Ogre::Mesh::suggestTangentVectorBuildParams SuggestTangentVectorBuildParams;
+%rename Ogre::Mesh::buildEdgeList                   BuildEdgeList;
+%rename Ogre::Mesh::freeEdgeList                    FreeEdgeList;
+%rename Ogre::Mesh::prepareForShadowVolume          PrepareForShadowVolume;
+%rename Ogre::Mesh::getEdgeList                     GetEdgeList;
+%rename Ogre::Mesh::isPreparedForShadowVolumes      IsPreparedForShadowVolumes;
+%rename Ogre::Mesh::isEdgeListBuilt                 IsEdgeListBuilt;
+%rename Ogre::Mesh::softwareVertexBlend             SoftwareVertexBlend;
+%rename Ogre::Mesh::setAutoBuildEdgeLists           SetAutoBuildEdgeLists;
+%rename Ogre::Mesh::getAutoBuildEdgeLists           GetAutoBuildEdgeLists;
+%rename Ogre::Mesh::getIndexBufferUsage             GetIndexBufferUsage;
+
+%rename Ogre::Mesh::generateLodLevels               GenerateLodLevels;
+
 //bool suggestTangentVectorBuildParams(unsigned short& outSourceCoordSet, unsigned short& outDestCoordSet);
 %apply unsigned short     &INOUT { unsigned short& outSourceCoordSet, unsigned short& outDestCoordSet };
 
@@ -25,92 +68,92 @@
     public int NumSubMeshes {
         get
         {
-            return getNumSubMeshes();
+            return GetNumSubMeshes();
         }
     }
 
     public AxisAlignedBox Bounds {
         get
         {
-            return getBounds();
+            return GetBounds();
         }
     }
 
     public float BoundingSphereRadius {
         get
         {
-            return getBoundingSphereRadius();
+            return GetBoundingSphereRadius();
         }
     }
 
     public SkeletonPtr Skeleton {
         get
         {
-            return getSkeleton();
+            return GetSkeleton();
         }
     }
 
     public string SkeletonName {
         set
         {
-            setSkeletonName(value);
+            SetSkeletonName(value);
         }
         get
         {
-            return getSkeletonName();
+            return GetSkeletonName();
         }
     }
 
     public int NumLodLevels {
         get
         {
-            return getNumLodLevels();
+            return GetNumLodLevels();
         }
     }
 
 //  public void VertexBufferPolicy {
 //    set
 //    {
-//        setVertexBufferPolicy((HardwareBuffer.Usage)value);
+//        SetVertexBufferPolicy((HardwareBuffer.Usage)value);
 //    }
 //  }
 
 //  public void IndexBufferPolicy {
 //    set
 //    {
-//        setIndexBufferPolicy((HardwareBuffer.Usage)value);
+//        SetIndexBufferPolicy((HardwareBuffer.Usage)value);
 //    }
 //  }
 
     public HardwareBuffer.Usage VertexBufferUsage {
         get
         {
-            return getVertexBufferUsage();
+            return GetVertexBufferUsage();
         }
     }
 
     public HardwareBuffer.Usage IndexBufferUsage {
         get
         {
-            return getIndexBufferUsage();
+            return GetIndexBufferUsage();
         }
     }
 
     public SWIGTYPE_p_Ogre__EdgeData EdgeList {
         get
         {
-            return getEdgeList();
+            return GetEdgeList();
         }
     }
 
     public bool AutoBuildEdgeLists {
         set
         {
-            setAutoBuildEdgeLists(value);
+            SetAutoBuildEdgeLists(value);
         }
         get
         {
-            return getAutoBuildEdgeLists();
+            return GetAutoBuildEdgeLists();
         }
     }
 %}

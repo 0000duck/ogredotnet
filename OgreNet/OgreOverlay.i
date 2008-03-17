@@ -2,18 +2,20 @@
 #include "OgreOverlay.h"
 %}
 
+%rename Ogre::Overlay::getChild                        GetChild;
+
 %typemap(cscode) Ogre::Overlay
 %{
     public PanelOverlayElement GetChildPanel(string instanceName)
     {
-        OverlayElement el = getChild(instanceName);
+        OverlayElement el = GetChild(instanceName);
         PanelOverlayElement ret = new PanelOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 
     public OverlayContainer GetChildContainer(string instanceName)
     {
-        OverlayElement el = getChild(instanceName);
+        OverlayElement el = GetChild(instanceName);
         OverlayContainer ret = new OverlayContainer(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }

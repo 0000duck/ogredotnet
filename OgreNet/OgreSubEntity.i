@@ -11,7 +11,8 @@
 %include OgreSubEntity.h
 
 %extend Ogre::SubEntity {
-    Renderable * GetAsRenderable()    {
+    Renderable * GetAsRenderable()
+    {
         return (Renderable*)self;
     }
 };

@@ -2,7 +2,7 @@
 #include "OgreRenderable.h"
 %}
 
-//ignore because of RenderOperation is private
+//ignore because RenderOperation is private
 %ignore Ogre::Renderable::getRenderOperation;
 
 //override is a key word in C#
@@ -71,7 +71,7 @@
 %include OgreRenderable.h
 
 %extend Ogre::Renderable {
-  void SetPolygonModeOverrideable(bool oo) {
-    self->setPolygonModeOverrideable(oo);
-  }
+    void SetPolygonModeOverrideable(bool oo) {
+        self->setPolygonModeOverrideable(oo);
+    }
 };

@@ -3,6 +3,8 @@
 #include "TextureUnitState.h"
 %}
 
+%rename Ogre::TextureUnitState::setTextureAddressingMode  SetTextureAddressingMode;
+
 %ignore Ogre::TextureUnitState::EffectMap;
 %ignore Ogre::TextureUnitState::getEffects;
 %ignore Ogre::TextureUnitState::addEffect;

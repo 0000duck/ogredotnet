@@ -215,7 +215,7 @@
         else
             this.CallBase_getWorldTransforms(m);
     }
-    
+
     protected IntPtr Handle_GetWorldOrientation ()
     {
         IntPtr ret;
@@ -239,7 +239,7 @@
         ret = OgreVector3.getCPtr(v).Handle;
         return ret;
     }
-
+    
     protected void Handle_NotifyCurrentCamera (IntPtr cam)
     {
         Camera c = new Camera(cam, false);
@@ -260,7 +260,7 @@
         ret = AxisAlignedBox.getCPtr(a).Handle;
         return ret;
     }
-    
+
     protected void Handle_UpdateRenderQueue (IntPtr queue)
     {
         RenderQueue r = new RenderQueue(queue, false);
@@ -269,7 +269,7 @@
         else
             this.CallBase_updateRenderQueue(r);
     }
-    
+
     protected string Handle_GetName ()
     {
         if(evtGetName != null)
@@ -277,7 +277,7 @@
         else
             return this.CallBase_getName();
     }
-    
+
     protected string Handle_GetMovableType ()
     {
         if(evtGetMovableType != null)
@@ -297,7 +297,7 @@
         ret = LightList.getCPtr(l).Handle;
         return ret;
     }
-    
+
     protected float Handle_GetSquaredViewDepth (IntPtr cam)
     {
         Camera c = new Camera(cam, false);
@@ -306,7 +306,7 @@
         else
             return 0.0f; //it is abstract and not on SimpleRenderer (multi-Inheritence problem)
     }
-
+    
     protected float Handle_GetBoundingRadius ()
     {
         if(evtGetBoundingRadius != null)

@@ -2,6 +2,12 @@
 #include "OgreSubMesh.h"
 %}
 
+%rename Ogre::SubMesh::setMaterialName                SetMaterialName;
+%rename Ogre::SubMesh::getMaterialName                GetMaterialName;
+%rename Ogre::SubMesh::isMatInitialised                IsMatInitialised;
+%rename Ogre::SubMesh::addBoneAssignment            AddBoneAssignment;
+%rename Ogre::SubMesh::clearBoneAssignments            ClearBoneAssignments;
+
 //TODO is multimap working?  below is the template
 //swig is having some problem with "struct" Ogre::VertexBoneAssignment being in a multimap and MapIterator
 //have to custom wrap this function because swig cant see it right.
@@ -41,7 +47,7 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
     return (cPtr == IntPtr.Zero) ? null : new BoneAssignmentIteratorWrap(cPtr, $owner);
 }
 
-//ignore because of RenderOperation is private
+//ignore because RenderOperation is private
 %ignore Ogre::SubMesh::_getRenderOperation;
 %ignore Ogre::SubMesh::operationType;
 
@@ -49,8 +55,8 @@ MapIteratorWRAP(BoneAssignmentIteratorWrap, std::multimap, size_t, Ogre::VertexB
 %{
     public string MaterialName
     {
-        set { setMaterialName(value); }
-        get { return getMaterialName(); }
+        set { SetMaterialName(value); }
+        get { return GetMaterialName(); }
     }
 %}
 

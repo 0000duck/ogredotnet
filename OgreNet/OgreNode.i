@@ -3,6 +3,45 @@
 #include "NodeExt.h"
 %}
 
+%rename Ogre::Node::getParent             GetParent;
+%rename Ogre::Node::getOrientation        GetOrientation;
+%rename Ogre::Node::setOrientation        SetOrientation;
+%rename Ogre::Node::resetOrientation      ResetOrientation;
+%rename Ogre::Node::setPosition           SetPosition;
+%rename Ogre::Node::getPosition           GetPosition;
+%rename Ogre::Node::setScale              SetScale;
+%rename Ogre::Node::getScale              GetScale;
+%rename Ogre::Node::setInheritScale       SetInheritScale;
+%rename Ogre::Node::getInheritScale       GetInheritScale;
+%rename Ogre::Node::scale                 Scale;
+%rename Ogre::Node::translate             Translate;
+%rename Ogre::Node::roll                  Roll;
+%rename Ogre::Node::pitch                 Pitch;
+%rename Ogre::Node::yaw                   Yaw;
+%rename Ogre::Node::rotate                Rotate;
+%rename Ogre::Node::getLocalAxes          GetLocalAxes;
+%rename Ogre::Node::createChild           CreateChild;
+%rename Ogre::Node::addChild              AddChild;
+%rename Ogre::Node::numChildren           NumChildren;
+%rename Ogre::Node::getChild              GetChild;
+%rename Ogre::Node::getName               GetName;
+%rename Ogre::Node::removeChild           RemoveChild;
+%rename Ogre::Node::removeAllChildren     RemoveAllChildren;
+%rename Ogre::Node::getMaterial           GetMaterial;
+%rename Ogre::Node::getWorldTransforms    GetWorldTransforms;
+%rename Ogre::Node::getWorldOrientation   GetWorldOrientation;
+%rename Ogre::Node::getWorldPosition      GetWorldPosition;
+%rename Ogre::Node::setInitialState       SetInitialState;
+%rename Ogre::Node::resetToInitialState   ResetToInitialState;
+%rename Ogre::Node::getInitialPosition    GetInitialPosition;
+%rename Ogre::Node::getInitialOrientation GetInitialOrientation;
+%rename Ogre::Node::getInitialScale       GetInitialScale;
+%rename Ogre::Node::getSquaredViewDepth   GetSquaredViewDepth;
+%rename Ogre::Node::needUpdate            NeedUpdate;
+%rename Ogre::Node::requestUpdate         RequestUpdate;
+%rename Ogre::Node::cancelUpdate          CancelUpdate;
+%rename Ogre::Node::getLights             GetLights;
+
 //ignore because of RenderOperation is private
 %ignore Ogre::Node::getRenderOperation;
 
@@ -22,90 +61,90 @@
 
 %typemap(cscode) Ogre::Node
 %{
-    public object GameNode // njkogre- added to allow for two-way pointers between OgreNodes and RF Nodes.
+    public object GameNode // to allow for two-way pointers between OgreNodes and RF Nodes.
     {
         get { return _gameNode; }
         set { _gameNode = value; }
     }
     private object _gameNode;
 
-    #region njkogre - added Yaw, Pitch, Roll with argument as Degrees
-    //rastaman backwards, it should be PI/180 
-    static private float _DegreesToRadiansFactor = (float)(Math.PI / 180.0); // njkogre-added
+    #region added Yaw, Pitch, Roll with argument as Degrees
 
-    public void Yaw(float degrees) // njkogre-added to bridge gap interface Axiom supported
+    static private float _DegreesToRadiansFactor = (float)(Math.PI / 180.0);
+
+    public void Yaw(float degrees) // to bridge gap interface Axiom supported
     {
         float radians = degrees * _DegreesToRadiansFactor;
-        yaw(new Radian(radians));
+        Yaw(new Radian(radians));
     }
 
-    public void Pitch(float degrees) // njkogre-added to bridge gap interface Axiom supported
+    public void Pitch(float degrees) // to bridge gap interface Axiom supported
     {
         float radians = degrees * _DegreesToRadiansFactor;
-        pitch(new Radian(radians));
+        Pitch(new Radian(radians));
     }
 
-    public void Roll(float degrees) // njkogre-added to bridge gap interface Axiom supported
+    public void Roll(float degrees) // to bridge gap interface Axiom supported
     {
         float radians = degrees * _DegreesToRadiansFactor;
-        roll(new Radian(radians));
+        Roll(new Radian(radians));
     }
 
-    #endregion njkogre - added Yaw, Pitch, Roll with argument as Degrees
+    #endregion added Yaw, Pitch, Roll with argument as Degrees
 
     public string Name {
-        get { return getName(); }
+        get { return GetName(); }
     }
 
     public virtual Node Parent {
-        get { return getParent(); }
+        get { return GetParent(); }
     }
 
     public virtual Math3D.Quaternion Orientation {
-        get { return getOrientation(); }
-        set { setOrientation(value); }
+        get { return GetOrientation(); }
+        set { SetOrientation(value); }
     }
 
     public virtual Math3D.Vector3 Position {
-        get { return getPosition(); }
-        set { setPosition(value); }
+        get { return GetPosition(); }
+        set { SetPosition(value); }
     }
 
     public virtual bool InheritScale {
-        get { return getInheritScale(); }
-        set { setInheritScale((bool)value); }
+        get { return GetInheritScale(); }
+        set { SetInheritScale((bool)value); }
     }
 
     public virtual Math3D.Matrix3 LocalAxes {
-        get { return getLocalAxes(); }
+        get { return GetLocalAxes(); }
     }
 
     public MaterialPtr Material {
-        get { return getMaterial(); }
+        get { return GetMaterial(); }
     }
 
     public Math3D.Quaternion WorldOrientation {
-        get { return getWorldOrientation(); }
+        get { return GetWorldOrientation(); }
     }
 
     public Math3D.Vector3 WorldPosition {
-        get { return getWorldPosition(); }
+        get { return GetWorldPosition(); }
     }
 
     public virtual Math3D.Vector3 InitialPosition {
-        get { return getInitialPosition(); }
+        get { return GetInitialPosition(); }
     }
 
     public virtual Math3D.Quaternion InitialOrientation {
-        get { return getInitialOrientation(); }
+        get { return GetInitialOrientation(); }
     }
 
     public virtual Math3D.Vector3 InitialScale {
-        get { return getInitialScale(); }
+        get { return GetInitialScale(); }
     }
 
     public LightList Lights {
-        get { return getLights(); }
+        get { return GetLights(); }
     }
 %}
 
@@ -128,7 +167,6 @@
         set_NLD_FP_nodeDetached     (swigCPtr, m_Delegate_nodeDetached);
         
     }
-
     public event    NLD_Delegate        evtNodeUpdated = null;
     public event    NLD_Delegate        evtNodeDestroyed = null;
     public event    NLD_Delegate        evtNodeAttached = null;

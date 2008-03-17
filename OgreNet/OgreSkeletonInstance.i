@@ -2,6 +2,15 @@
 #include "OgreSkeletonInstance.h"
 %}
 
+%rename Ogre::SkeletonInstance::getNumAnimations                         GetNumAnimations;
+%rename Ogre::SkeletonInstance::createAnimation                          CreateAnimation;
+%rename Ogre::SkeletonInstance::removeAnimation                          RemoveAnimation;
+%rename Ogre::SkeletonInstance::createTagPointOnBone                     CreateTagPointOnBone;
+%rename Ogre::SkeletonInstance::freeTagPoint                             FreeTagPoint;
+%rename Ogre::SkeletonInstance::addLinkedSkeletonAnimationSource         AddLinkedSkeletonAnimationSource;
+%rename Ogre::SkeletonInstance::removeAllLinkedSkeletonAnimationSources  RemoveAllLinkedSkeletonAnimationSources;
+%rename Ogre::SkeletonInstance::getLinkedSkeletonAnimationSourceIterator GetLinkedSkeletonAnimationSourceIterator;
+
 //custom warp because of pointer to pointer
 %ignore Ogre::SkeletonInstance::getAnimation;
 
@@ -10,7 +19,7 @@
     public override int NumAnimations {
         get
         {
-            return getNumAnimations();
+            return GetNumAnimations();
         }
     }
 %}

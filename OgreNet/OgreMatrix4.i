@@ -61,10 +61,10 @@
 }
 %typemap(csvarout) const Ogre::Matrix4 &
 %{
-get
-{
-    return OgreMatrix4.ToMatrix4(new OgreMatrix4($imcall, false));
-}
+    get
+    {
+        return OgreMatrix4.ToMatrix4(new OgreMatrix4($imcall, false));
+    }
 %}
 
 %typemap(cstype)   const Ogre::Matrix4 *,  Ogre::Matrix4 *  "Math3D.Matrix4"
@@ -75,10 +75,10 @@ get
 }
 %typemap(csvarout) const Ogre::Matrix4 *,  Ogre::Matrix4 * 
 %{
-get
-{
-    return OgreMatrix4.ToMatrix4(new OgreMatrix4($imcall, false));
-}
+    get
+    {
+        return OgreMatrix4.ToMatrix4(new OgreMatrix4($imcall, false));
+    }
 %}
 
 %typemap(cstype)   Ogre::Matrix4  "Math3D.Matrix4"
@@ -89,10 +89,10 @@ get
 }
 %typemap(csvarout) Ogre::Matrix4
 %{
-get
-{
-    return OgreMatrix4.ToMatrix4(new OgreMatrix4($imcall, false));
-}
+    get
+    {
+        return OgreMatrix4.ToMatrix4(new OgreMatrix4($imcall, false));
+    }
 %}
 
 %include "OgreMatrix4.h"

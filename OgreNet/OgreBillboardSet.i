@@ -23,9 +23,65 @@
 #define BBR_VERTEX    BBRotationTypeVertex
 #define BBR_TEXCOORD  BBRotationTypeTexCoord
 
+%rename Ogre::BillboardSet::createBillboard           CreateBillboard;
+%rename Ogre::BillboardSet::getNumBillboards          GetNumBillboards;
+%rename Ogre::BillboardSet::setAutoextend             SetAutoextend;
+%rename Ogre::BillboardSet::getAutoextend             GetAutoextend;
+%rename Ogre::BillboardSet::setSortingEnabled         SetSortingEnabled;
+%rename Ogre::BillboardSet::getSortingEnabled         GetSortingEnabled;
+%rename Ogre::BillboardSet::setPoolSize               SetPoolSize;
+%rename Ogre::BillboardSet::getPoolSize               GetPoolSize;
+%rename Ogre::BillboardSet::clear                     Clear;
+%rename Ogre::BillboardSet::getBillboard              GetBillboard;
+%rename Ogre::BillboardSet::removeBillboard           RemoveBillboard;
+%rename Ogre::BillboardSet::setBillboardOrigin        SetBillboardOrigin;
+%rename Ogre::BillboardSet::getBillboardOrigin        GetBillboardOrigin;
+%rename Ogre::BillboardSet::setBillboardRotationType  SetBillboardRotationType;
+%rename Ogre::BillboardSet::getBillboardRotationType  GetBillboardRotationType;
+%rename Ogre::BillboardSet::setDefaultDimensions      SetDefaultDimensions;
+%rename Ogre::BillboardSet::setDefaultWidth           SetDefaultWidth;
+%rename Ogre::BillboardSet::getDefaultWidth           GetDefaultWidth;
+%rename Ogre::BillboardSet::setDefaultHeight          SetDefaultHeight;
+%rename Ogre::BillboardSet::getDefaultHeight          GetDefaultHeight;
+%rename Ogre::BillboardSet::setMaterialName           SetMaterialName;
+%rename Ogre::BillboardSet::getMaterialName           GetMaterialName;
+%rename Ogre::BillboardSet::beginBillboards           BeginBillboards;
+%rename Ogre::BillboardSet::injectBillboard           InjectBillboard;
+%rename Ogre::BillboardSet::endBillboards             EndBillboards;
+%rename Ogre::BillboardSet::setBounds                 SetBounds;
+%rename Ogre::BillboardSet::getCullIndividually       GetCullIndividually;
+%rename Ogre::BillboardSet::setCullIndividually       SetCullIndividually;
+%rename Ogre::BillboardSet::setBillboardType          SetBillboardType;
+%rename Ogre::BillboardSet::getBillboardType          GetBillboardType;
+%rename Ogre::BillboardSet::setCommonDirection        SetCommonDirection;
+%rename Ogre::BillboardSet::getCommonDirection        GetCommonDirection;
+%rename Ogre::BillboardSet::setCommonUpVector        SetCommonUpVector;
+%rename Ogre::BillboardSet::getCommonUpVector        GetCommonUpVector;
+%rename Ogre::BillboardSet::setUseAccurateFacing     SetUseAccurateFacing;
+%rename Ogre::BillboardSet::getUseAccurateFacing     GetUseAccurateFacing;
+%rename Ogre::BillboardSet::setBillboardsInWorldSpace    SetBillboardsInWorldSpace;
+%rename Ogre::BillboardSet::setTextureCoords             SetTextureCoords;
+%rename Ogre::BillboardSet::setTextureStacksAndSlices    SetTextureStacksAndSlices;
+%rename Ogre::BillboardSet::getTextureCoords             GetTextureCoords;
+%rename Ogre::BillboardSet::setPointRenderingEnabled     SetPointRenderingEnabled;
+%rename Ogre::BillboardSet::isPointRenderingEnabled      IsPointRenderingEnabled;
+
 %rename Ogre::BillboardSet::_notifyBillboardResized                 m_NotifyBillboardResized;
 %rename Ogre::BillboardSet::_notifyBillboardTextureCoordsModified    m_NotifyBillboardTextureCoordsModified;
 %rename Ogre::BillboardSet::_updateBounds                           m_UpdateBounds;
+
+//Overridden from MovableObject
+%rename Ogre::BillboardSet::getBoundingBox            GetBoundingBox;
+%rename Ogre::BillboardSet::getBoundingRadius         GetBoundingRadius;
+%rename Ogre::BillboardSet::getMaterial               GetMaterial;
+%rename Ogre::BillboardSet::getMovableType            GetMovableType;
+
+//Overridden from Renderable
+%rename Ogre::BillboardSet::getWorldTransforms        GetWorldTransforms;
+%rename Ogre::BillboardSet::getWorldOrientation       GetWorldOrientation;
+%rename Ogre::BillboardSet::getWorldPosition          GetWorldPosition;
+%rename Ogre::BillboardSet::getSquaredViewDepth       GetSquaredViewDepth;
+%rename Ogre::BillboardSet::getLights                 GetLights;
 
 //TODO this retruns an array of FloatRect
 // virtual Ogre::FloatRect const * getTextureCoords(uint16 * oNumCoords);
@@ -40,162 +96,162 @@
     public virtual int NumBillboards {
         get
         {
-            return getNumBillboards();
+            return GetNumBillboards();
         }
     }
 
     public virtual bool Autoextend {
         get
         {
-            return getAutoextend();
+            return GetAutoextend();
         }
 
         set
         {
-            setAutoextend((bool)value);
+            SetAutoextend((bool)value);
         }
     }
 
     public virtual UInt32 PoolSize {
         get
         {
-            return getPoolSize();
+            return GetPoolSize();
         }
 
         set
         {
-            setPoolSize((UInt32)value);
+            SetPoolSize((UInt32)value);
         }
     }
 
     public virtual BillboardOrigin BillboardOrigin {
         get
         {
-            return getBillboardOrigin();
+            return GetBillboardOrigin();
         }
         set
         { 
-            setBillboardOrigin((BillboardOrigin)value);
+            SetBillboardOrigin((BillboardOrigin)value);
         }
     }
 
     public virtual float DefaultWidth {
         get
         {
-            return getDefaultWidth();
+            return GetDefaultWidth();
         }
         set
         {
-            setDefaultWidth((float)value);
+            SetDefaultWidth((float)value);
         }
     }
 
     public virtual float DefaultHeight {
         get
         {
-            return getDefaultHeight();
+            return GetDefaultHeight();
         }
 
         set
         {
-            setDefaultHeight((float)value);
+            SetDefaultHeight((float)value);
         }
     }
 
 //  public virtual void MaterialName {
 //    set
 //    {
-//        setMaterialName((string)value);
+//        SetMaterialName((string)value);
 //    }
 //  }
 
     public override AxisAlignedBox BoundingBox {
         get
         {
-            return getBoundingBox();
+            return GetBoundingBox();
         }
     }
 
     public override float BoundingRadius {
         get
         {
-            return getBoundingRadius();
+            return GetBoundingRadius();
         }
     }
 
     public virtual MaterialPtr Material {
         get
         {
-            return getMaterial();
+            return GetMaterial();
         }
     }
 
     public Math3D.Quaternion WorldOrientation {
         get
         {
-            return getWorldOrientation();
+            return GetWorldOrientation();
         }
     }
 
     public Math3D.Vector3 WorldPosition {
         get
         {
-            return getWorldPosition();
+            return GetWorldPosition();
         }
     }
 
     public virtual bool CullIndividually {
         get
         {
-            return getCullIndividually();
+            return GetCullIndividually();
         }
         set
         {
-            setCullIndividually((bool)value);
+            SetCullIndividually((bool)value);
         }  
     }
 
     public virtual BillboardType BillboardType {
         get
         {
-            return getBillboardType();
+            return GetBillboardType();
         }
 
         set
         {
-            setBillboardType((BillboardType)value);
+            SetBillboardType((BillboardType)value);
         }
     }
 
     public virtual Math3D.Vector3 CommonDirection {
         get
         {
-            return getCommonDirection();
+            return GetCommonDirection();
         }
         set
         {
-            setCommonDirection(value);
+            SetCommonDirection(value);
         }
     }
 
     public override string Name {
         get
         {
-            return getName();
+            return GetName();
         }
     }
 
     public override string MovableType {
         get
         {
-            return getMovableType();
+            return GetMovableType();
         }
     }
 
     public LightList Lights {
         get
         {
-            return getLights();
+            return GetLights();
         }
     }
 %}

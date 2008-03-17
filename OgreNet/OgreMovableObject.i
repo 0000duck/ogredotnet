@@ -3,6 +3,33 @@
 #include "MovableObjectExt.h"
 %}
 
+%rename Ogre::MovableObject::getName                   GetName;
+%rename Ogre::MovableObject::getMovableType            GetMovableType;
+%rename Ogre::MovableObject::getParentNode             GetParentNode;
+%rename Ogre::MovableObject::getParentSceneNode        GetParentSceneNode;
+%rename Ogre::MovableObject::isAttached                IsAttached;
+%rename Ogre::MovableObject::isInScene                 IsInScene;
+%rename Ogre::MovableObject::getBoundingBox            GetBoundingBox;
+%rename Ogre::MovableObject::getBoundingRadius         GetBoundingRadius;
+%rename Ogre::MovableObject::getWorldBoundingBox       GetWorldBoundingBox;
+%rename Ogre::MovableObject::getWorldBoundingSphere    GetWorldBoundingSphere;
+%rename Ogre::MovableObject::setVisible                SetVisible;
+%rename Ogre::MovableObject::isVisible                 IsVisible;
+%rename Ogre::MovableObject::setUserObject             SetUserObject;
+%rename Ogre::MovableObject::getUserObject             GetUserObject;
+%rename Ogre::MovableObject::setRenderQueueGroup       SetRenderQueueGroup;
+%rename Ogre::MovableObject::getRenderQueueGroup       GetRenderQueueGroup;
+%rename Ogre::MovableObject::setQueryFlags             SetQueryFlags;
+%rename Ogre::MovableObject::addQueryFlags             AddQueryFlags;
+%rename Ogre::MovableObject::removeQueryFlags          RemoveQueryFlags;
+%rename Ogre::MovableObject::getQueryFlags             GetQueryFlags;
+%rename Ogre::MovableObject::getEdgeList               GetEdgeList;
+%rename Ogre::MovableObject::getLightCapBounds         GetLightCapBounds;
+%rename Ogre::MovableObject::getDarkCapBounds          GetDarkCapBounds;
+%rename Ogre::MovableObject::setCastShadows            SetCastShadows;
+%rename Ogre::MovableObject::getCastShadows            GetCastShadows;
+%rename Ogre::MovableObject::getPointExtrusionDistance GetPointExtrusionDistance;
+
 //params is a keyword in C#.  there is a %extend for this function
 %ignore Ogre::MovableObjectFactory::createInstance(const String& name, SceneManager* manager, const NameValuePairList* params = 0);
 
@@ -16,51 +43,51 @@
     private object _userData;
 
     public virtual string Name {
-        get { return getName(); }
+        get { return GetName(); }
     }
 
     public virtual string MovableType {
-        get { return getMovableType(); }
+        get { return GetMovableType(); }
     }
 
     public virtual Node ParentNode {
-        get { return getParentNode(); }
+        get { return GetParentNode(); }
     }
 
     public virtual SceneNode ParentSceneNode {
-        get { return getParentSceneNode(); }
+        get { return GetParentSceneNode(); }
     }
 
     public virtual AxisAlignedBox BoundingBox {
-        get { return getBoundingBox(); }
+        get { return GetBoundingBox(); }
     }
 
     public virtual float BoundingRadius {
-        get { return getBoundingRadius(); }
+        get { return GetBoundingRadius(); }
     }
 
 //    public virtual void Visible {
 //        get { return IsVisible(); }
-//        set { setVisible((bool)value); }
+//        set { SetVisible((bool)value); }
 //    }
 
     public virtual RenderQueueGroupID RenderQueueGroup {
-        get { return (RenderQueueGroupID)(int)getRenderQueueGroup(); }
-        set { setRenderQueueGroup((byte)value); }
+        get { return (RenderQueueGroupID)(int)GetRenderQueueGroup(); }
+        set { SetRenderQueueGroup((byte)value); }
     }
 
     public virtual UInt32 QueryFlags {
-        get { return getQueryFlags(); }
-        set { setQueryFlags(value); }
+        get { return GetQueryFlags(); }
+        set { SetQueryFlags(value); }
     }
 
     public AxisAlignedBox LightCapBounds {
-        get { return getLightCapBounds(); }
+        get { return GetLightCapBounds(); }
     }
 
     public bool CastShadows {
-        get { return getCastShadows(); }
-        set { setCastShadows((bool)value); }
+        get { return GetCastShadows(); }
+        set { SetCastShadows((bool)value); }
     }
 
     static public MovableObject GetMovableObjectFrom(BillboardSet c)    {
@@ -100,7 +127,8 @@
 %include "OgreMovableObject.h"
 
 %extend Ogre::MovableObject {
-    AnimableObject * GetAsAnimableObject()    {
+    AnimableObject * GetAsAnimableObject()
+    {
         return (AnimableObject*)self;
     }
 };

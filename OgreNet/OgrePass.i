@@ -56,7 +56,6 @@ SWIG_STD_VECTOR_SPECIALIZE_MINIMUM(TextureUnitState, Ogre::TextureUnitState*)
 //        typedef VectorIterator<TextureUnitStates> TextureUnitStateIterator;
 VectorIteratorWRAP(TextureUnitStateIteratorWrap, std::vector, Ogre::TextureUnitState*);
 
-
 //        typedef ConstVectorIterator<TextureUnitStates> ConstTextureUnitStateIterator;
 ConstVectorIteratorWRAP(ConstTextureUnitStateIteratorWrap, std::vector, Ogre::TextureUnitState*);
 

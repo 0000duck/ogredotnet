@@ -2,6 +2,40 @@
 #include "OgreRenderTarget.h"
 %}
 
+%rename Ogre::RenderTarget::getName                        GetName;
+%rename Ogre::RenderTarget::getMetrics                     GetMetrics;
+%rename Ogre::RenderTarget::getWidth                       GetWidth;
+%rename Ogre::RenderTarget::getHeight                      GetHeight;
+%rename Ogre::RenderTarget::getColourDepth                 GetColourDepth;
+%rename Ogre::RenderTarget::update                         Update;
+%rename Ogre::RenderTarget::addViewport                    AddViewport;
+%rename Ogre::RenderTarget::getNumViewports                GetNumViewports;
+%rename Ogre::RenderTarget::getViewport                    GetViewport;
+%rename Ogre::RenderTarget::removeViewport                 RemoveViewport;
+%rename Ogre::RenderTarget::removeAllViewports             RemoveAllViewports;
+%rename Ogre::RenderTarget::getLastFPS                     GetLastFPS;
+%rename Ogre::RenderTarget::getAverageFPS                  GetAverageFPS;
+%rename Ogre::RenderTarget::getBestFPS                     GetBestFPS;
+%rename Ogre::RenderTarget::getWorstFPS                    GetWorstFPS;
+%rename Ogre::RenderTarget::getBestFrameTime               GetBestFrameTime;
+%rename Ogre::RenderTarget::getWorstFrameTime              GetWorstFrameTime;
+%rename Ogre::RenderTarget::resetStatistics                ResetStatistics;
+%rename Ogre::RenderTarget::getCustomAttribute             GetCustomAttribute;
+%rename Ogre::RenderTarget::addListener                    AddListener;
+%rename Ogre::RenderTarget::removeListener                 RemoveListener;
+%rename Ogre::RenderTarget::removeAllListeners             RemoveAllListeners;
+%rename Ogre::RenderTarget::setPriority                    SetPriority;
+%rename Ogre::RenderTarget::getPriority                    GetPriority;
+%rename Ogre::RenderTarget::isActive                       IsActive;
+%rename Ogre::RenderTarget::setActive                      SetActive;
+%rename Ogre::RenderTarget::setAutoUpdated                 SetAutoUpdated;
+%rename Ogre::RenderTarget::isAutoUpdated                  IsAutoUpdated;
+%rename Ogre::RenderTarget::writeContentsToFile            WriteContentsToFile;
+%rename Ogre::RenderTarget::writeContentsToTimestampedFile WriteContentsToTimestampedFile;
+%rename Ogre::RenderTarget::requiresTextureFlipping        RequiresTextureFlipping;
+%rename Ogre::RenderTarget::getTriangleCount               GetTriangleCount;
+%rename Ogre::RenderTarget::isPrimary                      IsPrimary;
+
 //TODO subclass Impl, do we need that?
 %ignore Ogre::RenderTarget::_getImpl;
 
@@ -23,130 +57,130 @@
     public virtual string Name {
         get
         {
-            return getName();
+            return GetName();
         }
     }
 
     public virtual UInt32 Width {
         get
         {
-            return getWidth();
+            return GetWidth();
         }
     }
 
     public virtual UInt32 Height {
         get
         {
-            return getHeight();
+            return GetHeight();
         }
     } 
 
     public virtual UInt32 ColourDepth {
         get
         {
-            return getColourDepth();
+            return GetColourDepth();
         }
     }
 
     public virtual int NumViewports {
         get
         {
-            return getNumViewports();
+            return GetNumViewports();
         }
     }
 
     public virtual float LastFPS {
         get
         {
-            return getLastFPS();
+            return GetLastFPS();
         }
     }
 
     public virtual float AverageFPS {
         get
         {
-            return getAverageFPS();
+            return GetAverageFPS();
         }
     }
 
     public virtual float BestFPS {
         get
         {
-            return getBestFPS();
+            return GetBestFPS();
         }
     }
 
     public virtual float WorstFPS {
         get
         {
-            return getWorstFPS();
+            return GetWorstFPS();
         }
     }
 
     public virtual float BestFrameTime {
         get
         {
-            return getBestFrameTime();
+            return GetBestFrameTime();
         }
     }
 
     public virtual float WorstFrameTime {
         get
         {
-            return getWorstFrameTime();
+            return GetWorstFrameTime();
         }
     }
 
     public virtual byte Priority {
         get
         {
-            return getPriority();
+            return GetPriority();
         }
         set
         {
-            setPriority((byte)value);
+            SetPriority((byte)value);
         }
     }
 
 //     public virtual bool IsActive {
 //         get
 //         {
-//             return isActive();
+//             return IsActive();
 //         }
 //     }
 
 //     public virtual void Active {
 //         set
 //         {
-//             setActive((bool)value);
+//             SetActive((bool)value);
 //         }
 //     }
 
 //     public virtual void AutoUpdated {
 //         set
 //         {
-//             setAutoUpdated((bool)value);
+//             SetAutoUpdated((bool)value);
 //         }
 //     }
 
 //     public virtual bool IsAutoUpdated {
 //         get
 //         {
-//             return isAutoUpdated();
+//             return IsAutoUpdated();
 //         }
 //     }
 
     public virtual UInt32 TriangleCount {
         get
         {
-            return getTriangleCount();
+            return GetTriangleCount();
         }
     }
 
 //     public virtual bool IsPrimary {
 //         get
 //         {
-//             return isPrimary();
+//             return IsPrimary();
 //         }
 //     }
 %}

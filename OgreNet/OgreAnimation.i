@@ -18,6 +18,43 @@
 %ignore Ogre::Animation::_keyFrameListChanged;
 %ignore Ogre::Animation::_getVertexTrackList;
 
+%rename Ogre::Animation::createNodeTrack                CreateNodeTrack;
+%rename Ogre::Animation::createNumericTrack                CreateNumericTrack;
+%rename Ogre::Animation::createVertexTrack                CreateVertexTrack;
+%rename Ogre::Animation::destroyNodeTrack                DestroyNodeTrack;
+%rename Ogre::Animation::destroyNumericTrack            DestroyNumericTrack;
+%rename Ogre::Animation::destroyVertexTrack                DestroyVertexTrack;
+%rename Ogre::Animation::destroyAllTracks                DestroyAllTracks;
+%rename Ogre::Animation::destroyAllNodeTracks            DestroyAllNodeTracks;
+%rename Ogre::Animation::destroyAllNumericTracks        DestroyAllNumericTracks;
+%rename Ogre::Animation::destroyAllVertexTracks            DestroyAllVertexTracks;
+%rename Ogre::Animation::getNodeTrack                    GetNodeTrack;
+%rename Ogre::Animation::getNumericTrack                GetNumericTrack;
+%rename Ogre::Animation::getVertexTrack                    GetVertexTrack;
+%rename Ogre::Animation::hasNodeTrack                    HasNodeTrack;
+%rename Ogre::Animation::hasNumericTrack                HasNumericTrack;
+%rename Ogre::Animation::hasVertexTrack                    HasVertexTrack;
+%rename Ogre::Animation::getNumNodeTracks                GetNumNodeTracks;
+%rename Ogre::Animation::getNumNumericTracks            GetNumNumericTracks;
+%rename Ogre::Animation::getNumVertexTracks                GetNumVertexTracks;
+%rename Ogre::Animation::getNodeTrackIterator            GetNodeTrackIterator;
+%rename Ogre::Animation::getNumericTrackIterator        GetNumericTrackIterator;
+%rename Ogre::Animation::getVertexTrackIterator            GetVertexTrackIterator;
+%rename Ogre::Animation::_getNodeTrackList                GetNodeTrackList;
+%rename Ogre::Animation::_getNumericTrackList            GetNumericTrackList;
+%rename Ogre::Animation::apply Apply;
+%rename Ogre::Animation::optimise Optimise;
+%rename Ogre::Animation::getName GetName;
+%rename Ogre::Animation::getLength GetLength;
+%rename Ogre::Animation::setRotationInterpolationMode SetRotationInterpolationMode;
+%rename Ogre::Animation::setDefaultInterpolationMode  SetDefaultInterpolationMode;
+%rename Ogre::Animation::setInterpolationMode SetInterpolationMode;
+%rename Ogre::Animation::getInterpolationMode GetInterpolationMode;
+%rename Ogre::Animation::getRotationInterpolationMode  GetRotationInterpolationMode;
+%rename Ogre::Animation::getDefaultInterpolationMode   GetDefaultInterpolationMode;
+%rename Ogre::Animation::setDefaultRotationInterpolationMode  SetDefaultRotationInterpolationMode;
+%rename Ogre::Animation::getDefaultRotationInterpolationMode  GetDefaultRotationInterpolationMode;
+
 //typedef SharedPtr<AnimableValue> AnimableValuePtr;
 %template(AnimableValuePtr) Ogre::SharedPtr<Ogre::AnimableValue>;
 
@@ -25,62 +62,62 @@
 %{
     public InterpolationMode mInterpolationMode    {
         get    {
-            return (InterpolationMode)getInterpolationMode();
+            return (InterpolationMode)GetInterpolationMode();
         }
         set     {
-            setInterpolationMode(value);
+            SetInterpolationMode(value);
         }
     }
     
     public RotationInterpolationMode mRotationInterpolationMode     {
         get    {
-            return (RotationInterpolationMode)getRotationInterpolationMode();
+            return (RotationInterpolationMode)GetRotationInterpolationMode();
         }
         set    {
-            setRotationInterpolationMode(value);
+            SetRotationInterpolationMode(value);
         }
     }
     
     public InterpolationMode DefaultInterpolationMode    {
         get    {
-            return (InterpolationMode)getDefaultInterpolationMode();
+            return (InterpolationMode)GetDefaultInterpolationMode();
         }
         set    {
-            setDefaultInterpolationMode(value);
+            SetDefaultInterpolationMode(value);
         }
     }
     
     public RotationInterpolationMode DefaultRotationInterpolationMode    {
         get    {
-            return (RotationInterpolationMode)getDefaultRotationInterpolationMode();
+            return (RotationInterpolationMode)GetDefaultRotationInterpolationMode();
         }
         set    {
-            setDefaultRotationInterpolationMode(value);
+            SetDefaultRotationInterpolationMode(value);
         }
     }
     
     public string Name {
         get        {
-            return getName();
+            return GetName();
         }
     }
     
     public float Length {
         get        {
-            return getLength();
+            return GetLength();
         }
     }
     
     public int NumNodeTracks {
-        get { return getNumNodeTracks(); }
+        get { return GetNumNodeTracks(); }
     }
 
     public int NumNumericTracks {
-        get { return getNumNumericTracks(); }
+        get { return GetNumNumericTracks(); }
     }
 
     public int NumVertexTracks {
-        get { return getNumVertexTracks(); }
+        get { return GetNumVertexTracks(); }
     }
 %}
 

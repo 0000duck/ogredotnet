@@ -6,7 +6,28 @@
 %ignore Ogre::Quaternion::operator=;
 %ignore Ogre::Quaternion::randomDeviant;
 
-%typemap(cscode) Ogre::Quaternion %{
+%typemap(cscode) Ogre::Quaternion
+%{
+    public float W {
+        get { return getW(); }
+        set { setW(value); }
+    }
+
+    public float X {
+        get { return getX(); }
+        set { setX(value); }
+    }
+
+    public float Y { 
+        get { return getY(); }
+        set { setY(value); }
+    }
+
+    public float Z {
+        get { return getZ(); }
+        set { setZ(value); }
+    }
+
     public static Math3D.Quaternion ToQuaternion(OgreDotNet.OgreQuaternion v)
     {
         return new Math3D.Quaternion(v.w, v.x, v.y, v.z);
@@ -26,10 +47,10 @@
 }
 %typemap(csvarout) const Ogre::Quaternion &
 %{
-get
-{
-    return OgreQuaternion.ToQuaternion(new OgreQuaternion($imcall, false));
-}
+    get
+    {
+        return OgreQuaternion.ToQuaternion(new OgreQuaternion($imcall, false));
+    }
 %}
 
 %typemap(cstype) Ogre::Quaternion "Math3D.Quaternion"
@@ -40,5 +61,44 @@ get
 }
 
 %rename Quaternion OgreQuaternion;
+
+%extend Ogre::Quaternion
+{
+    inline float getW(void)
+    {
+        return self->w;
+    }
+    inline void setW(float W)
+    {
+        self->w = W;
+    }
+
+    inline float getX(void)
+    {
+        return self->x;
+    }
+    inline void setX(float X)
+    {
+        self->x = X;
+    }
+    
+    inline float getY(void)
+    {
+        return self->y;
+    }
+    inline void setY(float Y)
+    {
+        self->y = Y;
+    }
+    
+    inline float getZ(void)
+    {
+        return self->z;
+    }
+    inline void setZ(float Z)
+    {
+        self->z = Z;
+    }
+}
 
 %include "OgreQuaternion.h"

@@ -2,6 +2,41 @@
 #include "OgreFrustum.h"
 %}
 
+%rename Ogre::Frustum::setFOVy                     SetFOVy;
+%rename Ogre::Frustum::getFOVy                     GetFOVy;
+%rename Ogre::Frustum::setNearClipDistance         SetNearClipDistance;
+%rename Ogre::Frustum::getNearClipDistance         GetNearClipDistance;
+%rename Ogre::Frustum::setFarClipDistance          SetFarClipDistance;
+%rename Ogre::Frustum::getFarClipDistance          GetFarClipDistance;
+%rename Ogre::Frustum::setAspectRatio              SetAspectRatio;
+%rename Ogre::Frustum::getAspectRatio              GetAspectRatio;
+%rename Ogre::Frustum::getProjectionMatrix         GetProjectionMatrix;
+//%rename Ogre::Frustum::getStandardProjectionMatrix GetStandardProjectionMatri;
+%rename Ogre::Frustum::getViewMatrix               GetViewMatrix;
+%rename Ogre::Frustum::getFrustumPlane             GetFrustumPlane;
+%rename Ogre::Frustum::isVisible                   IsVisible;
+%rename Ogre::Frustum::getBoundingBox              GetBoundingBox;
+%rename Ogre::Frustum::getBoundingRadius           GetBoundingRadius;
+%rename Ogre::Frustum::getMovableType              GetMovableType;
+%rename Ogre::Frustum::getName                     GetName;
+%rename Ogre::Frustum::getMaterial                 GetMaterial;
+%rename Ogre::Frustum::getWorldTransforms          GetWorldTransforms;
+%rename Ogre::Frustum::getWorldOrientation         GetWorldOrientation;
+%rename Ogre::Frustum::getWorldPosition            GetWorldPosition;
+%rename Ogre::Frustum::getSquaredViewDepth         GetSquaredViewDepth;
+%rename Ogre::Frustum::getLights                   GetLights;
+%rename Ogre::Frustum::getWorldSpaceCorners        GetWorldSpaceCorners;
+%rename Ogre::Frustum::setProjectionType           SetProjectionType;
+%rename Ogre::Frustum::getProjectionType           GetProjectionType;
+%rename Ogre::Frustum::enableReflection            EnableReflection;
+%rename Ogre::Frustum::disableReflection           DisableReflection;
+%rename Ogre::Frustum::isReflected                 IsReflected;
+%rename Ogre::Frustum::getReflectionMatrix         GetReflectionMatrix;
+%rename Ogre::Frustum::getReflectionPlane          GetReflectionPlane;
+%rename Ogre::Frustum::projectSphere               ProjectSphere;
+%rename Ogre::Frustum::enableCustomNearClipPlane   EnableCustomNearClipPlane;
+%rename Ogre::Frustum::disableCustomNearClipPlane  DisableCustomNearClipPlane;
+
 //ignore because of RenderOperation is private
 %ignore Ogre::Frustum::getRenderOperation;
 
@@ -17,139 +52,139 @@
     public virtual Radian FOVy {
         get
         {
-            return getFOVy();
+            return GetFOVy();
         }
         set
         {
-            setFOVy((Radian)value);
+            SetFOVy((Radian)value);
         }    
     }
 
     public virtual float NearClipDistance {
         get
         {
-            return getNearClipDistance();
+            return GetNearClipDistance();
         }
         set
         {
-            setNearClipDistance((float)value);
+            SetNearClipDistance((float)value);
         }    
     }
 
     public virtual float FarClipDistance {
         get
         {
-            return getFarClipDistance();
+            return GetFarClipDistance();
         }
         set
         {
-            setFarClipDistance((float)value);
+            SetFarClipDistance((float)value);
         }    
     }
 
     public virtual float AspectRatio {
         get
         {
-            return getAspectRatio();
+            return GetAspectRatio();
         }
         set
         {
-            setAspectRatio((float)value);
+            SetAspectRatio((float)value);
         }    
     }
 
     public virtual Math3D.Matrix4 ProjectionMatrix {
         get
         {
-            return getProjectionMatrix();
+            return GetProjectionMatrix();
         }
     }
 
 //  public virtual Math3D.Matrix4 StandardProjectionMatrix {
 //    get
 //    {
-//        return getStandardProjectionMatrix();
+//        return GetStandardProjectionMatrix();
 //    }
 //  }
 
     public virtual Math3D.Matrix4 ViewMatrix {
         get
         {
-            return getViewMatrix();
+            return GetViewMatrix();
         }
     }
 
     public override AxisAlignedBox BoundingBox {
         get
         {
-            return getBoundingBox();
+            return GetBoundingBox();
         }
     }
 
     public override float BoundingRadius {
         get
         {
-            return getBoundingRadius();
+            return GetBoundingRadius();
         }
     }
 
     public override string MovableType {
         get
         {
-            return getMovableType();
+            return GetMovableType();
         }
     }
 
     public override string Name {
         get
         {
-            return getName();
+            return GetName();
         }
     }
 
     public MaterialPtr Material {
         get
         {
-            return getMaterial();
+            return GetMaterial();
         }
     }
 
     public Math3D.Quaternion WorldOrientation {
         get
         {
-            return getWorldOrientation();
+            return GetWorldOrientation();
         }
     }
 
     public Math3D.Vector3 WorldPosition {
         get
         {
-            return getWorldPosition();
+            return GetWorldPosition();
         }
     }
 
     public LightList Lights {
         get
         {
-            return getLights();
+            return GetLights();
         }
     }
 
     public virtual Math3D.Vector3 WorldSpaceCorners {
         get
         {
-            return getWorldSpaceCorners();
+            return GetWorldSpaceCorners();
         }
     }
 
     public virtual ProjectionType ProjectionType {
         get
         {
-            return getProjectionType();
+            return GetProjectionType();
         }
         set
         {
-            setProjectionType((ProjectionType)value);
+            SetProjectionType((ProjectionType)value);
         }
     }
 
@@ -163,23 +198,22 @@
     public virtual Math3D.Matrix4 ReflectionMatrix {
         get
         {
-            return getReflectionMatrix();
+            return GetReflectionMatrix();
         }
     }
 
     public virtual Plane ReflectionPlane {
         get
         {
-            return getReflectionPlane();
+            return GetReflectionPlane();
         }
     }
-
-    %}
+%}
 
 %include "OgreFrustum.h"
 
 %extend Ogre::Frustum {
-    Renderable * GetAsRenderable()    {
+    Renderable * GetAsRenderable() {
         return (Renderable*)self;
     }
 };

@@ -18,40 +18,54 @@ namespace Ogre
 }
 %}
 
+%rename Ogre::AnimationState::getAnimationName GetAnimationName;
+%rename Ogre::AnimationState::getTimePosition GetTimePosition;
+%rename Ogre::AnimationState::setTimePosition SetTimePosition;
+%rename Ogre::AnimationState::getLength GetLength;
+%rename Ogre::AnimationState::setLength SetLength;
+%rename Ogre::AnimationState::getWeight GetWeight;
+%rename Ogre::AnimationState::setWeight SetWeight;
+%rename Ogre::AnimationState::addTime AddTime;
+%rename Ogre::AnimationState::getEnabled GetEnabled;
+%rename Ogre::AnimationState::setEnabled SetEnabled;
+%rename Ogre::AnimationState::getLoop GetLoop;
+%rename Ogre::AnimationState::setLoop SetLoop;
+%rename Ogre::AnimationState::copyStateFrom CopyStateFrom;
+
 %nodefault Ogre::AnimationStateControllerValueDirector;
 
 %typemap(cscode) Ogre::AnimationState
 %{
     public string AnimationName    {
-        get { return getAnimationName(); }
+        get { return GetAnimationName(); }
     }
 
     public float TimePosition    {
-        get { return getTimePosition(); }
-        set { setTimePosition((float)value); }
+        get { return GetTimePosition(); }
+        set { SetTimePosition((float)value); }
     }
 
     public float Length    {
-        get { return getLength(); }
-        set { setLength((float)value); }
+        get { return GetLength(); }
+        set { SetLength((float)value); }
     }
 
     public float Weight
     {
-        get { return getWeight(); }
-        set { setWeight((float)value); }
+        get { return GetWeight(); }
+        set { SetWeight((float)value); }
     }
 
     public bool Enabled
     {
-        get { return getEnabled(); }
-        set { setEnabled((bool)value); }
+        get { return GetEnabled(); }
+        set { SetEnabled((bool)value); }
     }
 
     public bool Loop
     {
-        get { return getLoop(); }
-        set { setLoop((bool)value); }
+        get { return GetLoop(); }
+        set { SetLoop((bool)value); }
     }
 %}
 

@@ -2,6 +2,45 @@
 #include "OgreCamera.h"
 %}
 
+%rename Ogre::Camera::setPolygonMode         SetPolygonMode;
+%rename Ogre::Camera::getPolygonMode         GetPolygonMode;
+%rename Ogre::Camera::getPosition            GetPosition;
+%rename Ogre::Camera::getSceneManager        GetSceneManager;
+%rename Ogre::Camera::move                   Move;
+%rename Ogre::Camera::moveRelative           MoveRelative;
+%rename Ogre::Camera::setDirection           SetDirection;
+%rename Ogre::Camera::getDirection           GetDirection;
+%rename Ogre::Camera::getUp                  GetUp;
+%rename Ogre::Camera::getRight               GetRight;
+%rename Ogre::Camera::lookAt                 _lookAt;
+%rename Ogre::Camera::roll                   Roll;
+%rename Ogre::Camera::yaw                    Yaw;
+%rename Ogre::Camera::pitch                  Pitch;
+%rename Ogre::Camera::rotate                 Rotate;
+%rename Ogre::Camera::setFixedYawAxis        SetFixedYawAxis;
+%rename Ogre::Camera::getOrientation         GetOrientation;
+%rename Ogre::Camera::setOrientation         SetOrientation;
+%rename Ogre::Camera::getDerivedOrientation  GetDerivedOrientation;
+%rename Ogre::Camera::getDerivedPosition     GetDerivedPosition;
+%rename Ogre::Camera::getMovableType         GetMovableType;
+%rename Ogre::Camera::setAutoTracking        SetAutoTracking;
+%rename Ogre::Camera::setLodBias             SetLodBias;
+%rename Ogre::Camera::getCameraToViewportRay GetCameraToViewportRay;
+%rename Ogre::Camera::setWindow              SetWindow;
+%rename Ogre::Camera::resetWindow            ResetWindow;
+%rename Ogre::Camera::isWindowSet            IsWindowSet;
+%rename Ogre::Camera::getWindowPlanes        GetWindowPlanes;
+%rename Ogre::Camera::getBoundingRadius      GetBoundingRadius;
+%rename Ogre::Camera::getAutoTrackTarget     GetAutoTrackTarget;
+%rename Ogre::Camera::getAutoTrackOffset     GetAutoTrackOffset;
+%rename Ogre::Camera::getViewport            GetViewport;
+%rename Ogre::Camera::setAutoAspectRatio     SetAutoAspectRatio;
+%rename Ogre::Camera::getAutoAspectRatio     GetAutoAspectRatio;
+%rename Ogre::Camera::getName                GetName;
+%rename Ogre::Camera::setPosition            SetPosition;
+%rename Ogre::Camera::getDerivedDirection    GetDerivedDirection;
+%rename Ogre::Camera::getLodBias             GetLodBias;
+
 %ignore Ogre::Camera::operator<<;
 
 %typemap(cscode) Ogre::Camera
@@ -10,11 +49,11 @@
     {
         get
         {
-            return getAspectRatio();
+            return GetAspectRatio();
         }
         set
         {
-            setAspectRatio(value);
+            SetAspectRatio(value);
         }
     }
 
@@ -22,11 +61,11 @@
     {
         get
         {
-            return getNearClipDistance();
+            return GetNearClipDistance();
         }
         set
         {
-            setNearClipDistance(value);
+            SetNearClipDistance(value);
         }
     }
     
@@ -34,11 +73,11 @@
     {
         get
         {
-            return getPosition();
+            return GetPosition();
         }
         set
         {
-            setPosition(value);
+            SetPosition(value);
         }
     }
     
@@ -46,155 +85,154 @@
     {
         set
         {
-            lookAt(value);
+            _lookAt(value);
         }
     }
 
     public SceneManager SceneManager {
         get
         {
-            return getSceneManager();
+            return GetSceneManager();
         }
     }
 
     public override string Name {
         get
         {
-            return getName();
+            return GetName();
         }
     }
 
     public PolygonMode DetailLevel {
         get
         {
-            return getPolygonMode();
+            return GetPolygonMode();
         }
 
         set
         {
-            setPolygonMode((PolygonMode)value);
+            SetPolygonMode((PolygonMode)value);
         }
     }
 
     public Math3D.Vector3 Direction {
         get
         {
-            return getDirection();
+            return GetDirection();
         }
         set
         {
-            setDirection(value);
+            SetDirection(value);
         }
     }
-
 
     public Math3D.Vector3 Up {
         get
         {
-            return getUp();
+            return GetUp();
         }
     }
 
     public Math3D.Vector3 Right {
         get
         {
-            return getRight();
+            return GetRight();
         }
     }
 
     public Math3D.Quaternion Orientation {
         get
         {
-            return getOrientation();
+            return GetOrientation();
         }
         set
         {
-            setOrientation(value);
+            SetOrientation(value);
         }
     }
 
     public Math3D.Quaternion DerivedOrientation {
         get
         {
-            return getDerivedOrientation();
+            return GetDerivedOrientation();
         }
     }
 
     public Math3D.Vector3 DerivedPosition {
         get
         {
-            return getDerivedPosition();
+            return GetDerivedPosition();
         }
     }
 
     public Math3D.Vector3 DerivedDirection {
         get
         {
-            return getDerivedDirection();
+            return GetDerivedDirection();
         }
     }
 
     public override string MovableType {
         get
         {
-            return getMovableType();
+            return GetMovableType();
         }
     }
 
     public float LodBias {
         get
         {
-            return getLodBias();
+            return GetLodBias();
         }
         set
         {
-            setLodBias((float)value);
+            SetLodBias((float)value);
         }
     }
 
     public PlaneVector WindowPlanes {
         get
         {
-            return getWindowPlanes();
+            return GetWindowPlanes();
         }
     }
 
     public override float BoundingRadius {
         get
         {
-            return getBoundingRadius();
+            return GetBoundingRadius();
         }
     }
 
     public SceneNode AutoTrackTarget {
         get
         {
-            return getAutoTrackTarget();
+            return GetAutoTrackTarget();
         }
     }
 
     public Math3D.Vector3 AutoTrackOffset {
         get
         {
-            return getAutoTrackOffset();
+            return GetAutoTrackOffset();
         }
     }
 
     public Viewport Viewport {
         get
         {
-            return getViewport();
+            return GetViewport();
         }
     }
 
     public bool AutoAspectRatio {
         get
         {
-            return getAutoAspectRatio();
+            return GetAutoAspectRatio();
         }
         set
         {
-            setAutoAspectRatio((bool)value);
+            SetAutoAspectRatio((bool)value);
         }
     }
 %}

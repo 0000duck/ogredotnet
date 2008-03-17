@@ -2,99 +2,141 @@
 #include "OgreMaterial.h"
 %}
 
+%rename Ogre::Material::isTransparent                IsTransparent;
+%rename Ogre::Material::setReceiveShadows            SetReceiveShadows;
+%rename Ogre::Material::getReceiveShadows            GetReceiveShadows;
+%rename Ogre::Material::setTransparencyCastsShadows        SetTransparencyCastsShadows;
+%rename Ogre::Material::getTransparencyCastsShadows        GetTransparencyCastsShadows;
+%rename Ogre::Material::createTechnique                CreateTechnique;
+%rename Ogre::Material::getTechnique                GetTechnique;
+%rename Ogre::Material::getNumTechniques            GetNumTechniques;
+%rename Ogre::Material::removeTechnique                RemoveTechnique;
+%rename Ogre::Material::removeAllTechniques            RemoveAllTechniques;
+%rename Ogre::Material::getTechniqueIterator            GetTechniqueIterator;
+%rename Ogre::Material::getSupportedTechniqueIterator        GetSupportedTechniqueIterator;
+%rename Ogre::Material::getSupportedTechnique            GetSupportedTechnique;
+%rename Ogre::Material::getNumSupportedTechniques        GetNumSupportedTechniques;
+%rename Ogre::Material::getNumLodLevels                GetNumLodLevels;
+%rename Ogre::Material::getBestTechnique            GetBestTechnique;
+%rename Ogre::Material::clone                    Clone;
+%rename Ogre::Material::copyDetailsTo                CopyDetailsTo;
+%rename Ogre::Material::compile                    Compile;
+%rename Ogre::Material::setAmbient                SetAmbient;
+%rename Ogre::Material::setDiffuse                SetDiffuse;
+%rename Ogre::Material::setSpecular                SetSpecular;
+%rename Ogre::Material::setShininess                SetShininess;
+%rename Ogre::Material::setSelfIllumination            SetSelfIllumination;
+%rename Ogre::Material::setDepthCheckEnabled            SetDepthCheckEnabled;
+%rename Ogre::Material::setDepthWriteEnabled            SetDepthWriteEnabled;
+%rename Ogre::Material::setDepthFunction            SetDepthFunction;
+%rename Ogre::Material::setColourWriteEnabled            SetColourWriteEnabled;
+%rename Ogre::Material::setCullingMode                SetCullingMode;
+%rename Ogre::Material::setManualCullingMode            SetManualCullingMode;
+%rename Ogre::Material::setLightingEnabled            SetLightingEnabled;
+%rename Ogre::Material::setShadingMode                SetShadingMode;
+%rename Ogre::Material::setFog                    SetFog;
+%rename Ogre::Material::setDepthBias                SetDepthBias;
+%rename Ogre::Material::setTextureFiltering            SetTextureFiltering;
+%rename Ogre::Material::setTextureAnisotropy            SetTextureAnisotropy;
+%rename Ogre::Material::setSceneBlending            SetSceneBlending;
+%rename Ogre::Material::setLodLevels                SetLodLevels;
+%rename Ogre::Material::getLodDistanceIterator            GetLodDistanceIterator;
+%rename Ogre::Material::getLodIndex                GetLodIndex;
+%rename Ogre::Material::getLodIndexSquaredDepth            GetLodIndexSquaredDepth;
+
 %ignore Ogre::Material::touch;
 
 %typemap(cscode) Ogre::Material
 %{
     public bool ReceiveShadows    {
-        get { return getReceiveShadows(); }
-        set { setReceiveShadows(value); }
+        get { return GetReceiveShadows(); }
+        set { SetReceiveShadows(value); }
     }
     
     public bool TransparencyCastsShadows    {
-        get { return getTransparencyCastsShadows(); }
-        set { setTransparencyCastsShadows(value); }
+        get { return GetTransparencyCastsShadows(); }
+        set { SetTransparencyCastsShadows(value); }
     }
     
     public int NumTechniques    {
-        get { return getNumTechniques(); }
+        get { return GetNumTechniques(); }
     }
     
     public int NumSupportedTechniques    {
-        get { return getNumSupportedTechniques(); }
+        get { return GetNumSupportedTechniques(); }
     }
     
     public System.Drawing.Color Ambient    {
-        set { setAmbient(value); }
+        set { SetAmbient(value); }
     }
     
     public System.Drawing.Color Diffuse    {
-        set { setDiffuse(value); }
+        set { SetDiffuse(value); }
     }
     
     public System.Drawing.Color Specular    {
-        set { setSpecular(value); }
+        set { SetSpecular(value); }
     }
     
     public float Shininess    {
-        set { setShininess(value); }
+        set { SetShininess(value); }
     }
     
     public System.Drawing.Color SelfIllumination    {
-        set { setSelfIllumination(value); }
+        set { SetSelfIllumination(value); }
     }
     
     public bool DepthCheckEnabled    {
-        set { setDepthCheckEnabled(value); }
+        set { SetDepthCheckEnabled(value); }
     }
     
     public bool DepthWriteEnabled    {
-        set { setDepthWriteEnabled(value); }
+        set { SetDepthWriteEnabled(value); }
     }
     
     public CompareFunction DepthFunction    {
-        set { setDepthFunction(value); }
+        set { SetDepthFunction(value); }
     }
     
     public bool ColourWriteEnabled    {
-        set { setColourWriteEnabled(value); }
+        set { SetColourWriteEnabled(value); }
     }
     
     public CullingMode CullingMode    {
-        set { setCullingMode(value); }
+        set { SetCullingMode(value); }
     }
     
     public ManualCullingMode ManualCullingMode    {
-        set { setManualCullingMode(value); }
+        set { SetManualCullingMode(value); }
     }
 
     public bool LightingEnabled    {
-        set { setLightingEnabled(value); }
+        set { SetLightingEnabled(value); }
     }
     
     public ShadeOptions ShadingMode    {
-        set { setShadingMode(value); }
+        set { SetShadingMode(value); }
     }
-
+    
 // TODO: setDepthBias takes 2 parameters    
 //     public UInt16 DepthBias    {
-//         set        { setDepthBias(value); }
+//         set        { SetDepthBias(value); }
 //     }
     
     public TextureFilterOptions TextureFiltering {
-        set    { setTextureFiltering(value); }
+        set    { SetTextureFiltering(value); }
     }
     
     public int TextureAnisotropy    {
-        set { setTextureAnisotropy(value); }
+        set { SetTextureAnisotropy(value); }
     }
     
     public SceneBlendType SceneBlending    {
-        set    { setSceneBlending(value); }
+        set    { SetSceneBlending(value); }
     }
     
     public VecFloats LodLevels    {
-        set { setLodLevels(value); }
+        set { SetLodLevels(value); }
     }
 %}
 

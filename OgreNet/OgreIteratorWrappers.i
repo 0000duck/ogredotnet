@@ -9,15 +9,14 @@
  *           getTrackIterator in OgreAnimation.i.
  */
  
-namespace Ogre
-{
+namespace Ogre {
     template <class T>
     class MapIterator
     {
-    private:
+     private:
         MapIterator();
 
-    public:
+     public:
         //MapIterator(typename T::iterator start, typename T::iterator end);
         bool hasMoreElements(void) const;
         void moveNext(void);
@@ -26,10 +25,10 @@ namespace Ogre
     template <class T>
     class ConstMapIterator
     {
-    private:
+     private:
         ConstMapIterator();
 
-    public:
+     public:
         //ConstMapIterator(typename T::iterator start, typename T::iterator end);
         bool hasMoreElements(void) const;
         void moveNext(void);

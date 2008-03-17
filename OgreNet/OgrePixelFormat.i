@@ -3,8 +3,11 @@
 %}
 
 %apply float *OUTPUT { float *r, float *g, float *b, float *a };
+
 %apply int *OUTPUT { int *r, int *g, int *b, int *a };
+
 %apply unsigned int *OUTPUT { Ogre::uint32 *r, Ogre::uint32 *g, Ogre::uint32 *b, Ogre::uint32 *a };
+
 %apply unsigned char *OUTPUT { uint8 *r, uint8 *g, uint8 *b, uint8 *a };
 
 %ignore Ogre::PixelUtil::getBitDepths;

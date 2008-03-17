@@ -2,6 +2,9 @@
 #include "OgreResourceManager.h"
 %}
 
+%rename Ogre::ResourceManager::create      Create;
+%rename Ogre::ResourceManager::load        Load;
+
 %include "OgreResourceManager.h"
 
 //typedef unsigned long ResourceHandle;

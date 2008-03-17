@@ -3,6 +3,19 @@
 #include "ResourceExt.h"
 %}
 
+%rename Ogre::Resource::load             Load;
+%rename Ogre::Resource::reload           Reload;
+%rename Ogre::Resource::isManuallyLoaded IsManuallyLoaded;
+%rename Ogre::Resource::unload           Unload;
+%rename Ogre::Resource::getSize          GetSize;
+%rename Ogre::Resource::touch            Touch;
+%rename Ogre::Resource::getName          GetName;
+%rename Ogre::Resource::getHandle        GetHandle;
+%rename Ogre::Resource::isLoaded         IsLoaded;
+%rename Ogre::Resource::getGroup         GetGroup;
+%rename Ogre::Resource::getCreator       GetCreator;
+%rename Ogre::Resource::getOrigin        GetOrigin;
+
 //typedef SharedPtr<Resource> ResourcePtr;
 %template(ResourcePtr) Ogre::SharedPtr<Ogre::Resource>;
 

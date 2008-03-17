@@ -2,13 +2,39 @@
 #include "OgreLight.h"
 %}
 
-%rename Ogre::Light::getType getLightType;
-%rename Ogre::Light::setType setLightType;
-
 // enum LightTypes
 #define LT_POINT        Point
 #define LT_DIRECTIONAL  Directional
 #define LT_SPOTLIGHT    Spot
+
+%rename Ogre::Light::tempSquareDist         TempSquareDist;
+%rename Ogre::Light::getName                GetName;
+%rename Ogre::Light::setType                SetLightType;
+%rename Ogre::Light::getType                GetLightType;        // We cant call it GetType(), because it is a reserved method implemented by each object
+%rename Ogre::Light::setDiffuseColour       SetDiffuseColour;
+%rename Ogre::Light::getDiffuseColour       GetDiffuseColour;
+%rename Ogre::Light::setSpecularColour      SetSpecularColour;
+%rename Ogre::Light::getSpecularColour      GetSpecularColour;
+%rename Ogre::Light::setAttenuation         SetAttenuation;
+%rename Ogre::Light::getAttenuationRange    GetAttenuationRange;
+%rename Ogre::Light::getAttenuationConstant GetAttenuationConstant;
+%rename Ogre::Light::getAttenuationLinear   GetAttenuationLinear;
+%rename Ogre::Light::getAttenuationQuadric  GetAttenuationQuadric;
+%rename Ogre::Light::setPosition            SetPosition;
+%rename Ogre::Light::getPosition            GetPosition;
+%rename Ogre::Light::setDirection           SetDirection;
+%rename Ogre::Light::getDirection           GetDirection;
+%rename Ogre::Light::setSpotlightRange      SetSpotlightRange;
+%rename Ogre::Light::getSpotlightInnerAngle GetSpotlightInnerAngle;
+%rename Ogre::Light::getSpotlightOuterAngle GetSpotlightOuterAngle;
+%rename Ogre::Light::getSpotlightFalloff    GetSpotlightFalloff;
+%rename Ogre::Light::getBoundingBox         GetBoundingBox;
+%rename Ogre::Light::getMovableType         GetMovableType;
+%rename Ogre::Light::getDerivedPosition     GetDerivedPosition;
+%rename Ogre::Light::getDerivedDirection    GetDerivedDirection;
+%rename Ogre::Light::setVisible             SetVisible;
+%rename Ogre::Light::getBoundingRadius      GetBoundingRadius;
+%rename Ogre::Light::getAs4DVector          GetAs4DVector;
 
 //override problem,  Light does not derive from Animbale because of single inheritance. 
 %ignore Ogre::Light::createAnimableValue; 
@@ -19,11 +45,11 @@
     {
         get
         {
-            return getDirection();
+            return GetDirection();
         }
         set
         {
-            setDirection(value);    
+            SetDirection(value);    
         }
     }
     
@@ -31,11 +57,11 @@
     {
         get
         {
-            return getPosition();
+            return GetPosition();
         }
         set
         {
-            setPosition(value);    
+            SetPosition(value);    
         }
     }
     
@@ -43,160 +69,160 @@
     {
         get
         {
-            return getDiffuseColour();
+            return GetDiffuseColour();
         }
         set
         {
-            setDiffuseColour(value);
+            SetDiffuseColour(value);
         }
     }
-
+    
     public override string Name {
         get
         {
-            return getName();
+            return GetName();
         }
     }
 
     public Light.LightTypes Type {
         get
         {
-            return getLightType();
+            return GetLightType();
         }
         set
         {
-            setLightType(value);
+            SetLightType(value);
         }    
     }
 
     public System.Drawing.Color SpecularColour {
         get
         {
-            return getSpecularColour();
+            return GetSpecularColour();
         }
         set
         {
-            setSpecularColour(value);
+            SetSpecularColour(value);
         }    
     }
 
     public float AttenuationRange {
         get
         {
-            return getAttenuationRange();
+            return GetAttenuationRange();
         }
     }
 
     public float AttenuationConstant {
         get
         {
-            return getAttenuationConstant();
+            return GetAttenuationConstant();
         }
     }
 
     public float AttenuationLinear {
         get
         {
-            return getAttenuationLinear();
+            return GetAttenuationLinear();
         }
     }
 
     public float AttenuationQuadric {
         get
         {
-            return getAttenuationQuadric();
+            return GetAttenuationQuadric();
         }
     }
 
 //  public OgreVector3 Position {
 //    get
 //    {
-//        return getPosition();
+//        return GetPosition();
 //    }
 //    set
 //    {
-//        setPosition((OgreVector3)value);
+//        SetPosition((OgreVector3)value);
 //    }    
 //  }
 
 //  public OgreVector3 Direction {
 //    get
 //    {
-//        return getDirection();
+//        return GetDirection();
 //    }
 //    set
 //    {
-//        setDirection((OgreVector3)value);
+//        SetDirection((OgreVector3)value);
 //    }    
 //  }
 
     public Radian SpotlightInnerAngle {
         get
         {
-            return getSpotlightInnerAngle();
+            return GetSpotlightInnerAngle();
         }
     }
 
     public Radian SpotlightOuterAngle {
         get
         {
-            return getSpotlightOuterAngle();
+            return GetSpotlightOuterAngle();
         }
     }
 
     public float SpotlightFalloff {
         get
         {
-            return getSpotlightFalloff();
+            return GetSpotlightFalloff();
         }
     }
 
     public override AxisAlignedBox BoundingBox {
         get
         {
-            return getBoundingBox();
+            return GetBoundingBox();
         }
     }
 
     public override string MovableType {
         get
         {
-            return getMovableType();
+            return GetMovableType();
         }
     }
 
     public Math3D.Vector3 DerivedPosition {
         get
         {
-            return getDerivedPosition();
+            return GetDerivedPosition();
         }
     }
 
     public Math3D.Vector3 DerivedDirection {
         get
         {
-            return getDerivedDirection();
+            return GetDerivedDirection();
         }
     }
 
 //  public void Visible {
 //    set
 //    {
-//        setVisible((bool)value);
+//        SetVisible((bool)value);
 //    }
 //  }
 
     public override float BoundingRadius {
         get
         {
-            return getBoundingRadius();
+            return GetBoundingRadius();
         }
     }
 
     public Math3D.Vector4 As4DVector {
         get
         {
-            return getAs4DVector();
+            return GetAs4DVector();
         }
     }
 %}

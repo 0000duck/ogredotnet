@@ -2,6 +2,31 @@
 #include "OgreSceneNode.h"
 %}
 
+%rename Ogre::SceneNode::attachObject                AttachObject;
+%rename Ogre::SceneNode::numAttachedObjects          NumAttachedObjects;
+%rename Ogre::SceneNode::getAttachedObject           GetAttachedObject;
+%rename Ogre::SceneNode::detachObject                DetachObject;
+%rename Ogre::SceneNode::detachAllObjects            DetachAllObjects;
+%rename Ogre::SceneNode::isInSceneGraph              IsInSceneGraph;
+%rename Ogre::SceneNode::getCreator                  GetCreator;
+%rename Ogre::SceneNode::removeAndDestroyChild       RemoveAndDestroyChild;
+%rename Ogre::SceneNode::removeAndDestroyAllChildren RemoveAndDestroyAllChildren;
+%rename Ogre::SceneNode::showBoundingBox             ShowBoundingBox;
+%rename Ogre::SceneNode::getShowBoundingBox          GetShowBoundingBox;
+%rename Ogre::SceneNode::createChildSceneNode        CreateChildSceneNode;
+%rename Ogre::SceneNode::findLights                  FindLights;
+%rename Ogre::SceneNode::setFixedYawAxis             SetFixedYawAxis;
+%rename Ogre::SceneNode::yaw                         Yaw;
+%rename Ogre::SceneNode::setDirection                SetDirection;
+%rename Ogre::SceneNode::lookAt                      LookAt;
+%rename Ogre::SceneNode::setAutoTracking             SetAutoTracking;
+%rename Ogre::SceneNode::getAutoTrackTarget          GetAutoTrackTarget;
+%rename Ogre::SceneNode::getAutoTrackOffset          GetAutoTrackOffset;
+%rename Ogre::SceneNode::getAutoTrackLocalDirection  GetAutoTrackLocalDirection;
+%rename Ogre::SceneNode::getParentSceneNode          GetParentSceneNode;
+%rename Ogre::SceneNode::setVisible                  SetVisible;
+%rename Ogre::SceneNode::flipVisibility              FlipVisibility;
+
 %typemap(csattributes) Ogre::SceneNode 
 "/// <summary>
 /// Class representing a node in the scene graph.
@@ -9,53 +34,52 @@
 
 %typemap(cscode) Ogre::SceneNode
 %{
-    
 //     public virtual bool IsInSceneGraph {
 //         get
 //         {
-//             return isInSceneGraph();
+//             return IsInSceneGraph();
 //         }
 //     }
 
     public SceneManager Creator {
         get
         {
-            return getCreator();
+            return GetCreator();
         }
     }
 
 //     public virtual bool ShowBoundingBox {
 //         get
 //         {
-//             return getShowBoundingBox();
+//             return GetShowBoundingBox();
 //         }
 //     }
 
     public SceneNode AutoTrackTarget {
         get
         {
-            return getAutoTrackTarget();
+            return GetAutoTrackTarget();
         }
     }
 
     public Math3D.Vector3 AutoTrackOffset {
         get
         {
-            return getAutoTrackOffset();
+            return GetAutoTrackOffset();
         }
     }
 
     public Math3D.Vector3 AutoTrackLocalDirection {
         get
         {
-            return getAutoTrackLocalDirection();
+            return GetAutoTrackLocalDirection();
         }
     }
 
     public SceneNode ParentSceneNode {
         get
         {
-            return getParentSceneNode();
+            return GetParentSceneNode();
         }
     }
 

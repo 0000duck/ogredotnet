@@ -2,6 +2,8 @@
 #include "OgreOverlayManager.h"
 %}
 
+%rename Ogre::OverlayManager::createOverlayElement            CreateOverlayElement;
+
 %typemap(cscode) Ogre::OverlayManager
 %{
     public static OverlayManager Instance    {
@@ -12,28 +14,28 @@
     
     public TextAreaOverlayElement CreateTextAreaElement(string instanceName, bool isTemplate)
     {
-        OverlayElement el = createOverlayElement("TextArea", instanceName, isTemplate);
+        OverlayElement el = CreateOverlayElement("TextArea", instanceName, isTemplate);
         TextAreaOverlayElement ret = new TextAreaOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 
     public TextAreaOverlayElement CreateTextAreaElement(string instanceName)
     {
-        OverlayElement el = createOverlayElement("TextArea", instanceName);
+        OverlayElement el = CreateOverlayElement("TextArea", instanceName);
         TextAreaOverlayElement ret = new TextAreaOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 
     public PanelOverlayElement CreatePanelElement(string instanceName, bool isTemplate)
     {
-        OverlayElement el = createOverlayElement("Panel", instanceName, isTemplate);
+        OverlayElement el = CreateOverlayElement("Panel", instanceName, isTemplate);
         PanelOverlayElement ret = new PanelOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }
 
     public PanelOverlayElement CreatePanelElement(string instanceName)
     {
-        OverlayElement el = createOverlayElement("Panel", instanceName);
+        OverlayElement el = CreateOverlayElement("Panel", instanceName);
         PanelOverlayElement ret = new PanelOverlayElement(OverlayElement.getCPtr(el).Handle , false);
         return ret;
     }

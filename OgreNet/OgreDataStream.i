@@ -99,8 +99,8 @@ namespace Ogre
     }
 };
 
-%extend Ogre::MemoryDataStream {
-
+%extend Ogre::MemoryDataStream
+{
     void SetBuffer(const Ogre::String& data)
     {
         Ogre::uchar *mybuff = self->getPtr();

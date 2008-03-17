@@ -17,13 +17,16 @@
 
 %typemap(cscode) Ogre::ResourceGroupManager
 %{
-    public static ResourceGroupManager Instance {
-        get {
+    public static ResourceGroupManager Instance
+    {
+        get
+        {
             return new ResourceGroupManager(OgreBindingsPINVOKE.ResourceGroupManager_getSingleton(), false);
         }
     }
 
-    public static ResourceGroupManager Singleton {
+    public static ResourceGroupManager Singleton
+    {
         get { return getSingleton(); }
     }
 %}
@@ -76,5 +79,4 @@ namespace Ogre
     {
         return new DataStreamListSharedPtr(self->openResources(pattern, groupName));
     }
-
 };

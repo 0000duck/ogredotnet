@@ -14,6 +14,33 @@
 
 %extend Ogre::Vector3
 {
+    inline float getX(void)
+    {
+        return self->x;
+    }
+    inline void setX(float X)
+    {
+        self->x = X;
+    }
+    
+    inline float getY(void)
+    {
+        return self->y;
+    }
+    inline void setY(float Y)
+    {
+        self->y = Y;
+    }
+    
+    inline float getZ(void)
+    {
+        return self->z;
+    }
+    inline void setZ(float Z)
+    {
+        self->z = Z;
+    }
+    
     static Vector3 Multiply(Vector3 * v1, Vector3 * v2)
     {
         return *v1 * *v2;
@@ -41,6 +68,42 @@
 }
 
 %typemap(cscode) Ogre::Vector3 %{
+    public float X
+    {
+        get
+        {
+            return getX();
+        }
+        set
+        {
+            setX(value);
+        }
+    }
+    
+    public float Y
+    {
+        get
+        {
+            return getY();
+        }
+        set
+        {
+            setY(value);
+        }
+    }
+    
+    public float Z
+    {
+        get
+        {
+            return getZ();
+        }
+        set
+        {
+            setZ(value);
+        }
+    }
+    
     /*public Math3D.Vector3 ToMath3DVector3()
     {
         return new Math3D.Vector3(this.x, this.y, this.z);
@@ -70,10 +133,10 @@
 }
 %typemap(csvarout) const Ogre::Vector3 &
 %{
-get
-{
-    return OgreVector3.ToVector3(new OgreVector3($imcall, false));
-}
+    get
+    {
+        return OgreVector3.ToVector3(new OgreVector3($imcall, false));
+    }
 %}
 
 %typemap(cstype) const Ogre::Vector3 * "Math3D.Vector3"
@@ -84,10 +147,10 @@ get
 }
 %typemap(csvarout) const Ogre::Vector3 *
 %{
-get
-{
-    return OgreVector3.ToVector3(new OgreVector3($imcall, false));
-}
+    get
+    {
+        return OgreVector3.ToVector3(new OgreVector3($imcall, false));
+    }
 %}
 
 %typemap(cstype) Ogre::Vector3 "Math3D.Vector3"
@@ -98,10 +161,10 @@ get
 }
 %typemap(csvarout) Ogre::Vector3
 %{
-get
-{
-    return OgreVector3.ToVector3(new OgreVector3($imcall, false));
-}
+    get
+    {
+        return OgreVector3.ToVector3(new OgreVector3($imcall, false));
+    }
 %}
 
 %include "OgreVector3.h"

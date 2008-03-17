@@ -26,7 +26,7 @@
 %include "OgreMovablePlane.h"
 
 %extend Ogre::MovablePlane {
-    MovableObject * GetAsMovableObject()    {
+    MovableObject * GetAsMovableObject() {
         return (MovableObject*)self;
     }
 };
