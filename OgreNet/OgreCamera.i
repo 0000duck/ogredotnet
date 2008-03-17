@@ -12,7 +12,7 @@
 %rename Ogre::Camera::getDirection           GetDirection;
 %rename Ogre::Camera::getUp                  GetUp;
 %rename Ogre::Camera::getRight               GetRight;
-%rename Ogre::Camera::lookAt                 _lookAt;
+%rename Ogre::Camera::lookAt                 LookAt;
 %rename Ogre::Camera::roll                   Roll;
 %rename Ogre::Camera::yaw                    Yaw;
 %rename Ogre::Camera::pitch                  Pitch;
@@ -81,14 +81,6 @@
         }
     }
     
-    public Math3D.Vector3 LookAt
-    {
-        set
-        {
-            _lookAt(value);
-        }
-    }
-
     public SceneManager SceneManager {
         get
         {
