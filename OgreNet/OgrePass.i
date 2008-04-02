@@ -95,19 +95,15 @@
 %rename Ogre::Pass::getParent GetParent;
 %rename Ogre::Pass::getResourceGroup GetResourceGroup;
 %rename Ogre::Pass::setVertexProgram SetVertexProgram;
-%rename Ogre::Pass::setVertexProgramParameters SetVertexProgramParameters;
 %rename Ogre::Pass::getVertexProgramParameters GetVertexProgramParameters;
 %rename Ogre::Pass::getVertexProgramName GetVertexProgramName;
 %rename Ogre::Pass::getVertexProgram GetVertexProgram;
 %rename Ogre::Pass::setShadowCasterVertexProgram SetShadowCasterVertexProgram;
-%rename Ogre::Pass::setShadowCasterVertexProgramParameters SetShadowCasterVertexProgramParameters;
 %rename Ogre::Pass::getShadowCasterVertexProgramName GetShadowCasterVertexProgramName;
 %rename Ogre::Pass::getShadowCasterVertexProgramParameters GetShadowCasterVertexProgramParameters;
 %rename Ogre::Pass::getShadowCasterVertexProgram GetShadowCasterVertexProgram;
 %rename Ogre::Pass::setShadowReceiverVertexProgram SetShadowReceiverVertexProgram;
-%rename Ogre::Pass::setShadowReceiverVertexProgramParameters SetShadowReceiverVertexProgramParameters;
 %rename Ogre::Pass::setShadowReceiverFragmentProgram SetShadowReceiverFragmentProgram;
-%rename Ogre::Pass::setShadowReceiverFragmentProgramParameters SetShadowReceiverFragmentProgramParameters;
 %rename Ogre::Pass::getShadowReceiverVertexProgramName GetShadowReceiverVertexProgramName;
 %rename Ogre::Pass::getShadowReceiverVertexProgramParameters GetShadowReceiverVertexProgramParameters;
 %rename Ogre::Pass::getShadowReceiverVertexProgram GetShadowReceiverVertexProgram;
@@ -116,7 +112,6 @@
 %rename Ogre::Pass::getShadowReceiverFragmentProgram GetShadowReceiverFragmentProgram;
 %rename Ogre::Pass::setFragmentProgram SetFragmentProgram;
 %rename Ogre::Pass::getFragmentProgram GetFragmentProgram;
-%rename Ogre::Pass::setFragmentProgramParameters SetFragmentProgramParameters;
 %rename Ogre::Pass::getFragmentProgramParameters GetFragmentProgramParameters;
 %rename Ogre::Pass::getFragmentProgramName GetFragmentProgramName;
 %rename Ogre::Pass::isLoaded IsLoaded;
