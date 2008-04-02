@@ -8,7 +8,7 @@
 //override is a key word in C#
 %ignore Ogre::Renderable::setPolygonModeOverrideable;
 
-//TODO wrapp AutoConstantEntry
+//TODO wrap AutoConstantEntry
 %ignore Ogre::Renderable::_updateCustomGpuParameter;
 
 %typemap(cscode) Ogre::Renderable
@@ -70,8 +70,10 @@
 
 %include OgreRenderable.h
 
-%extend Ogre::Renderable {
-    void SetPolygonModeOverrideable(bool oo) {
+%extend Ogre::Renderable
+{
+    void SetPolygonModeOverrideable(bool oo)
+    {
         self->setPolygonModeOverrideable(oo);
     }
 };
