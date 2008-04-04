@@ -1,9 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
 using OgreDotNet;
-
 using Math3D;
 
 namespace DemoWinForms
@@ -38,19 +36,18 @@ namespace DemoWinForms
 		protected ParticleEmitter mParticleEmitter1 = null;
 		protected ParticleEmitter mParticleEmitter2 = null;
 
-		public App( Control control )
+		public App(Control control)
 		{
 			mRoot = new Root();
 			Initialiser.SetupResources("resources.cfg");
 			mRoot.ShowConfigDialog();
-			Size s = control.ClientSize;
 			mRenderWindow = mRoot.Initialise( control );
 
 			mSceneManager = mRoot.CreateSceneManager( (UInt16)SceneType.Generic, "ExampleSMInstance" );
 
 			mCamera = mSceneManager.CreateCamera("MainCamera");
 			mCamera.Position = new Math3D.Vector3( 150, 150, 150 );
-			mCamera.LookAt = new Math3D.Vector3(0,0,0);
+			mCamera.LookAt(new Math3D.Vector3(0,0,0));
 			mCamera.NearClipDistance = 5;
 
 			mViewport = mRenderWindow.AddViewport( mCamera );
@@ -89,7 +86,6 @@ namespace DemoWinForms
 			mParticleEmitter2.Direction = new Math3D.Vector3(0.0f, 0.0f, -1.0f);
 			mParticleEmitter2.SetColors(Color.White, Color.Red);
 			mParticleEmitter2.Position = new Math3D.Vector3(-18.0f, 0.0f, 0.0f);
-
 
 			mSceneManager.RootSceneNode.
 				CreateChildSceneNode(new Math3D.Vector3(0.0f, 6.5f, -67.0f)).AttachObject(mParticleSystem);
