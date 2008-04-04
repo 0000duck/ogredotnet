@@ -5,7 +5,7 @@
 clean() {
     rm -rf CMakeCache.txt cmake_install.cmake CMakeFiles *.sln *.build Makefile
     rm -rf Math3D/*.csproj Math3D/*.build Math3D/*.user Math3D/bin
-    rm -rf *.so bin/*.dll
+    rm -rf bin/*.dll bin/*.so bin/*.dylib
     rm -rf OgreNet/*_wrap.* OgreNet/*.build OgreNet/*.user OgreNet/*.csproj OgreNet/bin
     rm -rf OgreNet/build/*.cs
 }
