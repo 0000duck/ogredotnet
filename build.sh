@@ -11,12 +11,21 @@ clean() {
 }
 
 build_swig() {
-    cmake -G "Unix Makefiles" && make
+    cmake -G "Unix Makefiles" || exit 1
+    make || exit 1
 }
 
 build_csharp() {
-    ./runprebuild.sh && nant
+    ./runprebuild.sh || exit 1
+    nant || exit 1
 }
 
 clean
-build_swig && build_csharp
+build_swig
+build_csharp
+
+if [ "`uname`" == "Darwin" ]; then
+    mv bin/OgreBindings.so bin/libOgreBindings.dylib
+else
+    mv bin/OgreBindings.so bin/libOgreBindings.so
+fi
