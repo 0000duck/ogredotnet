@@ -119,5 +119,4 @@
     }
 %}
 
-
 %include "OgreParticleEmitter.h"

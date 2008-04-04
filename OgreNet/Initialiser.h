@@ -6,7 +6,7 @@ namespace Ogre
     class Initialiser
     {
     public:
-        static void SetupResources(char * resourceconfigfile)
+        static void SetupResources(char* resourceconfigfile)
         {
             Ogre::ConfigFile cf;
             cf.load(resourceconfigfile);
@@ -17,7 +17,7 @@ namespace Ogre
             while (seci.hasMoreElements())
             {
                 secName = seci.peekNextKey();
-                Ogre::ConfigFile::SettingsMultiMap *settings = seci.getNext();
+                Ogre::ConfigFile::SettingsMultiMap* settings = seci.getNext();
                 Ogre::ConfigFile::SettingsMultiMap::iterator i;
                 for (i = settings->begin(); i != settings->end(); ++i)
                 {
