@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using OgreDotNet;
 using Math3D;
@@ -36,9 +37,28 @@ namespace DemoWinForms
         protected ParticleEmitter mParticleEmitter1 = null;
         protected ParticleEmitter mParticleEmitter2 = null;
 
+        public static string GetOS()
+        {
+            if (Environment.OSVersion.Platform == PlatformID.Unix)
+            {
+                if (File.Exists("/System/Library/Frameworks/Cocoa.framework/Cocoa"))
+                {
+                    return "osx";
+                }
+                else
+                {
+                    return "unix";
+                }
+            }
+            else
+            {
+                return "win";
+            }
+        }
+
         public App(Control control)
         {
-            mRoot = new Root();
+            mRoot = new Root(String.Format("plugins-{0}.cfg", GetOS()));
             Initialiser.SetupResources("resources.cfg");
             mRoot.ShowConfigDialog();
             mRenderWindow = mRoot.Initialise( control );
