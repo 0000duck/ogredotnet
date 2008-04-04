@@ -61,16 +61,16 @@ namespace DemoWinForms
             mRoot = new Root(String.Format("plugins-{0}.cfg", GetOS()));
             Initialiser.SetupResources("resources.cfg");
             mRoot.ShowConfigDialog();
-            mRenderWindow = mRoot.Initialise( control );
+            mRenderWindow = mRoot.Initialise(control);
 
-            mSceneManager = mRoot.CreateSceneManager( (UInt16)SceneType.Generic, "ExampleSMInstance" );
+            mSceneManager = mRoot.CreateSceneManager((UInt16)SceneType.Generic, "ExampleSMInstance");
 
             mCamera = mSceneManager.CreateCamera("MainCamera");
-            mCamera.Position = new Math3D.Vector3( 150, 150, 150 );
+            mCamera.Position = new Math3D.Vector3(150, 150, 150);
             mCamera.LookAt(new Math3D.Vector3(0,0,0));
             mCamera.NearClipDistance = 5;
 
-            mViewport = mRenderWindow.AddViewport( mCamera );
+            mViewport = mRenderWindow.AddViewport(mCamera);
             mViewport.BackgroundColor = Color.Blue;
             mCamera.AspectRatio = (float)mViewport.ActualWidth/(float)mViewport.ActualHeight;
 
@@ -87,7 +87,7 @@ namespace DemoWinForms
             mEntity = mSceneManager.CreateEntity("razor", "razor.mesh");
             mSceneManager.RootSceneNode.AttachObject(mEntity);
 
-            mParticleSystem = mSceneManager.CreateParticleSystem( "ParticleSys1", 200);
+            mParticleSystem = mSceneManager.CreateParticleSystem("ParticleSys1", 200);
             mParticleSystem.MaterialName = "Examples/Flare";
             mParticleSystem.SetDefaultDimensions(25, 25);
 
