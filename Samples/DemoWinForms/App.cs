@@ -67,7 +67,7 @@ namespace DemoWinForms
 
             mCamera = mSceneManager.CreateCamera("MainCamera");
             mCamera.Position = new Math3D.Vector3(150, 150, 150);
-            mCamera.LookAt(new Math3D.Vector3(0,0,0));
+            mCamera.LookAt(new Math3D.Vector3(0, 0, 0));
             mCamera.NearClipDistance = 5;
 
             mViewport = mRenderWindow.AddViewport(mCamera);
