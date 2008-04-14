@@ -49,7 +49,8 @@
 
 %typemap(cscode) Ogre::Frustum
 %{
-    public virtual Radian FOVy {
+    public virtual Radian FOVy
+    {
         get
         {
             return GetFOVy();
@@ -60,7 +61,8 @@
         }    
     }
 
-    public virtual float NearClipDistance {
+    public virtual float NearClipDistance
+    {
         get
         {
             return GetNearClipDistance();
@@ -71,7 +73,8 @@
         }    
     }
 
-    public virtual float FarClipDistance {
+    public virtual float FarClipDistance
+    {
         get
         {
             return GetFarClipDistance();
@@ -82,7 +85,8 @@
         }    
     }
 
-    public virtual float AspectRatio {
+    public virtual float AspectRatio
+    {
         get
         {
             return GetAspectRatio();
@@ -93,91 +97,104 @@
         }    
     }
 
-    public virtual Math3D.Matrix4 ProjectionMatrix {
+    public virtual Math3D.Matrix4 ProjectionMatrix
+    {
         get
         {
             return GetProjectionMatrix();
         }
     }
 
-//  public virtual Math3D.Matrix4 StandardProjectionMatrix {
+//  public virtual Math3D.Matrix4 StandardProjectionMatrix
+//  {
 //    get
 //    {
 //        return GetStandardProjectionMatrix();
 //    }
 //  }
 
-    public virtual Math3D.Matrix4 ViewMatrix {
+    public virtual Math3D.Matrix4 ViewMatrix
+    {
         get
         {
             return GetViewMatrix();
         }
     }
 
-    public override AxisAlignedBox BoundingBox {
+    public override AxisAlignedBox BoundingBox
+    {
         get
         {
             return GetBoundingBox();
         }
     }
 
-    public override float BoundingRadius {
+    public override float BoundingRadius
+    {
         get
         {
             return GetBoundingRadius();
         }
     }
 
-    public override string MovableType {
+    public override string MovableType
+    {
         get
         {
             return GetMovableType();
         }
     }
 
-    public override string Name {
+    public override string Name
+    {
         get
         {
             return GetName();
         }
     }
 
-    public MaterialPtr Material {
+    public MaterialPtr Material
+    {
         get
         {
             return GetMaterial();
         }
     }
 
-    public Math3D.Quaternion WorldOrientation {
+    public Math3D.Quaternion WorldOrientation
+    {
         get
         {
             return GetWorldOrientation();
         }
     }
 
-    public Math3D.Vector3 WorldPosition {
+    public Math3D.Vector3 WorldPosition
+    {
         get
         {
             return GetWorldPosition();
         }
     }
 
-    public LightList Lights {
+    public LightList Lights
+    {
         get
         {
             return GetLights();
         }
     }
 
-    public virtual Math3D.Vector3 WorldSpaceCorners {
+    public virtual Math3D.Vector3 WorldSpaceCorners
+    {
         get
         {
             return GetWorldSpaceCorners();
         }
     }
 
-    public virtual ProjectionType ProjectionType {
+    public virtual ProjectionType ProjectionType
+    {
         get
         {
             return GetProjectionType();
@@ -188,21 +205,24 @@
         }
     }
 
-//  public virtual bool IsReflected {
+//  public virtual bool IsReflected
+//  {
 //    get
 //    {
 //        return IsReflected();
 //    }
 //  }
 
-    public virtual Math3D.Matrix4 ReflectionMatrix {
+    public virtual Math3D.Matrix4 ReflectionMatrix
+    {
         get
         {
             return GetReflectionMatrix();
         }
     }
 
-    public virtual Plane ReflectionPlane {
+    public virtual Plane ReflectionPlane
+    {
         get
         {
             return GetReflectionPlane();
@@ -214,7 +234,8 @@
 
 %extend Ogre::Frustum
 {
-    Renderable * GetAsRenderable() {
+    Renderable * GetAsRenderable()
+    {
         return (Renderable*)self;
     }
 };

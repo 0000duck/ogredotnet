@@ -7,7 +7,6 @@
 //
 //TODO figure out,  for functions that return a pointer to a simple type
 
-
 %define SIMPLE_TYPEMAP(TYPE, CTYPE, CSTYPE)
 %typemap(ctype)  TYPE "CTYPE"
 %typemap(imtype) TYPE "CSTYPE"
@@ -197,16 +196,19 @@ VOID_PTR_TYPEMAP(unsigned char **,    unsigned char **)
   private HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  public $csclassname(IntPtr cPtr, bool cMemoryOwn) {
+  public $csclassname(IntPtr cPtr, bool cMemoryOwn)
+  {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new HandleRef(this, cPtr);
   }
 
-  static public HandleRef getCPtr($csclassname obj) {
+  static public HandleRef getCPtr($csclassname obj)
+  {
     return (obj == null) ? new HandleRef(null, IntPtr.Zero) : obj.swigCPtr;
   }
 
-  static public void RemoveOwnership($csclassname obj) {
+  static public void RemoveOwnership($csclassname obj)
+  {
     if (obj!=null)
         obj.swigCMemOwn=false;
   }
@@ -217,15 +219,18 @@ VOID_PTR_TYPEMAP(unsigned char **,    unsigned char **)
 %typemap(csbody_derived) SWIGTYPE %{
   private HandleRef swigCPtr;
 
-  public $csclassname(IntPtr cPtr, bool cMemoryOwn) : base($modulePINVOKE.$csclassnameUpcast(cPtr), cMemoryOwn) {
+  public $csclassname(IntPtr cPtr, bool cMemoryOwn) : base($modulePINVOKE.$csclassnameUpcast(cPtr), cMemoryOwn)
+  {
     swigCPtr = new HandleRef(this, cPtr);
   }
 
-  static public HandleRef getCPtr($csclassname obj) {
+  static public HandleRef getCPtr($csclassname obj)
+  {
     return (obj == null) ? new HandleRef(null, IntPtr.Zero) : obj.swigCPtr;
   }
 
-  static public void RemoveOwnership($csclassname obj) {
+  static public void RemoveOwnership($csclassname obj)
+  {
     if (obj!=null)
         obj.swigCMemOwn=false;
   }
@@ -235,15 +240,18 @@ VOID_PTR_TYPEMAP(unsigned char **,    unsigned char **)
 %typemap(csbody) SWIGTYPE *, SWIGTYPE &, SWIGTYPE [], SWIGTYPE (CLASS::*) %{
   private HandleRef swigCPtr;
 
-  public $csclassname(IntPtr cPtr, bool futureUse) {
+  public $csclassname(IntPtr cPtr, bool futureUse)
+  {
     swigCPtr = new HandleRef(this, cPtr);
   }
 
-  protected $csclassname() {
+  protected $csclassname()
+  {
     swigCPtr = new HandleRef(null, IntPtr.Zero);
   }
 
-  static public HandleRef getCPtr($csclassname obj) {
+  static public HandleRef getCPtr($csclassname obj)
+  {
     return (obj == null) ? new HandleRef(null, IntPtr.Zero) : obj.swigCPtr;
   }
 %}

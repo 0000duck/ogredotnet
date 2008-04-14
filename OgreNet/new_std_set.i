@@ -27,10 +27,12 @@
 %define SWIG_STD_SET_MINIMUM(CSTYPE, CTYPE...)
 %typemap(csinterfaces) std::set<CTYPE > "IDisposable, System.Collections.IEnumerable";
 %typemap(cscode) std::set<CTYPE > %{
-  public $csclassname(System.Collections.ICollection c) : this() {
+  public $csclassname(System.Collections.ICollection c) : this()
+  {
     if (c == null)
       throw new ArgumentNullException("c");
-    foreach (CSTYPE element in c) {
+    foreach (CSTYPE element in c)
+    {
       this.insert(element);
     }
   }
@@ -67,11 +69,13 @@
 
   
   // Type-safe version of IEnumerable.GetEnumerator
-  System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
+  System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+  {
     return new $csclassnameEnumerator(this);
   }
 
-  public $csclassnameEnumerator GetEnumerator() {
+  public $csclassnameEnumerator GetEnumerator()
+  {
     return new $csclassnameEnumerator(this);
   }
 
@@ -86,7 +90,8 @@
     private object currentObject;
     private int currentSize;
 
-    public $csclassnameEnumerator($csclassname collection) {
+    public $csclassnameEnumerator($csclassname collection)
+    {
       collectionRef = collection;
       currentIndex = -1;
       currentObject = null;
@@ -113,10 +118,12 @@
       }
     }
 
-    public bool MoveNext() {
+    public bool MoveNext()
+    {
       int size = collectionRef.Count;
       bool moveOkay = (currentIndex+1 < size) && (size == currentSize);
-      if (moveOkay) {
+      if (moveOkay)
+      {
         currentIndex++;
         currentObject = collectionRef[currentIndex];
       } else {
@@ -125,10 +132,12 @@
       return moveOkay;
     }
 
-    public void Reset() {
+    public void Reset()
+    {
       currentIndex = -1;
       currentObject = null;
-      if (collectionRef.Count != currentSize) {
+      if (collectionRef.Count != currentSize)
+      {
         throw new InvalidOperationException("Collection modified.");
       }
     }
@@ -142,7 +151,8 @@
         %newobject GetRange(int index, int count);
         set();
         %extend {
-            const_reference getitem(int index) throw (std::out_of_range) {
+            const_reference getitem(int index) throw (std::out_of_range)
+            {
                 std::set<CTYPE >::iterator it= self->begin();
                 std::advance(it,index);
                 if (it != self->end())
@@ -151,11 +161,13 @@
                     throw std::out_of_range("index");
             }
             // Takes a deep copy of the elements unlike ArrayList.AddRange
-            void AddRange(const std::set<CTYPE >& values) {
+            void AddRange(const std::set<CTYPE >& values)
+            {
                 self->insert(values.begin(), values.end());
             }
             // Takes a deep copy of the elements unlike ArrayList.GetRange
-            std::set<CTYPE > *GetRange(int index, int count) throw (std::out_of_range, std::invalid_argument) {
+            std::set<CTYPE > *GetRange(int index, int count) throw (std::out_of_range, std::invalid_argument)
+            {
                 if (index < 0)
                     throw std::out_of_range("index");
                 if (count < 0)
@@ -174,7 +186,8 @@
                 std::pair< std::set<CTYPE >::iterator, bool > r= self->insert(value);
                 return r.second;
             }
-            void RemoveAt(int index) throw (std::out_of_range) {
+            void RemoveAt(int index) throw (std::out_of_range)
+            {
                 std::set<CTYPE >::iterator it = self->begin();
                 std::advance(it,index);
                 if (it != self->end())
@@ -182,7 +195,8 @@
                 else
                     throw std::out_of_range("index");
             }
-            void RemoveRange(int index, int count) throw (std::out_of_range, std::invalid_argument) {
+            void RemoveRange(int index, int count) throw (std::out_of_range, std::invalid_argument)
+            {
                 if (index < 0)
                     throw std::out_of_range("index");
                 if (count < 0)
@@ -202,24 +216,28 @@
 // CSTYPE and CTYPE respectively correspond to the types in the cstype and ctype typemaps
 %define SWIG_STD_SET_EXTRA_OP_EQUALS_EQUALS(CSTYPE, CTYPE...)
     %extend {
-      bool Contains(const value_type& value) {
+      bool Contains(const value_type& value)
+      {
         return std::find(self->begin(), self->end(), value) != self->end();
       }
-      int IndexOf(const value_type& value) {
+      int IndexOf(const value_type& value)
+      {
         int index = -1;
         std::set<CTYPE >::iterator it = std::find(self->begin(), self->end(), value);
         if (it != self->end())
           index = (int)std::distance(self->begin(), it);
         return index;
       }
-      int LastIndexOf(const value_type& value) {
+      int LastIndexOf(const value_type& value)
+      {
         int index = -1;
         std::set<CTYPE >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
         if (rit != self->rend())
           index = (int)std::distance(rit, --(self->rend()));
         return index;
       }
-      void Remove(const value_type& value) {
+      void Remove(const value_type& value)
+      {
         std::set<CTYPE >::iterator it = std::find(self->begin(), self->end(), value);
         if (it != self->end())
           self->erase(it);
@@ -287,5 +305,3 @@ SWIG_STD_SET_SPECIALIZE(ulong, unsigned long long)
 SWIG_STD_SET_SPECIALIZE(float, float)
 SWIG_STD_SET_SPECIALIZE(double, double)
 SWIG_STD_SET_SPECIALIZE(string, std::string) // also requires a %include <std_string.i>
-
-

@@ -43,7 +43,8 @@
 
 %typemap(cscode) Ogre::ParticleSystem
 %{
-    public string MaterialName {
+    public string MaterialName
+    {
         get { return GetMaterialName(); }
         set { SetMaterialName(value); }
     }
@@ -53,7 +54,8 @@
 
 %extend Ogre::ParticleSystem
 {
-    MovableObject * GetAsMovableObject() {
+    MovableObject * GetAsMovableObject()
+    {
         return (MovableObject*)self;
     }
 };

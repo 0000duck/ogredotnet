@@ -38,22 +38,26 @@ namespace Ogre
 
 %typemap(cscode) Ogre::Skeleton
 %{
-  public virtual int NumBones {
-    get { return GetNumBones(); }
-  }
-  
-  public virtual Bone RootBone {
-    get { return GetRootBone(); }
-  }
+    public virtual int NumBones
+    {
+        get { return GetNumBones(); }
+    }
+    
+    public virtual Bone RootBone
+    {
+        get { return GetRootBone(); }
+    }
 
-  public virtual int NumAnimations {
-    get { return GetNumAnimations(); }
-  }
+    public virtual int NumAnimations
+    {
+        get { return GetNumAnimations(); }
+    }
 
-  public virtual SkeletonAnimationBlendMode BlendMode {
-    get { return GetBlendMode(); }
-    set { SetBlendMode((SkeletonAnimationBlendMode)value); }    
-  }
+    public virtual SkeletonAnimationBlendMode BlendMode
+    {
+        get { return GetBlendMode(); }
+        set { SetBlendMode((SkeletonAnimationBlendMode)value); }
+    }
 %}
 
 %include OgreSkeleton.h

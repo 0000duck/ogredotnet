@@ -31,29 +31,35 @@ namespace std {
         bool empty() const;
         void clear();
         %extend {
-            T& get(const K& key) throw (std::out_of_range) {
+            T& get(const K& key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     return i->second;
                 else
                     throw std::out_of_range("key not found");
             }
-            void set(const K& key, const T& x) {
+            void set(const K& key, const T& x)
+            {
               self->insert(std::pair< K, T>(key, x));
             }
-            void del(const K& key) throw (std::out_of_range) {
+            void del(const K& key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     self->erase(i);
                 else
                     throw std::out_of_range("key not found");
             }
-            bool has_key(const K& key) {
+            bool has_key(const K& key)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 return i != self->end();
             }
-            T& getitemValue(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            T& getitemValue(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (T&)it->second;
@@ -61,8 +67,10 @@ namespace std {
                 else
                     throw std::out_of_range("index");
             }
-            K& getitemKey(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            K& getitemKey(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (K&)it->first;
@@ -88,29 +96,35 @@ namespace std {
         bool empty() const;
         void clear();
         %extend {
-            T& get(K key) throw (std::out_of_range) {
+            T& get(K key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     return i->second;
                 else
                     throw std::out_of_range("key not found");
             }
-            void set(K key, const T& x) {
+            void set(K key, const T& x)
+            {
                 (*self)[key] = x;
             }
-            void del(K key) throw (std::out_of_range) {
+            void del(K key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     self->erase(i);
                 else
                     throw std::out_of_range("key not found");
             }
-            bool has_key(K key) {
+            bool has_key(K key)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 return i != self->end();
             }
-            T& getitemValue(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            T& getitemValue(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (T&)it->second;
@@ -118,8 +132,10 @@ namespace std {
                 else
                     throw std::out_of_range("index");
             }
-            K& getitemKey(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            K& getitemKey(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (K&)it->first;
@@ -142,29 +158,35 @@ namespace std {
         bool empty() const;
         void clear();
         %extend {
-            T get(const K& key) throw (std::out_of_range) {
+            T get(const K& key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     return i->second;
                 else
                     throw std::out_of_range("key not found");
             }
-            void set(const K& key, T x) {
+            void set(const K& key, T x)
+            {
                 (*self)[key] = x;
             }
-            void del(const K& key) throw (std::out_of_range) {
+            void del(const K& key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     self->erase(i);
                 else
                     throw std::out_of_range("key not found");
             }
-            bool has_key(const K& key) {
+            bool has_key(const K& key)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 return i != self->end();
             }
-            T& getitemValue(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            T& getitemValue(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (T&)it->second;
@@ -172,8 +194,10 @@ namespace std {
                 else
                     throw std::out_of_range("index");
             }
-            K& getitemKey(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            K& getitemKey(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (K&)it->first;
@@ -197,29 +221,35 @@ namespace std {
         bool empty() const;
         void clear();
         %extend {
-            T get(K key) throw (std::out_of_range) {
+            T get(K key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     return i->second;
                 else
                     throw std::out_of_range("key not found");
             }
-            void set(K key, T x) {
+            void set(K key, T x)
+            {
                 (*self)[key] = x;
             }
-            void del(K key) throw (std::out_of_range) {
+            void del(K key) throw (std::out_of_range)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 if (i != self->end())
                     self->erase(i);
                 else
                     throw std::out_of_range("key not found");
             }
-            bool has_key(K key) {
+            bool has_key(K key)
+            {
                 std::multimap<K,T >::iterator i = self->find(key);
                 return i != self->end();
             }
-            T& getitemValue(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            T& getitemValue(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (T&)it->second;
@@ -227,8 +257,10 @@ namespace std {
                 else
                     throw std::out_of_range("index");
             }
-            K& getitemKey(int index) throw (std::out_of_range) {
-                if (index>=0 && index<(int)self->size()) {
+            K& getitemKey(int index) throw (std::out_of_range)
+            {
+                if (index>=0 && index<(int)self->size())
+                {
                     std::multimap<K,T >::iterator it = (*self).begin();
                     std::advance(it,index);
                     return  (K&)it->first;
@@ -241,5 +273,4 @@ namespace std {
     %enddef
 
     // add specializations here
-
 }
