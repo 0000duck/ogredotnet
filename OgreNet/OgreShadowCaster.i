@@ -69,7 +69,8 @@
 
 %include OgreShadowCaster.h
 
-%extend Ogre::ShadowRenderable {
+%extend Ogre::ShadowRenderable
+{
     Renderable * GetAsRenderable()    {
         return (Renderable*)self;
     }

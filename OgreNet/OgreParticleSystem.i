@@ -51,7 +51,8 @@
 
 %include "OgreParticleSystem.h"
 
-%extend Ogre::ParticleSystem {
+%extend Ogre::ParticleSystem
+{
     MovableObject * GetAsMovableObject() {
         return (MovableObject*)self;
     }

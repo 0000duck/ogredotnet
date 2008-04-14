@@ -2,16 +2,16 @@
 #include "OgreRoot.h"
 %}
 
-%rename Ogre::Root::termHandler            TermHandler;
-%rename Ogre::Root::saveConfig             SaveConfig;
-%rename Ogre::Root::restoreConfig          RestoreConfig;
-%rename Ogre::Root::showConfigDialog       ShowConfigDialog;
-%rename Ogre::Root::addRenderSystem        AddRenderSystem;
-%rename Ogre::Root::getAvailableRenderers  GetAvailableRenderers;
-%rename Ogre::Root::getRenderSystemByName  GetRenderSystemByName;
-%rename Ogre::Root::setRenderSystem        SetRenderSystem;
-%rename Ogre::Root::getRenderSystem        GetRenderSystem;
-%rename Ogre::Root::initialise             Initialise;
+%rename Ogre::Root::termHandler                      TermHandler;
+%rename Ogre::Root::saveConfig                       SaveConfig;
+%rename Ogre::Root::restoreConfig                    RestoreConfig;
+%rename Ogre::Root::showConfigDialog                 ShowConfigDialog;
+%rename Ogre::Root::addRenderSystem                  AddRenderSystem;
+%rename Ogre::Root::getAvailableRenderers            GetAvailableRenderers;
+%rename Ogre::Root::getRenderSystemByName            GetRenderSystemByName;
+%rename Ogre::Root::setRenderSystem                  SetRenderSystem;
+%rename Ogre::Root::getRenderSystem                  GetRenderSystem;
+%rename Ogre::Root::initialise                       Initialise;
 %rename Ogre::Root::isInitialised                    IsInitialised;
 %rename Ogre::Root::addSceneManagerFactory           AddSceneManagerFactory;
 %rename Ogre::Root::removeSceneManagerFactory        RemoveSceneManagerFactory;
@@ -21,28 +21,28 @@
 %rename Ogre::Root::destroySceneManager              DestroySceneManager;
 %rename Ogre::Root::getSceneManager                  GetSceneManager;
 %rename Ogre::Root::getSceneManagerIterator          GetSceneManagerIterator;
-%rename Ogre::Root::getTextureManager      GetTextureManager;
-%rename Ogre::Root::getMeshManager         GetMeshManager;
-%rename Ogre::Root::getErrorDescription    GetErrorDescription;
-%rename Ogre::Root::queueEndRendering      QueueEndRendering;
-%rename Ogre::Root::startRendering         StartRendering;
-%rename Ogre::Root::renderOneFrame         RenderOneFrame;
-%rename Ogre::Root::shutdown               Shutdown;
-%rename Ogre::Root::addResourceLocation    AddResourceLocation;
-%rename Ogre::Root::removeResourceLocation RemoveResourceLocation;
-%rename Ogre::Root::getAutoCreatedWindow   GetAutoCreatedWindow;
-%rename Ogre::Root::createRenderWindow     CreateRenderWindow;
-%rename Ogre::Root::detachRenderTarget     DetachRenderTarget;
-%rename Ogre::Root::getRenderTarget        GetRenderTarget;
-%rename Ogre::Root::loadPlugin             LoadPlugin;
-%rename Ogre::Root::unloadPlugin           UnloadPlugin;
-%rename Ogre::Root::getTimer               GetTimer;
-%rename Ogre::Root::getCurrentFrameNumber  GetCurrentFrameNumber;
-%rename Ogre::Root::getSingleton           GetSingleton;
-%rename Ogre::Root::getSingletonPtr           GetSingletonPtr;
-%rename Ogre::Root::clearEventTimes           ClearEventTimes;
-%rename Ogre::Root::setFrameSmoothingPeriod   SetFrameSmoothingPeriod;
-%rename Ogre::Root::getFrameSmoothingPeriod   GetFrameSmoothingPeriod;
+%rename Ogre::Root::getTextureManager                GetTextureManager;
+%rename Ogre::Root::getMeshManager                   GetMeshManager;
+%rename Ogre::Root::getErrorDescription              GetErrorDescription;
+%rename Ogre::Root::queueEndRendering                QueueEndRendering;
+%rename Ogre::Root::startRendering                   StartRendering;
+%rename Ogre::Root::renderOneFrame                   RenderOneFrame;
+%rename Ogre::Root::shutdown                         Shutdown;
+%rename Ogre::Root::addResourceLocation              AddResourceLocation;
+%rename Ogre::Root::removeResourceLocation           RemoveResourceLocation;
+%rename Ogre::Root::getAutoCreatedWindow             GetAutoCreatedWindow;
+%rename Ogre::Root::createRenderWindow               CreateRenderWindow;
+%rename Ogre::Root::detachRenderTarget               DetachRenderTarget;
+%rename Ogre::Root::getRenderTarget                  GetRenderTarget;
+%rename Ogre::Root::loadPlugin                       LoadPlugin;
+%rename Ogre::Root::unloadPlugin                     UnloadPlugin;
+%rename Ogre::Root::getTimer                         GetTimer;
+%rename Ogre::Root::getCurrentFrameNumber            GetCurrentFrameNumber;
+%rename Ogre::Root::getSingleton                     GetSingleton;
+%rename Ogre::Root::getSingletonPtr                  GetSingletonPtr;
+%rename Ogre::Root::clearEventTimes                  ClearEventTimes;
+%rename Ogre::Root::setFrameSmoothingPeriod          SetFrameSmoothingPeriod;
+%rename Ogre::Root::getFrameSmoothingPeriod          GetFrameSmoothingPeriod;
 
 %rename Ogre::Root::addMovableObjectFactory             AddMovableObjectFactory;
 %rename Ogre::Root::removeMovableObjectFactory          RemoveMovableObjectFactory;
@@ -66,7 +66,7 @@
 %ignore Ogre::Root::_getCurrentSceneManager;
 %ignore Ogre::Root::_updateAllRenderTargets;
 
-// TODO this exspects a list of uint32
+// TODO this expects a list of uint32
 %ignore Ogre::Root::convertColourValue;
 
 %typemap(cscode) Ogre::Root
@@ -79,41 +79,49 @@
 
     static public Root Instance
     {
-        get    {
+        get
+        {
             if (_instance == null) _instance = GetSingleton();
             return _instance;
         }
     }
     static private Root _instance = null;
     
-    public RenderSystemList AvailableRenderers {
-        get    {    return GetAvailableRenderers();    }
+    public RenderSystemList AvailableRenderers
+    {
+        get { return GetAvailableRenderers(); }
     }
     
-    public RenderSystem RenderSystem {
-        get    {    return GetRenderSystem();    }
-        set    {    SetRenderSystem((RenderSystem)value);    }
+    public RenderSystem RenderSystem
+    {
+        get { return GetRenderSystem(); }
+        set { SetRenderSystem((RenderSystem)value); }
     }
     
-    public TextureManager TextureManager {
-        get    {    return GetTextureManager();    }
+    public TextureManager TextureManager
+    {
+        get { return GetTextureManager(); }
     }
 
-    public MeshManager MeshManager {
-        get    {    return GetMeshManager();    }
+    public MeshManager MeshManager
+    {
+        get { return GetMeshManager(); }
     }
     
-    public RenderWindow AutoCreatedWindow {
-        get    {    return GetAutoCreatedWindow();    }
+    public RenderWindow AutoCreatedWindow
+    {
+        get { return GetAutoCreatedWindow(); }
     }
     
 // TODO: problems generating Timer.cs
-//    public OgreDotNet.Timer Timer {
-//        get    {    return GetTimer();    }
+//    public OgreDotNet.Timer Timer
+//    {
+//        get { return GetTimer(); }
 //    }
     
-    public UInt32 CurrentFrameNumber {
-        get    {    return GetCurrentFrameNumber();    }
+    public UInt32 CurrentFrameNumber
+    {
+        get { return GetCurrentFrameNumber(); }
     }
 %}
 

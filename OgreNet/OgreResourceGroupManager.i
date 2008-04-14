@@ -67,7 +67,8 @@ namespace Ogre
     };
 }
 
-%extend Ogre::ResourceGroupManager {
+%extend Ogre::ResourceGroupManager
+{
     //declare new functions to use RGMResourceDeclaration in place of ResourceGroupManager::ResourceDeclaration
     //  ResourceDeclarationList getResourceDeclarationList(const String& groupName);
     Ogre::RGMResourceDeclarationList *GetResourceDeclarationList(const String& groupName)

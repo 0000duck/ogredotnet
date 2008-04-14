@@ -37,36 +37,43 @@
 %{
     public object UserData // njkogre - dont use the Ogre "UserObject" - we got our own.
     {
-        get{return _userData;}
-        set{_userData = value;}
+        get { return _userData; }
+        set { _userData = value; }
     }
     private object _userData;
 
-    public virtual string Name {
+    public virtual string Name
+    {
         get { return GetName(); }
     }
 
-    public virtual string MovableType {
+    public virtual string MovableType
+    {
         get { return GetMovableType(); }
     }
 
-    public virtual Node ParentNode {
+    public virtual Node ParentNode
+    {
         get { return GetParentNode(); }
     }
 
-    public virtual SceneNode ParentSceneNode {
+    public virtual SceneNode ParentSceneNode
+    {
         get { return GetParentSceneNode(); }
     }
 
-    public virtual AxisAlignedBox BoundingBox {
+    public virtual AxisAlignedBox BoundingBox
+    {
         get { return GetBoundingBox(); }
     }
 
-    public virtual float BoundingRadius {
+    public virtual float BoundingRadius
+    {
         get { return GetBoundingRadius(); }
     }
 
-//    public virtual void Visible {
+//    public virtual void Visible
+//    {
 //        get { return IsVisible(); }
 //        set { SetVisible((bool)value); }
 //    }
@@ -126,14 +133,16 @@
 
 %include "OgreMovableObject.h"
 
-%extend Ogre::MovableObject {
+%extend Ogre::MovableObject
+{
     AnimableObject * GetAsAnimableObject()
     {
         return (AnimableObject*)self;
     }
 };
 
-%extend Ogre::MovableObjectFactory {
+%extend Ogre::MovableObjectFactory
+{
     MovableObject* CreateInstance(const String& name, SceneManager* manager, const NameValuePairList* vparams = 0)
     {
         return self->createInstance(name, manager, vparams);

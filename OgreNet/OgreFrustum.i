@@ -212,7 +212,8 @@
 
 %include "OgreFrustum.h"
 
-%extend Ogre::Frustum {
+%extend Ogre::Frustum
+{
     Renderable * GetAsRenderable() {
         return (Renderable*)self;
     }

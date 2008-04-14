@@ -147,7 +147,8 @@
 
 %include OgreRenderSystem.h
 
-%extend Ogre::RenderSystem {
+%extend Ogre::RenderSystem
+{
     void _SetTextureAddressingMode(size_t unit, Ogre::TUSUVWAddressingMode * uvw)
     {
         self->_setTextureAddressingMode(unit, *uvw->get_mObj());

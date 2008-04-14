@@ -7,8 +7,8 @@
 %ignore Ogre::FileHandleDataStream;
 %ignore Ogre::FileStreamDataStream;
 
-//we may want these some day even thow buff is converted to an IntPtr 
-//TODO need to create an exteded function to get chunks for binarry data
+//we may want these some day even though buff is converted to an IntPtr 
+//TODO need to create an exteded function to get chunks for binary data
 // (must be fixed size in param list, byte[256])
 //virtual size_t read(void* buf, size_t count) = 0;
 //%ignore Ogre::DataStream::read;
@@ -25,7 +25,7 @@
 %template(DataStreamPtr) Ogre::SharedPtr<Ogre::DataStream>;
 
 //    typedef std::list<DataStreamPtr> DataStreamList;
-SWIG_STD_LIST_SPECIALIZE_MINIMUM(DataStreamPtr  , Ogre::SharedPtr<Ogre::DataStream>)
+SWIG_STD_LIST_SPECIALIZE_MINIMUM(DataStreamPtr, Ogre::SharedPtr<Ogre::DataStream>)
 %template(DataStreamList)  std::list<Ogre::SharedPtr<Ogre::DataStream> >;
 
 //custom wrapped  functions that use it need to be ignored and an exteded function created to use DataStreamListSharedPtr
@@ -87,7 +87,8 @@ namespace Ogre
     };
 }
 
-%extend Ogre::DataStream {
+%extend Ogre::DataStream
+{
     //virtual size_t readLine(char* buf, size_t maxCount, const String& delim = "\n");
     const Ogre::String& ReadLine(const Ogre::String& delim = "\n")
     {
@@ -110,7 +111,7 @@ namespace Ogre
         
         strcpy((char*)mybuff, data.substr(0, sizeTocopy).c_str());
     }
-    //.Net should se newmembuff as a byte[]
+    //.Net should see newmembuff as a byte[]
     void SetBuffer(void *newmembuff, Ogre::uint pos, Ogre::uint count)
     {
         Ogre::uchar *mybuff = self->getPtr();

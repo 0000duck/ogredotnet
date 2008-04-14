@@ -77,10 +77,12 @@ namespace Ogre {
     %}
 #elseif defined(SWIGCSHARP)
     %cscode %{
-        public MapIterator __iter__(MapIterator self)    {
+        public MapIterator __iter__(MapIterator self)
+        {
             return self;
         }
-        public Y next(MapIterator self){
+        public Y next(MapIterator self)
+        {
             if (self.hasMoreElements())
                 return self.getNext();
             else
@@ -112,10 +114,12 @@ namespace Ogre {
     %}
 #elseif defined(SWIGCSHARP)
     %cscode %{
-        public ConstMapIteratorWRAP __iter__(ConstMapIteratorWRAP self)    {
+        public ConstMapIteratorWRAP __iter__(ConstMapIteratorWRAP self)
+        {
             return self;
         }
-        public Y next(ConstMapIteratorWRAP self){
+        public Y next(ConstMapIteratorWRAP self)
+        {
             if (self.hasMoreElements())
                 return self.getNext();
             else
@@ -145,10 +149,12 @@ namespace Ogre {
     %}
 #elseif defined(SWIGCSHARP)
     %cscode %{
-        public VectorIterator __iter__(VectorIterator self)    {
+        public VectorIterator __iter__(VectorIterator self)
+        {
             return self;
         }
-        public X next(VectorIterator self){
+        public X next(VectorIterator self)
+        {
             if (self.hasMoreElements())
                 return self.getNext();
             else
@@ -178,10 +184,12 @@ namespace Ogre {
     %}
 #elseif defined(SWIGCSHARP)
     %cscode %{
-        public ConstVectorIterator __iter__(ConstVectorIterator self)    {
+        public ConstVectorIterator __iter__(ConstVectorIterator self)
+        {
             return self;
         }
-        public X next(ConstVectorIterator self){
+        public X next(ConstVectorIterator self)
+        {
             if (self.hasMoreElements())
                 return self.getNext();
             else

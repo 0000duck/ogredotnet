@@ -258,7 +258,8 @@
 
 %include OgreBillboardSet.h
 
-%extend Ogre::BillboardSet {
+%extend Ogre::BillboardSet
+{
     Renderable * GetAsRenderable()    {
         return (Renderable*)self;
     }

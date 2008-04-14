@@ -27,7 +27,8 @@
 
 %include "OgreSimpleRenderable.h"
 
-%extend Ogre::SimpleRenderable {
+%extend Ogre::SimpleRenderable
+{
     Ogre::Renderable * GetAsRenderable()    {
         return (Ogre::Renderable*)self;
     }

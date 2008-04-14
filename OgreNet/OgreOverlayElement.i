@@ -6,45 +6,41 @@
 %{
     static public OverlayElement GetOverlayElementFrom(OverlayContainer c)
     {
-        OverlayElement ret = new OverlayElement(OverlayContainer.getCPtr(c).Handle , false);
-        return ret;
+        return new OverlayElement(OverlayContainer.getCPtr(c).Handle, false);
     }
 
     static public OverlayElement GetOverlayElementFrom(TextAreaOverlayElement c)
     {
-        OverlayElement ret = new OverlayElement(TextAreaOverlayElement.getCPtr(c).Handle , false);
-        return ret;
+        return new OverlayElement(TextAreaOverlayElement.getCPtr(c).Handle, false);
     }
 
     static public OverlayElement GetOverlayElementFrom(PanelOverlayElement c)
     {
-        OverlayElement ret = new OverlayElement(PanelOverlayElement.getCPtr(c).Handle , false);
-        return ret;
+        return new OverlayElement(PanelOverlayElement.getCPtr(c).Handle, false);
     }
 
     static public OverlayContainer GetOverlayContainerFrom(OverlayElement c)
     {
-        OverlayContainer ret = new OverlayContainer(OverlayElement.getCPtr(c).Handle , false);
-        return ret;
+        return new OverlayContainer(OverlayElement.getCPtr(c).Handle, false);
     }
 
     static public TextAreaOverlayElement GetTextAreaOverlayElementFrom(OverlayElement c)
     {
-        TextAreaOverlayElement ret = new TextAreaOverlayElement(OverlayElement.getCPtr(c).Handle , false);
-        return ret;
+        return new TextAreaOverlayElement(OverlayElement.getCPtr(c).Handle, false);
     }
 
     static public OverlayElement GetPanelOverlayElementFrom(OverlayElement c)
     {
-        PanelOverlayElement ret = new PanelOverlayElement(OverlayElement.getCPtr(c).Handle , false);
-        return ret;
+        return new PanelOverlayElement(OverlayElement.getCPtr(c).Handle, false);
     }
 %}
 
 %include OgreOverlayElement.h
 
-%extend Ogre::OverlayElement {
-    Renderable * GetAsRenderable()    {
+%extend Ogre::OverlayElement
+{
+    Renderable* GetAsRenderable()
+    {
         return (Renderable*)self;
     }
 };
