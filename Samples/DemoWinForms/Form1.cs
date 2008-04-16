@@ -12,36 +12,36 @@ namespace DemoWinForms
     /// <summary>
     /// Summary description for Form1.
     /// </summary>
-    public class Form1 : System.Windows.Forms.Form
+    public class Form1 : Form
     {
         protected App app = null;
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.MainMenu mainMenu1;
-        private System.Windows.Forms.MenuItem menuItem1;
-        private System.Windows.Forms.MenuItem menuItem2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MenuItem menuItem3;
-        private System.Windows.Forms.MenuItem menuItem4;
-        private System.Windows.Forms.MenuItem menuItem5;
-        private System.Windows.Forms.MenuItem menuItem6;
-        private System.Windows.Forms.MenuItem menuItem7;
-        private System.Windows.Forms.MenuItem menuItem8;
-        private System.Windows.Forms.MenuItem menuItem9;
-        private System.Windows.Forms.MenuItem menuItem10;
-        private System.Windows.Forms.MenuItem menuItem11;
-        private System.Windows.Forms.MenuItem menuItem12;
-        private System.Windows.Forms.MenuItem menuItem13;
-        private System.Windows.Forms.MenuItem menuItem14;
-        private System.Windows.Forms.MenuItem menuItem15;
-        private System.Windows.Forms.MenuItem menuItem16;
-        private System.Windows.Forms.MenuItem menuItem17;
+        private Panel panel1;
+        private ListBox listBox1;
+        private Button button1;
+        private Button button2;
+        private MainMenu mainMenu1;
+        private MenuItem menuItem1;
+        private MenuItem menuItem2;
+        private MenuItem menuItem3;
+        private MenuItem menuItem4;
+        private MenuItem menuItem5;
+        private MenuItem menuItem6;
+        private MenuItem menuItem7;
+        private MenuItem menuItem8;
+        private MenuItem menuItem9;
+        private MenuItem menuItem10;
+        private MenuItem menuItem11;
+        private MenuItem menuItem12;
+        private MenuItem menuItem13;
+        private MenuItem menuItem14;
+        private MenuItem menuItem15;
+        private MenuItem menuItem16;
+        private MenuItem menuItem17;
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.Container components = null;
+        private Container components = null;
 
         public Form1()
         {
@@ -76,41 +76,41 @@ namespace DemoWinForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.mainMenu1 = new System.Windows.Forms.MainMenu();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.menuItem4 = new System.Windows.Forms.MenuItem();
-            this.menuItem5 = new System.Windows.Forms.MenuItem();
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
-            this.menuItem8 = new System.Windows.Forms.MenuItem();
-            this.menuItem9 = new System.Windows.Forms.MenuItem();
-            this.menuItem10 = new System.Windows.Forms.MenuItem();
-            this.menuItem11 = new System.Windows.Forms.MenuItem();
-            this.menuItem12 = new System.Windows.Forms.MenuItem();
-            this.menuItem13 = new System.Windows.Forms.MenuItem();
-            this.menuItem14 = new System.Windows.Forms.MenuItem();
-            this.menuItem15 = new System.Windows.Forms.MenuItem();
-            this.menuItem16 = new System.Windows.Forms.MenuItem();
-            this.menuItem17 = new System.Windows.Forms.MenuItem();
+            this.panel1 = new Panel();
+            this.mainMenu1 = new MainMenu();
+            this.menuItem1 = new MenuItem();
+            this.menuItem2 = new MenuItem();
+            this.listBox1 = new ListBox();
+            this.button1 = new Button();
+            this.button2 = new Button();
+            this.menuItem3 = new MenuItem();
+            this.menuItem4 = new MenuItem();
+            this.menuItem5 = new MenuItem();
+            this.menuItem6 = new MenuItem();
+            this.menuItem7 = new MenuItem();
+            this.menuItem8 = new MenuItem();
+            this.menuItem9 = new MenuItem();
+            this.menuItem10 = new MenuItem();
+            this.menuItem11 = new MenuItem();
+            this.menuItem12 = new MenuItem();
+            this.menuItem13 = new MenuItem();
+            this.menuItem14 = new MenuItem();
+            this.menuItem15 = new MenuItem();
+            this.menuItem16 = new MenuItem();
+            this.menuItem17 = new MenuItem();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(248, 8);
+            this.panel1.Location = new Point(248, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 440);
+            this.panel1.Size = new Size(480, 440);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Paint += new PaintEventHandler(this.panel1_Paint);
             // 
             // mainMenu1
             // 
-            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mainMenu1.MenuItems.AddRange(new MenuItem[] {
                     this.menuItem1,
                     this.menuItem9,
                     this.menuItem13});
@@ -118,7 +118,7 @@ namespace DemoWinForms
             // menuItem1
             // 
             this.menuItem1.Index = 0;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem1.MenuItems.AddRange(new MenuItem[] {
                     this.menuItem3,
                     this.menuItem4,
                     this.menuItem5,
@@ -147,24 +147,24 @@ namespace DemoWinForms
                     "A",
                     ".NET",
                     "Form"});
-            this.listBox1.Location = new System.Drawing.Point(8, 8);
+            this.listBox1.Location = new Point(8, 8);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(232, 381);
+            this.listBox1.Size = new Size(232, 381);
             this.listBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 400);
+            this.button1.Location = new Point(16, 400);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 56);
+            this.button1.Size = new Size(104, 56);
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(128, 400);
+            this.button2.Location = new Point(128, 400);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 56);
+            this.button2.Size = new Size(112, 56);
             this.button2.TabIndex = 3;
             this.button2.Text = "button2";
             // 
@@ -202,7 +202,7 @@ namespace DemoWinForms
             // menuItem9
             // 
             this.menuItem9.Index = 1;
-            this.menuItem9.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem9.MenuItems.AddRange(new MenuItem[] {
                     this.menuItem10,
                     this.menuItem11,
                     this.menuItem12});
@@ -226,7 +226,7 @@ namespace DemoWinForms
             // menuItem13
             // 
             this.menuItem13.Index = 2;
-            this.menuItem13.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem13.MenuItems.AddRange(new MenuItem[] {
                     this.menuItem14,
                     this.menuItem15,
                     this.menuItem17,
@@ -255,8 +255,8 @@ namespace DemoWinForms
             // 
             // Form1
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(736, 462);
+            this.AutoScaleBaseSize = new Size(5, 13);
+            this.ClientSize = new Size(736, 462);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
@@ -293,20 +293,20 @@ namespace DemoWinForms
             }
         }
 
-        private void Form1_Load(object sender, System.EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
         }
 
-        private void panel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
         }
 
-        private void menuItem2_Click(object sender, System.EventArgs e)
+        private void menuItem2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void menuItem6_Click(object sender, System.EventArgs e)
+        private void menuItem6_Click(object sender, EventArgs e)
         {
         }
     }

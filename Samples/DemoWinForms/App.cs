@@ -12,19 +12,13 @@ namespace DemoWinForms
         protected Root mRoot = null;
         public Root Root
         {
-            get
-            {
-                return mRoot;
-            }
+            get { return mRoot; }
         }
 
         protected RenderWindow mRenderWindow = null;
         public RenderWindow RenderWindow
         {
-            get
-            {
-                return mRenderWindow;
-            }
+            get { return mRenderWindow; }
         }
 
         protected SceneManager mSceneManager = null;
@@ -107,8 +101,7 @@ namespace DemoWinForms
             mParticleEmitter2.SetColors(Color.White, Color.Red);
             mParticleEmitter2.Position = new Math3D.Vector3(-18.0f, 0.0f, 0.0f);
 
-            mSceneManager.RootSceneNode.
-                CreateChildSceneNode(new Math3D.Vector3(0.0f, 6.5f, -67.0f)).AttachObject(mParticleSystem);
+            mSceneManager.RootSceneNode.CreateChildSceneNode(new Math3D.Vector3(0.0f, 6.5f, -67.0f)).AttachObject(mParticleSystem);
         }
     }
 }
