@@ -2,6 +2,8 @@
 #include "OgreColourValue.h"
 %}
 
+%ignore Ogre::ColourValue::ptr() const;
+
 %typemap(cscode) Ogre::ColourValue
 %{
     public float A   {

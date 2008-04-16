@@ -11,6 +11,7 @@
 %ignore Ogre::Vector3::Vector3(const Real afCoordinate[3]);
 %ignore Ogre::Vector3::Vector3(const int afCoordinate[3]);
 %ignore Ogre::Vector3::Vector3(Real* const r);
+%ignore Ogre::Vector3::ptr() const;
 
 %extend Ogre::Vector3
 {

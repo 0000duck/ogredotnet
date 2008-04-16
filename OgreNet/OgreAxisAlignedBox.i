@@ -2,6 +2,9 @@
 #include "OgreAxisAlignedBox.h"
 %}
 
+%ignore Ogre::AxisAlignedBox::getMinimum();
+%ignore Ogre::AxisAlignedBox::getMaximum();
+
 %rename Ogre::AxisAlignedBox::getAllCorners GetAllCorners;
 %rename Ogre::AxisAlignedBox::merge Merge;
 %rename Ogre::AxisAlignedBox::transform Transform;

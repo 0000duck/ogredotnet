@@ -2,11 +2,7 @@
 #include "OgreHardwarePixelBuffer.h"
 %}
 
-
-
-
 %include OgreHardwarePixelBuffer.h
-
 
 //lot of trouble with templating the SharedPtr + we dont need 2 of them.
 // so just the autocreated one some functions

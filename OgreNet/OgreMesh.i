@@ -63,6 +63,10 @@
 //@param pIndexMap Pointer to an array of indices to translate blend indices in the sourceVertexData to the index of pMatrices
 %ignore Ogre::Mesh::softwareVertexBlend;
 
+%ignore Ogre::Mesh::getEdgeList(unsigned int) const;
+%ignore Ogre::Mesh::getEdgeList() const;
+%ignore Ogre::Mesh::getPoseIterator() const;
+
 %typemap(cscode) Ogre::Mesh
 %{
     public int NumSubMeshes {

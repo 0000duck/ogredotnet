@@ -3,6 +3,32 @@
 #include "TextureUnitState.h"
 %}
 
+%ignore Ogre::TextureUnitState::_load(void);
+%ignore Ogre::TextureUnitState::_unload(void);
+%ignore Ogre::TextureUnitState::_notifyNeedsRecompile(void);
+%ignore Ogre::TextureUnitState::_notifyParent(Pass* parent);
+%ignore Ogre::TextureUnitState::_getTexturePtr(void);
+%ignore Ogre::TextureUnitState::_getTexturePtr(size_t frame);
+%ignore Ogre::TextureUnitState::_setTexturePtr(const TexturePtr& texptr);
+%ignore Ogre::TextureUnitState::_setTexturePtr(const TexturePtr& texptr, size_t frame);
+%ignore Ogre::TextureUnitState::_getAnimController();
+
+%ignore Ogre::TextureUnitState::EffectMap;
+%ignore Ogre::TextureUnitState::getEffects;
+%ignore Ogre::TextureUnitState::addEffect;
+%ignore Ogre::TextureUnitState::getTextureAddressingMode;
+%ignore Ogre::TextureUnitState::setTextureAddressingMode(const UVWAddressingMode& uvw);
+
+%newobject Ogre::TextureUnitState::GetEffects;
+%newobject Ogre::TextureUnitState::GetTextureAddressingMode;
+
+%nodefault Ogre::TUSTextureEffectMap;
+
+%newobject Ogre::TUSTextureEffectMap::getFirst;
+%newobject Ogre::TUSTextureEffectMap::getLast;
+%newobject Ogre::TUSTextureEffectMap::getByIndex;
+%newobject Ogre::TUSTextureEffectMap::getItem;
+
 %rename Ogre::TextureUnitState::getTextureName GetTextureName;
 %rename Ogre::TextureUnitState::setTextureName SetTextureName;
 %rename Ogre::TextureUnitState::setCubicTextureName SetCubicTextureName;
@@ -80,34 +106,7 @@
 %rename Ogre::TextureUnitState::setTextureNameAlias SetTextureNameAlias;
 %rename Ogre::TextureUnitState::getTextureNameAlias GetTextureNameAlias;
 %rename Ogre::TextureUnitState::applyTextureAliases ApplyTextureAliases;
-
-%ignore Ogre::TextureUnitState::_load(void);
-%ignore Ogre::TextureUnitState::_unload(void);
-%ignore Ogre::TextureUnitState::_notifyNeedsRecompile(void);
-%ignore Ogre::TextureUnitState::_notifyParent(Pass* parent);
-%ignore Ogre::TextureUnitState::_getTexturePtr(void);
-%ignore Ogre::TextureUnitState::_getTexturePtr(size_t frame);
-%ignore Ogre::TextureUnitState::_setTexturePtr(const TexturePtr& texptr);
-%ignore Ogre::TextureUnitState::_setTexturePtr(const TexturePtr& texptr, size_t frame);
-%ignore Ogre::TextureUnitState::_getAnimController();
-
 %rename Ogre::TextureUnitState::setTextureAddressingMode  SetTextureAddressingMode;
-
-%ignore Ogre::TextureUnitState::EffectMap;
-%ignore Ogre::TextureUnitState::getEffects;
-%ignore Ogre::TextureUnitState::addEffect;
-%ignore Ogre::TextureUnitState::getTextureAddressingMode;
-%ignore Ogre::TextureUnitState::setTextureAddressingMode(const UVWAddressingMode& uvw);
-
-%newobject Ogre::TextureUnitState::GetEffects;
-%newobject Ogre::TextureUnitState::GetTextureAddressingMode;
-
-%nodefault Ogre::TUSTextureEffectMap;
-
-%newobject Ogre::TUSTextureEffectMap::getFirst;
-%newobject Ogre::TUSTextureEffectMap::getLast;
-%newobject Ogre::TUSTextureEffectMap::getByIndex;
-%newobject Ogre::TUSTextureEffectMap::getItem;
 
 %include OgreTextureUnitState.h
 

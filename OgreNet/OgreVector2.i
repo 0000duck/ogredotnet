@@ -6,6 +6,7 @@
 %ignore Ogre::Vector2::Vector2(const Real afCoordinate[2]);
 %ignore Ogre::Vector2::Vector2(const int afCoordinate[2]);
 %ignore Ogre::Vector2::Vector2(Real* const r);
+%ignore Ogre::Vector2::ptr() const;
 
 %extend Ogre::Vector2
 {

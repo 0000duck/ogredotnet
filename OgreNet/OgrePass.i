@@ -152,6 +152,10 @@
 %ignore Ogre::Pass::_updateAutoParamsLightsOnly(const AutoParamDataSource& source) const;
 %ignore Ogre::Pass::_getTextureUnitWithContentTypeIndex(TextureUnitState::ContentType contentType, unsigned short index) const;
 
+%ignore Ogre::Pass::getTextureUnitState(unsigned short) const;
+%ignore Ogre::Pass::getTextureUnitState(Ogre::String const &) const;
+%ignore Ogre::Pass::getTextureUnitStateIterator() const;
+
 %include OgrePass.h
 
 %extend Ogre::Pass

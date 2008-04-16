@@ -5,6 +5,7 @@
 %ignore Ogre::Quaternion::Quaternion(Real* valptr);
 %ignore Ogre::Quaternion::operator=;
 %ignore Ogre::Quaternion::randomDeviant;
+%ignore Ogre::Quaternion::ptr() const;
 
 %typemap(cscode) Ogre::Quaternion
 %{
