@@ -3,7 +3,7 @@
 To build OgreDotNet, you need the following:
  - Ogre (http://www.ogre3d.org/)
  - CMake (http://www.cmake.org/)
- - swig (http://www.swig.org/)
+ - swig (http://www.swig.org/) (swig 1.3.33 or later is known to work.  1.3.31 does not work.  1.3.32 is unknown.)
 
 For Linux / OS X, you also need the following:
  - mono (http://www.mono-project.com/)
