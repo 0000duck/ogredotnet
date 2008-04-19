@@ -41,6 +41,8 @@
 %rename Ogre::ParticleSystem::setBounds            SetBounds;
 %rename Ogre::ParticleSystem::setBoundsAutoUpdated SetBoundsAutoUpdated;
 
+%ignore Ogre::ParticleSystem::_getIterator(void);
+
 %typemap(cscode) Ogre::ParticleSystem
 %{
     public string MaterialName
