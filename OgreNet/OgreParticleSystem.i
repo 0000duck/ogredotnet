@@ -41,7 +41,7 @@
 %rename Ogre::ParticleSystem::setBounds            SetBounds;
 %rename Ogre::ParticleSystem::setBoundsAutoUpdated SetBoundsAutoUpdated;
 
-%ignore Ogre::ParticleSystem::_getIterator(void);
+%ignore Ogre::ParticleSystem::_getIterator;
 
 %typemap(cscode) Ogre::ParticleSystem
 %{
