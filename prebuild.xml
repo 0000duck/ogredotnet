@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Prebuild xmlns="http://dnpb.sourceforge.net/schemas/prebuild-1.7.xsd" version="1.7">
-  <Solution name="OgreDotnet" activeConfig="Debug" path="./" version="1.4.6">
+  <Solution name="OgreDotNet" activeConfig="Debug" path="./" version="1.4.6">
     <Configuration name="Debug">
       <Options>
         <CompilerDefines>TRACE;DEBUG</CompilerDefines>
