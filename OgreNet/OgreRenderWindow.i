@@ -15,6 +15,7 @@
 %rename Ogre::RenderWindow::update               Update;
 %rename Ogre::RenderWindow::isFullScreen         IsFullScreen;
 %rename Ogre::RenderWindow::getMetrics           GetMetrics;
+%rename Ogre::RenderWindow::setFullscreen        SetFullscreen;
 
 // virtual void getMetrics(unsigned int& width, unsigned int& height, unsigned int& colourDepth, int& left, int& top);
 %apply int &OUTPUT { int& left, int& top };
@@ -22,27 +23,33 @@
 
 %typemap(cscode) Ogre::RenderWindow
 %{
-    public HandleRef HandleRef    {
+    public HandleRef HandleRef
+    {
         get { return swigCPtr; }
     }
 
-    public bool Closed    {
+    public bool Closed
+    {
         get { return IsClosed(); }
     }
     
-    public bool Visible {
+    public bool Visible
+    {
         get { return IsVisible(); }
     }
 
-    public bool Active {
+    public bool Active
+    {
         get { return IsActive(); }
     }
 
-    public bool Primary {
+    public bool Primary
+    {
         get { return IsPrimary(); }
     }
 
-    public bool FullScreen {
+    public bool FullScreen
+    {
         get { return IsFullScreen(); }
     }
 %}
