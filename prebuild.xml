@@ -77,6 +77,29 @@
 
     <!-- Samples -->
 
+    <Project name="DemoSimple" path="Samples/DemoSimple" type="Exe">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../../bin/</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../../bin/</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../../bin/</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Data" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="Math3D"/>
+      <Reference name="OgreDotNet"/>
+      <Files>
+        <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
     <Project name="DemoWinForms" path="Samples/DemoWinForms" type="Exe">
       <Configuration name="Debug">
         <Options>
