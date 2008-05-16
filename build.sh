@@ -12,12 +12,12 @@ clean() {
 
 build_swig() {
     cmake -G "Unix Makefiles" || exit 1
-    make VERBOSE=1 || exit 1
+    make || exit 1
 }
 
 build_csharp() {
     ./runprebuild.sh || exit 1
-    nant -v || exit 1
+    nant || exit 1
 }
 
 clean

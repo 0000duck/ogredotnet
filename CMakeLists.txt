@@ -52,9 +52,9 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/OgreNet
   ${EXTRA_INCLUDES})
 
 IF(WIN32)
-  SET(CMAKE_SWIG_FLAGS -Wall -csharp -namespace OgreDotNet)
+  SET(CMAKE_SWIG_FLAGS -csharp -namespace OgreDotNet)
 ELSE(WIN32)
-  SET(CMAKE_SWIG_FLAGS -Wall -csharp -namespace OgreDotNet -D_MONO)
+  SET(CMAKE_SWIG_FLAGS -csharp -namespace OgreDotNet -D_MONO)
 ENDIF(WIN32)  
 
 SET(CMAKE_SWIG_OUTDIR OgreNet/build)

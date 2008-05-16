@@ -1,5 +1,5 @@
 // Warning: Use the typemaps here in the expectation that the macros they are in will change name.
-#pragma SWIG nowarn=302 //Warning(302): Identifier 'list' redefined (ignored),
+%warnfilter(302) list; // Identifier 'list' redefined (ignored)
 
 /*
  * SWIG typemaps for std::list
@@ -403,5 +403,3 @@ SWIG_STD_LIST_SPECIALIZE(ulong, unsigned long long)
 SWIG_STD_LIST_SPECIALIZE(float, float)
 SWIG_STD_LIST_SPECIALIZE(double, double)
 SWIG_STD_LIST_SPECIALIZE(string, std::string) // also requires a %include "std_string.i"
-
-#pragma SWIG nowarn=+302 //turn it back on
