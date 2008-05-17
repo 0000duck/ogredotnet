@@ -68,7 +68,6 @@ SIMPLE_RETRUN_PTR_TYPEMAP(unsigned long,  unsigned long,    UInt32)
 SIMPLE_RETRUN_PTR_TYPEMAP(size_t,         unsigned long,    UInt32)
 SIMPLE_RETRUN_PTR_TYPEMAP(unsigned short, unsigned short,   UInt16)
 
-
 %define SIMPLE_ARRAY_TYPE_IN(CTYPE, CSTYPE)
 %typemap(ctype)  CTYPE *INPUTARRAY   "void *"
 %typemap(imtype) CTYPE *INPUTARRAY   "CSTYPE[]"
@@ -81,7 +80,6 @@ SIMPLE_ARRAY_TYPE_IN(double,  double)
 SIMPLE_ARRAY_TYPE_IN(float,  float)
 SIMPLE_ARRAY_TYPE_IN(int,  int)
 
-
 %define VOID_PTR_TYPEMAP(TYPE, CTYPE)
 %typemap(ctype)        TYPE    "CTYPE"
 %typemap(imtype)    TYPE    "IntPtr"
@@ -89,21 +87,17 @@ SIMPLE_ARRAY_TYPE_IN(int,  int)
 %typemap(in)        TYPE    %{ $1 = (CTYPE)$input; %}
 %typemap(out)        TYPE    %{ $result = $1; %}
 %typemap(csin)        TYPE    "$csinput"
-%typemap(csout, excode=SWIGEXCODE)        TYPE
+%typemap(csout, excode=SWIGEXCODE) TYPE
 {
     return new IntPtr((int)$imcall);
 }
 %typemap(csvarin)    TYPE
 %{
-    set {
-        $imcall;
-    }
+    set { $imcall; }
 %}
 %typemap(csvarout)    TYPE
 %{
-    get {
-        return new IntPtr((int)$imcall);
-    }
+    get { return new IntPtr((int)$imcall); }
 %}
 %enddef
 VOID_PTR_TYPEMAP(void *,              void *)
