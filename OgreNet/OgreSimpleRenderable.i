@@ -3,7 +3,7 @@
 #include "SimpleRenderableDirector.h"
 %}
 
-//ignore because of RenderOperation is private
+// ignore because RenderOperation is private
 %ignore Ogre::SimpleRenderable::setRenderOperation;
 %ignore Ogre::SimpleRenderable::getRenderOperation;
 %ignore Ogre::SimpleRenderableDirector::setRenderOperation;
@@ -11,8 +11,8 @@
 
 %typemap(cscode) Ogre::SimpleRenderable
 %{
-    //because theres no static_cast if you get an object that was originaly created as a SimpleRenderable
-    // or somthing derived from SimpleRenderable.  Use these to convert it
+    // because theres no static_cast if you get an object that was originaly created as a SimpleRenderable
+    // or something derived from SimpleRenderable.  Use these to convert it
     static public SimpleRenderable GetSimpleRenderableFrom(MovableObject c)
     {
         SimpleRenderable ret = new SimpleRenderable(MovableObject.getCPtr(c).Handle , false);
@@ -29,7 +29,8 @@
 
 %extend Ogre::SimpleRenderable
 {
-    Ogre::Renderable * GetAsRenderable()    {
+    Ogre::Renderable* GetAsRenderable()
+    {
         return (Ogre::Renderable*)self;
     }
 };
@@ -61,79 +62,107 @@
     protected delegate  float        _SRD_Delegate_getSquaredViewDepth    (IntPtr cam);
     protected delegate  float        _SRD_Delegate_getBoundingRadius        ();
     
-    public Renderable RO_Renderable {
+    public Renderable RO_Renderable
+    {
         get { return this.GetRO_Renderable(); }
     }
         
-    public IndexData RO_IndexData {
+    public IndexData RO_IndexData
+    {
         get { return this.GetRO_IndexData(); }
         set { this.SetRO_IndexData(value); }
     }
     
-    public bool RO_UseIndexes {
+    public bool RO_UseIndexes
+    {
         get { return this.GetRO_UseIndexes(); }
         set { this.SetRO_UseIndexes(value); }
     }
     
-    public OperationType RO_OperationType {
+    public OperationType RO_OperationType
+    {
         get { return (OperationType)this.GetRO_OperationType(); }
         set { this.SetRO_OperationType((int)value); }
     }
     
-    public VertexData RO_VertexData {
+    public VertexData RO_VertexData
+    {
         get { return this.GetRO_VertexData(); }
         set { this.SetRO_VertexData(value); }
     }
     
-    public void Init_Event_GetMaterial()    {
-        m_Delegate_GetMaterial =            new _SRD_Delegate_getMaterial            (Handle_GetMaterial);
-        set_SRD_FP_getMaterial            (swigCPtr, m_Delegate_GetMaterial);
+    public void Init_Event_GetMaterial()
+    {
+        m_Delegate_GetMaterial = new _SRD_Delegate_getMaterial(Handle_GetMaterial);
+        set_SRD_FP_getMaterial(swigCPtr, m_Delegate_GetMaterial);
     }
-    public void Init_Event_GetWorldTransforms()            {
-        m_Delegate_GetWorldTransforms =        new    _SRD_Delegate_getWorldTransforms    (Handle_GetWorldTransforms);
-        set_SRD_FP_getWorldTransforms    (swigCPtr, m_Delegate_GetWorldTransforms);
+
+    public void Init_Event_GetWorldTransforms()
+    {
+        m_Delegate_GetWorldTransforms = new _SRD_Delegate_getWorldTransforms(Handle_GetWorldTransforms);
+        set_SRD_FP_getWorldTransforms(swigCPtr, m_Delegate_GetWorldTransforms);
     }
-    public void Init_Event_GetWorldOrientation()        {
-        m_Delegate_GetWorldOrientation =    new    _SRD_Delegate_getWorldOrientation    (Handle_GetWorldOrientation);
-        set_SRD_FP_getWorldOrientation    (swigCPtr, m_Delegate_GetWorldOrientation);
+
+    public void Init_Event_GetWorldOrientation()
+    {
+        m_Delegate_GetWorldOrientation = new _SRD_Delegate_getWorldOrientation(Handle_GetWorldOrientation);
+        set_SRD_FP_getWorldOrientation(swigCPtr, m_Delegate_GetWorldOrientation);
     }
-    public void Init_Event_GetWorldPosition()            {
-        m_Delegate_GetWorldPosition =        new    _SRD_Delegate_getWorldPosition        (Handle_GetWorldPosition);
-        set_SRD_FP_getWorldPosition        (swigCPtr, m_Delegate_GetWorldPosition);
+
+    public void Init_Event_GetWorldPosition()
+    {
+        m_Delegate_GetWorldPosition = new _SRD_Delegate_getWorldPosition(Handle_GetWorldPosition);
+        set_SRD_FP_getWorldPosition(swigCPtr, m_Delegate_GetWorldPosition);
     }
-    public void Init_Event_NotifyCurrentCamera()        {
-        m_Delegate_NotifyCurrentCamera =    new    _SRD_Delegate_notifyCurrentCamera    (Handle_NotifyCurrentCamera);
-        set_SRD_FP_notifyCurrentCamera    (swigCPtr, m_Delegate_NotifyCurrentCamera);
+
+    public void Init_Event_NotifyCurrentCamera()
+    {
+        m_Delegate_NotifyCurrentCamera = new _SRD_Delegate_notifyCurrentCamera(Handle_NotifyCurrentCamera);
+        set_SRD_FP_notifyCurrentCamera(swigCPtr, m_Delegate_NotifyCurrentCamera);
     }
-    public void Init_Event_GetBoundingBox()        {
-        m_Delegate_GetBoundingBox =            new    _SRD_Delegate_getBoundingBox        (Handle_GetBoundingBox);
-        set_SRD_FP_getBoundingBox        (swigCPtr, m_Delegate_GetBoundingBox);
+
+    public void Init_Event_GetBoundingBox()
+    {
+        m_Delegate_GetBoundingBox = new _SRD_Delegate_getBoundingBox(Handle_GetBoundingBox);
+        set_SRD_FP_getBoundingBox(swigCPtr, m_Delegate_GetBoundingBox);
     }
-    public void Init_Event_UpdateRenderQueue()        {
-        m_Delegate_UpdateRenderQueue =        new    _SRD_Delegate_updateRenderQueue        (Handle_UpdateRenderQueue);
-        set_SRD_FP_updateRenderQueue    (swigCPtr, m_Delegate_UpdateRenderQueue);
+
+    public void Init_Event_UpdateRenderQueue()
+    {
+        m_Delegate_UpdateRenderQueue = new _SRD_Delegate_updateRenderQueue(Handle_UpdateRenderQueue);
+        set_SRD_FP_updateRenderQueue(swigCPtr, m_Delegate_UpdateRenderQueue);
     }
-    public void Init_Event_GetName()        {
-        m_Delegate_GetName =                new    _SRD_Delegate_getName                (Handle_GetName);
-        set_SRD_FP_getName                (swigCPtr, m_Delegate_GetName);
+
+    public void Init_Event_GetName()
+    {
+        m_Delegate_GetName = new _SRD_Delegate_getName(Handle_GetName);
+        set_SRD_FP_getName(swigCPtr, m_Delegate_GetName);
     }
-    public void Init_Event_GetMovableType()        {
-        m_Delegate_GetMovableType =            new    _SRD_Delegate_getMovableType        (Handle_GetMovableType);
-        set_SRD_FP_getMovableType        (swigCPtr, m_Delegate_GetMovableType);
+
+    public void Init_Event_GetMovableType()
+    {
+        m_Delegate_GetMovableType = new _SRD_Delegate_getMovableType(Handle_GetMovableType);
+        set_SRD_FP_getMovableType(swigCPtr, m_Delegate_GetMovableType);
     }
-    public void Init_Event_GetLights()        {
-        m_Delegate_GetLights =                new    _SRD_Delegate_getLights                (Handle_GetLights);
-        set_SRD_FP_getLights            (swigCPtr, m_Delegate_GetLights);
+
+    public void Init_Event_GetLights()
+    {
+        m_Delegate_GetLights = new _SRD_Delegate_getLights(Handle_GetLights);
+        set_SRD_FP_getLights(swigCPtr, m_Delegate_GetLights);
     }
-    public void Init_Event_GetSquaredViewDepth()        {
-        m_Delegate_GetSquaredViewDepth =    new    _SRD_Delegate_getSquaredViewDepth    (Handle_GetSquaredViewDepth);
-        set_SRD_FP_getSquaredViewDepth    (swigCPtr, m_Delegate_GetSquaredViewDepth);
+
+    public void Init_Event_GetSquaredViewDepth()
+    {
+        m_Delegate_GetSquaredViewDepth = new _SRD_Delegate_getSquaredViewDepth(Handle_GetSquaredViewDepth);
+        set_SRD_FP_getSquaredViewDepth(swigCPtr, m_Delegate_GetSquaredViewDepth);
     }
-    public void Init_Event_GetBoundingRadius()        {
-        m_Delegate_GetBoundingRadius =        new    _SRD_Delegate_getBoundingRadius        (Handle_GetBoundingRadius);
-        set_SRD_FP_getBoundingRadius    (swigCPtr, m_Delegate_GetBoundingRadius);
+
+    public void Init_Event_GetBoundingRadius()
+    {
+        m_Delegate_GetBoundingRadius = new _SRD_Delegate_getBoundingRadius(Handle_GetBoundingRadius);
+        set_SRD_FP_getBoundingRadius(swigCPtr, m_Delegate_GetBoundingRadius);
     }
-    
+
     public event    SRD_Delegate_getMaterial            evtGetMaterial = null;
     public event    SRD_Delegate_getWorldTransforms        evtGetWorldTransforms = null;
     public event    SRD_Delegate_getWorldOrientation    evtGetWorldOrientation = null;
@@ -200,7 +229,7 @@
     {
         IntPtr ret;
         MaterialPtr m;
-        if(evtGetMaterial != null)
+        if (evtGetMaterial != null)
             m = evtGetMaterial();
         else
             m = this.CallBase_getMaterial();
@@ -208,20 +237,20 @@
         return ret;
     }
 
-    protected void Handle_GetWorldTransforms (IntPtr xform)
+    protected void Handle_GetWorldTransforms(IntPtr xform)
     {
         Math3D.Matrix4 m = OgreMatrix4.ToMatrix4(new OgreMatrix4(xform,false));
-        if(evtGetWorldTransforms != null)
+        if (evtGetWorldTransforms != null)
             evtGetWorldTransforms(m);
         else
             this.CallBase_getWorldTransforms(m);
     }
 
-    protected IntPtr Handle_GetWorldOrientation ()
+    protected IntPtr Handle_GetWorldOrientation()
     {
         IntPtr ret;
         OgreQuaternion q;
-        if(evtGetWorldOrientation != null)    
+        if (evtGetWorldOrientation != null)    
             q = OgreQuaternion.FromQuaternion(evtGetWorldOrientation());
         else 
             q = OgreQuaternion.FromQuaternion(this.CallBase_getWorldOrientation());
@@ -229,11 +258,11 @@
         return ret;
     }
 
-    protected IntPtr Handle_GetWorldPosition ()
+    protected IntPtr Handle_GetWorldPosition()
     {
         IntPtr ret;
         OgreVector3 v;
-        if(evtGetWorldPosition != null)
+        if (evtGetWorldPosition != null)
             v = OgreVector3.FromVector3(evtGetWorldPosition());
         else
             v = OgreVector3.FromVector3(this.CallBase_getWorldPosition());
@@ -241,20 +270,20 @@
         return ret;
     }
     
-    protected void Handle_NotifyCurrentCamera (IntPtr cam)
+    protected void Handle_NotifyCurrentCamera(IntPtr cam)
     {
         Camera c = new Camera(cam, false);
-        if(evtNotifyCurrentCamera != null)
+        if (evtNotifyCurrentCamera != null)
             evtNotifyCurrentCamera(c);
         else
             this.CallBase_notifyCurrentCamera(c);
     }
     
-    protected IntPtr Handle_GetBoundingBox ()
+    protected IntPtr Handle_GetBoundingBox()
     {
         IntPtr ret;
         AxisAlignedBox a;
-        if(evtGetBoundingBox != null)
+        if (evtGetBoundingBox != null)
             a = evtGetBoundingBox();
         else
             a = this.CallBase_getBoundingBox();
@@ -262,36 +291,36 @@
         return ret;
     }
 
-    protected void Handle_UpdateRenderQueue (IntPtr queue)
+    protected void Handle_UpdateRenderQueue(IntPtr queue)
     {
         RenderQueue r = new RenderQueue(queue, false);
-        if(evtUpdateRenderQueue != null)
+        if (evtUpdateRenderQueue != null)
             evtUpdateRenderQueue(r);
         else
             this.CallBase_updateRenderQueue(r);
     }
 
-    protected string Handle_GetName ()
+    protected string Handle_GetName()
     {
-        if(evtGetName != null)
+        if (evtGetName != null)
             return evtGetName();
         else
             return this.CallBase_getName();
     }
 
-    protected string Handle_GetMovableType ()
+    protected string Handle_GetMovableType()
     {
-        if(evtGetMovableType != null)
+        if (evtGetMovableType != null)
             return evtGetMovableType();
         else
             return this.CallBase_getMovableType();
     }
     
-    protected IntPtr Handle_GetLights ()
+    protected IntPtr Handle_GetLights()
     {
         IntPtr ret;
         LightList l;
-        if(evtGetLights != null)
+        if (evtGetLights != null)
             l = evtGetLights();
         else
             l = this.CallBase_getLights();
@@ -299,21 +328,21 @@
         return ret;
     }
 
-    protected float Handle_GetSquaredViewDepth (IntPtr cam)
+    protected float Handle_GetSquaredViewDepth(IntPtr cam)
     {
         Camera c = new Camera(cam, false);
-        if(evtGetSquaredViewDepth != null)
+        if (evtGetSquaredViewDepth != null)
             return evtGetSquaredViewDepth(c);
         else
-            return 0.0f; //it is abstract and not on SimpleRenderer (multi-Inheritence problem)
+            return 0.0f; // it is abstract and not on SimpleRenderer (multi-Inheritence problem)
     }
     
-    protected float Handle_GetBoundingRadius ()
+    protected float Handle_GetBoundingRadius()
     {
-        if(evtGetBoundingRadius != null)
+        if (evtGetBoundingRadius != null)
             return evtGetBoundingRadius();
         else
-            return 0.0f;    //it is abstract and not on SimpleRenderer (multi-Inheritence problem)
+            return 0.0f; // it is abstract and not on SimpleRenderer (multi-Inheritence problem)
     }
 %}
 
@@ -324,9 +353,9 @@ namespace Ogre
     public:
         SimpleRenderableDirector();
         
-        const Renderable * GetRO_Renderable();
+        const Renderable* GetRO_Renderable();
         
-        IndexData * GetRO_IndexData();
+        IndexData* GetRO_IndexData();
         void SetRO_IndexData(IndexData * v);
         
         bool GetRO_UseIndexes();
@@ -335,8 +364,8 @@ namespace Ogre
         int GetRO_OperationType();
         void SetRO_OperationType(int v);
         
-        VertexData * GetRO_VertexData();
-        void SetRO_VertexData(VertexData * v);
+        VertexData* GetRO_VertexData();
+        void SetRO_VertexData(VertexData* v);
         
         const MaterialPtr& CallBase_getMaterial(void) const;
         void CallBase_getWorldTransforms(Matrix4* xform) const;
