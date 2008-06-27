@@ -92,6 +92,7 @@
       <ReferencePath>../../bin/</ReferencePath>
       <Reference name="System" localCopy="false"/>
       <Reference name="System.Data" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
       <Reference name="System.Drawing" localCopy="false"/>
       <Reference name="Math3D"/>
       <Reference name="OgreDotNet"/>
