@@ -1,5 +1,7 @@
 PROJECT(OgreBindings)
 
+CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
+
 ## If you get errors about not finding swig, set this:
 #SET(SWIG_DIR /usr/local/bin)
 
@@ -52,12 +54,12 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/OgreNet
   ${EXTRA_INCLUDES})
 
 IF(WIN32)
-  SET(CMAKE_SWIG_FLAGS -csharp -namespace OgreDotNet)
+  SET(CMAKE_SWIG_FLAGS -namespace OgreDotNet)
 ELSE(WIN32)
-  SET(CMAKE_SWIG_FLAGS -csharp -namespace OgreDotNet -D_MONO)
+  SET(CMAKE_SWIG_FLAGS -namespace OgreDotNet -D_MONO)
 ENDIF(WIN32)  
 
 SET(CMAKE_SWIG_OUTDIR OgreNet/build)
 
-SWIG_ADD_MODULE(OgreBindings c++ ${INTERFACE_FILES} ${SRC_FILES})
+SWIG_ADD_MODULE(OgreBindings csharp ${INTERFACE_FILES} ${SRC_FILES})
 SWIG_LINK_LIBRARIES(OgreBindings ${EXTRA_LIBRARIES})
