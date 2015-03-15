@@ -1,0 +1,1 @@
+A SWIG-generated wrapper for OGRE (graphics engine) targeting the .NET framework.
